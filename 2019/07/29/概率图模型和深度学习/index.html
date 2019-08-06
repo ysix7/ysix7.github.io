@@ -55,28 +55,35 @@
   };
 </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://ysix7.github.io/index.html">
+  <meta name="description" content="统计学知识 极大似然估计与最大后验概率估计  极大似然估计：p(X=头痛|Y=中风)=0.8 P(X=头痛|Y=感冒)=0.5 P(X=头痛|Y=) X=头痛  Y=argmaxP(X=头痛|Y)  Y=中风 最大后验概率：Y = argmax p(Y|X=头痛)=P(X|Y)P(Y)  生成模型和判别模型的区别  判别模型 p(y|x), 给一个X，判断y=1的值。 生产模型 p(y|x)等价于">
+<meta name="keywords" content="deep-learning">
+<meta property="og:type" content="article">
+<meta property="og:title" content="概率图模型">
+<meta property="og:url" content="https://ysix7.github.io/2019/07/29/概率图模型和深度学习/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="统计学知识 极大似然估计与最大后验概率估计  极大似然估计：p(X=头痛|Y=中风)=0.8 P(X=头痛|Y=感冒)=0.5 P(X=头痛|Y=) X=头痛  Y=argmaxP(X=头痛|Y)  Y=中风 最大后验概率：Y = argmax p(Y|X=头痛)=P(X|Y)P(Y)  生成模型和判别模型的区别  判别模型 p(y|x), 给一个X，判断y=1的值。 生产模型 p(y|x)等价于">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://cdn.mathpix.com/snip/images/BoYo4j40Vwd6QP_7xPqn0mVOtUnXcqccFwDph72E8PQ.original.fullsize.png">
+<meta property="og:updated_time" content="2019-08-06T18:24:41.326Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-  <link rel="canonical" href="https://ysix7.github.io/">
+<meta name="twitter:title" content="概率图模型">
+<meta name="twitter:description" content="统计学知识 极大似然估计与最大后验概率估计  极大似然估计：p(X=头痛|Y=中风)=0.8 P(X=头痛|Y=感冒)=0.5 P(X=头痛|Y=) X=头痛  Y=argmaxP(X=头痛|Y)  Y=中风 最大后验概率：Y = argmax p(Y|X=头痛)=P(X|Y)P(Y)  生成模型和判别模型的区别  判别模型 p(y|x), 给一个X，判断y=1的值。 生产模型 p(y|x)等价于">
+<meta name="twitter:image" content="https://cdn.mathpix.com/snip/images/BoYo4j40Vwd6QP_7xPqn0mVOtUnXcqccFwDph72E8PQ.original.fullsize.png">
+  <link rel="canonical" href="https://ysix7.github.io/2019/07/29/概率图模型和深度学习/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false,
+    isHome: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>Hexo</title>
+  <title>概率图模型 | Hexo</title>
   
 
 
@@ -213,10 +220,11 @@
         <div class="content-wrap">
             
 
-          <div id="content" class="content page-home">
+          <div id="content" class="content page-post-detail">
             
-  <section id="posts" class="posts-expand">
-      
+
+  <div id="posts" class="posts-expand">
+    
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
@@ -237,9 +245,8 @@
       <header class="post-header">
 
         
-          <h1 class="post-title" itemprop="name headline">
-              
-              <a href="/2019/07/29/概率图模型和深度学习/" class="post-title-link" itemprop="url">概率图模型</a>
+          <h1 class="post-title" itemprop="name headline">概率图模型
+
             
           </h1>
         
@@ -295,8 +302,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          
-            <h1 id="统计学知识"><a href="#统计学知识" class="headerlink" title="统计学知识"></a>统计学知识</h1><ul>
+        <h1 id="统计学知识"><a href="#统计学知识" class="headerlink" title="统计学知识"></a>统计学知识</h1><ul>
 <li>极大似然估计与最大后验概率估计</li>
 </ul>
 <p>极大似然估计：p(X=头痛|Y=中风)=0.8 P(X=头痛|Y=感冒)=0.5 P(X=头痛|Y=)</p>
@@ -444,9 +450,6 @@
 <p><a href="https://www.cnblogs.com/reaptomorrow-flydream/p/9688730.html" target="_blank" rel="noopener">隐马尔可夫(HMM)模型</a></p>
 <p><a href="https://www.cnblogs.com/ironstark/p/5125757.html" target="_blank" rel="noopener">CPD(conditional probability distribution)概率图模型</a></p>
 
-          
-        
-      
     </div>
 
     
@@ -454,261 +457,25 @@
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/2019/06/02/2019-06-13-菜谱collection/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-
+          
         
-          <h1 class="post-title" itemprop="name headline">
-              
-              <a href="/2019/06/02/2019-06-13-菜谱collection/" class="post-title-link" itemprop="url">菜谱Collection</a>
-            
-          </h1>
-        
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              
-                
-              
-
-              <time title="Created: 2019-06-02 00:00:00" itemprop="dateCreated datePublished" datetime="2019-06-02T00:00:00+08:00">2019-06-02</time>
-            </span>
+        <div class="post-tags">
+            <a href="/tags/deep-learning/" rel="tag"># deep-learning</a>
           
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-08-07 01:36:11" itemprop="dateModified" datetime="2019-08-07T01:36:11+08:00">2019-08-07</time>
-              </span>
-            
-          
-
-          
-
         </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="简单食材菜谱"><a href="#简单食材菜谱" class="headerlink" title="简单食材菜谱"></a>简单食材菜谱</h1>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/06/02/2019-06-13-菜谱collection/#more" rel="contents">
-                Read more &raquo;
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+              <a href="/2019/06/02/2019-06-13-菜谱collection/" rel="next" title="菜谱Collection">
+                <i class="fa fa-chevron-left"></i> 菜谱Collection
               </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/2019/05/17/2019-05-16-论文阅读笔记/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-
-        
-          <h1 class="post-title" itemprop="name headline">
-              
-              <a href="/2019/05/17/2019-05-16-论文阅读笔记/" class="post-title-link" itemprop="url">论文阅读笔记</a>
             
-          </h1>
-        
+          </div>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
+          <span class="post-nav-divider"></span>
 
-              
-                
-              
-
-              <time title="Created: 2019-05-17 00:00:00" itemprop="dateCreated datePublished" datetime="2019-05-17T00:00:00+08:00">2019-05-17</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-08-07 00:44:02" itemprop="dateModified" datetime="2019-08-07T00:44:02+08:00">2019-08-07</time>
-              </span>
-            
-          
-
-          
-
+          <div class="post-nav-prev post-nav-item">
+          </div>
         </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="期刊会议"><a href="#期刊会议" class="headerlink" title="期刊会议"></a><a href="https://www.zhihu.com/question/37687006" target="_blank" rel="noopener">期刊会议</a></h1><ul>
-<li><p>计算机视觉期刊</p>
-<p>A类</p>
-<ul>
-<li>TPAMI: IEEE Trans on Pattern Analysis and Machine Intelligence</li>
-<li>IJCV: International Journal of Computer Vision</li>
-<li>TIP: IEEE Transactions on Image Processing</li>
-</ul>
-<p>B类</p>
-<ul>
-<li>CVIU: Computer Vision and Image Understanding</li>
-<li>Pattern Recognition</li>
-</ul>
-<p>C类</p>
-<ul>
-<li>IET-CVI: IET Computer Vision</li>
-<li>IVC: Image and Vision Computing</li>
-<li>IJPRAI: International Journal of Pattern Recognition and Artificial Intelligence</li>
-<li>Machine Vision and Applications</li>
-<li>PRL: Pattern Recognition Letters</li>
-</ul>
-</li>
-<li><p>计算机视觉会议</p>
-<p>A类</p>
-<ul>
-<li>ICCV: International Conference on Computer Vision</li>
-<li>CVPR: International Conference on Computer Vision and Pattern Recognition</li>
-<li>AAAI: AAAI Conference on Artificial Intelligence</li>
-<li>ICML: International Conference on Machine Learning</li>
-<li>NIPS: Annual Conference on Neural Information Processing Systems</li>
-<li>ACM MM: ACM International Conference on Multimedia</li>
-</ul>
-<p>B类</p>
-<ul>
-<li>ECCV: European Conference on Computer Vision</li>
-</ul>
-<p>C类</p>
-<ul>
-<li>ACCV: Asian Conference on Computer Vision</li>
-<li>ICPR: International Conference on Pattern Recognition</li>
-<li>BMVC: British Machine Vision Conference</li>
-</ul>
-</li>
-<li><p>应用数学期刊</p>
-<p><a href="https://www.springer.com/computer/image+processing/journal/10851" target="_blank" rel="noopener">JMIV</a>: Journal of Mathematical Imaging and Vision</p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1g346nrzv99j31og09uq53.jpg" alt="image-20190517120613341"></p>
-</li>
-<li><p>应用数学会议</p>
-</li>
-<li><p>检索工具</p>
-<p>期刊影响因子查询网站：<a href="http://www.letpub.com.cn/index.php?journalid=3328&page=journalapp&view=detail" target="_blank" rel="noopener">中文</a>、 <a href="https://jcr.clarivate.com/JCRLandingPageAction.action?Init=Yes&SrcApp=IC2LS&SID=J2-4XwAp32l42uZt12TwkA6PPRWUdDytSwG-18x2dEBNx2FAmx2Bx2BLS9TPTpUU0DGKQx3Dx3DNs8V1Mx2BQp597TwzF85F1aAx3Dx3D-WwpRYkX4Gz8e7T4uNl5SUQx3Dx3D-wBEj1mx2B0mykql8H4kstFLwx3Dx3D" target="_blank" rel="noopener">英文网站</a></p>
-</li>
-<li><p>出版商、数据库、检索工具</p>
-<ul>
-<li><p>IEEE和Springer是<u>出版商</u>，并且拥有自己的数据库和检索工具。</p>
-<p>如：IEEE有IEEExplorer检索。 其他数据库自己（比如EI, EBSCOhost等等）可以抓取出版商数据库里面的文章。比如EngineeringVillage (EI)在IEEExplorer抓取文章的内容；这时候作者的文章就能在EI里面查到了。</p>
-</li>
-<li><p>Google/Google Scholar/Scirus/ScienceDirect/IEEExplorer/ISI这些都是检索工具</p>
-</li>
-<li><p>SCI(Science Citation Index)是影响因子，也是ISI（Institute Scientific Information）做的数据库。</p>
-<p>SCI不是出版商，只是数据库，不是具体某篇文章内容版权的拥有者；所以在SCI里面，能看到只是题目+摘要+参考文献。SCI的内容不是原始文献全文，卖点是每年推出JCR，里面给出影响因子。</p>
-</li>
-<li><p><a href="https://zhuanlan.zhihu.com/p/27674513" target="_blank" rel="noopener">SIAM简介</a>：国际工业与应用数学<u>协会</u>(SIAM), 旗下出版有应用数学相关的许多国际著名期刊杂志</p>
-</li>
-</ul>
-</li>
-</ul>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/05/17/2019-05-16-论文阅读笔记/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
     </footer>
   </div>
   
@@ -716,14 +483,12 @@
   
   </article>
 
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
           
+
 
         </div>
           
@@ -738,8 +503,17 @@
 
   <aside id="sidebar" class="sidebar">
     <div class="sidebar-inner">
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
 
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -808,6 +582,23 @@
 
         </div>
       </div>
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#统计学知识"><span class="nav-number">1.</span> <span class="nav-text">统计学知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概率图模型-structured-probabilistic-models"><span class="nav-number">1.1.</span> <span class="nav-text">概率图模型 structured probabilistic models.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#深度学习和概率图模型的关系"><span class="nav-number">1.2.</span> <span class="nav-text">深度学习和概率图模型的关系</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#有向图模型-贝叶斯网络-信念网络"><span class="nav-number">2.</span> <span class="nav-text">有向图模型/贝叶斯网络/信念网络</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#无向图-马尔可夫随机场-马尔可夫网"><span class="nav-number">3.</span> <span class="nav-text">无向图/马尔可夫随机场/马尔可夫网</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#常见的无向图：条件随机场-词性分类"><span class="nav-number">3.1.</span> <span class="nav-text">常见的无向图：条件随机场, 词性分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见的无向图：去噪"><span class="nav-number">3.2.</span> <span class="nav-text">常见的无向图：去噪</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#采样"><span class="nav-number">4.</span> <span class="nav-text">采样</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#推断"><span class="nav-number">5.</span> <span class="nav-text">推断</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#学习"><span class="nav-number">6.</span> <span class="nav-text">学习</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#玻耳兹曼机-RBM"><span class="nav-number">7.</span> <span class="nav-text">玻耳兹曼机(RBM)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">7.1.</span> <span class="nav-text">参考</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#采样："><span class="nav-number">8.</span> <span class="nav-text">采样：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他参考"><span class="nav-number">9.</span> <span class="nav-text">其他参考</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
 
     </div>
   </aside>
@@ -907,5 +698,9 @@
 
 
   
+  <script src="/js/scrollspy.js?v=7.3.0"></script>
+<script src="/js/post-details.js?v=7.3.0"></script>
+
+
 </body>
 </html>
