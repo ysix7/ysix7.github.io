@@ -170,33 +170,110 @@
       
       
         
-        <li class="menu-item menu-item-categories">
+        <li class="menu-item menu-item-分类">
       
     
 
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
 
   </li>
       
       
       
         
-        <li class="menu-item menu-item-archives">
+        <li class="menu-item menu-item-归档">
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
 
   </li>
       
       
       
         
-        <li class="menu-item menu-item-deep-learning">
+        <li class="menu-item menu-item-图像处理">
       
     
 
-    <a href="/categories/deep-learning/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>deep-learning</a>
+    <a href="/categories/图像处理/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>图像处理</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-深度学习">
+      
+    
+
+    <a href="/categories/深度学习/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>深度学习</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-数学基础">
+      
+    
+
+    <a href="/categories/数学/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>数学基础</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-优化算法">
+      
+    
+
+    <a href="/categories/算法/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>优化算法</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-语言">
+      
+    
+
+    <a href="/categories/语言/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>语言</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-摄影">
+      
+    
+
+    <a href="/categories/摄影/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>摄影</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-生活">
+      
+    
+
+    <a href="/categories/生活/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>生活</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-其他">
+      
+    
+
+    <a href="/categories/其他/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>其他</a>
 
   </li>
   </ul>
@@ -216,6 +293,761 @@
           <div id="content" class="content page-home">
             
   <section id="posts" class="posts-expand">
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/2019/08/07/图像处理相关问题综述/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">
+              
+              <a href="/2019/08/07/图像处理相关问题综述/" class="post-title-link" itemprop="url">图像处理相关问题综述</a>
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2019-08-07 00:00:00 / Modified: 12:58:50" itemprop="dateCreated datePublished" datetime="2019-08-07T00:00:00+08:00">2019-08-07</time>
+            </span>
+          
+            
+
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+            <h1 id="deblur"><a href="#deblur" class="headerlink" title="deblur"></a>deblur</h1><ul>
+<li><p><a href="http://faculty.ucmerced.edu/mhyang/papers/cvpr2018_discriminative_prior.pdf" target="_blank" rel="noopener">Learning a Discriminative Prior for Blind Image Deblurring</a></p>
+<p>$\min <em>{I, k}|I \otimes k-B|</em>{2}^{2}+\gamma|k|_{2}^{2}+p(I)$</p>
+<blockquote>
+<p>The key to the success of this framework lies on the latent<br>image prior p(I), which favors clear images over blurred<br>images when minimizing (2). Therefore, the image prior<br>p(I) should have lower responses for clear images and<br>higher responses for blurred images.</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="super-resolution"><a href="#super-resolution" class="headerlink" title="super-resolution"></a>super-resolution</h1><ul>
+<li><a href="https://www4.comp.polyu.edu.hk/~cslzhang/paper/CVPR19_DPSR.pdf" target="_blank" rel="noopener">Deep Plug-and-Play Super-Resolution for Arbitrary Blur Kernels</a></li>
+</ul>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://www.zhihu.com/question/41250817/answer/284449311" target="_blank" rel="noopener">在图像处理领域的不同的研究问题</a></p>
+
+          
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/2019/08/07/穿搭/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">
+              
+              <a href="/2019/08/07/穿搭/" class="post-title-link" itemprop="url">穿搭</a>
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2019-08-07 00:00:00 / Modified: 13:09:58" itemprop="dateCreated datePublished" datetime="2019-08-07T00:00:00+08:00">2019-08-07</time>
+            </span>
+          
+            
+
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/生活/" itemprop="url" rel="index"><span itemprop="name">生活</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+            <p><a href="https://mp.weixin.qq.com/s/REfayWjoGO371CiBgiJuXw" target="_blank" rel="noopener">复古look：brands</a></p>
+
+          
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/2019/08/06/hexo博客搭建/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">
+              
+              <a href="/2019/08/06/hexo博客搭建/" class="post-title-link" itemprop="url">hexo博客搭建</a>
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2019-08-06 00:00:00" itemprop="dateCreated datePublished" datetime="2019-08-06T00:00:00+08:00">2019-08-06</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-07 13:19:16" itemprop="dateModified" datetime="2019-08-07T13:19:16+08:00">2019-08-07</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/其他/" itemprop="url" rel="index"><span itemprop="name">其他</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+            <ul>
+<li><p>安装node.js</p>
+<p><a href="https://nodejs.org/en/" target="_blank" rel="noopener">https://nodejs.org/en/</a></p>
+</li>
+<li><p>sudo npm install –unsafe-perm –verbose -g hexo；hexo version 测试</p>
+</li>
+<li><p>自带了git，否则需要安装</p>
+</li>
+<li><p>初始化博客文件夹</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init &lt;folder&gt;</span><br><span class="line">$ cd &lt;folder&gt;</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>测试生成网页</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>选主题<a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a> 下载</p>
+<p>git clone <a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">https://github.com/theme-next/hexo-theme-next</a></p>
+<p>将它放到theme下，并重命名</p>
+</li>
+<li><p>修改 站点配置文件_config.yml中的主题</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Extensions</span><br><span class="line">## Plugins: https://hexo.io/plugins/</span><br><span class="line">## Themes: https://hexo.io/themes/</span><br><span class="line"># theme: landscape</span><br><span class="line">theme: next</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>重新编译</p>
+<p>![image-20190806232759873](/Users/yyf/Library/Application Support/typora-user-images/image-20190806232759873.png)</p>
+</li>
+<li><p>修改主题风格</p>
+</li>
+</ul>
+<h1 id="生成的github文件"><a href="#生成的github文件" class="headerlink" title="生成的github文件"></a>生成的github文件</h1><p>我的github链接：<a href="https://github.com/ysix7/ysix7.github.io/tree/master/2019" target="_blank" rel="noopener">https://github.com/ysix7/ysix7.github.io/tree/master/2019</a></p>
+<p>参考blog： <a href="https://hellozhaozheng.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/" target="_blank" rel="noopener">https://hellozhaozheng.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</a> </p>
+<h1 id="本地更新文件"><a href="#本地更新文件" class="headerlink" title="本地更新文件"></a>本地更新文件</h1><p>![image-20190807010049690](/Users/yyf/Library/Application Support/typora-user-images/image-20190807010049690.png)</p>
+<p>Hero s 本地看</p>
+<h1 id="新增的功能"><a href="#新增的功能" class="headerlink" title="新增的功能"></a>新增的功能</h1><p>分级目录：<a href="https://blog.csdn.net/wugenqiang/article/details/88609066" target="_blank" rel="noopener">https://blog.csdn.net/wugenqiang/article/details/88609066</a></p>
+<p>新增分类：<a href="http://www.iooeo.com/2017/07/20/Hexo-%E6%96%B0%E5%BB%BA%E8%8F%9C%E5%8D%95-menu-%E5%AD%98%E6%94%BE%E5%BD%92%E6%A1%A3/" target="_blank" rel="noopener">http://www.iooeo.com/2017/07/20/Hexo-%E6%96%B0%E5%BB%BA%E8%8F%9C%E5%8D%95-menu-%E5%AD%98%E6%94%BE%E5%BD%92%E6%A1%A3/</a></p>
+<h1 id="Tags"><a href="#Tags" class="headerlink" title="Tags"></a>Tags</h1><p>深度学习：pytorch，python, 机器学习，服务器</p>
+<p>美食类：西安,香港..</p>
+<p>软件：latex</p>
+<p>图形处理：denoising,segmentation</p>
+
+          
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/2019/08/05/16.Graph model/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">
+              
+              <a href="/2019/08/05/16.Graph model/" class="post-title-link" itemprop="url">Untitled</a>
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2019-08-05 11:29:43" itemprop="dateCreated datePublished" datetime="2019-08-05T11:29:43+08:00">2019-08-05</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-06 17:59:12" itemprop="dateModified" datetime="2019-08-06T17:59:12+08:00">2019-08-06</time>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+            <h1 id="Opening"><a href="#Opening" class="headerlink" title="Opening"></a>Opening</h1><p>今天我讲的内容是第十六章，图模型。主要包含三个基本问题：图模型的结构、推断、学习。表示问题，利用图结构表示彼岸两之间的依赖关系</p>
+<p>推断问题，推断预测变量的后验分布。在观测到部分变量e时候，计算其它变量的某个子集 q = {q 1 , q 2 , · · · , q n } 的后验概率 p(q|e)。以及学习问题, 图结构的学习和图中参数的学习。</p>
+<p>![image-20190805205029413](/Users/yyf/Library/Application Support/typora-user-images/image-20190805205029413.png)</p>
+<p>![image-20190805183117338](/Users/yyf/Library/Application Support/typora-user-images/image-20190805183117338.png)</p>
+<p>在前面几周，已经介绍了一些推断的方法，以及参数的学习方法，例如EM算法。今天，我将首先补充一下图结构的知识。并通过举例一些实际应用例子，来看图结构如何协同推断和学习来解决一个问题，如同如文本分类、以及图像去噪。</p>
+<h1 id="有向图结构"><a href="#有向图结构" class="headerlink" title="有向图结构"></a>有向图结构</h1><ul>
+<li><p>图结构分为无向图和有向图</p>
+<p>有向图：Directed Graphical model，也称为贝叶斯网络（Bayesian Network），或信念网络（Belief Network）</p>
+<p>无向图：</p>
+<p>![image-20190805194737417](/Users/yyf/Library/Application Support/typora-user-images/image-20190805194737417.png)</p>
+</li>
+<li><p>有向图的联合分布</p>
+<p>以图(a)为例，p(x1,x2,x3,x4)=p(x1)p(x2|x1)p(x3|x1,x2)p(x4|x1,x2,x3 )。</p>
+<p>根据性质$X_{2} \perp X_{3} | X_{1}$, $p\left(x_{2} | x_{1}, x_{3}\right)=p\left(x_{2} | x_{1}\right)$, 以及图结构上的独立性，</p>
+<p>我们有p(x2|x1)=p(x2|x1,x3) ，p(x4|x3,x2)=p(x4|x3,x2,x1)</p>
+<p>因此右边可以简化为p(x1)p(x2|x1 )p(x3|x1)p(x4|x2, x3)</p>
+<hr>
+<blockquote>
+<p>For any acyclic Bayesian network G, the joint probability distribution of X can be decomposed into a multiplicative form of the local conditional probability of each random variable X.</p>
+<p>In this graph, then the </p>
+</blockquote>
+<p>对于任意一个无环贝叶斯网络G，X 的联合概率分布可以分解为每个随机变量 $X_k$ 的<strong>局部条件概率的连乘形式</strong><br>$$<br>p(\mathbf{x})=\prod_{k=1}^{K} p\left(x_{k} | \mathbf{x}<em>{\pi</em>{k}}\right)<br>$$<br>其中$x_{\pi k}$表示节点k的父节点。P(Xk|Xπk)是局部条件概率</p>
+<p>根据这个公式：我们遍历图（a）中的每一个节点，即可以得到联合分布</p>
+<p>p(x)=p(x1)p(x3|x1)p(x2|x1)p(x4|x3,x2). ——和我们之前的结果一样。</p>
+<p>![image-20190805202457364](/Users/yyf/Library/Application Support/typora-user-images/image-20190805202457364.png)</p>
+<hr>
+<p>现在我们来讨论用一个图结构来表示概率分布的优点。</p>
+<p>假设X1 , X2 , X3 , X4 是二值变量，在没有图中变量依赖关系的情况下，可以用<strong>一个联合概率表</strong>来显式地记录每一种取值的概率P(X)，共需要2^4 −1 = 15个参数。如果我们用4 个表格来记录这 4 个局部条件概率的乘积，只需要 1 + 2 + 2 + 4 = 9 个独立参数。</p>
+<p>因此当概率模型中的变量数量比较多时，其条件依赖关系也比较复杂。使用图结构的方式可以将概率模型可视化，，以一种直观、简单的方式描述出随机变量之间的条件独立性的性质，并可以将一个复杂的联合概率模型分解为一些简单条件概率模型的组合。</p>
+<blockquote>
+<p>Therefore, when the number of variables in the probability model is relatively large, the conditional dependence is also complicated. The use of graph structure can visualize the probability model, describe the nature of conditional independence between random variables in an intuitive and simple way, and decompose a complex joint probability model into some simple conditional probability models. combination.</p>
+</blockquote>
+</li>
+<li><p>几种常见的有向图（不讲）</p>
+<p>很多经典的机器学习模型可以使用有向图模型来描述，比如朴素贝叶斯分类器、隐马尔可夫模型、深度信念网络等。各自具有特定的结构，适用于不同的任务。</p>
+<p>![image-20190805211242662](/Users/yyf/Library/Application Support/typora-user-images/image-20190805211242662.png)</p>
+<p>![image-20190805211207481](/Users/yyf/Library/Application Support/typora-user-images/image-20190805211207481.png)</p>
+</li>
+</ul>
+<h1 id="有向图—文本分类"><a href="#有向图—文本分类" class="headerlink" title="有向图—文本分类"></a>有向图—文本分类</h1><ul>
+<li>图结构：一个常用的<strong>有向图结构</strong>，朴素贝叶斯模型。</li>
+</ul>
+<p><img src="/Users/yyf/Library/Application%20Support/typora-user-images/image-20190805204929639.png" alt="image-20190805204929639"></p>
+<ul>
+<li>参数的学习</li>
+</ul>
+<ul>
+<li><p>后验分布可以分解为</p>
+<p><img src="/Users/yyf/Library/Application%20Support/typora-user-images/image-20190805210626683.png" alt="image-20190805210626683"></p>
+</li>
+<li><p>这里我要强调一下两个概念。<strong>生成模型和判别模型的区别</strong>。</p>
+</li>
+</ul>
+<h1 id="生成模型和判别模型的区别"><a href="#生成模型和判别模型的区别" class="headerlink" title="生成模型和判别模型的区别"></a>生成模型和判别模型的区别</h1><p>我们经常提到的生成模型和判别模型。我们可能通常错误的以为生成模型就是图像应用中数据重建的意思，其实不然。生成模型除了重建也可以用来判别。</p>
+<ul>
+<li>简单来说。生成模型是计算一个p(x,y)的联合分布，而判别模型是生成p(y|x)，</li>
+</ul>
+<p>![image-20190805232955885](/Users/yyf/Library/Application Support/typora-user-images/image-20190805232955885.png)</p>
+<ul>
+<li>两个模型的应用。生成模型和判别模型都可以用来进行分类问题。</li>
+</ul>
+<p>![image-20190805233143964](/Users/yyf/Library/Application Support/typora-user-images/image-20190805233143964.png)</p>
+<p>![image-20190805233307927](/Users/yyf/Library/Application Support/typora-user-images/image-20190805233307927.png)</p>
+<p>![image-20190805233213328](/Users/yyf/Library/Application Support/typora-user-images/image-20190805233213328.png)</p>
+<p>![image-20190805233118468](/Users/yyf/Library/Application Support/typora-user-images/image-20190805233118468.png)</p>
+<ul>
+<li><p>两个模型的建模以及我的总结</p>
+<p>![image-20190805233903604](/Users/yyf/Library/Application Support/typora-user-images/image-20190805233903604.png)</p>
+</li>
+</ul>
+<h1 id="有向图—高斯混合模型"><a href="#有向图—高斯混合模型" class="headerlink" title="有向图—高斯混合模型"></a>有向图—高斯混合模型</h1><p>高斯混合模型（Gaussian Mixture Model，GMM)。假设样本 x 是从 K 个高斯分布中生成的。</p>
+<p>高斯混合模型的概率密度函数为：$p(x)=\sum_{k=1}^{K} \pi_{k} \mathcal{N}\left(x | \mu_{k}, \sigma_{k}\right)​$</p>
+<p>有向图结构的定义：Y-&gt;X</p>
+<p>在这个图中，我们定义$P(X|Y=k)=\mathcal{N}\left(x | \mu_{k}, \sigma_{k}\right)$, $P(Y=k)=\pi_k, \sum_{k=1}^{K} \pi_{k}=1$.</p>
+<p>根据这个图：我们可以得到x的边际概率：$p(x)=\sum_{k=1}^{K} \pi_{k} \mathcal{N}\left(x | \mu_{k}, \sigma_{k}\right)​$</p>
+<p>参数估计：用最大似然的方法来进行参数估计，给定N 个训练样本D = {x (i) }, 1 ≤ i ≤ N，其训练集的对数边际似然为 $\mathcal{L}(\mathcal{D} | \theta)=\frac{1}{N} \sum_{i=1}^{N}\left(\log p\left(\mathbf{x}^{(i)}, \theta\right)\right.$,并通过EM算法来求解获得参数$u_k,\sigma_k,\pi_k$, </p>
+<p>推断：计算后验分布 p(Y=k|x)$\pi_{k} \mathcal{N}\left(x^{(n)} | \mu_{k}, \sigma_{k}\right)​$</p>
+<p>![image-20190805231018118](/Users/yyf/Library/Application Support/typora-user-images/image-20190805231018118.png)</p>
+<h1 id="无向图结构"><a href="#无向图结构" class="headerlink" title="无向图结构"></a>无向图结构</h1><ul>
+<li><p>应用场景</p>
+<p>我们可以看到，在有向图中，通常存在明确方向上的因果关系。当相互的作用并没 有本质性的指向，或者是明确的双向相互作用时，使用<strong>无向模型</strong>更加合适。作为一个这种情况的例子，假设我们希望对三个二值随机变量建模。X1-X2-X3。其中X1，X2，X3分别代表你的室友，你和你的同事是否😷。我们假设，你的室友和同事 并不认识，所以他们不太可能直接相互传染一些疾病，因而我们的模型中两者之间没有直接的连接。然而，你传染给你的室友和你的室友传染给你都是非常容易的，所以模型不存在一个明确的单向箭头。并且，你的室友和你很有可能其中之一将感冒传染给你，然后通过你再传染给了另一个人。</p>
+<p>现在我们来考虑三者健康状况的联合分布。p(X1,X2,X3)</p>
+</li>
+<li><p>无向图的联合分布的分解方式</p>
+<p>无向图模型，也称为马尔可夫随机场（Markov Random Field，MRF）或 马尔可夫网络（Markov Network）</p>
+<p>无向图的联合分布方式：对于一个马尔可夫随机场G,当p(x)可以表示为,一系列定义在最大团上的非负函数的乘积形式,即$$p(\mathbf{x})=\frac{1}{Z} \prod_{c \in \mathcal{C}} \phi_{c}\left(\mathbf{x}_{c}\right)$$。其中：最大团（Maximal Clique）就是其中的点是全连接的子集，并且无法被一个更大的团包含。对于 图中的每一个团C，一个 因子（factor）ϕ(C)(也称为 团势能（clique potential)，衡量了团中变量每一种可能的联合状态所对应的密切程度，因而必须为0。为了归一化</p>
+</li>
+</ul>
+<p>![image-20190805215740555](/Users/yyf/Library/Application Support/typora-user-images/image-20190805215740555.png)</p>
+<ul>
+<li><p>例子中的计算方法</p>
+<p>在我们这个模型中，我们可以为你和你的室友定义这样一个势能函数。</p>
+<p>![image-20190805215043749](/Users/yyf/Library/Application Support/typora-user-images/image-20190805215043749.png)</p>
+<p>状态为 1 代表了健康的状态，相对的状态为 0 则表示不好的健康状态（即感染 了感冒）。你们两个通常都是健康的，所以对应的状态拥有最高的密切程度。两个人 中只有一个人是生病的密切程度是最低的，因为这是一个很罕见的状态。两个人都生病的状态（通过一个人来传染给了另一个人）有一个稍高的密切程度，尽管仍然 不及两个人都健康的密切程度。 同样地，我们可以为你和你的同事定义一个。</p>
+<p>现在我们可以得到非归一化的概率分布。如hc=0，hy=1，hx=1的情况下，p；hc=0，hy=1，hx=1的情况下，p。和我们预设的情形相符合。</p>
+</li>
+<li><p>无向图中联合分布的能量表达方法</p>
+<p>现在我们返回到这个联合分布的定义。我们注意到，为了有效定义每一种情况，势能函数必须大于0. 由于势能函数必须为正的，因此我们一般定义为$\phi_{c}\left(\mathbf{x}<em>{c}\right)=\exp \left(-E</em>{c}\left(\mathbf{x}<em>{c}\right)\right)$，其中E(xc)为能量函数（energy function) 。因此，无向图上定义的概率分布可以表示为：<br>$$<br>\begin{aligned} P(\mathbf{x}) &amp;=\frac{1}{Z} \prod</em>{c \in \mathcal{C}} \exp \left(-E_{c}\left(\mathbf{x}<em>{c}\right)\right) \ &amp;=\frac{1}{Z} \exp \left(\sum</em>{c \in \mathcal{C}}-E_{c}\left(\mathbf{x}_{c}\right)\right)\&amp;=\frac{1}{Z} \exp \left(-E\left(\mathbf{x}\right)\right)<br>\end{aligned}<br>$$<br>这种形式的分布又称为玻尔兹曼分布（Boltzmann Distribution）。任何一个无向图模型都可以用公式(11.21) 来表示其联合概率。服从式 (16.7) 形式的任意分布都是 玻尔兹曼分布（Boltzmann distribution） 的一个实例。正是基于这个原因， 我们把许多基于能量的模型称为玻尔兹曼机（Boltzmann Machine）。现在我们来讲一个基于无向图的应用，去噪。</p>
+</li>
+<li><p>常见的无向图(不讲)</p>
+<p>![image-20190805211429187](/Users/yyf/Library/Application Support/typora-user-images/image-20190805211429187.png)</p>
+</li>
+<li><p>总结</p>
+<p>利用图模型的局部马尔可夫性，我们可以对多变量的联合概率进行简化，从而降低建模的复杂度。（可加到有向图的后面）Using the local Markov property of the graph model, we can simplify the joint probability of multivariates, thus reducing the complexity of modeling. (can be added to the back of the directed graph)</p>
+<p>局部马尔可夫性质：对一个更一般的贝叶斯网络，其局部马尔可夫性质为：每个随机变量在给定父节点的情况下，条件独立于它的非后代节点。对与一个无向图而言，即一个变量 Xk 在给定它的邻居的情况下独立于所有其它变量。</p>
+</li>
+</ul>
+<p>#无向图—图像去噪</p>
+<p>无向图：图像去噪。</p>
+<ul>
+<li><p><a href="http://deanhan.com/2018/04/22/MRF/" target="_blank" rel="noopener">基于马尔科夫随机场的图像去噪方法+python代码</a></p>
+</li>
+<li><p><a href="https://blog.csdn.net/jzwong/article/details/69948615" target="_blank" rel="noopener">马尔可夫去噪+matlab：能量函数有点不同</a></p>
+</li>
+</ul>
+<h1 id="受限玻耳兹曼机"><a href="#受限玻耳兹曼机" class="headerlink" title="受限玻耳兹曼机"></a>受限玻耳兹曼机</h1><p>A widely used model of Undirected graph is Boltzman’s machine。 下面我们有请Ms Tang，来介绍some details about the Boltzman’s machine and its extentions in deep learning models.</p>
+<p>玻耳兹曼机是一个无向图</p>
+<p>发展：1986Hinton发明了玻耳兹曼机-&gt;2002Hinton发明了CD(对比散度)来计算梯度-&gt;2006Hinton提出了受限玻耳兹曼机</p>
+<p>模型构建：<a href="https://deeplearning4j.org/cn/restrictedboltzmannmachine.html" target="_blank" rel="noopener">Introduction to Restricted Boltzmann Machines Using PyTorch</a>、<a href="https://skymind.ai/wiki/restricted-boltzmann-machine" target="_blank" rel="noopener">英文原文</a></p>
+<p>计算原理：<a href="https://blog.csdn.net/itplus/article/details/19168937" target="_blank" rel="noopener">预备知识</a>、<a href="https://blog.csdn.net/itplus/article/details/19207371" target="_blank" rel="noopener">梯度上升法</a>、<a href="https://blog.csdn.net/itplus/article/details/19408773" target="_blank" rel="noopener">评价效果的方法</a></p>
+<p>代码：<a href="https://github.com/MichelDeudon/RBM-for-MNIST" target="_blank" rel="noopener">受限玻耳兹曼姬重构：tf版本</a>、<a href="https://github.com/bacnguyencong/rbm-pytorch/blob/master/Notebook.ipynb" target="_blank" rel="noopener">受限玻耳兹曼姬重构：pytorch版本</a>、<a href="https://heartbeat.fritz.ai/guide-to-restricted-boltzmann-machines-using-pytorch-ee50d1ed21a8" target="_blank" rel="noopener">Introduction to Restricted Boltzmann Machines Using PyTorch</a>、<a href="https://github.com/GabrielBianconi/pytorch-rbm/blob/master/mnist_example.py" target="_blank" rel="noopener">pytorch-rbm</a>、</p>
+<h1 id="受限玻耳兹曼姬和深度学习的关系"><a href="#受限玻耳兹曼姬和深度学习的关系" class="headerlink" title="受限玻耳兹曼姬和深度学习的关系"></a>受限玻耳兹曼姬和深度学习的关系</h1>
+          
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/2019/08/05/生成模型/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">
+              
+              <a href="/2019/08/05/生成模型/" class="post-title-link" itemprop="url">生成模型vs判别模型</a>
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2019-08-05 00:00:00" itemprop="dateCreated datePublished" datetime="2019-08-05T00:00:00+08:00">2019-08-05</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-07 13:11:03" itemprop="dateModified" datetime="2019-08-07T13:11:03+08:00">2019-08-07</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/深度学习/" itemprop="url" rel="index"><span itemprop="name">深度学习</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+            <h1 id="不同的应用"><a href="#不同的应用" class="headerlink" title="不同的应用"></a>不同的应用</h1><p>判别式模型，这种模型的形式主要是根据原始图像推测图像具备的一些性质，例如根据数字图像推测数字的名称，根据自然场景图像推测物体的边界；而生成模型恰恰相反，通常给出的<strong>输入是图像具备的性质</strong>，而<strong>输出是性质对应的图像</strong>。这种生成模型相当于构建了图像的分布，因此利用这类模型，我们可以完成<u>图像自动生成（采样）、图像信息补全等工作。</u></p>
+<p>生成模型可以用来重构、也可以用来判别。当用于判别时</p>
+<p>生成模型可以是监督的，也可以是无监督的？</p>
+<p>常用的生成网络：VAE、GAN、GAN</p>
+<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>生成模型的输入是什么？</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
+<li><p><a href="http://www.sohu.com/a/164497415_610300" target="_blank" rel="noopener">十个生成模型(GANs)的最佳案例和原理 | 代码+论文</a></p>
+</li>
+<li><p><a href="https://mp.weixin.qq.com/s/3Kj2Dww4HqRWqauQtaHXBQ" target="_blank" rel="noopener">GNN论文分门别类，16大应用200+篇论文最新推荐</a></p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/2019/07/31/2019-07-31-图像分割/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">
+              
+              <a href="/2019/07/31/2019-07-31-图像分割/" class="post-title-link" itemprop="url">胰脏分割-Unet相关论文</a>
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2019-07-31 19:17:59" itemprop="dateCreated datePublished" datetime="2019-07-31T19:17:59+08:00">2019-07-31</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-07 13:02:37" itemprop="dateModified" datetime="2019-08-07T13:02:37+08:00">2019-08-07</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/图像处理/" itemprop="url" rel="index"><span itemprop="name">图像处理</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+            <p>胰脏分割</p>
+<p>从coarse到fine</p>
+<p>Attention U-net： 关注点在前景，比Unet多了attention gate；</p>
+<h1 id="Unet"><a href="#Unet" class="headerlink" title="Unet"></a>Unet</h1><p>图像分割综述</p>
+<p><a href="https://zhuanlan.zhihu.com/p/43422162" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/43422162</a></p>
+<p><a href="https://arxiv.org/pdf/1505.04597.pdf" target="_blank" rel="noopener">U-Net论文</a></p>
+<p><a href="https://blog.csdn.net/dugudaibo/article/details/82934731" target="_blank" rel="noopener">U-Net论文笔记</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/37496466" target="_blank" rel="noopener">U-Net论文笔记</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/37496466" target="_blank" rel="noopener">U-Net论文笔记知乎</a></p>
+<h1 id="论文清单"><a href="#论文清单" class="headerlink" title="论文清单"></a>论文清单</h1><h1 id="需要补充"><a href="#需要补充" class="headerlink" title="需要补充"></a>需要补充</h1><p>一些常用层的作用：如up，downsample，deconvolution，pooling, batch normalization</p>
+<p>normalization有很多方法，VGG-Net，Stride</p>
+<p>![image-20190731201343360](/Users/yyf/Library/Application Support/typora-user-images/image-20190731201343360.png)</p>
+
+          
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
       
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
@@ -266,7 +1098,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-08-07 02:24:41" itemprop="dateModified" datetime="2019-08-07T02:24:41+08:00">2019-08-07</time>
+                <time title="Modified: 2019-08-07 12:59:18" itemprop="dateModified" datetime="2019-08-07T12:59:18+08:00">2019-08-07</time>
               </span>
             
           
@@ -276,7 +1108,7 @@
               </span>
               <span class="post-meta-item-text">In</span>
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/deep-learning/" itemprop="url" rel="index"><span itemprop="name">deep-learning</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/深度学习/" itemprop="url" rel="index"><span itemprop="name">深度学习</span></a></span>
 
                 
                 
@@ -470,7 +1302,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/2019/06/02/2019-06-13-菜谱collection/">
+    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/2019/07/29/淘宝店铺/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -486,7 +1318,7 @@
         
           <h1 class="post-title" itemprop="name headline">
               
-              <a href="/2019/06/02/2019-06-13-菜谱collection/" class="post-title-link" itemprop="url">菜谱Collection</a>
+              <a href="/2019/07/29/淘宝店铺/" class="post-title-link" itemprop="url">淘宝收藏的店铺</a>
             
           </h1>
         
@@ -502,7 +1334,7 @@
                 
               
 
-              <time title="Created: 2019-06-02 00:00:00" itemprop="dateCreated datePublished" datetime="2019-06-02T00:00:00+08:00">2019-06-02</time>
+              <time title="Created: 2019-07-29 00:00:00" itemprop="dateCreated datePublished" datetime="2019-07-29T00:00:00+08:00">2019-07-29</time>
             </span>
           
             
@@ -513,9 +1345,22 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-08-07 01:36:11" itemprop="dateModified" datetime="2019-08-07T01:36:11+08:00">2019-08-07</time>
+                <time title="Modified: 2019-08-07 13:10:07" itemprop="dateModified" datetime="2019-08-07T13:10:07+08:00">2019-08-07</time>
               </span>
             
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/生活/" itemprop="url" rel="index"><span itemprop="name">生活</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -529,16 +1374,17 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="简单食材菜谱"><a href="#简单食材菜谱" class="headerlink" title="简单食材菜谱"></a>简单食材菜谱</h1>
-          <!--noindex-->
           
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/06/02/2019-06-13-菜谱collection/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
+            <h1 id="裤裤"><a href="#裤裤" class="headerlink" title="裤裤"></a>裤裤</h1><ul>
+<li><p>短裤</p>
+<p>![image-20190720152120722](/Users/yyf/Library/Application Support/typora-user-images/image-20190720152120722.png)</p>
+</li>
+</ul>
+<h1 id="衣服"><a href="#衣服" class="headerlink" title="衣服"></a>衣服</h1><ul>
+<li>一家红裙子店</li>
+</ul>
+
           
-          <!--/noindex-->
         
       
     </div>
@@ -564,7 +1410,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/2019/05/17/2019-05-16-论文阅读笔记/">
+    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/2019/07/29/解的存在性证明/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -580,7 +1426,7 @@
         
           <h1 class="post-title" itemprop="name headline">
               
-              <a href="/2019/05/17/2019-05-16-论文阅读笔记/" class="post-title-link" itemprop="url">论文阅读笔记</a>
+              <a href="/2019/07/29/解的存在性证明/" class="post-title-link" itemprop="url">求解的存在性</a>
             
           </h1>
         
@@ -596,7 +1442,7 @@
                 
               
 
-              <time title="Created: 2019-05-17 00:00:00" itemprop="dateCreated datePublished" datetime="2019-05-17T00:00:00+08:00">2019-05-17</time>
+              <time title="Created: 2019-07-29 00:00:00" itemprop="dateCreated datePublished" datetime="2019-07-29T00:00:00+08:00">2019-07-29</time>
             </span>
           
             
@@ -607,9 +1453,22 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-08-07 00:44:02" itemprop="dateModified" datetime="2019-08-07T00:44:02+08:00">2019-08-07</time>
+                <time title="Modified: 2019-08-07 13:14:41" itemprop="dateModified" datetime="2019-08-07T13:14:41+08:00">2019-08-07</time>
               </span>
             
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数学/" itemprop="url" rel="index"><span itemprop="name">数学</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -623,82 +1482,159 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="期刊会议"><a href="#期刊会议" class="headerlink" title="期刊会议"></a><a href="https://www.zhihu.com/question/37687006" target="_blank" rel="noopener">期刊会议</a></h1><ul>
-<li><p>计算机视觉期刊</p>
-<p>A类</p>
-<ul>
-<li>TPAMI: IEEE Trans on Pattern Analysis and Machine Intelligence</li>
-<li>IJCV: International Journal of Computer Vision</li>
-<li>TIP: IEEE Transactions on Image Processing</li>
-</ul>
-<p>B类</p>
-<ul>
-<li>CVIU: Computer Vision and Image Understanding</li>
-<li>Pattern Recognition</li>
-</ul>
-<p>C类</p>
-<ul>
-<li>IET-CVI: IET Computer Vision</li>
-<li>IVC: Image and Vision Computing</li>
-<li>IJPRAI: International Journal of Pattern Recognition and Artificial Intelligence</li>
-<li>Machine Vision and Applications</li>
-<li>PRL: Pattern Recognition Letters</li>
-</ul>
-</li>
-<li><p>计算机视觉会议</p>
-<p>A类</p>
-<ul>
-<li>ICCV: International Conference on Computer Vision</li>
-<li>CVPR: International Conference on Computer Vision and Pattern Recognition</li>
-<li>AAAI: AAAI Conference on Artificial Intelligence</li>
-<li>ICML: International Conference on Machine Learning</li>
-<li>NIPS: Annual Conference on Neural Information Processing Systems</li>
-<li>ACM MM: ACM International Conference on Multimedia</li>
-</ul>
-<p>B类</p>
-<ul>
-<li>ECCV: European Conference on Computer Vision</li>
-</ul>
-<p>C类</p>
-<ul>
-<li>ACCV: Asian Conference on Computer Vision</li>
-<li>ICPR: International Conference on Pattern Recognition</li>
-<li>BMVC: British Machine Vision Conference</li>
-</ul>
-</li>
-<li><p>应用数学期刊</p>
-<p><a href="https://www.springer.com/computer/image+processing/journal/10851" target="_blank" rel="noopener">JMIV</a>: Journal of Mathematical Imaging and Vision</p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1g346nrzv99j31og09uq53.jpg" alt="image-20190517120613341"></p>
-</li>
-<li><p>应用数学会议</p>
-</li>
-<li><p>检索工具</p>
-<p>期刊影响因子查询网站：<a href="http://www.letpub.com.cn/index.php?journalid=3328&page=journalapp&view=detail" target="_blank" rel="noopener">中文</a>、 <a href="https://jcr.clarivate.com/JCRLandingPageAction.action?Init=Yes&SrcApp=IC2LS&SID=J2-4XwAp32l42uZt12TwkA6PPRWUdDytSwG-18x2dEBNx2FAmx2Bx2BLS9TPTpUU0DGKQx3Dx3DNs8V1Mx2BQp597TwzF85F1aAx3Dx3D-WwpRYkX4Gz8e7T4uNl5SUQx3Dx3D-wBEj1mx2B0mykql8H4kstFLwx3Dx3D" target="_blank" rel="noopener">英文网站</a></p>
-</li>
-<li><p>出版商、数据库、检索工具</p>
-<ul>
-<li><p>IEEE和Springer是<u>出版商</u>，并且拥有自己的数据库和检索工具。</p>
-<p>如：IEEE有IEEExplorer检索。 其他数据库自己（比如EI, EBSCOhost等等）可以抓取出版商数据库里面的文章。比如EngineeringVillage (EI)在IEEExplorer抓取文章的内容；这时候作者的文章就能在EI里面查到了。</p>
-</li>
-<li><p>Google/Google Scholar/Scirus/ScienceDirect/IEEExplorer/ISI这些都是检索工具</p>
-</li>
-<li><p>SCI(Science Citation Index)是影响因子，也是ISI（Institute Scientific Information）做的数据库。</p>
-<p>SCI不是出版商，只是数据库，不是具体某篇文章内容版权的拥有者；所以在SCI里面，能看到只是题目+摘要+参考文献。SCI的内容不是原始文献全文，卖点是每年推出JCR，里面给出影响因子。</p>
-</li>
-<li><p><a href="https://zhuanlan.zhihu.com/p/27674513" target="_blank" rel="noopener">SIAM简介</a>：国际工业与应用数学<u>协会</u>(SIAM), 旗下出版有应用数学相关的许多国际著名期刊杂志</p>
-</li>
-</ul>
-</li>
-</ul>
-          <!--noindex-->
           
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/05/17/2019-05-16-论文阅读笔记/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
+            <h1 id="解的存在性证明"><a href="#解的存在性证明" class="headerlink" title="解的存在性证明"></a>解的存在性证明</h1><ul>
+<li><p>证明 $\inf _{\Omega} f \leq u^{*} \leq \sup _{\Omega} f$</p>
+<p>通过有界性说明</p>
+</li>
+<li><p>证明有界性</p>
+</li>
+</ul>
+<ul>
+<li>BV的有界性 值的是</li>
+</ul>
+<p>![image-20190724131348088](/Users/yyf/Library/Application Support/typora-user-images/image-20190724131348088.png)</p>
+
           
-          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/2019/07/29/边缘特征提取/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">
+              
+              <a href="/2019/07/29/边缘特征提取/" class="post-title-link" itemprop="url">图形边缘提取</a>
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2019-07-29 00:00:00" itemprop="dateCreated datePublished" datetime="2019-07-29T00:00:00+08:00">2019-07-29</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-07 13:15:09" itemprop="dateModified" datetime="2019-08-07T13:15:09+08:00">2019-08-07</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/图像处理/" itemprop="url" rel="index"><span itemprop="name">图像处理</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+            <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<li><p><a href="http://www.me.umn.edu/courses/me5286/vision/VisionNotes/2017/ME5286-Lecture7-2017-EdgeDetection2.pdf" target="_blank" rel="noopener">Edge detection ppt</a></p>
+</li>
+<li><p><a href="http://www.aishack.in/tutorials/sobel-laplacian-edge-detectors/" target="_blank" rel="noopener">Edge detection blog</a></p>
+</li>
+<li><p><a href>Edge detection matlab</a></p>
+</li>
+<li><p><a href="https://blog.csdn.net/saltriver/article/details/78990575" target="_blank" rel="noopener">图像的二阶信息</a></p>
+</li>
+</ul>
+<h1 id="传统数学方法"><a href="#传统数学方法" class="headerlink" title="传统数学方法"></a>传统数学方法</h1><p>发展过程</p>
+<p>一阶、二阶、优点、缺点、鲁棒性</p>
+<p>canny</p>
+<ul>
+<li><p>Sobel <a href="https://blog.csdn.net/zhufanqie/article/details/8709910" target="_blank" rel="noopener">code++</a></p>
+<p>I. Sobel. <strong>Camera models and machine perception.</strong> Technical report, DTIC Document, 1970.</p>
+<p>thresholding the gradient map.</p>
+</li>
+<li><p>Canny：an extension of Sobel, more <strong>robust</strong> to noise.  <a href>code++</a></p>
+<p> J. Canny. <strong>A computational approach to edge detection.</strong> IEEE TPAMI, 8(6):679–698, 1986.</p>
+<p>Gaussian smoothing as a preprocessing step </p>
+</li>
+<li><p>Laplacian: 用一个线性算子即可 </p>
+<p>Ansitropic nabla^2 = uxx+uyy.  (右边取绝对值)</p>
+<p>![image-20190623174549671](/Users/yyf/Library/Application Support/typora-user-images/image-20190623174549671.png)</p>
+</li>
+</ul>
+<h1 id="深度学习方法"><a href="#深度学习方法" class="headerlink" title="深度学习方法"></a>深度学习方法</h1><ul>
+<li><p>Xie, S., Tu, Z.: <strong>Holistically-nested edge detection.</strong> In: Proceedings of the IEEE international conference on computer vision, pp. 1395–1403 (2015)</p>
+</li>
+<li><p>Liu, Y., Cheng, M.M., Hu, X., Wang, K., Bai, X.: <strong>Richer convolutional features for edge detection.</strong> In: Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 3000–3009 (2017)</p>
+</li>
+</ul>
+<h1 id="Laplacian的方法"><a href="#Laplacian的方法" class="headerlink" title="Laplacian的方法"></a>Laplacian的方法</h1><h1 id="边缘加强去噪"><a href="#边缘加强去噪" class="headerlink" title="边缘加强去噪"></a>边缘加强去噪</h1><p>二阶算子或者一阶算子</p>
+<p>边缘</p>
+<ul>
+<li>二阶算子对应其他边缘 如canny边缘或者sobel边缘 能否有这个结果</li>
+<li></li>
+</ul>
+
+          
         
       
     </div>
@@ -720,6 +1656,9 @@
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+  </nav>
 
 
           </div>
@@ -749,9 +1688,9 @@
   <nav class="site-state motion-element">
       <div class="site-state-item site-state-posts">
         
-          <a href="/archives/">
+          <a href="/archives">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">38</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -772,7 +1711,25 @@
         
           
         
-        <span class="site-state-item-count">1</span>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">categories</span>
         </a>
       </div>
@@ -797,7 +1754,57 @@
         
           
         
-        <span class="site-state-item-count">4</span>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">tags</span>
         </a>
       </div>

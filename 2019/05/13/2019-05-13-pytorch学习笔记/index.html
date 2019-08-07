@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html class="theme-next gemini use-motion" lang="">
+<head>
+  <meta charset="UTF-8">
+<meta name="generator" content="Hexo 3.9.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    save_scroll: false,
+    copycode: {"enable":false,"show_result":false,"style":null},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    }
+  };
+</script>
+
+  <meta name="description" content="Pytorch学习笔记——随时更新  Pytorch环境 查看pytorch版本 1234&amp;gt;&amp;gt;&amp;gt; import torch&amp;gt;&amp;gt;&amp;gt; print(torch.__version__)0.4.0# 更新之后  更新pytorch 1conda update pytorch torchvision    Backward Propagation 算法 机器学习中的线性">
+<meta name="keywords" content="pytorch">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pytorch学习笔记">
+<meta property="og:url" content="https://ysix7.github.io/2019/05/13/2019-05-13-pytorch学习笔记/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Pytorch学习笔记——随时更新  Pytorch环境 查看pytorch版本 1234&amp;gt;&amp;gt;&amp;gt; import torch&amp;gt;&amp;gt;&amp;gt; print(torch.__version__)0.4.0# 更新之后  更新pytorch 1conda update pytorch torchvision    Backward Propagation 算法 机器学习中的线性">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79gy1g30qn2yrggj30mi09z3zv.jpg">
+<meta property="og:updated_time" content="2019-08-07T04:48:33.950Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Pytorch学习笔记">
+<meta name="twitter:description" content="Pytorch学习笔记——随时更新  Pytorch环境 查看pytorch版本 1234&amp;gt;&amp;gt;&amp;gt; import torch&amp;gt;&amp;gt;&amp;gt; print(torch.__version__)0.4.0# 更新之后  更新pytorch 1conda update pytorch torchvision    Backward Propagation 算法 机器学习中的线性">
+<meta name="twitter:image" content="https://ws4.sinaimg.cn/large/006tNc79gy1g30qn2yrggj30mi09z3zv.jpg">
+  <link rel="canonical" href="https://ysix7.github.io/2019/05/13/2019-05-13-pytorch学习笔记/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Pytorch学习笔记 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  <div class="container sidebar-position-left">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-分类">
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-归档">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-图像处理">
+      
+    
+
+    <a href="/categories/图像处理/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>图像处理</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-深度学习">
+      
+    
+
+    <a href="/categories/深度学习/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>深度学习</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-数学基础">
+      
+    
+
+    <a href="/categories/数学/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>数学基础</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-优化算法">
+      
+    
+
+    <a href="/categories/算法/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>优化算法</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-语言">
+      
+    
+
+    <a href="/categories/语言/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>语言</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-摄影">
+      
+    
+
+    <a href="/categories/摄影/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>摄影</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-生活">
+      
+    
+
+    <a href="/categories/生活/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>生活</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-其他">
+      
+    
+
+    <a href="/categories/其他/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>其他</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content page-post-detail">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/2019/05/13/2019-05-13-pytorch学习笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">Pytorch学习笔记
+
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2019-05-13 00:00:00" itemprop="dateCreated datePublished" datetime="2019-05-13T00:00:00+08:00">2019-05-13</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-07 12:48:33" itemprop="dateModified" datetime="2019-08-07T12:48:33+08:00">2019-08-07</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/深度学习/" itemprop="url" rel="index"><span itemprop="name">深度学习</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
+<p>Pytorch学习笔记——随时更新</p>
+</blockquote>
+<h1 id="Pytorch环境"><a href="#Pytorch环境" class="headerlink" title="Pytorch环境"></a>Pytorch环境</h1><ul>
+<li><p>查看pytorch版本</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> torch</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(torch.__version__)</span><br><span class="line"><span class="number">0.4</span><span class="number">.0</span></span><br><span class="line"><span class="comment"># 更新之后</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>更新pytorch</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda update pytorch torchvision</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>Backward Propagation 算法</p>
+<p><a href="https://blog.csdn.net/u010976453/article/details/54381248" target="_blank" rel="noopener">机器学习中的线性代数之矩阵求导</a></p>
+<p><a href="https://blog.csdn.net/xidianliutingting/article/details/51673207" target="_blank" rel="noopener">向量，标量对向量求导数</a></p>
+<h1 id="GPU"><a href="#GPU" class="headerlink" title="GPU"></a>GPU</h1><ol>
+<li><p>查看cuda以及pytorch版本</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">print(torch.cuda.current_device()) </span><br><span class="line"><span class="keyword">import</span> pytorch</span><br><span class="line">print(torch.__version__)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>指定cuda</p>
+</li>
+<li><p>指定torch的设备</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">torch.device(<span class="string">'cuda'</span>,<span class="number">0</span>) <span class="keyword">or</span> torch.device(<span class="string">'cuda:0'</span>) <span class="keyword">or</span></span><br><span class="line">var = torch.device(<span class="string">'cuda:0'</span>)</span><br><span class="line">a = torch.randn((<span class="number">2</span>,<span class="number">3</span>),device=var)</span><br><span class="line">b = torch.randn(<span class="number">2</span>,<span class="number">3</span>).to_sparse().requires_grad_(<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">torch.randn((<span class="number">2</span>,<span class="number">3</span>), <span class="string">'cuda:1'</span>), </span><br><span class="line"></span><br><span class="line">cuda1= torch.device(<span class="string">'cuda:1'</span>)， torch.randn((<span class="number">2</span>,<span class="number">3</span>), device=cuda1)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><a href="https://zhuanlan.zhihu.com/p/31936740" target="_blank" rel="noopener">数据迁徙：将Pytorch模型从CPU转换成GPU</a></p>
+</li>
+</ol>
+<h1 id="Tensor张量"><a href="#Tensor张量" class="headerlink" title="Tensor张量"></a>Tensor张量</h1><ol>
+<li><p>通过pytorch创建张量</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x = torch.randn(M,N）.type(dtype)</span><br><span class="line"><span class="comment"># 原来是通过numpy创建数组, numpy提供了很多矩阵数学计算</span></span><br><span class="line">x = np.random.randn(N, I)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将张量放在GPU上<img src="https://ws4.sinaimg.cn/large/006tNc79gy1g30qn2yrggj30mi09z3zv.jpg" alt="tensor"></p>
+</li>
+<li><p>张量在cpu和gpu之间的转换</p>
+<p>从cpu –&gt; gpu，使用<code>data.cuda()</code><br>从gpu –&gt; cpu，使用<code>data.cpu()</code></p>
+</li>
+<li><p><a href="randonhttps://blog.csdn.net/g11d111/article/details/80896137" target="_blank" rel="noopener">张量之间的转换</a></p>
+</li>
+<li><p>tensor的创建</p>
+<p>直接创建：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">torch.tensor([..]).type(..)</span><br><span class="line">torch.FloatTensor()</span><br></pre></td></tr></table></figure>
+
+<p>创建随机矩阵：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dtype = torch.Floatensor </span><br><span class="line">dtype = torch.cuda.Floatensor </span><br><span class="line">torch.randn((M,N),type(dtype)</span><br></pre></td></tr></table></figure>
+
+<p> 从其他数据类型:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">data = [[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>]]</span><br><span class="line">tensor = torch.FloatTensor(data)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>找出其中最大元素</p>
+<p>torch.max(input)</p>
+</li>
+</ol>
+<h1 id="矩阵操作"><a href="#矩阵操作" class="headerlink" title="矩阵操作"></a>矩阵操作</h1><ul>
+<li><p>增加维度</p>
+</li>
+<li><p>减少维度</p>
+</li>
+</ul>
+<h1 id="Pytorch可视化"><a href="#Pytorch可视化" class="headerlink" title="Pytorch可视化"></a>Pytorch可视化</h1><p>利用tensorboard画图</p>
+<ol>
+<li><p><a href="https://blog.csdn.net/weixin_37978645/article/details/80807156" target="_blank" rel="noopener">通过logger文件可视化训练过程</a>、<a href="https://www.tensorflow.org/guide/summaries_and_tensorboard?hl=zh-cn" target="_blank" rel="noopener">官网</a>、<a href="https://blog.csdn.net/u010099080/article/details/77426577" target="_blank" rel="noopener">别人写的tensorflow下比较具体的可视化</a></p>
+</li>
+<li><p>出现的问题</p>
+<p>端口冲突通过指定端口解决：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tensorboard --logdir=/tmp   --port=8008 <span class="comment">#绝对路径</span></span><br><span class="line">tensorboard --logdir=./tmp  --port=8008 <span class="comment">#相对路径</span></span><br></pre></td></tr></table></figure>
+
+<p> <a href="https://stackoverflow.com/questions/45095820/tensorboard-command-not-found?rq=1" target="_blank" rel="noopener">tensorbard命令无法找到</a>：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 -m tensorboard.main --logdir=~/my/training/dir</span><br></pre></td></tr></table></figure>
+
+<p>进入目录：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pip show tensorflow</span><br><span class="line"><span class="built_in">cd</span> /home/abc/xy/.<span class="built_in">local</span>/lib/python2.7/site-packages</span><br><span class="line">python main.py --logdir=/path/to/log_file/</span><br></pre></td></tr></table></figure>
+
+<p> 路径的名称要小心，路径得是根目录, 不需要引号</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yyfang@mai:~$  ge/ERRNet_Code/logs --port=8008</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>可视化</p>
+</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> iteration % <span class="number">100</span> == <span class="number">0</span>:</span><br><span class="line">    print(<span class="string">"===&gt; Epoch[&#123;&#125;](&#123;&#125;/&#123;&#125;): Loss: &#123;:.6f&#125;"</span>.format(epoch, iteration, len(training_data_loader),loss.data.item()))</span><br><span class="line">    info = &#123; <span class="string">'loss'</span>: loss.data.item()&#125;</span><br><span class="line">    itera = (epoch<span class="number">-1</span>)*len(training_data_loader)+iteration</span><br><span class="line">    <span class="keyword">for</span> tag, value <span class="keyword">in</span> info.items():</span><br><span class="line">        logger.scalar_summary(tag, value, itera)</span><br><span class="line">        <span class="keyword">for</span> tag, value <span class="keyword">in</span> model.named_parameters():</span><br><span class="line">            <span class="comment">#                 print(value.grad)</span></span><br><span class="line">            logger.histo_summary(tag, to_np(value), itera)</span><br><span class="line">            logger.histo_summary(tag+<span class="string">'/grad'</span>, to_np(value.grad), iteration)               </span><br><span class="line"></span><br><span class="line">            images = input  * <span class="number">255.</span> <span class="comment"># ?[0,1]?????[0,255]??</span></span><br><span class="line">            images[images &lt; <span class="number">0</span>] = <span class="number">0</span></span><br><span class="line">            images[images &gt; <span class="number">255.</span>] = <span class="number">255.</span></span><br><span class="line">            a =to_np(images.view(<span class="number">-1</span>, <span class="number">64</span>, <span class="number">64</span>)[:<span class="number">8</span>])</span><br><span class="line">            <span class="comment">#             info_input = &#123;'input': to_np(images.view(-1, 64, 64)[:2])&#125;</span></span><br><span class="line">            imagelabel = label  * <span class="number">255.</span> <span class="comment"># ?[0,1]?????[0,255]??</span></span><br><span class="line">            imagelabel[imagelabel &lt; <span class="number">0</span>] = <span class="number">0</span></span><br><span class="line">            imagelabel[imagelabel &gt; <span class="number">255.</span>] = <span class="number">255.</span></span><br><span class="line">            b = to_np(imagelabel.view(<span class="number">-1</span>, <span class="number">64</span>, <span class="number">64</span>)[:<span class="number">8</span>])</span><br><span class="line">            c = np.hstack((a,b))</span><br><span class="line">            <span class="comment">#             print(images)</span></span><br><span class="line">            info_label = &#123;<span class="string">'inpput/label'</span>: c&#125;    </span><br><span class="line">            <span class="keyword">for</span> tag, images <span class="keyword">in</span> info_label.items():</span><br><span class="line">                logger.image_summary(tag, images, itera)</span><br><span class="line">                <span class="comment">#             for tag, images in info_label.items():</span></span><br><span class="line">                <span class="comment">#                  logger.image_summary(tag, images, iteration)</span></span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> iteration % <span class="number">5000</span> == <span class="number">0</span>:</span><br><span class="line">                    number = opt.number</span><br><span class="line">                    save_checkpoint_iter(model, number)</span><br><span class="line">                    opt.number += <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h1><ol>
+<li><p>训练集(train set) 验证集(validation set) 测试集(test set）</p>
+<p>training set： 用来训练模型</p>
+<p>validation set : 用来做model selection（往往我们需要对多种模型进行训练，训练完之后就会得到多个模型的结果，我们希望从这些训练好的模型中选择最适合的模型）</p>
+<p>test set : 用来评估所选出来的model的实际性能</p>
+</li>
+<li><p>几个常用数据集</p>
+<p>BSD500： </p>
+<p>DIV2K：</p>
+</li>
+</ol>
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><ul>
+<li><p>矩阵相乘/点乘</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">data = [[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>]]</span><br><span class="line">tensor = torch.FloatTensor(data)</span><br><span class="line"><span class="comment"># numpy</span></span><br><span class="line">np.matmual(data, data)</span><br><span class="line"><span class="comment"># tensor</span></span><br><span class="line">torch.mm(tensor, tensor) <span class="comment"># 矩阵相乘</span></span><br><span class="line">tensor.mm(tensor.t())</span><br><span class="line">torch.mul(tensor,tenor.t()) <span class="comment">#点乘</span></span><br><span class="line">tensor.mul(tensor)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将数组截取到一个区间</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">h_relu = h.clamp(min=<span class="number">0</span>)</span><br><span class="line">h_relu2  = torch.clamp(h, min=<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><a href="https://docs.fast.ai/torch_core.html#to_np" target="_blank" rel="noopener">To_np函数</a>: 转化数据类型</p>
+<p>包含在库<a href="https://docs.fast.ai/overview.html#core" target="_blank" rel="noopener">fastai</a>中</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> fastai.basics <span class="keyword">import</span> *</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="网络结构-nn包"><a href="#网络结构-nn包" class="headerlink" title="网络结构-nn包"></a>网络结构-nn包</h1><p><a href="https://pytorch-cn.readthedocs.io/zh/latest/package_references/torch-nn/#linear-layers" target="_blank" rel="noopener">torch_nn中文文档</a></p>
+<ul>
+<li><p>torch.nn的线形层</p>
+</li>
+<li><p>torch.nn的卷积层</p>
+<p>卷积核的大小: [out_Channel, in_Channel, kernel_size, kernel_size]</p>
+<p>bias的大小:[out_Channel]</p>
+</li>
+<li><p>继承nn.modle自定义模块</p>
+</li>
+<li><p>问题</p>
+<ul>
+<li><p>如何初始化model中的参数</p>
+</li>
+<li><p>为什么需要model.zero_grad之后再backward(), 例如</p>
+<p>model.zero_grad()</p>
+<p>optimizer.zero_grad()</p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="优化器"><a href="#优化器" class="headerlink" title="优化器"></a>优化器</h1><p>optimizer = torch.optim.Adam(model.parameters(), lr = learning_rate)</p>
+<h1 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h1><ul>
+<li>如何自定义损失函数</li>
+</ul>
+<h1 id="并行运算Parallel"><a href="#并行运算Parallel" class="headerlink" title="并行运算Parallel"></a>并行运算Parallel</h1><p>pytorch中如果使用DataParallel，<strong>那么保存的模型key值前面会多出’modules.’</strong>，这样如果训练的时候使用的是多GPU，而测试的时候使用的是单GPU，模型载入就会出现问题。</p>
+<h1 id="例子：设置GPU和预训练模型"><a href="#例子：设置GPU和预训练模型" class="headerlink" title="例子：设置GPU和预训练模型"></a>例子：设置GPU和预训练模型</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"> criterion =  nn.MSELoss(size_average=<span class="literal">False</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置GPU</span></span><br><span class="line"> print(<span class="string">"===&gt; Setting GPU"</span>)</span><br><span class="line"> <span class="keyword">if</span> cuda:</span><br><span class="line">     <span class="comment"># 调用多个GPU</span></span><br><span class="line">     model = nn.DataParallel(model, device_ids=[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]).cuda()</span><br><span class="line">     <span class="comment"># 调用单个GPU model = model.cuda()</span></span><br><span class="line">     criterion = criterion.cuda()</span><br><span class="line"> <span class="keyword">else</span>:</span><br><span class="line">     model = model.cpu()</span><br><span class="line"></span><br><span class="line"> <span class="comment"># 加载预预训练好的模型及权重</span></span><br><span class="line"> <span class="keyword">if</span> opt.pretrained:</span><br><span class="line">     <span class="keyword">if</span> os.path.isfile(opt.pretrained):</span><br><span class="line">         print(<span class="string">"=&gt; loading model '&#123;&#125;'"</span>.format(opt.pretrained))</span><br><span class="line">         weights = torch.load(opt.pretrained)</span><br><span class="line">         model.load_state_dict(weights[<span class="string">'model'</span>].state_dict())</span><br><span class="line">     <span class="keyword">else</span>:</span><br><span class="line">         print(<span class="string">"=&gt; no model found at '&#123;&#125;'"</span>.format(opt.pretrained))</span><br><span class="line">         </span><br><span class="line"> <span class="comment"># 保存模型的参数</span></span><br><span class="line"> <span class="comment"># Save checkpoint</span></span><br><span class="line">     save_file = os.path.join(TMP_DIR, <span class="string">'checkpoint_epoch&#123;&#125;.pth'</span>.format(epoch))</span><br><span class="line">     save_checkpoint(&#123;</span><br><span class="line">         <span class="string">'epoch'</span>: epoch,</span><br><span class="line">         <span class="string">'state_dict'</span>: model.state_dict(),</span><br><span class="line">         <span class="string">'optimizer'</span>: optimizer.state_dict()</span><br><span class="line">                      &#125;, filename=save_file)</span><br></pre></td></tr></table></figure>
+
+<h1 id="Debug"><a href="#Debug" class="headerlink" title="Debug"></a>Debug</h1><ul>
+<li><p>Anaconda中，import和实际的不符</p>
+<p>Anaconda清除历史，否则同一个格子刷新，并不会影响前面已经import的内容</p>
+</li>
+<li><p>torch版本带来的bug</p>
+<p>loss.data[0] -&gt;loss.data.item()</p>
+</li>
+<li><p>Mac air(未解决)</p>
+<p>载入模型参数时报错（在ubuntu下不报错，ubuntu的版本是1.0.1.post2, air下是0.4.0）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AttributeError: Can&apos;t get attribute &apos;_rebuild_parameter&apos; on &lt;module &apos;torch._utils&apos; from &apos;/Users/yingyingfang/anaconda3/lib/python3.6/site-packages/torch/_utils.py&apos;&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Ubuntu下训练RCF模型时报错（解决）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">expected object of backend cpu but got backend cuda <span class="keyword">for</span> argument <span class="comment">#2 'weight'</span></span><br><span class="line"><span class="comment"># 解决办法</span></span><br><span class="line">input=input.cuda()</span><br><span class="line">net = net.cuda()</span><br><span class="line">net(input)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如何提高训练速度</p>
+<ul>
+<li>并行运算</li>
+</ul>
+</li>
+<li><p>RuntimeError: Input type (torch.cuda.DoubleTensor) and weight type (torch.cuda.FloatTensor) should be the same</p>
+<p>产生原因：创建了一个高斯随机分布之后？</p>
+<p>解决办法：将数据类型转换成FloatTensor即可，如下，加一行代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">train_label_batch = torch.from_numpy(train_label_batch)</span><br><span class="line">train_label_batch = train_label_batch.type(torch.FloatTensor)  <span class="comment"># 转Float</span></span><br><span class="line">train_label_batch = train_label_batch.cuda()  <span class="comment"># 转cuda</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><a href="https://discuss.pytorch.org/t/how-to-solve-the-problem-of-runtimeerror-all-tensors-must-be-on-devices-0/15198" target="_blank" rel="noopener">RuntimeError: all tensors must be on devices[0]</a></p>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+        
+        <div class="post-tags">
+            <a href="/tags/pytorch/" rel="tag"># pytorch</a>
+          
+        </div>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+              <a href="/2019/05/12/2019-05-12-服务器学习笔记/" rel="next" title="Ubuntu服务器">
+                <i class="fa fa-chevron-left"></i> Ubuntu服务器
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+              <a href="/2019/05/14/2019-05-14-深度网络学习笔记 /" rel="prev" title="深度学习网络学习">
+                深度学习网络学习 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description motion-element" itemprop="description"></div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives">
+        
+          <span class="site-state-item-count">38</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">categories</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">tags</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+        </div>
+      </div>
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Pytorch环境"><span class="nav-number">1.</span> <span class="nav-text">Pytorch环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GPU"><span class="nav-number">2.</span> <span class="nav-text">GPU</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Tensor张量"><span class="nav-number">3.</span> <span class="nav-text">Tensor张量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#矩阵操作"><span class="nav-number">4.</span> <span class="nav-text">矩阵操作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Pytorch可视化"><span class="nav-number">5.</span> <span class="nav-text">Pytorch可视化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据集"><span class="nav-number">6.</span> <span class="nav-text">数据集</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#函数"><span class="nav-number">7.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网络结构-nn包"><span class="nav-number">8.</span> <span class="nav-text">网络结构-nn包</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#优化器"><span class="nav-number">9.</span> <span class="nav-text">优化器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#损失函数"><span class="nav-number">10.</span> <span class="nav-text">损失函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#并行运算Parallel"><span class="nav-number">11.</span> <span class="nav-text">并行运算Parallel</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#例子：设置GPU和预训练模型"><span class="nav-number">12.</span> <span class="nav-text">例子：设置GPU和预训练模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Debug"><span class="nav-number">13.</span> <span class="nav-text">Debug</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.3.0</div>
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+      </div>
+
+    
+
+  </div>
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/js/utils.js?v=7.3.0"></script>
+  <script src="/js/motion.js?v=7.3.0"></script>
+
+
+  <script src="/js/affix.js?v=7.3.0"></script>
+  <script src="/js/schemes/pisces.js?v=7.3.0"></script>
+
+
+
+<script src="/js/next-boot.js?v=7.3.0"></script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+  
+  <script src="/js/scrollspy.js?v=7.3.0"></script>
+<script src="/js/post-details.js?v=7.3.0"></script>
+
+
+</body>
+</html>

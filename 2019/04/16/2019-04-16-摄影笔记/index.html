@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html class="theme-next gemini use-motion" lang="">
+<head>
+  <meta charset="UTF-8">
+<meta name="generator" content="Hexo 3.9.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    save_scroll: false,
+    copycode: {"enable":false,"show_result":false,"style":null},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    }
+  };
+</script>
+
+  <meta name="description" content="相机成像原理小孔成像：进光、倒立 孔太大了无法成像，每个点包含了整个成像物； 小孔变小，图像会更清晰，光线变暗 相机的光圈类比于小孔 闪光灯的作用 在光线充足的地方：增加光效，突出立体感  在光线不足的地方：补光  逆光时：人物的面部光线更为柔和  X100下具有自动曝光功能。菜单的位置：闪光灯的自动模式，闪光灯的力度大小，配合闪光灯的消除红眼    测光模式 X100具有多重、点测光、平均三种测">
+<meta property="og:type" content="article">
+<meta property="og:title" content="富士X100：慢拍的优雅">
+<meta property="og:url" content="https://ysix7.github.io/2019/04/16/2019-04-16-摄影笔记/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="相机成像原理小孔成像：进光、倒立 孔太大了无法成像，每个点包含了整个成像物； 小孔变小，图像会更清晰，光线变暗 相机的光圈类比于小孔 闪光灯的作用 在光线充足的地方：增加光效，突出立体感  在光线不足的地方：补光  逆光时：人物的面部光线更为柔和  X100下具有自动曝光功能。菜单的位置：闪光灯的自动模式，闪光灯的力度大小，配合闪光灯的消除红眼    测光模式 X100具有多重、点测光、平均三种测">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79gy1g2z1bmakzgj30sf063q96.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79gy1g30qhuv2h6j30z005qdi9.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79gy1g2znkirdrij30wy0f6gre.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79gy1g2znrfh1gwj314605awkd.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79gy1g2z21yi6maj30nt0dgmzs.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79gy1g2z1nev269j30nt0fh4g2.jpg">
+<meta property="og:updated_time" content="2019-08-07T03:01:08.613Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="富士X100：慢拍的优雅">
+<meta name="twitter:description" content="相机成像原理小孔成像：进光、倒立 孔太大了无法成像，每个点包含了整个成像物； 小孔变小，图像会更清晰，光线变暗 相机的光圈类比于小孔 闪光灯的作用 在光线充足的地方：增加光效，突出立体感  在光线不足的地方：补光  逆光时：人物的面部光线更为柔和  X100下具有自动曝光功能。菜单的位置：闪光灯的自动模式，闪光灯的力度大小，配合闪光灯的消除红眼    测光模式 X100具有多重、点测光、平均三种测">
+<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tNc79gy1g2z1bmakzgj30sf063q96.jpg">
+  <link rel="canonical" href="https://ysix7.github.io/2019/04/16/2019-04-16-摄影笔记/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>富士X100：慢拍的优雅 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  <div class="container sidebar-position-left">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-分类">
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-归档">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-图像处理">
+      
+    
+
+    <a href="/categories/图像处理/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>图像处理</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-深度学习">
+      
+    
+
+    <a href="/categories/深度学习/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>深度学习</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-数学基础">
+      
+    
+
+    <a href="/categories/数学/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>数学基础</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-优化算法">
+      
+    
+
+    <a href="/categories/算法/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>优化算法</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-语言">
+      
+    
+
+    <a href="/categories/语言/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>语言</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-摄影">
+      
+    
+
+    <a href="/categories/摄影/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>摄影</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-生活">
+      
+    
+
+    <a href="/categories/生活/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>生活</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-其他">
+      
+    
+
+    <a href="/categories/其他/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>其他</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content page-post-detail">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/2019/04/16/2019-04-16-摄影笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">富士X100：慢拍的优雅
+
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2019-04-16 00:00:00" itemprop="dateCreated datePublished" datetime="2019-04-16T00:00:00+08:00">2019-04-16</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-07 11:01:08" itemprop="dateModified" datetime="2019-08-07T11:01:08+08:00">2019-08-07</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/摄影/" itemprop="url" rel="index"><span itemprop="name">摄影</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="相机成像原理"><a href="#相机成像原理" class="headerlink" title="相机成像原理"></a>相机成像原理</h1><p>小孔成像：进光、倒立</p>
+<p>孔太大了无法成像，每个点包含了整个成像物； 小孔变小，图像会更清晰，光线变暗</p>
+<p>相机的光圈类比于小孔</p>
+<h1 id="闪光灯的作用"><a href="#闪光灯的作用" class="headerlink" title="闪光灯的作用"></a>闪光灯的作用</h1><ul>
+<li><p>在光线充足的地方：增加光效，突出立体感</p>
+</li>
+<li><p>在光线不足的地方：补光</p>
+</li>
+<li><p>逆光时：人物的面部光线更为柔和</p>
+</li>
+<li><p>X100下具有自动曝光功能。<u>菜单的位置</u>：闪光灯的自动模式，闪光灯的力度大小，配合闪光灯的消除红眼</p>
+</li>
+</ul>
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1g2z1bmakzgj30sf063q96.jpg" alt="闪光灯"></p>
+<h1 id="测光模式"><a href="#测光模式" class="headerlink" title="测光模式"></a>测光模式</h1><ul>
+<li><p>X100具有<strong>多重、点测光、平均</strong>三种测光模式。</p>
+</li>
+<li><p>多重测光是点和平均的中和。夜晚时，画面容易偏亮。</p>
+</li>
+<li><p>点测光的特点：适合拍摄主题明显的画面，营造氛围。当测光在亮部时，整体会偏暗；当测光在暗部时，整体会偏亮。(点测光下，可以改变测光点吗：半自动测光）</p>
+</li>
+<li><p>平均测光的特点：适合拍摄静物和风景。测光平均值比较稳定。画面容易偏暗</p>
+</li>
+</ul>
+<p><strong>注意：</strong>MF模式下，测光方式不影响曝光画面。由光圈快门决定。</p>
+<h1 id="曝光补偿"><a href="#曝光补偿" class="headerlink" title="曝光补偿"></a>曝光补偿</h1><ul>
+<li><p>增加曝光补偿：<img src="https://ws4.sinaimg.cn/large/006tNc79gy1g30qhuv2h6j30z005qdi9.jpg" alt="增加曝光"></p>
+<p>例子：</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1g2znkirdrij30wy0f6gre.jpg" alt="增加曝光的例子"></p>
+</li>
+<li><p>降低曝光补偿：</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1g2znrfh1gwj314605awkd.jpg" alt="降低曝光"></p>
+</li>
+</ul>
+<h1 id="白平衡"><a href="#白平衡" class="headerlink" title="白平衡"></a>白平衡</h1><ul>
+<li><p>作用：增加氛围；中和不正常的光线</p>
+</li>
+<li><p>几种调节方式：自动白平衡、自定义白平衡、白平衡偏移</p>
+</li>
+<li><p>白平衡偏移：<img src="https://ws2.sinaimg.cn/large/006tNc79gy1g2z21yi6maj30nt0dgmzs.jpg" alt="白平衡偏移色彩对应"></p>
+</li>
+</ul>
+<h1 id="不同场景的拍摄"><a href="#不同场景的拍摄" class="headerlink" title="不同场景的拍摄"></a>不同场景的拍摄</h1><p>夕阳的拍摄技巧</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1g2z1nev269j30nt0fh4g2.jpg" alt="夕阳"></p>
+<h1 id="色彩的学习"><a href="#色彩的学习" class="headerlink" title="色彩的学习"></a>色彩的学习</h1><ul>
+<li><p><a href="https://m.lizhiweike.com/classroom/11584842" target="_blank" rel="noopener">课堂链接</a></p>
+</li>
+<li><p>色彩的饱和度：所含彩色强度的浓度。</p>
+</li>
+<li><p>色彩的明度：色彩的亮度。其中黄色明度最高，紫色明度最低，绿、红、蓝、橙的明度相近，为中间明度。</p>
+</li>
+<li><p>色彩的搭配方式</p>
+<p>单色、对比色、分离补色、冷暖色</p>
+</li>
+</ul>
+<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><ul>
+<li><a href="https://www.zhihu.com/question/22878394" target="_blank" rel="noopener">全画幅和半画幅的区别</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+              <a href="/2017/02/06/[转载]2017-2-9-Mac快速调出终端/" rel="next" title="Mac 快速调出终端">
+                <i class="fa fa-chevron-left"></i> Mac 快速调出终端
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+              <a href="/2019/05/12/2019-05-12-服务器学习笔记/" rel="prev" title="Ubuntu服务器">
+                Ubuntu服务器 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description motion-element" itemprop="description"></div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives">
+        
+          <span class="site-state-item-count">38</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">categories</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">tags</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+        </div>
+      </div>
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#相机成像原理"><span class="nav-number">1.</span> <span class="nav-text">相机成像原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#闪光灯的作用"><span class="nav-number">2.</span> <span class="nav-text">闪光灯的作用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#测光模式"><span class="nav-number">3.</span> <span class="nav-text">测光模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#曝光补偿"><span class="nav-number">4.</span> <span class="nav-text">曝光补偿</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#白平衡"><span class="nav-number">5.</span> <span class="nav-text">白平衡</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#不同场景的拍摄"><span class="nav-number">6.</span> <span class="nav-text">不同场景的拍摄</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#色彩的学习"><span class="nav-number">7.</span> <span class="nav-text">色彩的学习</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#问题"><span class="nav-number">8.</span> <span class="nav-text">问题</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.3.0</div>
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+      </div>
+
+    
+
+  </div>
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/js/utils.js?v=7.3.0"></script>
+  <script src="/js/motion.js?v=7.3.0"></script>
+
+
+  <script src="/js/affix.js?v=7.3.0"></script>
+  <script src="/js/schemes/pisces.js?v=7.3.0"></script>
+
+
+
+<script src="/js/next-boot.js?v=7.3.0"></script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+  
+  <script src="/js/scrollspy.js?v=7.3.0"></script>
+<script src="/js/post-details.js?v=7.3.0"></script>
+
+
+</body>
+</html>

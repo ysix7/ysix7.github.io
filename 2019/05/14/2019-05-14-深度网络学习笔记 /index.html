@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html class="theme-next gemini use-motion" lang="">
+<head>
+  <meta charset="UTF-8">
+<meta name="generator" content="Hexo 3.9.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    save_scroll: false,
+    copycode: {"enable":false,"show_result":false,"style":null},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    }
+  };
+</script>
+
+  <meta name="description" content="网络架构学习  课程链接-tensorflow中文版教程 最新资讯和链接近期必读的10篇ACL 2019【图神经网络（GNN）+NLP】相关论文和代码 卷积神经网络CNN 文献 AlexNet VGG ResNet He K, Zhang X, Ren S, Sun J. Deep residual learning for image recognition. InProceedings of">
+<meta name="keywords" content="网络结构">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深度学习网络学习">
+<meta property="og:url" content="https://ysix7.github.io/2019/05/14/2019-05-14-深度网络学习笔记 /index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="网络架构学习  课程链接-tensorflow中文版教程 最新资讯和链接近期必读的10篇ACL 2019【图神经网络（GNN）+NLP】相关论文和代码 卷积神经网络CNN 文献 AlexNet VGG ResNet He K, Zhang X, Ren S, Sun J. Deep residual learning for image recognition. InProceedings of">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79gy1g30q089fiwj30s00f0tbp.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79gy1g30q07ezv5j30q40l8n0w.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79gy1g30q06hft4j316u0u07ea.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79gy1g30r10uhfrj30n60q4k2e.jpg">
+<meta property="og:updated_time" content="2019-08-07T04:49:00.537Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="深度学习网络学习">
+<meta name="twitter:description" content="网络架构学习  课程链接-tensorflow中文版教程 最新资讯和链接近期必读的10篇ACL 2019【图神经网络（GNN）+NLP】相关论文和代码 卷积神经网络CNN 文献 AlexNet VGG ResNet He K, Zhang X, Ren S, Sun J. Deep residual learning for image recognition. InProceedings of">
+<meta name="twitter:image" content="https://ws4.sinaimg.cn/large/006tNc79gy1g30q089fiwj30s00f0tbp.jpg">
+  <link rel="canonical" href="https://ysix7.github.io/2019/05/14/2019-05-14-深度网络学习笔记 /">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>深度学习网络学习 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  <div class="container sidebar-position-left">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-分类">
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-归档">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-图像处理">
+      
+    
+
+    <a href="/categories/图像处理/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>图像处理</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-深度学习">
+      
+    
+
+    <a href="/categories/深度学习/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>深度学习</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-数学基础">
+      
+    
+
+    <a href="/categories/数学/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>数学基础</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-优化算法">
+      
+    
+
+    <a href="/categories/算法/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>优化算法</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-语言">
+      
+    
+
+    <a href="/categories/语言/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>语言</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-摄影">
+      
+    
+
+    <a href="/categories/摄影/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>摄影</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-生活">
+      
+    
+
+    <a href="/categories/生活/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>生活</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-其他">
+      
+    
+
+    <a href="/categories/其他/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>其他</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content page-post-detail">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/2019/05/14/2019-05-14-深度网络学习笔记 /">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">深度学习网络学习
+
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2019-05-14 00:00:00" itemprop="dateCreated datePublished" datetime="2019-05-14T00:00:00+08:00">2019-05-14</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-07 12:49:00" itemprop="dateModified" datetime="2019-08-07T12:49:00+08:00">2019-08-07</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/深度学习/" itemprop="url" rel="index"><span itemprop="name">深度学习</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
+<p>网络架构学习</p>
+</blockquote>
+<h1 id="课程链接"><a href="#课程链接" class="headerlink" title="课程链接"></a>课程链接</h1><p>-<a href="https://mp.weixin.qq.com/s/0eKvZy_L_Ql99IJTmCh-VA" target="_blank" rel="noopener">tensorflow中文版教程</a></p>
+<h1 id="最新资讯和链接"><a href="#最新资讯和链接" class="headerlink" title="最新资讯和链接"></a>最新资讯和链接</h1><p><a href="https://mp.weixin.qq.com/s/27pcokMV0eYJubPoJjq5hg" target="_blank" rel="noopener">近期必读的10篇ACL 2019【图神经网络（GNN）+NLP】相关论文和代码</a></p>
+<h1 id="卷积神经网络CNN"><a href="#卷积神经网络CNN" class="headerlink" title="卷积神经网络CNN"></a>卷积神经网络CNN</h1><ul>
+<li><p>文献</p>
+<p><strong>AlexNet</strong></p>
+<p><strong>VGG</strong></p>
+<p><strong>ResNet</strong> He K, Zhang X, Ren S, Sun J. Deep residual learning for image recognition. InProceedings of the IEEE conference on computer vision and pattern recognition 2016 (pp. 770-778).</p>
+</li>
+</ul>
+<h3 id="Alex-net"><a href="#Alex-net" class="headerlink" title="Alex net"></a>Alex net</h3><p><a href="https://blog.csdn.net/u012679707/article/details/80870625" target="_blank" rel="noopener">Alex net之前的工作以及AlexNet中的创新点</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/22734982" target="_blank" rel="noopener">论文笔记</a></p>
+<h3 id="VGG"><a href="#VGG" class="headerlink" title="VGG"></a>VGG</h3><h3 id="RESNET"><a href="#RESNET" class="headerlink" title="RESNET"></a>RESNET</h3><p>ResNet, 2015, 微软亚洲研究院的何凯明等人提出</p>
+<p>He K, Zhang X, Ren S, Sun J. Deep residual learning for image recognition. InProceedings of the IEEE conference on computer vision and pattern recognition 2016 (pp. 770-778).</p>
+<p><strong>主要贡献：</strong>网络层数从32层提到152层</p>
+<p><strong>特点：</strong></p>
+<ol>
+<li><p>网络较瘦，控制了参数数量；</p>
+</li>
+<li><p>存在明显层级，特征图个数逐层递进，保证输出特征表达能力；</p>
+</li>
+<li><p>使用了较少的池化层，大量使用下采样，提高传播效率；</p>
+</li>
+<li><p>没有使用Dropout，利用BN和全局平均池化进行正则化，加快了训练速度；</p>
+</li>
+<li><p>层数较高时减少了3x3卷积个数，并用1x1卷积控制了3x3卷积的输入输出特征图数量，称这种结构为“瓶颈”(bottleneck)。</p>
+</li>
+</ol>
+<p><strong>残差单元：</strong> 克服了梯度消失的问题</p>
+<p>##卷积神经网络中的组成</p>
+<p>####步长和补零</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1g30q089fiwj30s00f0tbp.jpg" alt="image-20190116203754878"></p>
+<p>####卷积核：三维结构</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1g30q07ezv5j30q40l8n0w.jpg" alt="image-20190116201711290"></p>
+<p>####池化层</p>
+<p>池化层的输入一般来源于上一个卷积层，主要作用是提供了很强的鲁棒性（例如max-pooling是取一小块区域中的最大值，此时若此区域中的其他值略有变化，或者图像稍有平移，pooling后的结果仍不变），并且减少了参数的数量，防止过拟合现象的发生。池化层一般没有参数，所以反向传播的时候，只需对输入参数求导，不需要进行权值更新。</p>
+<p>####Inception模块</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1g30q06hft4j316u0u07ea.jpg" alt="image-20190116215438302"></p>
+<p>####bottle layer的作用</p>
+<p>#循环神经网络RNN 4.30</p>
+<ul>
+<li><p>阅读</p>
+<ul>
+<li><a href="https://pytorch.org/tutorials/intermediate/char_rnn_classification_tutorial.html" target="_blank" rel="noopener">Pytorch Example: A character-level RNN 识别名字的种类</a></li>
+</ul>
+</li>
+<li><p>前馈神经网络的局限</p>
+<ul>
+<li><p>节点之间没有联系</p>
+</li>
+<li><p>输入和输出的维度固定。无法处理变长的序列数据？维度改变的时序问题</p>
+<p>时序的长度是什么？一个字符串的长度？</p>
+</li>
+<li><p>每次输出只依赖于当前输入</p>
+</li>
+</ul>
+</li>
+<li><p>循环神经网络的难点</p>
+<p>按照时序反向传播的时候存在梯度爆炸和梯度消失。解决办法：引入门控机制。</p>
+</li>
+<li><p><a href="https://pytorch.org/tutorials/intermediate/char_rnn_classification_tutorial.html" target="_blank" rel="noopener">A character-level RNN </a></p>
+</li>
+</ul>
+<h1 id="强化学习"><a href="#强化学习" class="headerlink" title="强化学习"></a>强化学习</h1><h1 id="对抗神经网络GAN"><a href="#对抗神经网络GAN" class="headerlink" title="对抗神经网络GAN"></a>对抗神经网络GAN</h1><ul>
+<li><p>阅读</p>
+<ul>
+<li><p><a href="https://www.msra.cn/zh-cn/news/features/gan-20170511" target="_blank" rel="noopener">什么是生成式对抗网络GAN</a></p>
+</li>
+<li><p><a href="http://www.sohu.com/a/130252639_473283" target="_blank" rel="noopener">2017王飞跃等：生成式对抗网络 GAN 的研究进展与展望</a><a href="https://www.msra.cn/zh-cn/news/features/gan-20170511" target="_blank" rel="noopener">https://www.msra.cn/zh-cn/news/features/gan-20170511</a>)</p>
+</li>
+<li><p><a href="https://arxiv.org/pdf/1904.08653.pdf" target="_blank" rel="noopener">2019论文：图像补丁躲过图像识别</a>（19.05.02）<a href="https://gitlab.com/EAVISE/adversarial-yolo" target="_blank" rel="noopener">code</a></p>
+</li>
+</ul>
+</li>
+<li><p><strong>生成对抗网络的工作原理</strong>：一个是摄影师（男生），一个是摄影师的女朋友（女生）。男生一直试图拍出像众多优秀摄影师一样的好照片，而女生一直以挑剔的眼光找出“自己男朋友”拍的照片和“别人家的男朋友”拍的照片的区别。于是两者的交流过程类似于：男生拍一些照片 -&gt;女生分辨男生拍的照片和自己喜欢的照片的区别-&gt;男生根据反馈改进自己的技术，拍新的照片-&gt;女生根据新的照片继续提出改进意见-&gt;……，这个过程直到均衡出现：即女生不能再分辨出“自己男朋友”拍的照片和“别人家的男朋友”拍的照片的区别。</p>
+</li>
+<li><p><strong>生成对抗网络的工作原理</strong>：以图像生成模型举例。假设我们有一个图片生成模型（generator），它的目标是生成一张真实的图片。与此同时我们有一个图像判别模型（discriminator），它的目标是能够正确判别一张图片是生成出来的还是真实存在的。那么如果我们把刚才的场景映射成图片生成模型和判别模型之间的博弈，就变成了如下模式：生成模型生成一些图片-&gt;判别模型学习区分生成的图片和真实图片-&gt;生成模型根据判别模型改进自己，生成新的图片-&gt;····<strong>（训练过程由生成模型和判别模型组成）</strong></p>
+</li>
+<li><p>最简单的数据<strong>生成模型</strong>：如果有数据集S={x1，…xn}，假设这些数据的分布P{X}服从g(x;θ)，在观测数据上通过最大化似然函数得到θ的值，即最大似然法：$$\max <em>{\theta} \sum</em>{i=1}^{n} \log g\left(x_{i} ; \theta\right)​$$。当这个<strong>生成模型是</strong>神经网络的时候，就是<strong>生成式对抗网络（GAN）</strong></p>
+</li>
+<li><p>文献综述</p>
+</li>
+</ul>
+<h1 id="网络绘图"><a href="#网络绘图" class="headerlink" title="网络绘图"></a>网络绘图</h1><p>画图软件</p>
+<ul>
+<li><p><strong>Visio</strong></p>
+<p>![image-20190514135849553](../../../../Library/Application Support/typora-user-images/image-20190514135849553.png)</p>
+<p>![image-20190514135858557](../../../../Library/Application Support/typora-user-images/image-20190514135858557.png)</p>
+</li>
+<li><p><strong>NN-SVG</strong>，适合卷积神经网络, <a href="http://alexlenail.me/NN-SVG/LeNet.html" target="_blank" rel="noopener">在线链接</a></p>
+<p>![image-20190514135655177](../../../../Library/Application Support/typora-user-images/image-20190514135655177.png)</p>
+</li>
+<li><p><strong>PlotNeuralNet</strong>，基于Latex，<a href="github链接-<https://github.com/HarisIqbal88/PlotNeuralNet>">github的链接</a>，导出pdf</p>
+<p>![image-20190514133839750](../../../../Library/Application Support/typora-user-images/image-20190514133839750.png)</p>
+</li>
+<li><p>提供很多<strong>模版</strong>的<strong>在线</strong>画图<a href="https://www.draw.io/" target="_blank" rel="noopener">网页</a></p>
+<p>![image-20190514135511723](../../../../Library/Application Support/typora-user-images/image-20190514135511723.png)</p>
+</li>
+</ul>
+<p>神经网络的例子</p>
+<ul>
+<li><p>Edge detection: HED</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1g30r10uhfrj30n60q4k2e.jpg" alt="Edge detection: HED"></p>
+<p>multi-scale: 不同大小的卷积核</p>
+<p>multi-level:</p>
+<p>receptive field: 网络层次越深，越大，越抽象</p>
+<p>weighted-fusion layer:</p>
+</li>
+<li><p>MSRB</p>
+</li>
+</ul>
+<ul>
+<li><p>MSRB for SR</p>
+<p>![image-20190514132028216](../../../../Library/Application Support/typora-user-images/image-20190514132028216.png)</p>
+</li>
+<li><p>MSRB for denoising</p>
+<p>![image-20190514131803277](../../../../Library/Application Support/typora-user-images/image-20190514131803277.png)</p>
+</li>
+<li><p>SR: MSRN</p>
+</li>
+</ul>
+<p>#常见问题</p>
+<ul>
+<li><p>DNN（Deep Neural Network）和Deep CNN的区别</p>
+<p>过去传统的神经网络ANN（Artifical Neural Network），都是层次较少的网络型结构，所以又被称为浅层网络（shallow neural network），DNN与传统SNN的区别就在于其网络层次结构更多，等复杂，因此由于其层次更多，在图论上说就是图的深度更深，所以被冠名为深度神经网络（Deep Neural Network)</p>
+<p>Deep CNN是使用了卷积的网络。DNN是最基本的网络结构。</p>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+        
+        <div class="post-tags">
+            <a href="/tags/网络结构/" rel="tag"># 网络结构</a>
+          
+        </div>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+              <a href="/2019/05/13/2019-05-13-pytorch学习笔记/" rel="next" title="Pytorch学习笔记">
+                <i class="fa fa-chevron-left"></i> Pytorch学习笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+              <a href="/2019/05/15/2019-05-15-latex使用笔记/" rel="prev" title="latex使用笔记">
+                latex使用笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description motion-element" itemprop="description"></div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives">
+        
+          <span class="site-state-item-count">38</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">categories</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">tags</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+        </div>
+      </div>
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#课程链接"><span class="nav-number">1.</span> <span class="nav-text">课程链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#最新资讯和链接"><span class="nav-number">2.</span> <span class="nav-text">最新资讯和链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#卷积神经网络CNN"><span class="nav-number">3.</span> <span class="nav-text">卷积神经网络CNN</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Alex-net"><span class="nav-number">3.0.1.</span> <span class="nav-text">Alex net</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VGG"><span class="nav-number">3.0.2.</span> <span class="nav-text">VGG</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RESNET"><span class="nav-number">3.0.3.</span> <span class="nav-text">RESNET</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#强化学习"><span class="nav-number">4.</span> <span class="nav-text">强化学习</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#对抗神经网络GAN"><span class="nav-number">5.</span> <span class="nav-text">对抗神经网络GAN</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网络绘图"><span class="nav-number">6.</span> <span class="nav-text">网络绘图</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.3.0</div>
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+      </div>
+
+    
+
+  </div>
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/js/utils.js?v=7.3.0"></script>
+  <script src="/js/motion.js?v=7.3.0"></script>
+
+
+  <script src="/js/affix.js?v=7.3.0"></script>
+  <script src="/js/schemes/pisces.js?v=7.3.0"></script>
+
+
+
+<script src="/js/next-boot.js?v=7.3.0"></script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+  
+  <script src="/js/scrollspy.js?v=7.3.0"></script>
+<script src="/js/post-details.js?v=7.3.0"></script>
+
+
+</body>
+</html>
