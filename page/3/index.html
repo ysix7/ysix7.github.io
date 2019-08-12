@@ -4,7 +4,7 @@
 
 
 
-<html class="theme-next gemini use-motion" lang="">
+<html class="theme-next gemini use-motion" lang="zh-CN">
 <head>
   <meta charset="UTF-8">
 <meta name="generator" content="Hexo 3.9.0">
@@ -12,14 +12,16 @@
 <meta name="theme-color" content="#222">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/cloud32.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/cloud16.png?v=7.3.0">
   <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
 
 <link rel="stylesheet" href="/css/main.css?v=7.3.0">
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-pace-theme-minimal.min.css?v=1.0.2">
 
 
 <script id="hexo-configurations">
@@ -29,7 +31,7 @@
     scheme: 'Gemini',
     version: '7.3.0',
     sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
-    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
     save_scroll: false,
     copycode: {"enable":false,"show_result":false,"style":null},
     fancybox: false,
@@ -43,14 +45,14 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
-    path: '',
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
-      copy_button: 'Copy',
-      copy_success: 'Copied',
-      copy_failure: 'Copy failed'
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
     }
   };
 </script>
@@ -59,7 +61,7 @@
 <meta property="og:title" content="春夏秋冬">
 <meta property="og:url" content="https://ysix7.github.io/page/3/index.html">
 <meta property="og:site_name" content="春夏秋冬">
-<meta property="og:locale" content="default">
+<meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="春夏秋冬">
   <link rel="canonical" href="https://ysix7.github.io/page/3/">
@@ -113,7 +115,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   <div class="container sidebar-position-left">
     <div class="headband"></div>
@@ -132,7 +134,7 @@
   </div>
 
   <div class="site-nav-toggle">
-    <button aria-label="Toggle navigation bar">
+    <button aria-label="切换导航栏">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -151,8 +153,10 @@
         <li class="menu-item menu-item-home">
       
     
+      
+    
 
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
 
   </li>
       
@@ -162,8 +166,10 @@
         <li class="menu-item menu-item-tags">
       
     
+      
+    
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">17</span></a>
 
   </li>
       
@@ -171,6 +177,8 @@
       
         
         <li class="menu-item menu-item-分类">
+      
+    
       
     
 
@@ -184,6 +192,8 @@
         <li class="menu-item menu-item-归档">
       
     
+      
+    
 
     <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
 
@@ -195,8 +205,10 @@
         <li class="menu-item menu-item-图像处理">
       
     
+      
+    
 
-    <a href="/categories/图像处理/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>图像处理</a>
+    <a href="/categories/图像处理/" rel="section"><i class="menu-item-icon fa fa-fw fa-tripadvisor"></i> <br>图像处理</a>
 
   </li>
       
@@ -206,8 +218,10 @@
         <li class="menu-item menu-item-深度学习">
       
     
+      
+    
 
-    <a href="/categories/深度学习/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>深度学习</a>
+    <a href="/categories/深度学习/" rel="section"><i class="menu-item-icon fa fa-fw fa-free-code-camp"></i> <br>深度学习</a>
 
   </li>
       
@@ -215,6 +229,8 @@
       
         
         <li class="menu-item menu-item-数学基础">
+      
+    
       
     
 
@@ -228,6 +244,8 @@
         <li class="menu-item menu-item-优化算法">
       
     
+      
+    
 
     <a href="/categories/算法/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>优化算法</a>
 
@@ -237,6 +255,8 @@
       
         
         <li class="menu-item menu-item-软件">
+      
+    
       
     
 
@@ -250,6 +270,8 @@
         <li class="menu-item menu-item-语言">
       
     
+      
+    
 
     <a href="/categories/语言/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>语言</a>
 
@@ -259,6 +281,8 @@
       
         
         <li class="menu-item menu-item-摄影">
+      
+    
       
     
 
@@ -272,6 +296,8 @@
         <li class="menu-item menu-item-生活">
       
     
+      
+    
 
     <a href="/categories/生活/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>生活</a>
 
@@ -283,12 +309,41 @@
         <li class="menu-item menu-item-其他">
       
     
+      
+    
 
     <a href="/categories/其他/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>其他</a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+      </li>
+    
   </ul>
 
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+    </div>
 </nav>
 </div>
     </header>
@@ -311,12 +366,12 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/2019/06/02/健身/">
+    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/p/undefined.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="夏不哉下">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/head.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -325,11 +380,11 @@
       <header class="post-header">
 
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
               
-              <a href="/2019/06/02/健身/" class="post-title-link" itemprop="url">健身清单</a>
+              <a href="/p/undefined.html" class="post-title-link" itemprop="url">健身清单</a>
             
-          </h1>
+          </h2>
         
 
         <div class="post-meta">
@@ -337,13 +392,13 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
 
               
                 
               
 
-              <time title="Created: 2019-06-02 00:00:00" itemprop="dateCreated datePublished" datetime="2019-06-02T00:00:00+08:00">2019-06-02</time>
+              <time title="创建时间：2019-06-02 00:00:00" itemprop="dateCreated datePublished" datetime="2019-06-02T00:00:00+08:00">2019-06-02</time>
             </span>
           
             
@@ -353,8 +408,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-08-07 11:11:24" itemprop="dateModified" datetime="2019-08-07T11:11:24+08:00">2019-08-07</time>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-08-07 11:11:24" itemprop="dateModified" datetime="2019-08-07T11:11:24+08:00">2019-08-07</time>
               </span>
             
           
@@ -362,7 +417,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/生活/" itemprop="url" rel="index"><span itemprop="name">生活</span></a></span>
 
@@ -372,6 +427,27 @@
             </span>
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span></span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span></span>
+            </span>
           
 
         </div>
@@ -416,12 +492,12 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/2019/06/02/图像_小波去噪/">
+    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/p/undefined.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="夏不哉下">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/head.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -430,11 +506,11 @@
       <header class="post-header">
 
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
               
-              <a href="/2019/06/02/图像_小波去噪/" class="post-title-link" itemprop="url">小波域图像去噪</a>
+              <a href="/p/undefined.html" class="post-title-link" itemprop="url">小波域图像去噪</a>
             
-          </h1>
+          </h2>
         
 
         <div class="post-meta">
@@ -442,13 +518,13 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
 
               
                 
               
 
-              <time title="Created: 2019-06-02 00:00:00" itemprop="dateCreated datePublished" datetime="2019-06-02T00:00:00+08:00">2019-06-02</time>
+              <time title="创建时间：2019-06-02 00:00:00" itemprop="dateCreated datePublished" datetime="2019-06-02T00:00:00+08:00">2019-06-02</time>
             </span>
           
             
@@ -458,8 +534,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-08-07 12:55:15" itemprop="dateModified" datetime="2019-08-07T12:55:15+08:00">2019-08-07</time>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-08-07 12:55:15" itemprop="dateModified" datetime="2019-08-07T12:55:15+08:00">2019-08-07</time>
               </span>
             
           
@@ -467,7 +543,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/图像处理/" itemprop="url" rel="index"><span itemprop="name">图像处理</span></a></span>
 
@@ -477,6 +553,27 @@
             </span>
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span></span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span></span>
+            </span>
           
 
         </div>
@@ -975,12 +1072,12 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/2019/06/02/影单/">
+    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/p/undefined.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="夏不哉下">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/head.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -989,11 +1086,11 @@
       <header class="post-header">
 
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
               
-              <a href="/2019/06/02/影单/" class="post-title-link" itemprop="url">电影清单</a>
+              <a href="/p/undefined.html" class="post-title-link" itemprop="url">电影清单</a>
             
-          </h1>
+          </h2>
         
 
         <div class="post-meta">
@@ -1001,13 +1098,13 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
 
               
                 
               
 
-              <time title="Created: 2019-06-02 00:00:00" itemprop="dateCreated datePublished" datetime="2019-06-02T00:00:00+08:00">2019-06-02</time>
+              <time title="创建时间：2019-06-02 00:00:00" itemprop="dateCreated datePublished" datetime="2019-06-02T00:00:00+08:00">2019-06-02</time>
             </span>
           
             
@@ -1017,8 +1114,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-08-07 12:55:40" itemprop="dateModified" datetime="2019-08-07T12:55:40+08:00">2019-08-07</time>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-08-07 12:55:40" itemprop="dateModified" datetime="2019-08-07T12:55:40+08:00">2019-08-07</time>
               </span>
             
           
@@ -1026,7 +1123,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/生活/" itemprop="url" rel="index"><span itemprop="name">生活</span></a></span>
 
@@ -1036,6 +1133,27 @@
             </span>
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span></span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span></span>
+            </span>
           
 
         </div>
@@ -1076,12 +1194,12 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/2019/06/02/菜谱/">
+    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/p/undefined.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="夏不哉下">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/head.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1090,11 +1208,11 @@
       <header class="post-header">
 
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
               
-              <a href="/2019/06/02/菜谱/" class="post-title-link" itemprop="url">菜谱Collection</a>
+              <a href="/p/undefined.html" class="post-title-link" itemprop="url">菜谱Collection</a>
             
-          </h1>
+          </h2>
         
 
         <div class="post-meta">
@@ -1102,13 +1220,13 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
 
               
                 
               
 
-              <time title="Created: 2019-06-02 00:00:00" itemprop="dateCreated datePublished" datetime="2019-06-02T00:00:00+08:00">2019-06-02</time>
+              <time title="创建时间：2019-06-02 00:00:00" itemprop="dateCreated datePublished" datetime="2019-06-02T00:00:00+08:00">2019-06-02</time>
             </span>
           
             
@@ -1118,8 +1236,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-08-07 14:06:02" itemprop="dateModified" datetime="2019-08-07T14:06:02+08:00">2019-08-07</time>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-08-07 14:06:02" itemprop="dateModified" datetime="2019-08-07T14:06:02+08:00">2019-08-07</time>
               </span>
             
           
@@ -1127,7 +1245,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/生活/" itemprop="url" rel="index"><span itemprop="name">生活</span></a></span>
 
@@ -1137,6 +1255,27 @@
             </span>
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span></span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span></span>
+            </span>
           
 
         </div>
@@ -1259,12 +1398,12 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/2019/06/01/化妆笔记/">
+    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/p/undefined.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="夏不哉下">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/head.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1273,11 +1412,11 @@
       <header class="post-header">
 
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
               
-              <a href="/2019/06/01/化妆笔记/" class="post-title-link" itemprop="url">美妆笔记</a>
+              <a href="/p/undefined.html" class="post-title-link" itemprop="url">美妆笔记</a>
             
-          </h1>
+          </h2>
         
 
         <div class="post-meta">
@@ -1285,13 +1424,13 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
 
               
                 
               
 
-              <time title="Created: 2019-06-01 00:00:00" itemprop="dateCreated datePublished" datetime="2019-06-01T00:00:00+08:00">2019-06-01</time>
+              <time title="创建时间：2019-06-01 00:00:00" itemprop="dateCreated datePublished" datetime="2019-06-01T00:00:00+08:00">2019-06-01</time>
             </span>
           
             
@@ -1301,8 +1440,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-08-07 11:50:20" itemprop="dateModified" datetime="2019-08-07T11:50:20+08:00">2019-08-07</time>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-08-07 11:50:20" itemprop="dateModified" datetime="2019-08-07T11:50:20+08:00">2019-08-07</time>
               </span>
             
           
@@ -1310,7 +1449,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/生活/" itemprop="url" rel="index"><span itemprop="name">生活</span></a></span>
 
@@ -1320,6 +1459,27 @@
             </span>
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span></span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span></span>
+            </span>
           
 
         </div>
@@ -1394,12 +1554,12 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/2019/06/01/理财入门/">
+    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/p/undefined.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="夏不哉下">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/head.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1408,11 +1568,11 @@
       <header class="post-header">
 
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
               
-              <a href="/2019/06/01/理财入门/" class="post-title-link" itemprop="url">理财知识</a>
+              <a href="/p/undefined.html" class="post-title-link" itemprop="url">理财知识</a>
             
-          </h1>
+          </h2>
         
 
         <div class="post-meta">
@@ -1420,13 +1580,13 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
 
               
                 
               
 
-              <time title="Created: 2019-06-01 00:00:00" itemprop="dateCreated datePublished" datetime="2019-06-01T00:00:00+08:00">2019-06-01</time>
+              <time title="创建时间：2019-06-01 00:00:00" itemprop="dateCreated datePublished" datetime="2019-06-01T00:00:00+08:00">2019-06-01</time>
             </span>
           
             
@@ -1436,8 +1596,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-08-07 14:05:29" itemprop="dateModified" datetime="2019-08-07T14:05:29+08:00">2019-08-07</time>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-08-07 14:05:29" itemprop="dateModified" datetime="2019-08-07T14:05:29+08:00">2019-08-07</time>
               </span>
             
           
@@ -1445,7 +1605,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/生活/" itemprop="url" rel="index"><span itemprop="name">生活</span></a></span>
 
@@ -1455,6 +1615,27 @@
             </span>
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span></span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span></span>
+            </span>
           
 
         </div>
@@ -1547,12 +1728,12 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/2019/05/28/少女私房照/">
+    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/p/undefined.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="夏不哉下">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/head.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1561,11 +1742,11 @@
       <header class="post-header">
 
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
               
-              <a href="/2019/05/28/少女私房照/" class="post-title-link" itemprop="url">少女私房照</a>
+              <a href="/p/undefined.html" class="post-title-link" itemprop="url">少女私房照</a>
             
-          </h1>
+          </h2>
         
 
         <div class="post-meta">
@@ -1573,13 +1754,13 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
 
               
                 
               
 
-              <time title="Created: 2019-05-28 00:00:00" itemprop="dateCreated datePublished" datetime="2019-05-28T00:00:00+08:00">2019-05-28</time>
+              <time title="创建时间：2019-05-28 00:00:00" itemprop="dateCreated datePublished" datetime="2019-05-28T00:00:00+08:00">2019-05-28</time>
             </span>
           
             
@@ -1589,8 +1770,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-08-07 13:04:30" itemprop="dateModified" datetime="2019-08-07T13:04:30+08:00">2019-08-07</time>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-08-07 13:04:30" itemprop="dateModified" datetime="2019-08-07T13:04:30+08:00">2019-08-07</time>
               </span>
             
           
@@ -1598,7 +1779,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/摄影/" itemprop="url" rel="index"><span itemprop="name">摄影</span></a></span>
 
@@ -1608,6 +1789,27 @@
             </span>
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span></span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span></span>
+            </span>
           
 
         </div>
@@ -1685,12 +1887,12 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/2019/05/27/数学基础/">
+    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/p/undefined.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="夏不哉下">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/head.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1699,11 +1901,11 @@
       <header class="post-header">
 
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
               
-              <a href="/2019/05/27/数学基础/" class="post-title-link" itemprop="url">数学基础知识</a>
+              <a href="/p/undefined.html" class="post-title-link" itemprop="url">数学基础知识</a>
             
-          </h1>
+          </h2>
         
 
         <div class="post-meta">
@@ -1711,13 +1913,13 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
 
               
                 
               
 
-              <time title="Created: 2019-05-27 00:00:00" itemprop="dateCreated datePublished" datetime="2019-05-27T00:00:00+08:00">2019-05-27</time>
+              <time title="创建时间：2019-05-27 00:00:00" itemprop="dateCreated datePublished" datetime="2019-05-27T00:00:00+08:00">2019-05-27</time>
             </span>
           
             
@@ -1727,8 +1929,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-08-07 12:54:31" itemprop="dateModified" datetime="2019-08-07T12:54:31+08:00">2019-08-07</time>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-08-12 12:49:42" itemprop="dateModified" datetime="2019-08-12T12:49:42+08:00">2019-08-12</time>
               </span>
             
           
@@ -1736,7 +1938,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数学/" itemprop="url" rel="index"><span itemprop="name">数学</span></a></span>
 
@@ -1746,6 +1948,27 @@
             </span>
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span></span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span></span>
+            </span>
           
 
         </div>
@@ -1784,8 +2007,8 @@
 <p>#证明解的存在性</p>
 <ul>
 <li><p>一个函数在某个空间内有界的意思</p>
-<p>$0&lt;c_{1} \leq u_{n} \leq c_{2}, \text{which implies that u n is bounded in} L^{1}(\Omega)​$</p>
-<p>$\left{u_{n}\right} \text { is bounded in } B V(\Omega)​$</p>
+<p>$0&lt;c_{1} \leq u_{n} \leq c_{2}, \text{which implies that u n is bounded in} L^{1}(\Omega)$</p>
+<p>$\left{u_{n}\right} \text { is bounded in } B V(\Omega)$</p>
 </li>
 <li><p>泛函， is bounded below, we can choose a minimizing sequence $\left{u_{n} : n=1,2, \cdots\right} \in \overline{S}(\Omega)$</p>
 </li>
@@ -1801,27 +2024,27 @@
 <p>![image-20190725171210467](/Users/yyf/Library/Application Support/typora-user-images/image-20190725171210467.png)</p>
 <p>![image-20190725171030761](/Users/yyf/Library/Application Support/typora-user-images/image-20190725171030761.png)</p>
 </li>
-<li><p>$W^{1, 1}(\Omega)​$ is usually defined as all functions $v \in L^{1}(\Omega)​$, with weak derivatives of first order and these derivatives shall belong to $L^{1}(\Omega)​$.</p>
-<p>The space $W^{1, \infty}(\Omega)​$ is usually defined as all functions $v \in L^{\infty}(\Omega)​$with weak derivatives of first order<br>and these derivatives shall belong to $L^{\infty}(\Omega) .​$</p>
+<li><p>$W^{1, 1}(\Omega)$ is usually defined as all functions $v \in L^{1}(\Omega)$, with weak derivatives of first order and these derivatives shall belong to $L^{1}(\Omega)$.</p>
+<p>The space $W^{1, \infty}(\Omega)$ is usually defined as all functions $v \in L^{\infty}(\Omega)$with weak derivatives of first order<br>and these derivatives shall belong to $L^{\infty}(\Omega) .$</p>
 </li>
 <li><p>BV空间，BH空间</p>
 <p>The space $[\mathrm{BV}(\Omega)]^{m}$ with $|u|<em>{\mathrm{BV}(\Omega)} :=\int</em>{\Omega}|u| d x+|D u|(\Omega)$ is a Banach space.</p>
 <p>![image-20190726181150976](/Users/yyf/Library/Application Support/typora-user-images/image-20190726181150976.png)</p>
 </li>
 </ul>
-<h1 id="证明收敛速度"><a href="#证明收敛速度" class="headerlink" title="证明收敛速度"></a>证明收敛速度</h1><p>![image-20190724181456673](/Users/yyf/Library/Application Support/typora-user-images/image-20190724181456673.png)</p>
+<h1 id="证明收敛速度"><a href="#证明收敛速度" class="headerlink" title="证明收敛速度"></a>证明收敛速度</h1><p><img src="https://blog-w.oss-cn-beijing.aliyuncs.com/2019-08-12-044904.png" alt="image-20190724181456673"></p>
 <ul>
 <li><p>converge sublinearly</p>
-<p>$\lim <em>{k \rightarrow \infty} \frac{\left|x</em>{k+1}-L\right|}{\left|x_{k}-L\right|}=1​$</p>
+<p>$\lim <em>{k \rightarrow \infty} \frac{\left|x</em>{k+1}-L\right|}{\left|x_{k}-L\right|}=1$</p>
 </li>
 <li><p><em>converge linearly</em> </p>
-<p>$\lim <em>{k \rightarrow \infty} \frac{\left|x</em>{k+1}-L\right|}{\left|x_{k}-L\right|}=\mu, \mu \in(0,1)​$ </p>
+<p>$\lim <em>{k \rightarrow \infty} \frac{\left|x</em>{k+1}-L\right|}{\left|x_{k}-L\right|}=\mu, \mu \in(0,1)$ </p>
 </li>
 <li><p><em>converge superlinearly</em> </p>
-<p>$\lim <em>{k \rightarrow \infty} \frac{\left|x</em>{k+1}-L\right|}{\left|x_{k}-L\right|}=0​$</p>
+<p>$\lim <em>{k \rightarrow \infty} \frac{\left|x</em>{k+1}-L\right|}{\left|x_{k}-L\right|}=0$</p>
 </li>
 <li><p><em>Q-linear convergence</em>: distinguish superlinear rates of convergence. </p>
-<p>$\lim <em>{k \rightarrow \infty} \frac{\left|x</em>{k+1}-L\right|}{\left|x_{k}-L\right|^{q}}&lt;M​$</p>
+<p>$\lim <em>{k \rightarrow \infty} \frac{\left|x</em>{k+1}-L\right|}{\left|x_{k}-L\right|^{q}}&lt;M$</p>
 </li>
 <li><p>Monotone operator</p>
 </li>
@@ -1854,12 +2077,12 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/2019/05/20/Python学习笔记/">
+    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/p/undefined.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="夏不哉下">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/head.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1868,11 +2091,11 @@
       <header class="post-header">
 
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
               
-              <a href="/2019/05/20/Python学习笔记/" class="post-title-link" itemprop="url">python语法学习</a>
+              <a href="/p/undefined.html" class="post-title-link" itemprop="url">python语法学习</a>
             
-          </h1>
+          </h2>
         
 
         <div class="post-meta">
@@ -1880,13 +2103,13 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
 
               
                 
               
 
-              <time title="Created: 2019-05-20 00:00:00" itemprop="dateCreated datePublished" datetime="2019-05-20T00:00:00+08:00">2019-05-20</time>
+              <time title="创建时间：2019-05-20 00:00:00" itemprop="dateCreated datePublished" datetime="2019-05-20T00:00:00+08:00">2019-05-20</time>
             </span>
           
             
@@ -1896,8 +2119,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-08-07 12:52:34" itemprop="dateModified" datetime="2019-08-07T12:52:34+08:00">2019-08-07</time>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-08-07 12:52:34" itemprop="dateModified" datetime="2019-08-07T12:52:34+08:00">2019-08-07</time>
               </span>
             
           
@@ -1905,7 +2128,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/深度学习/" itemprop="url" rel="index"><span itemprop="name">深度学习</span></a></span>
 
@@ -1915,6 +2138,27 @@
             </span>
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span></span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span></span>
+            </span>
           
 
         </div>
@@ -2138,12 +2382,12 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/2019/05/17/去噪传统方法论文综述/">
+    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/p/undefined.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="夏不哉下">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/head.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -2152,11 +2396,11 @@
       <header class="post-header">
 
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
               
-              <a href="/2019/05/17/去噪传统方法论文综述/" class="post-title-link" itemprop="url">去噪传统方法论文综述</a>
+              <a href="/p/undefined.html" class="post-title-link" itemprop="url">去噪传统方法论文综述</a>
             
-          </h1>
+          </h2>
         
 
         <div class="post-meta">
@@ -2164,13 +2408,13 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
 
               
                 
               
 
-              <time title="Created: 2019-05-17 00:00:00" itemprop="dateCreated datePublished" datetime="2019-05-17T00:00:00+08:00">2019-05-17</time>
+              <time title="创建时间：2019-05-17 00:00:00" itemprop="dateCreated datePublished" datetime="2019-05-17T00:00:00+08:00">2019-05-17</time>
             </span>
           
             
@@ -2180,8 +2424,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-08-07 13:39:27" itemprop="dateModified" datetime="2019-08-07T13:39:27+08:00">2019-08-07</time>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-08-07 13:39:27" itemprop="dateModified" datetime="2019-08-07T13:39:27+08:00">2019-08-07</time>
               </span>
             
           
@@ -2189,7 +2433,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/图像处理/" itemprop="url" rel="index"><span itemprop="name">图像处理</span></a></span>
 
@@ -2199,6 +2443,27 @@
             </span>
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span></span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span></span>
+            </span>
           
 
         </div>
@@ -2644,7 +2909,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -2669,6 +2934,9 @@
         <div class="site-overview">
 
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/head.jpg"
+      alt="夏不哉下">
   <p class="site-author-name" itemprop="name">夏不哉下</p>
   <div class="site-description motion-element" itemprop="description"></div>
 </div>
@@ -2678,7 +2946,7 @@
           <a href="/archives">
         
           <span class="site-state-item-count">38</span>
-          <span class="site-state-item-name">posts</span>
+          <span class="site-state-item-name">日志</span>
         </a>
       </div>
     
@@ -2711,7 +2979,7 @@
           
         
         <span class="site-state-item-count">9</span>
-        <span class="site-state-item-name">categories</span>
+        <span class="site-state-item-name">分类</span>
         </a>
       </div>
     
@@ -2759,19 +3027,48 @@
         
           
         
-          
-        
         <span class="site-state-item-count">17</span>
-        <span class="site-state-item-name">tags</span>
+        <span class="site-state-item-name">标签</span>
         </a>
       </div>
     
   </nav>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/ysix7" title="GitHub &rarr; https://github.com/ysix7" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="/17481201@life.hkbu.edu.hk" title="E-Mail &rarr; 17481201@life.hkbu.edu.hk"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+    
+  </div>
 
 
 
         </div>
       </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
 
     </div>
   </aside>
@@ -2788,12 +3085,45 @@
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">夏不哉下</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    
+    <span title="站点总字数"></span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    
+    <span title="站点阅读时长"></span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.3.0</div>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.3.0</div>
 
         
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+    <span class="post-meta-divider">|</span>
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
 
 
 
@@ -2805,9 +3135,6 @@
         
       </div>
     </footer>
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-      </div>
 
     
 
@@ -2850,6 +3177,7 @@
 
 
 
+  <script src="/js/local-search.js?v=7.3.0"></script>
 
 
 
@@ -2863,6 +3191,31 @@
 
 
 
+
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
   
 
   
