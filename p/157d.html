@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="generator" content="Hexo 3.9.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/cloud32.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/cloud16.png?v=7.3.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-pace-theme-minimal.min.css?v=1.0.2">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
+    save_scroll: false,
+    copycode: {"enable":false,"show_result":false,"style":null},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    }
+  };
+</script>
+
+  <meta name="description" content="参考文献  A highly efficient semismooth Newton augmented Lagrangianmethod for solving Lasso problems，论文代码 A sparse semismooth Newton based proximalmajorization-minimization algorithm for nonconvexsquare-r">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Semismooth牛顿法">
+<meta property="og:url" content="https://ysix7.github.io/p/157d.html">
+<meta property="og:site_name" content="春夏秋冬">
+<meta property="og:description" content="参考文献  A highly efficient semismooth Newton augmented Lagrangianmethod for solving Lasso problems，论文代码 A sparse semismooth Newton based proximalmajorization-minimization algorithm for nonconvexsquare-r">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-08-17T06:37:26.700Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Semismooth牛顿法">
+<meta name="twitter:description" content="参考文献  A highly efficient semismooth Newton augmented Lagrangianmethod for solving Lasso problems，论文代码 A sparse semismooth Newton based proximalmajorization-minimization algorithm for nonconvexsquare-r">
+  <link rel="canonical" href="https://ysix7.github.io/p/157d">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Semismooth牛顿法 | 春夏秋冬</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  <div class="container sidebar-position-left">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">春夏秋冬</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">17</span></a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-分类">
+      
+    
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-归档">
+      
+    
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-图像处理">
+      
+    
+      
+    
+
+    <a href="/categories/图像处理/" rel="section"><i class="menu-item-icon fa fa-fw fa-tripadvisor"></i> <br>图像处理</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-深度学习">
+      
+    
+      
+    
+
+    <a href="/categories/深度学习/" rel="section"><i class="menu-item-icon fa fa-fw fa-free-code-camp"></i> <br>深度学习</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-数学基础">
+      
+    
+      
+    
+
+    <a href="/categories/数学/" rel="section"><i class="menu-item-icon fa fa-fw fa-superscript"></i> <br>数学基础</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-优化算法">
+      
+    
+      
+    
+
+    <a href="/categories/算法/" rel="section"><i class="menu-item-icon fa fa-fw fa-line-chart"></i> <br>优化算法</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-软件">
+      
+    
+      
+    
+
+    <a href="/categories/软件/" rel="section"><i class="menu-item-icon fa fa-fw fa-desktop"></i> <br>软件</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-语言">
+      
+    
+      
+    
+
+    <a href="/categories/语言/" rel="section"><i class="menu-item-icon fa fa-fw fa-font"></i> <br>语言</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-摄影">
+      
+    
+      
+    
+
+    <a href="/categories/摄影/" rel="section"><i class="menu-item-icon fa fa-fw fa-instagram"></i> <br>摄影</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-生活">
+      
+    
+      
+    
+
+    <a href="/categories/生活/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>生活</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-其他">
+      
+    
+      
+    
+
+    <a href="/categories/其他/" rel="section"><i class="menu-item-icon fa fa-fw fa-th-list"></i> <br>其他</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+      </li>
+    
+  </ul>
+
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+    </div>
+</nav>
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content page-post-detail">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/p/157d.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="夏不哉下">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="春夏秋冬">
+    </span>
+      <header class="post-header">
+
+        
+          <h2 class="post-title" itemprop="name headline">Semismooth牛顿法
+
+            
+          </h2>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-01 00:00:00" itemprop="dateCreated datePublished" datetime="2019-07-01T00:00:00+08:00">2019-07-01</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-08-17 14:37:26" itemprop="dateModified" datetime="2019-08-17T14:37:26+08:00">2019-08-17</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/" itemprop="url" rel="index"><span itemprop="name">算法</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            <span class="post-meta-item" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>17k</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>16 分钟</span>
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>参考文献</p>
+<ul>
+<li><a href="https://arxiv.org/pdf/1607.05428.pdf" target="_blank" rel="noopener">A highly efficient semismooth Newton augmented Lagrangian<br>method for solving Lasso problems</a>，<a href="http://www.math.nus.edu.sg/~mattohkc/SuiteLasso.html" target="_blank" rel="noopener">论文代码</a></li>
+<li><a href="https://arxiv.org/pdf/1903.11460.pdf" target="_blank" rel="noopener">A sparse semismooth Newton based proximal<br>majorization-minimization algorithm for nonconvex<br>square-root-loss regression problems</a>, </li>
+</ul>
+<h1 id="h-Ax-p-x"><a href="#h-Ax-p-x" class="headerlink" title="h(Ax)+p(x)"></a>h(Ax)+p(x)</h1><ul>
+<li><p>论文中的模型：Primal/Dual<br>$$<br>\text { (P) } \max -{f(x)=h(\mathcal{A} x)-\langle c, x\rangle+ p(x)}<br>$$</p>
+<p>$$<br>\text { (P) } \min  {f(x)=h(\mathcal{A} x)-\langle c, x\rangle+p(x)}<br>$$</p>
+<p>$$<br>\text { (D) } \min \left{h^{<em>}(y)+p^{</em>}(z) | \mathcal{A}^{*} y+z=c\right}<br>$$</p>
+<p>where, $\mathcal{A} \in R^{MN}​$, $p, h : \mathcal{Y} \rightarrow \Re \text { and } p : \mathcal{X} \rightarrow(-\infty,+\infty]​$ are two closed proper convex functions.</p>
+<p>对于Dual问题：</p>
+<p>$h^<em>$ is essentially smooth with  $\nabla h^{</em>}$ is locally Lipschitz continuous and directionally diﬀerentiable on int $\operatorname{int}\left(\operatorname{dom} h^{*}\right)$.</p>
+</li>
+<li><p>对偶问题的拉格朗日$l​$和增广拉格朗日$\mathcal{L}​$<br>$$<br>l(y, z, x)=h^{<em>}(y)+p^{</em>}(z)-\left\langle x, \mathcal{A}^{*} y+z-c\right\rangle, \quad \forall(y, z, x) \in \mathcal{Y} \times \mathcal{X} \times \mathcal{X}<br>$$</p>
+<p>$$<br>\begin{aligned}<br>\mathcal{L}_{\sigma}(y, z ; x) &amp;=l(y, z, x)+\frac{\sigma}{2}\left|\mathcal{A}^{<em>} y+z-c\right|^{2}, \quad \forall(y, z, x) \in \mathcal{Y} \times \mathcal{X} \times \mathcal{X}\<br>&amp;=h^{</em>}(y)+p^{<em>}(z)<br>+\frac{\sigma}{2}\left|\mathcal{A}^{</em>} y+z-c-\frac{x}{\sigma}\right|^{2}-\frac{1}{2 \sigma}|x|^{2}<br>\end{aligned}<br>$$</p>
+</li>
+<li><p>算法框架<strong>（第一层循环）</strong></p>
+<p>![image-20190625062337998](/Users/yyf/Library/Application Support/typora-user-images/image-20190625062337998.png)</p>
+</li>
+<li><p>将(18)中的拉格朗日方程转化成<strong>单变量</strong>拉格朗日方程</p>
+<ul>
+<li><p>Define $\min <em>{y, z} \Psi(y, z) :=\mathcal{L}</em>{\sigma}(y, z ; \tilde{x})​$</p>
+</li>
+<li><p>Define $\psi(y) :=\inf _{z} \Psi(y, z)​$</p>
+</li>
+<li><p>（18）中的拉格朗日转化成单变量光滑方程<br>$$<br>\begin{aligned} \Psi(y) &amp;=\inf <em>{z}{ h^{<em>}(y)+p^{</em>}(z)<br>+\frac{\sigma}{2}\left|\mathcal{A}^{<em>} y+z-c-\frac{x}{\sigma}\right|^{2}-\frac{1}{2 \sigma}|x|^{2}} \<br>&amp;=h^</em>(y)+\sigma \inf _{z}\left{\frac{1}{\sigma} p^<em>(z)+\frac{1}{2}\left|z-(c-A^*y+\frac{x}{\sigma})\right|^{2}\right}-\frac{1}{2 \sigma}|x|^{2} \ &amp;=h^</em>(y)+\sigma M</em>{\frac{1}{\sigma}}p^<em>(c-A^*y+\frac{x}{\sigma})-\frac{1}{2 \sigma}|x|^{2} \end{aligned})<br>$$<br>with $z = \arg\min_z  p^</em>(z)/\sigma+\frac{1}{2}\left|z-(c-A^<em>y+\frac{x}{\sigma})\right|^{2}=\operatorname{Prox}_{p^{</em>} / \sigma}\left(x / \sigma-\mathcal{A}^{*} \overline{y}+c\right)$ .</p>
+</li>
+<li><p>$\psi(y)$  is a smooth function whose gradient is derived as:</p>
+</li>
+</ul>
+<p>$$<br>\begin{aligned} \nabla\Psi(y) &amp;= \nabla h^{<em>}(y)-\mathcal{A} \operatorname{Prox}_{\sigma p}\left(\tilde{x}-\sigma\left(\mathcal{A}^{</em>} y-c\right)\right)<br>\end{aligned}<br>$$</p>
+<ul>
+<li><p>将 $z =\operatorname{Prox}_{p^{<em>} / \sigma}\left(x / \sigma-\mathcal{A}^{</em>} \overline{y}+c\right)​$ 代入 (18) 得到</p>
+<p>$$\psi(y)=h^{<em>}(y)+p^{</em>}\left(\operatorname{Prox}<em>{p^{<em>} / \sigma}\left(x / \sigma-\mathcal{A}^{</em>} y+c\right)\right)+\frac{1}{2 \sigma}\left|\operatorname{Prox}</em>{\sigma p}\left(x-\sigma\left(\mathcal{A}^{*} y-c\right)\right)\right|^{2}-\frac{1}{2 \sigma}|x|^{2}$$</p>
+</li>
+</ul>
+<blockquote>
+<p> Moreau-Yosida regularization and proximal mapping<br>$$<br>M_{\lambda} f(x) :=\min <em>{u} f(u)+\frac{1}{2 \lambda}|u-x|</em>{2}^{2}<br>$$</p>
+<p>$$<br>\nabla M_{\lambda} f(x)=\frac{1}{\lambda}\left(x-\operatorname{Prox}_{\lambda f}(x)\right)<br>$$</p>
+<p>$$<br>\operatorname{Prox}_{\lambda f}(x) :=\arg \min _{u \in \mathcal{X}} f(x)+\frac{1}{2 \lambda}|u-x|^{2}<br>$$</p>
+<p>$$<br>\operatorname{Prox}<em>{\lambda p}(x)+\lambda \operatorname{Prox}</em>{p^{<em>}(x) / \lambda}(x / \lambda)=x\operatorname{Prox}<em>{\lambda p}(x)+\lambda \operatorname{Prox}</em>{p^{</em>}(x) / \lambda}(x / \lambda)=x<br>$$</p>
+</blockquote>
+</li>
+<li><p>$\min <em>{y, z} \Psi(y, z) $等价于以下单变量非线形方程 <strong>(22)</strong><br>$$<br>\nabla\Psi(y)=0<br>$$<br>whose the generalized Hessian of $\Psi$ at y is defined as<br>$$<br>\hat{\partial}^{2} \psi(y) :=\partial\left(\nabla h^{*}\right)(y)+\sigma \mathcal{A} \partial \operatorname{Prox}</em>{\sigma p}\left(\tilde{x}-\sigma\left(\mathcal{A}^{<em>} y-c\right)\right) \mathcal{A}^{</em>}<br>$$<br>Defining the $H \in \partial^{2} h^{<em>}(y)$ and $U \in \partial \operatorname{Prox}_{\sigma p}\left(\tilde{x}-\sigma\left(\mathcal{A}^{</em>} y-c\right)\right)$, then, we have<br>$$<br>V :=H+\sigma \mathcal{A} U \mathcal{A}^{*}<br>$$</p>
+</li>
+<li><p>利用牛顿法和Hessian 矩阵求解非线形等式(22) <strong>(第二层循环)</strong></p>
+<ul>
+<li><p>寻找方向$d$：$V_{j} d+\nabla \psi\left(y^{j}\right)=0$（24）</p>
+<p>$V \in \hat{\partial}^{2} \psi(y)$, $\hat{\partial}^{2} \psi(y) :=\partial\left(\nabla h^{<em>}\right)(y)+\sigma \mathcal{A} \partial \operatorname{Prox}_{\sigma p}\left(\tilde{x}-\sigma\left(\mathcal{A}^{</em>} y-c\right)\right) \mathcal{A}^{*}$</p>
+<p>$V :=H+\sigma \mathcal{A} U \mathcal{A}^{*}​$</p>
+</li>
+<li><p>步长：set $\alpha_{j}=\delta^{m_{j}}​$</p>
+<p>$y^{j}+\delta^{m} d^{j} \in \operatorname{int}\left(\operatorname{dom} h^{*}\right) \quad \text { and } \quad \psi\left(y^{j}+\delta^{m} d^{j}\right) \leq \psi\left(y^{j}\right)+\mu \delta^{m}\left\langle\nabla \psi\left(y^{j}\right), d^{j}\right\rangle​$</p>
+</li>
+<li><p>更新：$y^{j+1}=y^{j}+\alpha_{j} d^{j}$</p>
+</li>
+<li><p>迭代终止条件：$\nabla \psi\left(y^{j}\right)$ is sufficiently small</p>
+</li>
+</ul>
+</li>
+<li><p>求解线性问题（24）$V_{j} d=-\nabla \psi\left(y^{j}\right)​$</p>
+<ul>
+<li><p>方法一：利用$V_j​$的稀疏性求出解析解<br>$$<br>\left(H+\sigma A U A^{T}\right) d=-\nabla \psi(y), H = LL^T<br>$$</p>
+<p>$$<br>\left(I_{m}+\sigma\left(L^{-1} A\right) U\left(L^{-1} A\right)^{T}\right)\left(L^{T} d\right)=-L^{-1} \nabla \psi(y)<br>$$</p>
+<p>考虑简化后的情况：<br>$$<br>\left(I_{m}+\sigma A U A^{T}\right) d=-\nabla \psi(y)<br>$$</p>
+<p>$$<br>\mbox{with } A U A^{T}=(A U)(A U)^{T}=A_{\mathcal{J}} A_{\mathcal{J}}^{T}<br>$$</p>
+<p>$$<br>\left(I_{m}+\sigma A U A^{T}\right)^{-1}=\left(I_{m}+\sigma A_{\mathcal{J}} A_{\mathcal{J}}^{T}\right)^{-1}=I_{m}-A_{\mathcal{J}}\left(\sigma^{-1} I_{r}+A_{\mathcal{J}}^{T} A_{\mathcal{J}}\right)^{-1} A_{\mathcal{J}}^{T}<br>$$</p>
+<p>维度降低：利用U是一个对角由0和1组成的对角矩阵，$\mathcal{O}\left(m^{2} n\right)$-&gt;$\mathcal{O}\left(m^{2} r\right)$-&gt;$\mathcal{O}\left(r^{2} m\right)$</p>
+<p>![image-20190627171823537](/Users/yyf/Library/Application Support/typora-user-images/image-20190627171823537.png)</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>方法二：Pcg 循环（第三层循环）</p>
+<p>Do $V_jd^j​$</p>
+<p>Until $\left|V_{j} d^{j}+\nabla \psi\left(y^{j}\right)\right| \leq \min \left(\overline{\eta},\left|\nabla \psi\left(y^{j}\right)\right|^{1+\tau}\right)​$</p>
+<p>尝试过的加速办法：</p>
+<ul>
+<li><p>与$\tau$的大小有关</p>
+</li>
+<li><p>将该循环写成c语言</p>
+</li>
+<li><p>每次牛顿迭代从上一次d的结果开始。在算法快收敛的时候可以加速。</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>速度分析</p>
+<ul>
+<li><p>循环一：lnexact Lagrangian methd </p>
+</li>
+<li><p>循环二：牛顿法迭代求解问题（22）</p>
+<p><strong>影响循环二迭代次数的因素：</strong></p>
+<p>1.该循环的中止条件: $\left|\nabla \psi_{k}\left(y^{k+1}\right)\right|$ 足够小</p>
+<p>2.循环三中的精度$\tau$：该循环的收敛速度与循环三中pcg的精度有关<br>$$<br>\left|y^{j+1}-\overline{y}\right|=O\left(\left|y^{j}-\overline{y}\right|^{1+\tau}\right)<br>$$</p>
+</li>
+<li><p>循环三(若使用pcg的方法求解(24))：</p>
+<p><strong>影响循环三迭代次数的因素: $\tau$的大小</strong></p>
+<p>1.该循环终止条件：$\left|V_{j} d^{j}+\nabla \psi\left(y^{j}\right)\right| \leq \min \left(\overline{\eta},\left|\nabla \psi\left(y^{j}\right)\right|^{1+\tau}\right),\tau=(0,1]$</p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="h-x-p-Bx"><a href="#h-x-p-Bx" class="headerlink" title="h(x)+p(Bx)"></a>h(x)+p(Bx)</h1><ul>
+<li><p>目标方程： $\min|y-g|+\lambda|\nabla y|_1$</p>
+<p>无法套用论文中$h(Ay)+p(y)​$的Dual方法的原因：</p>
+<p>如果$p(y)=\lambda|\nabla y|_1​$，那么p*的显式无法表达。</p>
+<p>如果$h(Ay)=\lambda|\nabla y|_1, A=\nabla$, 那么依然无法将问题转化成单变量的<strong>smooth</strong>问题，因为h项会被保留</p>
+</li>
+<li><p>$\nabla$的矩阵形式</p>
+<p>(补充)</p>
+</li>
+<li><p>提出模型 $h(y)+p(By),  h(y)=|Ay-g|, p(Bx)=|\nabla y|_1​$，$B=\nabla​$</p>
+<p>（P）$\min h(y)+p(By)​$, $h(y)=|Ay-g|​$, $p(Bx)=|\nabla y|_1​$</p>
+<p>（D）$\min \left{h^{<em>}(y)+p^{</em>}(z) | \mathcal{B}^{<em>} z+y=c\right}$, $h^{</em>}(y)=\frac{1}{2}|b+y|^{2}-\frac{1}{2}|b|^{2}$, $p^{*}(z)=I\left{|z|_{\infty} \leq \lambda\right}$</p>
+<p>对于D问题，无法转化成单变量的smooth方程，<strong>推导见附录</strong>(待补充)。因此选择该模型的主问题。</p>
+</li>
+<li><p>对于(P) $h(y)+p(By)​$，转化成单变量的smooth方程</p>
+<p>增广拉格朗日：$\mathcal{L}_{\sigma}(y, z ; x) :=h(y)+p(z)+&lt;x, \mathcal{B} y-z&gt;+\frac{\sigma}{2}|\mathcal{B} y-z|^{2}​$</p>
+<p>​                                $=h(y)+p(z)+\frac{\sigma}{2}\left|\mathcal{B} y+\frac{x}{\sigma}-z\right|^{2}-\frac{1}{2 \sigma}|x|^{2}​$</p>
+<p>转化后的单变量方光滑方程：</p>
+<p>$\mathcal{L}<em>{\sigma}(y ; x) :=h(y)+p\left(\operatorname{Prox} \frac{p}{\sigma}\left(\mathcal{B} y+\frac{x}{\sigma}\right)\right)+\frac{1}{2 \sigma}\left|\operatorname{Prox}</em>{\sigma p^{*}}\left(\sigma\left(\mathcal{B} y+\frac{x}{\sigma}\right)\right)\right|^{2}-\frac{1}{2 \sigma}|x|^{2}, \overline{z}=\operatorname{Prox}_{\frac{p}{\sigma}}\left(\mathcal{B} y+\frac{x}{\sigma}\right)$</p>
+<p>$\nabla \mathcal{L}<em>{\sigma}(y) :=\nabla h(y)+\mathcal{B}^{*} \operatorname{Prox}</em>{\sigma p^{*}}(\sigma(\mathcal{B} y+\frac{x}{\sigma})$</p>
+<p>$\partial\left(\nabla \mathcal{L}<em>{\sigma}(y)\right)  :=\partial(\nabla h(y))+\sigma \mathcal{B}^{*} \partial \operatorname{Prox}</em>{\sigma p^{<em>}}\left(\sigma\left(\mathcal{B} y+\frac{x}{\sigma}\right)\right) \mathcal{B}\=\partial(\nabla h(y))+\sigma \mathcal{B}^{</em>}\left(I-\partial \operatorname{Prox}_{\frac{p}{\sigma}}\left(\mathcal{B} y+\frac{x}{\sigma}\right)\right) \mathcal{B}​$</p>
+</li>
+<li><p>求解$V_{j} d=-\nabla \psi\left(y^{j}\right)​$</p>
+<ul>
+<li><p>方法一：求逆</p>
+<p>其中, $\partial \operatorname{Prox}<em>{\sigma p^{<em>}}\left(\sigma\left(\mathcal{B} y+\frac{x}{\sigma}\right)\right)​$的稀疏性随着图像的平滑减弱，因此直接利用该稀疏矩阵求逆，*</em>计算立马随着噪声的减弱而变慢**。相反，$\partial \operatorname{Prox}</em>{\frac{p}{\sigma}}\left(\mathcal{B} y+\frac{x}{\sigma}\right)​$的稀疏性随着图像的平滑变稀疏。</p>
+<p>$\left(A^TA+\sigma \mathcal{B}^<em>\mathcal{B}-\sigma \mathcal{B}^{</em>}\partial \operatorname{Prox}_{\frac{p}{\sigma}}\left(\mathcal{B} y+\frac{x}{\sigma}\right)\mathcal{B}\right)d=-\nabla \psi\left(y^{j}\right) ​$</p>
+<p>Denote  $U =\partial \operatorname{Prox}_{\frac{p}{\sigma}}\left(\mathcal{B} y+\frac{x}{\sigma}\right)​$ , $b =-\nabla \psi\left(y^{j}\right) ​$</p>
+<p>we have $\left(A^TA+\sigma \mathcal{B}^<em>\mathcal{B}-\sigma \mathcal{B}^{</em>}U\mathcal{B}\right)d=-\nabla \psi\left(y^{j}\right) ​$</p>
+<ul>
+<li><p>如果没有U，就可以使用FFT快速变化，因为B可以当作[-1 1]构成的卷积</p>
+</li>
+<li><p><strong>如果对可以对$A^TA+\sigma \mathcal{B}^*\mathcal{B}$进行$LL^T$的分解。可将原问题转化成以下形式后求逆</strong><br>$$<br>\left(I_{m}+\sigma\left(L^{-1} A\right) U\left(L^{-1} A\right)^{T}\right)\left(L^{T} d\right)=-L^{-1} \nabla \psi(y)<br>$$<br>例如在TV denoising的情况下：$A=I$，$B=[B1, B2]$, 则需对$I+\sigma B^*B$进行分解 </p>
+<p><strong>(目前没有实现这个分解, 所以使用pcg求解该线性等式)</strong></p>
+</li>
+</ul>
+</li>
+<li><p><strong>方法二：Pcg 循环（第三层循环）</strong></p>
+<p>Do $V_jd^j​$</p>
+<p>Until $\left|V_{j} d^{j}+\nabla \psi\left(y^{j}\right)\right| \leq \min \left(\overline{\eta},\left|\nabla \psi\left(y^{j}\right)\right|^{1+\tau}\right)​$</p>
+<p>尝试过的加速办法：</p>
+<ul>
+<li><p>将该循环写成c语言</p>
+</li>
+<li><p>加速的办法，每次牛顿迭代从上一次d的结果开始。在算法快收敛的时候可以加速</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>实验结果与实验设置</p>
+<ul>
+<li><p>循环一：lnexact Lagrangian methd </p>
+</li>
+<li><p>循环二：牛顿法迭代求解问题（22）</p>
+<p>设置循环二的中止条件为: $\left|\nabla \psi_{k}\left(y^{k+1}\right)\right|$ &lt;{0.005}</p>
+<p>ps：如果在小于0.005前达到收敛，则终止循环二，进入循环一的下一轮迭代</p>
+<p>该循环的收敛速度与循环三中pcg的精度有关:<br>$$<br>\left|y^{j+1}-\overline{y}\right|=O\left(\left|y^{j}-\overline{y}\right|^{1+\tau}\right)<br>$$</p>
+</li>
+<li><p>循环三<strong>(pcg)</strong>：</p>
+<p><strong>影响循环三迭代次数的因素: $\tau​$的大小</strong></p>
+<p>该循环终止条件：$\left|V_{j} d^{j}+\nabla \psi\left(y^{j}\right)\right| \leq \min \left(\overline{\eta},\left|\nabla \psi\left(y^{j}\right)\right|^{1+\tau}\right),\tau=(0,1]$</p>
+<p>$\tau=1$:<strong>循环三循环(大概20)次，循环二收敛需要*次</strong>，循环一需要*次</p>
+<p>$\tau=2$:<strong>循环三循环*次，循环二收敛需要*次</strong>，循环一需要*次</p>
+<p>(实验结果需要补充)</p>
+</li>
+</ul>
+</li>
+<li><p>实验中存在的问题</p>
+<p>循环二和循环三之间的收敛速度没有满足理论值：<br>$$<br>\left|y^{j+1}-\overline{y}\right|=O\left(\left|y^{j}-\overline{y}\right|^{1+\tau}\right)<br>$$</p>
+</li>
+</ul>
+<p>​    具体的说，循环1中的中间几次迭代中，循环二的收敛速度很慢，没有达到理论值，甚至比线性收敛还要慢。</p>
+<p>​    <strong>（循环二的收敛图需要补充）</strong><br>​                    </p>
+<h1 id="Non-convex-model"><a href="#Non-convex-model" class="headerlink" title="Non-convex model"></a>Non-convex model</h1><h2 id="1-General-Model"><a href="#1-General-Model" class="headerlink" title="1. General Model"></a>1. General Model</h2><ul>
+<li>A nonconvex problem (square-root regression problem)  (3)</li>
+</ul>
+<p>$$<br>\min <em>{\beta \in \Re^{n}}{g(\beta) :=\underbrace{h(X \beta)}</em>{f(\beta)}+\underbrace{p(\beta)-q(\beta)}_{r(\beta)}}<br>$$</p>
+<p>​    $p : \Re^{n} \rightarrow(-\infty,+\infty] \text { is a proper closed convex function }​$</p>
+<p>​    $q : \Re^{n} \rightarrow \Re \text { is a finite-valued (smooth, not essential) convex function. }$</p>
+<p>​    $ \text {The proximal functions of h and p to be (strongly) semismooth.}$</p>
+<ul>
+<li><p>Examples</p>
+<p>（等待补充）</p>
+</li>
+<li><p>因为原general model (3) 转化成模型 (10)/(P):</p>
+<p>$\text { Given } \sigma&gt;0, \tau&gt;0, \tilde{\beta} \in \mathbb{R}^{n}, \tilde{v} \in \mathbb{R}^{n}, \text { and }\tilde{b} \in \mathbb{R}^{m}$<br>$$<br>\begin{aligned} \min _{\beta \in \mathbb{R}^{n}}{h(\beta ; \sigma, \tau, \tilde{\beta}, \tilde{v}, \tilde{b}) :=&amp;|X \beta-b|+\lambda p(\beta)-q(\tilde{\beta})-\langle\tilde{v}, \beta-\tilde{\beta}\rangle \ &amp;+\frac{\sigma}{2}|\beta-\tilde{\beta}|^{2}+\frac{\tau}{2}|X \beta-\tilde{b}|^{2} } \end{aligned}<br>$$<br>(1) Linearize the concave term: $-q(\beta)$. 因为此项nonconvex</p>
+<p>(2) Add the proximal term：$\frac{\tau}{2}|X \beta-X \tilde{\beta}|^{2}$. 因为$h(\cdot)$和$p(\beta)$是nonsmooth</p>
+</li>
+<li><p>$\beta^{k+1}=\operatorname{Prox}_{\lambda p / \sigma^{2, k}}\left(\beta^{k}+\left(\nabla q\left(\beta^{k}\right)-X^{T} u^{k+1}\right) / \sigma^{2, k}\right)​$</p>
+</li>
+<li><p>问题</p>
+<ul>
+<li><input checked disabled type="checkbox"> <p>$\frac{\sigma}{2}|\beta-\tilde{\beta}|$的作用：因为是PPA算法</p>
+</li>
+<li><input disabled type="checkbox"> <p>$\frac{\tau}{2}|X \beta-\tilde{b}|^{2}$这个Proximal项的由来</p>
+</li>
+<li><input disabled type="checkbox"> <p>针对该非凸模型的算法，解的唯一性和算法的收敛性能否被证明？只要是非凸问题，都无法保障解的唯一性？那么该算法的优点？</p>
+</li>
+<li><input disabled type="checkbox"> <p>该类问题本来的解法</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-SSN-based-PPM-Algorithm"><a href="#2-SSN-based-PPM-Algorithm" class="headerlink" title="2. SSN-based PPM Algorithm"></a>2. SSN-based PPM Algorithm</h2><ul>
+<li><p><strong>PPM algorithm：</strong> Proximal majorization-minimization</p>
+<p>Initialize:  $\beta^{0} \approx \underset{\beta \in \mathbb{R}^{n}}{\operatorname{argmin}}\left{h\left(\beta ; \sigma^{1}, \tau^{1}, 0,0, b\right)\right}​$</p>
+<p>Iteration:  <strong>step 1</strong> $\beta^{k+1}=\underset{\beta \in \mathbb{R}^{n}}{\operatorname{argmin}}\left{h\left(\beta ; \sigma^{2, k}, \tau^{2, k}, \beta^{k}, \nabla q\left(\beta^{k}\right), X \beta^{k}\right)+\left\langle\delta^{k}, \beta-\beta^{k}\right\rangle\right}$</p>
+<p>​              <strong>step 2</strong> $\sigma^{2, k+1}=\rho_{k} \sigma^{2, k}, \tau^{2, k+1}=\rho_{k} \tau^{2, k}\text { with } \rho_{k} \in(0,1)​$</p>
+<p>Until:  If $β_{k+1}​$ satisﬁes a prescribed stopping criterion, terminate;</p>
+</li>
+<li><p>Step 1:  solve  the dual of the (10)  which is（12）<br>$$<br>\begin{aligned} \min <em>{u \in \mathbb{R}^{m}} &amp;\left{\varphi(u) :=\langle u, b\rangle+\frac{\tau}{2}\left|\tau^{-1} u+\tilde{b}-b\right|^{2}-\left|\operatorname{Prox}</em>{\tau^{-1}|\cdot|}\left(\tau^{-1} u+\tilde{b}-b\right)\right|\right.\ &amp;-\frac{1}{2 \tau}\left|\operatorname{Prox}<em>{\tau \delta</em>{B}}(u+\tau(\tilde{b}-b))\right|^{2}+\frac{\sigma}{2}\left|\tilde{\beta}+\sigma^{-1}\left(\tilde{v}-X^{T} u\right)\right|^{2} \ &amp;-\lambda p\left(\operatorname{Prox}<em>{\sigma^{-1} \lambda p}\left(\tilde{\beta}+\sigma^{-1}\left(\tilde{v}-X^{T} u\right)\right)\right)-\frac{1}{2 \sigma}\left|\operatorname{Prox}</em>{\sigma(\lambda p) *}\left(\sigma \tilde{\beta}+\tilde{v}-X^{T} u\right)\right|^{2} } \end{aligned} (12)<br>$$<br>with $\overline{y}=\operatorname{Prox}<em>{\tau^{-1}| |}\left(\tau^{-1} \overline{u}+\tilde{b}-b\right), \quad \overline{\beta}=\operatorname{Prox}</em>{\sigma^{-1} \lambda p}\left(\tilde{\beta}+\sigma^{-1}\left(\tilde{v}-X^{T} \overline{u}\right)\right)​$.</p>
+<p>and $\beta^{k+1}=\operatorname{Prox}_{\lambda p / \sigma^{2, k}}\left(\beta^{k}+\left(\nabla q\left(\beta^{k}\right)-X^{T} u^{k+1}\right) / \sigma^{2, k}\right)​$</p>
+</li>
+<li><p>(12) 的推导过程</p>
+<ul>
+<li><p>令$y=X \beta-b$将(10)转化成约束问题(11)<br>$$<br>\min _{\beta \in \mathbb{R}^{n}, y \in \mathbb{R}^{m}}\left{|X\beta-b|+\lambda p(\beta)-\langle\tilde{v}, \beta-\tilde{\beta}\rangle+\frac{\sigma}{2}|\beta-\tilde{\beta}|^{2}+\frac{\tau}{2}|y+b-\tilde{b}|^{2} \right}\<br>\text{subject to }X \beta-b=y\<br>$$</p>
+</li>
+<li><p>将约束问题转化成Lagrangian：</p>
+<p>$L(y,\beta; u) = \left{|y|+\lambda p(\beta)-\langle\tilde{v}, \beta-\tilde{\beta}\rangle+\frac{\sigma}{2}|\beta-\tilde{\beta}|^{2}+\frac{\tau}{2}|y+b-\tilde{b}|^{2} - &lt;u, X \beta-y-b&gt;\right}​$ (11)</p>
+</li>
+<li><p>Dual function of  (11)<br>$$<br>g(u):=\inf _{y,\beta} L(y, \beta;u)<br>$$</p>
+</li>
+<li><p>对$L(y,\beta; u) ​$进行配方<br>$$<br>\begin{aligned}<br>L(y,\beta; u)<br>&amp;= |y|+\lambda p(\beta)-\langle\tilde{v}, \beta-\tilde{\beta}\rangle+\frac{\sigma}{2}|\beta-\tilde{\beta}|^{2}+\frac{\tau}{2}|y+b-\tilde{b}|^{2} - \langle u, y-X \beta+b\rangle\<br>&amp;={|y|+\frac{\tau}{2}|y+b-\tilde{b}|^{2}-\langle u,y\rangle}+{\lambda p(\beta)-\langle\tilde{v}, \beta-\tilde{\beta}\rangle+\frac{\sigma}{2}|\beta-\tilde{\beta}|^{2}+\langle X^T u,\beta\rangle}-\langle u,b\rangle\<br>&amp;={|y|+\frac{\tau}{2}|y+b-\tilde{b}-\frac{u}{\tau}|^{2}}-\frac{u^2}{2\tau}+\langle \tilde b,u\rangle+{\lambda p(\beta)+\frac{\sigma}{2}|\beta-\tilde{\beta}|^{2}+\langle X^Tu-\tilde{v}, \beta-\tilde{\beta}\rangle+\langle \tilde{\beta},X^Tu\rangle}\<br>&amp;={|y|+\frac{\tau}{2}|y+b-\tilde{b}+\frac{u}{\tau}|^{2}}+{\lambda p(\beta) + \frac{\sigma}{2}|\beta-\tilde{\beta}+\frac{X^Tu-\tilde{v}}{\sigma}|^{2}}…\<br>&amp;-\frac{u^2}{2\tau}+\langle \tilde b,u\rangle+\langle\tilde{\beta},X^Tu\rangle-|\frac{X^Tu-\tilde{v}}{\sigma}|^2 \<br>\end{aligned}<br>$$</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>(12) 的求解：A semismooth Newton‘s method</p>
+<ul>
+<li><p>最小化（12）等价于（12）的一阶条件<br>$$<br>\nabla \varphi(u)=\operatorname{Prox}<em>{\tau^{-1} |}\left(\tau^{-1} u+\tilde{b}-b\right)-X \operatorname{Prox}</em>{\sigma^{-1} \lambda p}\left(\tilde{\beta}+\sigma^{-1}\left(\tilde{v}-X^{T} u\right)\right)+b\<br>\nabla \varphi(u)=0\qquad(13)\<br>$$</p>
+</li>
+<li><p>Solve nonlinear equation（13）by pcg</p>
+<p>$\hat{\partial}^{2} \varphi(u) :=\sigma^{-1} X \partial \operatorname{Prox}<em>{\sigma^{-1} \lambda p}\left(\tilde{\beta}+\sigma^{-1}\left(\tilde{v}-X^{T} u\right)\right) X^{T}+\tau^{-1} \partial \operatorname{Prox}</em>{\tau^{-1} |}\left(\tau^{-1} u+\tilde{b}-b\right)$</p>
+<p>$H:=\sigma^{-1} X U X^{T}+\tau^{-1} V \in \hat{\partial}^{2} \varphi(u)​$</p>
+<p>![image-20190707021520501](/Users/yyf/Library/Application Support/typora-user-images/image-20190707021520501.png)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-Problem"><a href="#3-Problem" class="headerlink" title="3. Problem"></a>3. Problem</h2><h2 id="4-Our-case"><a href="#4-Our-case" class="headerlink" title="4. Our case"></a>4. Our case</h2><ul>
+<li><p>For the ROF model:</p>
+<p>$h(X\beta)=|\nabla \beta|_1$</p>
+<p>$p(\beta)=|\beta-b|_2^2,q(\beta)=0​$</p>
+</li>
+</ul>
+<h1 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h1><ul>
+<li><p>转化成smooth单变量方程的推导过程<br>$$<br>\begin{aligned} \Psi(\hat{y}, \hat{z}) &amp;=\inf <em>{z} \Psi(\hat{u}, z) \ &amp;=G(\hat{y})+\sigma \inf _{z}\left{\frac{1}{\sigma} F(z)+\frac{1}{2}\left|z-K \hat{y}-\frac{x}{\sigma}\right|^{2}\right}-\frac{1}{2 \sigma}|x|^{2} \ &amp;=G(\hat{y})+\sigma M(F / \sigma)(K \hat{y}+x)-\frac{1}{2 \sigma}|x|^{2} \end{aligned}<br>$$<br>Using the Moreau-Yosida regularization:<br>$$<br>M</em>{\lambda} f(x) :=\min <em>{u} f(u)+\frac{1}{2 \lambda}|u-x|</em>{2}^{2}<br>$$</p>
+<p>$$<br>\nabla M_{\lambda} f(x)=\frac{1}{\lambda}\left(x-\operatorname{Prox}_{\lambda f}(x)\right)<br>$$</p>
+</li>
+<li><p>$h(y)+p(By)$对偶问题无法转化成单变量smooth的原因<br>$$<br>\begin{array}{c}{\partial \psi(z)=\partial p^{<em>}(z)-\underline{A x}+\sigma\left(\mathcal{A}^{</em>} z+y-c\right)} \ {0 \in \partial \psi(\overline{z})} \ {0 \in \partial p^{<em>}(\overline{z})-\mathcal{A} x+\sigma\left(\mathcal{A}^{</em>} \overline{z}+y-c\right)} \ {0 \in \sigma\left(\frac{\partial p^{<em>}(\overline{z})}{\sigma}+\mathcal{A}^{</em>} z-\left(c-y+\frac{1}{\sigma} \mathcal{A} x\right)\right)}\end{array}<br>$$<br>$z$无法用proximal表示</p>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+              <a href="/p/f8c4.html" rel="next" title="变分不等式的收敛性证明">
+                <i class="fa fa-chevron-left"></i> 变分不等式的收敛性证明
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+              <a href="/p/44bc.html" rel="prev" title="Mac/ipad/iphone软件清单">
+                Mac/ipad/iphone软件清单 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/head.jpg"
+      alt="夏不哉下">
+  <p class="site-author-name" itemprop="name">夏不哉下</p>
+  <div class="site-description motion-element" itemprop="description"></div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives">
+        
+          <span class="site-state-item-count">38</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/ysix7" title="GitHub &rarr; https://github.com/ysix7" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="/17481201@life.hkbu.edu.hk" title="E-Mail &rarr; 17481201@life.hkbu.edu.hk"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+    
+  </div>
+
+
+
+        </div>
+      </div>
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#h-Ax-p-x"><span class="nav-number">1.</span> <span class="nav-text">h(Ax)+p(x)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#h-x-p-Bx"><span class="nav-number">2.</span> <span class="nav-text">h(x)+p(Bx)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Non-convex-model"><span class="nav-number">3.</span> <span class="nav-text">Non-convex model</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-General-Model"><span class="nav-number">3.1.</span> <span class="nav-text">1. General Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-SSN-based-PPM-Algorithm"><span class="nav-number">3.2.</span> <span class="nav-text">2. SSN-based PPM Algorithm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Problem"><span class="nav-number">3.3.</span> <span class="nav-text">3. Problem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Our-case"><span class="nav-number">3.4.</span> <span class="nav-text">4. Our case</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#附录"><span class="nav-number">4.</span> <span class="nav-text">附录</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">夏不哉下</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    
+    <span title="站点总字数">146k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    
+    <span title="站点阅读时长">2:13</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.3.0</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+    <span class="post-meta-divider">|</span>
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+  </div>
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/js/utils.js?v=7.3.0"></script>
+  <script src="/js/motion.js?v=7.3.0"></script>
+
+
+  <script src="/js/affix.js?v=7.3.0"></script>
+  <script src="/js/schemes/pisces.js?v=7.3.0"></script>
+
+
+
+<script src="/js/next-boot.js?v=7.3.0"></script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="/js/local-search.js?v=7.3.0"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+  <script src="/js/scrollspy.js?v=7.3.0"></script>
+<script src="/js/post-details.js?v=7.3.0"></script>
+
+
+</body>
+</html>

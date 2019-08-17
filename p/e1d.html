@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="generator" content="Hexo 3.9.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/cloud32.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/cloud16.png?v=7.3.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-pace-theme-minimal.min.css?v=1.0.2">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
+    save_scroll: false,
+    copycode: {"enable":false,"show_result":false,"style":null},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    }
+  };
+</script>
+
+  <meta name="description" content="目录 存在性：存在收敛的序列 唯一性，凸性  解存在性证明例子1 证明 $\inf _{\Omega} f \leq u^{*} \leq \sup _{\Omega} f$ 通过有界性说明  证明有界性  BV的有界性    解存在性证明例子2问题的转化1.原问题：The natural space for the functional H to be deﬁned in, is $W^{2,1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Proof_解的存在性">
+<meta property="og:url" content="https://ysix7.github.io/p/e1d.html">
+<meta property="og:site_name" content="春夏秋冬">
+<meta property="og:description" content="目录 存在性：存在收敛的序列 唯一性，凸性  解存在性证明例子1 证明 $\inf _{\Omega} f \leq u^{*} \leq \sup _{\Omega} f$ 通过有界性说明  证明有界性  BV的有界性    解存在性证明例子2问题的转化1.原问题：The natural space for the functional H to be deﬁned in, is $W^{2,1">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://blog-w.oss-cn-beijing.aliyuncs.com/2019-08-12-153611.png">
+<meta property="og:image" content="https://wikimedia.org/api/rest_v1/media/math/render/svg/6aef35d06fab2b7a3b1470988e6ff6da3a090b77">
+<meta property="og:image" content="https://wikimedia.org/api/rest_v1/media/math/render/svg/d671890050b21484dde3087d000700c97fc3b03c">
+<meta property="og:image" content="https://wikimedia.org/api/rest_v1/media/math/render/svg/a601995d55609f2d9f5e233e36fbe9ea26011b3b">
+<meta property="og:image" content="https://wikimedia.org/api/rest_v1/media/math/render/svg/d671890050b21484dde3087d000700c97fc3b03c">
+<meta property="og:image" content="https://wikimedia.org/api/rest_v1/media/math/render/svg/e6f96f0cfc3596fca8b37c7ada51b69d1ddc1a74">
+<meta property="og:image" content="https://wikimedia.org/api/rest_v1/media/math/render/svg/1996a53b9365ee5e345fe7dc1b86df610634e7af">
+<meta property="og:image" content="https://wikimedia.org/api/rest_v1/media/math/render/svg/805c73495ba5e17474f02014105b819d9a571100">
+<meta property="og:image" content="https://wikimedia.org/api/rest_v1/media/math/render/svg/1996a53b9365ee5e345fe7dc1b86df610634e7af">
+<meta property="og:image" content="https://wikimedia.org/api/rest_v1/media/math/render/svg/805c73495ba5e17474f02014105b819d9a571100">
+<meta property="og:image" content="https://wikimedia.org/api/rest_v1/media/math/render/svg/a601995d55609f2d9f5e233e36fbe9ea26011b3b">
+<meta property="og:image" content="https://wikimedia.org/api/rest_v1/media/math/render/svg/c93a30874c887769d0835535ab67fec95916b59d">
+<meta property="og:image" content="https://wikimedia.org/api/rest_v1/media/math/render/svg/436cf0b0b0a6801965c92205b5629cac0c589edd">
+<meta property="og:image" content="https://wikimedia.org/api/rest_v1/media/math/render/svg/0431b3963e8a873a339dc8e1933d0a076b61b94e">
+<meta property="og:image" content="https://blog-w.oss-cn-beijing.aliyuncs.com/FYY_blog/%E6%95%B0%E5%AD%A6_%E8%A7%A3%E7%9A%84%E5%AD%98%E5%9C%A8%E6%80%A7%E8%AF%81%E6%98%8E/image-20190812153123025.png">
+<meta property="og:image" content="https://wikimedia.org/api/rest_v1/media/math/render/svg/70f0c27000fbc03d920b5b678949a0043ad269bd">
+<meta property="og:image" content="https://blog-w.oss-cn-beijing.aliyuncs.com/2019-08-12-043016.png">
+<meta property="og:updated_time" content="2019-08-17T06:50:58.245Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Proof_解的存在性">
+<meta name="twitter:description" content="目录 存在性：存在收敛的序列 唯一性，凸性  解存在性证明例子1 证明 $\inf _{\Omega} f \leq u^{*} \leq \sup _{\Omega} f$ 通过有界性说明  证明有界性  BV的有界性    解存在性证明例子2问题的转化1.原问题：The natural space for the functional H to be deﬁned in, is $W^{2,1">
+<meta name="twitter:image" content="https://blog-w.oss-cn-beijing.aliyuncs.com/2019-08-12-153611.png">
+  <link rel="canonical" href="https://ysix7.github.io/p/e1d">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Proof_解的存在性 | 春夏秋冬</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  <div class="container sidebar-position-left">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">春夏秋冬</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">17</span></a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-分类">
+      
+    
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-归档">
+      
+    
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-图像处理">
+      
+    
+      
+    
+
+    <a href="/categories/图像处理/" rel="section"><i class="menu-item-icon fa fa-fw fa-tripadvisor"></i> <br>图像处理</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-深度学习">
+      
+    
+      
+    
+
+    <a href="/categories/深度学习/" rel="section"><i class="menu-item-icon fa fa-fw fa-free-code-camp"></i> <br>深度学习</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-数学基础">
+      
+    
+      
+    
+
+    <a href="/categories/数学/" rel="section"><i class="menu-item-icon fa fa-fw fa-superscript"></i> <br>数学基础</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-优化算法">
+      
+    
+      
+    
+
+    <a href="/categories/算法/" rel="section"><i class="menu-item-icon fa fa-fw fa-line-chart"></i> <br>优化算法</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-软件">
+      
+    
+      
+    
+
+    <a href="/categories/软件/" rel="section"><i class="menu-item-icon fa fa-fw fa-desktop"></i> <br>软件</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-语言">
+      
+    
+      
+    
+
+    <a href="/categories/语言/" rel="section"><i class="menu-item-icon fa fa-fw fa-font"></i> <br>语言</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-摄影">
+      
+    
+      
+    
+
+    <a href="/categories/摄影/" rel="section"><i class="menu-item-icon fa fa-fw fa-instagram"></i> <br>摄影</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-生活">
+      
+    
+      
+    
+
+    <a href="/categories/生活/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>生活</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-其他">
+      
+    
+      
+    
+
+    <a href="/categories/其他/" rel="section"><i class="menu-item-icon fa fa-fw fa-th-list"></i> <br>其他</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+      </li>
+    
+  </ul>
+
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+    </div>
+</nav>
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content page-post-detail">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/p/e1d.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="夏不哉下">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="春夏秋冬">
+    </span>
+      <header class="post-header">
+
+        
+          <h2 class="post-title" itemprop="name headline">Proof_解的存在性
+
+            
+          </h2>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-29 00:00:00" itemprop="dateCreated datePublished" datetime="2019-07-29T00:00:00+08:00">2019-07-29</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-08-17 14:50:58" itemprop="dateModified" datetime="2019-08-17T14:50:58+08:00">2019-08-17</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数学/" itemprop="url" rel="index"><span itemprop="name">数学</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            <span class="post-meta-item" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>8.4k</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>8 分钟</span>
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ul>
+<li>存在性：存在收敛的序列</li>
+<li>唯一性，凸性</li>
+</ul>
+<h1 id="解存在性证明例子1"><a href="#解存在性证明例子1" class="headerlink" title="解存在性证明例子1"></a>解存在性证明例子1</h1><ul>
+<li><p>证明 $\inf _{\Omega} f \leq u^{*} \leq \sup _{\Omega} f$</p>
+<p>通过有界性说明</p>
+</li>
+<li><p>证明有界性</p>
+</li>
+<li><p>BV的有界性</p>
+</li>
+</ul>
+<p><img src="https://blog-w.oss-cn-beijing.aliyuncs.com/2019-08-12-153611.png" alt="image-20190724131348088"></p>
+<h1 id="解存在性证明例子2"><a href="#解存在性证明例子2" class="headerlink" title="解存在性证明例子2"></a>解存在性证明例子2</h1><h2 id="问题的转化"><a href="#问题的转化" class="headerlink" title="问题的转化"></a>问题的转化</h2><p>1.原问题：The natural space for the functional H to be deﬁned in, is $W^{2,1}(\Omega)$<br>$$<br>\begin{aligned} H(u)=&amp; \frac{1}{2} \int_{\Omega}\left(u_{0}-T u\right)^{2} d x+\alpha \int_{\Omega} f(\nabla u) d x +\beta \int_{\Omega} g\left(\nabla^{2} u\right) d x \end{aligned}<br>$$<br>缺点：this space is not <u>reﬂexive</u>(自反空间), and thus existence of minimisers cannot be guaranteed.</p>
+<blockquote>
+<p>每个有限维赋范向量空间都是自反空间。</p>
+<p>所有的<a href="https://wiki.kfd.me/wiki/希尔伯特空间" target="_blank" rel="noopener">希尔伯特空间</a>都是自反空间。比如说，$\mathrm{L}^2$空间是自反空间。</p>
+</blockquote>
+<p>2.Extended problem：extend the functional H in (3.5) to $\mathrm{BH}(\Omega)$<br>$$<br>H_{e x}(u)=\left{\begin{array}{l}{\frac{1}{2} \int_{\Omega}\left(u_{0}-T u\right)^{2} d x+\alpha \int_{\Omega} f(\nabla u) d x} \ {+\beta \int_{\Omega} g\left(\nabla^{2} u\right) d x \quad \text { if } u \in W^{2,1}(\Omega)} \ {+\infty \text { if } f \in \mathrm{BH}(\Omega) \backslash W^{2,1}(\Omega)}\end{array}\right.<br>$$<br>缺点：$H_{ex}$ is not <u>sequentially</u> <u>lower semicontinuous</u> with respect to the strict topology in BH(Ω) and hence it is neither with respect to the  $weak^∗$ topology in $[\mathrm{BH}(\Omega)]^{n}$</p>
+<blockquote>
+<ol>
+<li><p>为什么需要lower semicontinuous?</p>
+</li>
+<li><p>$BH$空间,</p>
+<p>$\mathrm{BH}(\Omega)=\left{u \in W^{1,1}(\Omega) : \nabla u \in[\mathrm{BV}(\Omega)]^{2}\right}$</p>
+</li>
+<li><p>the $weak^∗$ topology in BH(Ω) provides a good <u>compactness property</u> which is inherited from the weak ∗ topology in $[\mathrm{BV}(\Omega)]^{n}$</p>
+</li>
+</ol>
+</blockquote>
+<p>3.Relaxed functional<br>$$<br>\begin{aligned} \overline{H_{e x}}(u) :=&amp; \frac{1}{2} \int_{\Omega}\left(u_{0}-T u\right)^{2} d x+\alpha \int_{\Omega} f(\nabla u) d x \ &amp;+\beta g\left(D^{2} u\right)(\Omega) \=&amp; \frac{1}{2} \int_{\Omega}\left(u_{0}-T u\right)^{2} d x+\alpha \int_{\Omega} f(\nabla u) d x \ &amp;+\beta \int_{\Omega} g\left(\nabla^{2} u\right) d x \ &amp;+\beta \int_{\Omega} g_{\infty}\left(\frac{D^{s} \nabla u}{\left|D^{s} \nabla u\right|}\right) d\left|D^{s} \nabla u\right| \end{aligned}<br>$$</p>
+<blockquote>
+<p>Relaxed function：</p>
+<p>![image-20190816101314838](/Users/yyf/Library/Application Support/typora-user-images/image-20190816101314838.png)</p>
+<p>![image-20190816101458245](/Users/yyf/Library/Application Support/typora-user-images/image-20190816101458245.png)</p>
+</blockquote>
+<p>优点： lower semicontinuous。</p>
+<p><strong>Theorem 3.6</strong> The functional $\overline{H_{e x}}(u)$ is lower semicontinuous with respect to the <u>strict topology</u> in $\mathrm{BH}(\Omega)$.</p>
+<p>which means,  $\overline{H_{e x}}(u)\le\lim_{k\to\infty}\inf\overline{H_{e x}}(u_k)$, when $u_k\to u$, in $\mathrm{BH}{(\Omega)}$</p>
+<p>Also, </p>
+<p>$\overline{H_{e x}}(u)\le\lim_{k\to\infty}\inf\overline{H_{e x}}(u_k)$, when $u_k\rightarrow^{w^*} u$, in $\mathrm{BH}{(\Omega)}$</p>
+<h2 id="证明步骤"><a href="#证明步骤" class="headerlink" title="证明步骤"></a>证明步骤</h2><p>目标方程：$\inf <em>{u \in \mathrm{BH}(\Omega)} \overline{H</em>{e x}}(u)$</p>
+<ol>
+<li><p>取一个minimizing sequence ${u_k}$ </p>
+</li>
+<li><p>证明${u_k}$ is bounded in BH(Ω).</p>
+</li>
+<li><p>利用BH的compactness, 得到$u_k\rightarrow u$ weakly 在BH空间</p>
+</li>
+<li><p>利用${H_{ex}}$的下半连续性，得到</p>
+<p>$\overline{H_{e x}}(u)\le\lim_{k\to\infty}\inf\overline{H_{e x}}(u_k)$</p>
+<p>which implies that(因为$u_k$minimizing):</p>
+<p>$u=\min <em>{u \in \mathrm{BH}(\Omega)} \overline{H</em>{e x}}(u)$</p>
+</li>
+<li><p>利用 property of the relaxed functional：$\min _{x \in X} F(x)=\inf _{x \in X} F(x)$</p>
+<p>问题：？那不是只能说明F存在下界？ inf F(x) = min F(x) </p>
+</li>
+</ol>
+<h1 id="级数的收敛"><a href="#级数的收敛" class="headerlink" title="级数的收敛"></a>级数的收敛</h1><p>级数：一个有穷或无穷的序列的和<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/6aef35d06fab2b7a3b1470988e6ff6da3a090b77" alt="{\displaystyle s=u_{1}+u_{2}+u_{3}+\ldots }">称为<strong>级数</strong>。根据项数分为：有穷级数和<strong>无穷级数</strong></p>
+<p>无穷级数的收敛性：如果当$n$趋于正无穷大时，<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/d671890050b21484dde3087d000700c97fc3b03c" alt="s_{n}">趋向一个有限的极限。如果当<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a601995d55609f2d9f5e233e36fbe9ea26011b3b" alt="n">趋于正无穷大时，<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/d671890050b21484dde3087d000700c97fc3b03c" alt="s_{n}">趋向一个有限的<a href="https://zh.wikipedia.org/wiki/極限_(數列)" target="_blank" rel="noopener">极限</a>：<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/e6f96f0cfc3596fca8b37c7ada51b69d1ddc1a74" alt="s=\lim _{n\to \infty }s_{n}"></p>
+<p>条件收敛：如果<strong>任意项级数</strong><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/1996a53b9365ee5e345fe7dc1b86df610634e7af" alt="\sum _{n=1}^{\infty }u_{n}">收敛，而<strong>级数</strong><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/805c73495ba5e17474f02014105b819d9a571100" alt="\sum _{n=1}^{\infty }|u_{n}|">发散，则称<strong>级数</strong><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/1996a53b9365ee5e345fe7dc1b86df610634e7af" alt="\sum _{n=1}^{\infty }u_{n}"><a href="https://zh.wikipedia.org/wiki/条件收敛" target="_blank" rel="noopener">条件收敛</a>。</p>
+<p>绝对收敛：如果级数<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/805c73495ba5e17474f02014105b819d9a571100" alt="\sum _{n=1}^{\infty }|u_{n}|">收敛，则称级数<a href="https://zh.wikipedia.org/wiki/绝对收敛" target="_blank" rel="noopener">绝对收敛</a>。绝对收敛-&gt;条件收敛</p>
+<p>收敛级数的性质：当<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a601995d55609f2d9f5e233e36fbe9ea26011b3b" alt="n">趋向无限大时，任何一个收敛级数的通项都趋于0：<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c93a30874c887769d0835535ab67fec95916b59d" alt="\lim _{n\to \infty }u_{n}=0"></p>
+<h1 id="序列的收敛性"><a href="#序列的收敛性" class="headerlink" title="序列的收敛性"></a>序列的收敛性</h1><h2 id="有界"><a href="#有界" class="headerlink" title="有界"></a>有界</h2><ul>
+<li><p>定义</p>
+<p>Thus a <a href="https://en.wikipedia.org/wiki/Sequence" target="_blank" rel="noopener">sequence</a> <em>f</em> = (<em>a</em>0, <em>a</em>1, <em>a</em>2, …) is bounded if there exists a real number <em>M</em> such that</p>
+</li>
+<li><p>实数中的定义</p>
+<p>如果存在一个实数 <em>k</em>，使得对于所有 <em>S</em> 中的 <em>s</em> 有 <em>k</em> ≥ <em>s</em>，实数集合 <em>S</em> 被称为“上有界”的，这个数 <em>k</em> 被称为 <em>S</em> 的<strong>上界</strong>。可用类似的定义术语“下有界”和<strong>下界</strong>。</p>
+</li>
+<li><p>度量空间中的定义</p>
+<p>度量空間 (<em>M</em>, <em>d</em>) 的子集<em>S</em> 是<strong>有界</strong>的，如果它包含在有限半徑的球內，就是說如果對於所有 <em>S</em> 中的 <em>s</em>，存在 <em>M</em> 中的 <em>x</em> 並且 <em>r</em> &gt; 0，使得 <strong>d(<em>x</em>, <em>s</em>) &lt; <em>r</em></strong>。<em>M</em> 是有界度量空間（或 <em>d</em> 是有界度量），如果 <em>M</em> 作為自身的子集是有界的。</p>
+</li>
+</ul>
+<h2 id="空间"><a href="#空间" class="headerlink" title="空间"></a>空间</h2><ul>
+<li><p>向量空间、函数空间</p>
+</li>
+<li><p>Lp空间</p>
+<p><strong>Lp空间</strong>是由p次可<strong>积函数组成的空间</strong>；对应的<strong>ℓp空间</strong>是由<em>p</em>次可和序列组成的空间，有时叫做勒贝格空间。</p>
+</li>
+<li><p>Sobolev spaces: $W^{1,1}$, $W^{2,1}$</p>
+<p>![image-20190816001648069](/Users/yyf/Library/Application Support/typora-user-images/image-20190816001648069.png)</p>
+<p>Equipped with the norm <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/436cf0b0b0a6801965c92205b5629cac0c589edd" alt="{\displaystyle \|\cdot \|_{k,p},W^{k,p}}"> becomes a <a href="https://en.wikipedia.org/wiki/Banach_space" target="_blank" rel="noopener">Banach space</a>.</p>
+</li>
+<li><p>Banach空间：完备(柯西收敛即收敛)+赋范, <u>属于Hilbert空间</u></p>
+<p>A Banach space is a <a href="https://en.wikipedia.org/wiki/Vector_space" target="_blank" rel="noopener">vector space</a> <em>X</em> over any scalar field K, which is equipped with a <a href="https://en.wikipedia.org/wiki/Norm_(mathematics)" target="_blank" rel="noopener">norm</a> <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/0431b3963e8a873a339dc8e1933d0a076b61b94e" alt="{\displaystyle \|\cdot \|_{X}}"> and which is <a href="https://en.wikipedia.org/wiki/Complete_metric_space" target="_blank" rel="noopener">complete</a> with respect to the distance function induced by the norm, that is to say, for every <a href="https://en.wikipedia.org/wiki/Cauchy_sequence" target="_blank" rel="noopener">Cauchy sequence</a> ${x_n}$ in <em>X</em>, there exists an element <em>x</em> in <em>X</em> such that $\lim <em>{n \rightarrow \infty} x</em>{n}=x$</p>
+</li>
+<li><p><a href="https://en.wikipedia.org/wiki/Bounded_variation" target="_blank" rel="noopener">BV空间</a></p>
+<ul>
+<li><p>One variable</p>
+<p>![image-20190816150519847](/Users/yyf/Library/Application Support/typora-user-images/image-20190816150519847.png)</p>
+</li>
+<li><p>Functions of bounded variation, BV <a href="https://en.wikipedia.org/wiki/Function_(mathematics)" target="_blank" rel="noopener">functions</a>, are functions whose distributional <a href="https://en.wikipedia.org/wiki/Directional_derivative" target="_blank" rel="noopener">derivative</a> is a <a href="https://en.wiktionary.org/wiki/finite" target="_blank" rel="noopener">finite</a><a href="https://en.wikipedia.org/wiki/Bounded_variation#cite_note-5" target="_blank" rel="noopener">[5]</a> <a href="https://en.wikipedia.org/wiki/Radon_measure" target="_blank" rel="noopener">Radon measure</a>.</p>
+</li>
+</ul>
+<p>$|u|<em>{\mathrm{BV}(\Omega)} :=\int</em>{\Omega}|u| d x+|D u|(\Omega)$</p>
+</li>
+<li><p>$BV^2$空间</p>
+<p>$|u|<em>{\mathrm{BV}(\Omega)} :=\int</em>{\Omega}|u| d x+|D u|(\Omega)$</p>
+</li>
+<li><p>BH空间, 属于Banach空间</p>
+<p>$\mathrm{BH}(\Omega)=\left{u \in W^{1,1}(\Omega) : \nabla u \in[\mathrm{BV}(\Omega)]^{2}\right}$</p>
+<p>$\mathrm{BH}(\Omega)$ is a Banach space equipped with the norm $|u|<em>{B H(\Omega)}=|u|</em>{B V(\Omega)}+\left|D^{2} u\right|(\Omega)$.</p>
+<ul>
+<li><p>Deﬁnition 3.1 ($Weak^∗$ Convergence in BH(Ω))</p>
+<p>We say that $(u_k ),k\in N$ converges to $u$ $weakly^∗$ in $\mathrm{BH}(\Omega)$ if</p>
+<p>$u_{k} \rightarrow u, \quad \text {in} L^{1}(\Omega)$ and $\nabla u_{k} \rightarrow \nabla u \quad \text {weakly }^{*} \text { in }[\mathrm{BV}(\Omega)]^{2},\text{as } k \rightarrow \infty$</p>
+<p>or in other words:<br>$$<br>\begin{array}{l}{\left|u_{k}-u\right|<em>{L^{1}(\Omega)} \rightarrow 0} \ {\left|\nabla u</em>{k}-\nabla u\right|<em>{\left[L^{1}(\Omega)\right]^{2}} \rightarrow 0} \ {\int</em>{\Omega} \phi d D^{2} u_{k} \rightarrow \int_{\Omega} \phi d D^{2} u, \quad \forall \phi \in C_{0}(\Omega)}\end{array}<br>$$</p>
+</li>
+</ul>
+</li>
+<li><p>Theorem 3.2 <u>(Compactness in $\mathrm{BH}(\Omega)$)</u>: 可根据bounded得到收敛的序列</p>
+<p>Suppose that the sequence $\left(u_{k}\right)<em>{k \in \mathbb{N}}$ is bounded in $\mathrm{BH}(\Omega)$. Then there exists a subsequence $\left(u</em>{k_{\ell}}\right)<em>{\ell \in \mathbb{N}}$ and a function $u \in \mathrm{BH}(\Omega)$ such that  $\left(u</em>{k_{\ell}}\right)_{\ell \in \mathbb{N}}$ converges to u $weakly^∗$ in $\mathrm{BH}(\Omega)$.</p>
+</li>
+<li><p>Deﬁnition 3.3 (Strict Convergence in BH(Ω))</p>
+<p>We say that $(u_k ),k\in N$ converges to $u$ $strictly$ in $\mathrm{BH}(\Omega)$ if</p>
+<p>$u_{k} \rightarrow u, \quad \text {in } L^{1}(\Omega)$ and ![image-20190816013439422](/Users/yyf/Library/Application Support/typora-user-images/image-20190816013439422.png)</p>
+</li>
+</ul>
+<blockquote>
+<p>t<u>he weak ∗ topology in BH(Ω) provides a good compactness property</u> which is inherited from the weak ∗ topology in [BV(Ω)] n.</p>
+<p>Compactness：可根据bounded得到收敛的序列</p>
+</blockquote>
+<ul>
+<li><p>Lebesgue space </p>
+<p>就是Lp空间？</p>
+</li>
+<li><p>各类空间</p>
+<p>![image-20190816101107875](/Users/yyf/Library/Application Support/typora-user-images/image-20190816101107875.png)</p>
+</li>
+</ul>
+<h2 id="序列"><a href="#序列" class="headerlink" title="序列"></a>序列</h2><ul>
+<li><p>柯西序列</p>
+<p>定义：</p>
+<p><img src="https://blog-w.oss-cn-beijing.aliyuncs.com/FYY_blog/%E6%95%B0%E5%AD%A6_%E8%A7%A3%E7%9A%84%E5%AD%98%E5%9C%A8%E6%80%A7%E8%AF%81%E6%98%8E/image-20190812153123025.png" alt="image-20190812153123025"></p>
+<p>和收敛序列的关系：任何收敛数列必然是柯西列，任何柯西列必然是<a href="https://zh.wikipedia.org/wiki/有界集合" target="_blank" rel="noopener">有界</a>序列。</p>
+</li>
+</ul>
+<blockquote>
+<p>无限维度中的有界序列具体含义：见“有界”</p>
+<p><a href="https://www.zhihu.com/question/29917059" target="_blank" rel="noopener">柯西列是否一定是收敛的？</a></p>
+</blockquote>
+<ul>
+<li><p>序列收敛的定义</p>
+<p>收敛(强)：定义在norm</p>
+<p>弱(weak)收敛：定义在内积</p>
+<p>weak*收敛：</p>
+</li>
+<li><p>实数序列收敛的判别方法</p>
+<p><strong>Bolzano-Weierstrass:</strong> 任一<strong>有限维</strong>实向量空间$\mathbb {R} ^{n}$中的有界序列<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/70f0c27000fbc03d920b5b678949a0043ad269bd" alt="{\displaystyle (a_{n})_{n\in \mathbb {N} }}">都至少包含一个收敛的子列。</p>
+<p>有界不一定收敛</p>
+<p>有界序列是什么意思？</p>
+</li>
+<li><p>有界序列</p>
+<p><strong>Theorem 3.2</strong> (Compactness in $\mathrm{BH}(\Omega)$) Suppose that the sequence $(u_k)<em>{k \in N}$ is bounded in $\mathrm{BH}(\Omega)$. Then there exists a subsequence $\left(u</em>{k_{\ell}}\right)<em>{\ell \in \mathbb{N}}$ and a function $u \in \mathrm{BH}(\Omega)$ such that $\left(u</em>{k_{\ell}}\right)_{\ell \in \mathbb{N}}$ converges to $u$ weakly∗ in $\mathrm{BH}(\Omega)$.</p>
+</li>
+</ul>
+<p>##不同的收敛速度</p>
+<p><img src="https://blog-w.oss-cn-beijing.aliyuncs.com/2019-08-12-043016.png" alt="image-20190724181456673"></p>
+<ul>
+<li><p>converge sublinearly</p>
+<p>$\lim <em>{k \rightarrow \infty} \frac{\left|x</em>{k+1}-L\right|}{\left|x_{k}-L\right|}=1$</p>
+</li>
+<li><p><em>converge linearly</em> </p>
+<p>$\lim <em>{k \rightarrow \infty} \frac{\left|x</em>{k+1}-L\right|}{\left|x_{k}-L\right|}=\mu, \mu \in(0,1)$ </p>
+</li>
+<li><p><em>converge superlinearly</em> </p>
+<p>$\lim <em>{k \rightarrow \infty} \frac{\left|x</em>{k+1}-L\right|}{\left|x_{k}-L\right|}=0$</p>
+</li>
+<li><p><em>Q-linear convergence</em>: distinguish superlinear rates of convergence. </p>
+<p>$\lim <em>{k \rightarrow \infty} \frac{\left|x</em>{k+1}-L\right|}{\left|x_{k}-L\right|^{q}}&lt;M$</p>
+</li>
+<li><p>Monotone operator</p>
+</li>
+</ul>
+<p>##不同的收敛模式</p>
+<ul>
+<li><p>强收敛</p>
+</li>
+<li><p>弱收敛</p>
+</li>
+</ul>
+<p>![image-20190725143410105](/Users/yyf/Library/Application Support/typora-user-images/image-20190725143410105.png)</p>
+<h1 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h1><h2 id="Fatous-lemma"><a href="#Fatous-lemma" class="headerlink" title="Fatous lemma"></a>Fatous lemma</h2><p>![image-20190725145706825](/Users/yyf/Library/Application Support/typora-user-images/image-20190725145706825.png)</p>
+<h2 id="Lower-semicontinuous"><a href="#Lower-semicontinuous" class="headerlink" title="Lower semicontinuous"></a>Lower semicontinuous</h2><p>##Distributional derivative</p>
+<p> weak derivative</p>
+<p>![image-20190816143252525](/Users/yyf/Library/Application Support/typora-user-images/image-20190816143252525.png)</p>
+<p>![image-20190816143354216](/Users/yyf/Library/Application Support/typora-user-images/image-20190816143354216.png)</p>
+<ul>
+<li><p>Reference</p>
+<p><a href="https://www.math.arizona.edu/~kglasner/math456/GREENS1.pdf" target="_blank" rel="noopener">Distributions and distributional derivatives</a></p>
+<p><a href="http://publish.illinois.edu/yubo-paul-yang/files/2014/09/Distributional-Derivative.pdf" target="_blank" rel="noopener">Distributional Derivative</a></p>
+</li>
+</ul>
+<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><ol>
+<li><p>minimizing sequence?</p>
+</li>
+<li><p>K-SVD code</p>
+</li>
+<li><p>证明relax一下</p>
+</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+              <a href="/p/221.html" rel="next" title="自编码器">
+                <i class="fa fa-chevron-left"></i> 自编码器
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+              <a href="/p/4dde.html" rel="prev" title="淘宝收藏">
+                淘宝收藏 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/head.jpg"
+      alt="夏不哉下">
+  <p class="site-author-name" itemprop="name">夏不哉下</p>
+  <div class="site-description motion-element" itemprop="description"></div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives">
+        
+          <span class="site-state-item-count">38</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/ysix7" title="GitHub &rarr; https://github.com/ysix7" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="/17481201@life.hkbu.edu.hk" title="E-Mail &rarr; 17481201@life.hkbu.edu.hk"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+    
+  </div>
+
+
+
+        </div>
+      </div>
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">1.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解存在性证明例子1"><span class="nav-number">2.</span> <span class="nav-text">解存在性证明例子1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解存在性证明例子2"><span class="nav-number">3.</span> <span class="nav-text">解存在性证明例子2</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题的转化"><span class="nav-number">3.1.</span> <span class="nav-text">问题的转化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#证明步骤"><span class="nav-number">3.2.</span> <span class="nav-text">证明步骤</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#级数的收敛"><span class="nav-number">4.</span> <span class="nav-text">级数的收敛</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#序列的收敛性"><span class="nav-number">5.</span> <span class="nav-text">序列的收敛性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#有界"><span class="nav-number">5.1.</span> <span class="nav-text">有界</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#空间"><span class="nav-number">5.2.</span> <span class="nav-text">空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#序列"><span class="nav-number">5.3.</span> <span class="nav-text">序列</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#补充"><span class="nav-number">6.</span> <span class="nav-text">补充</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Fatous-lemma"><span class="nav-number">6.1.</span> <span class="nav-text">Fatous lemma</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lower-semicontinuous"><span class="nav-number">6.2.</span> <span class="nav-text">Lower semicontinuous</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#问题"><span class="nav-number">7.</span> <span class="nav-text">问题</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">夏不哉下</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    
+    <span title="站点总字数">146k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    
+    <span title="站点阅读时长">2:13</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.3.0</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+    <span class="post-meta-divider">|</span>
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+  </div>
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/js/utils.js?v=7.3.0"></script>
+  <script src="/js/motion.js?v=7.3.0"></script>
+
+
+  <script src="/js/affix.js?v=7.3.0"></script>
+  <script src="/js/schemes/pisces.js?v=7.3.0"></script>
+
+
+
+<script src="/js/next-boot.js?v=7.3.0"></script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="/js/local-search.js?v=7.3.0"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', function() {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
+  
+
+  
+
+  
+
+
+  
+  <script src="/js/scrollspy.js?v=7.3.0"></script>
+<script src="/js/post-details.js?v=7.3.0"></script>
+
+
+</body>
+</html>

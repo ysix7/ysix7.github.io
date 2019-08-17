@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="generator" content="Hexo 3.9.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/cloud32.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/cloud16.png?v=7.3.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-pace-theme-minimal.min.css?v=1.0.2">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
+    save_scroll: false,
+    copycode: {"enable":false,"show_result":false,"style":null},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    }
+  };
+</script>
+
+  <meta name="description" content="服务器学习  快捷键在服务器里切换界面：alt+tab 链接使用命令的命令。 看完这篇Linux基本的操作就会了 https://github.com/jlevy/the-art-of-command-line/blob/master/README-zh.md 一个学习linux的网站 命令行清单 定义变量1your_name=&amp;quot;qinjx&amp;quot;  用引号，等号旁边不能有空格。否">
+<meta name="keywords" content="服务器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu服务器">
+<meta property="og:url" content="https://ysix7.github.io/p/6fe1.html">
+<meta property="og:site_name" content="春夏秋冬">
+<meta property="og:description" content="服务器学习  快捷键在服务器里切换界面：alt+tab 链接使用命令的命令。 看完这篇Linux基本的操作就会了 https://github.com/jlevy/the-art-of-command-line/blob/master/README-zh.md 一个学习linux的网站 命令行清单 定义变量1your_name=&amp;quot;qinjx&amp;quot;  用引号，等号旁边不能有空格。否">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://blog-w.oss-cn-beijing.aliyuncs.com/2019-07-21-082015.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190721161114733.png">
+<meta property="og:updated_time" content="2019-08-17T06:37:26.724Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ubuntu服务器">
+<meta name="twitter:description" content="服务器学习  快捷键在服务器里切换界面：alt+tab 链接使用命令的命令。 看完这篇Linux基本的操作就会了 https://github.com/jlevy/the-art-of-command-line/blob/master/README-zh.md 一个学习linux的网站 命令行清单 定义变量1your_name=&amp;quot;qinjx&amp;quot;  用引号，等号旁边不能有空格。否">
+<meta name="twitter:image" content="https://blog-w.oss-cn-beijing.aliyuncs.com/2019-07-21-082015.png">
+  <link rel="canonical" href="https://ysix7.github.io/p/6fe1">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Ubuntu服务器 | 春夏秋冬</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  <div class="container sidebar-position-left">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">春夏秋冬</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">17</span></a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-分类">
+      
+    
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-归档">
+      
+    
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-图像处理">
+      
+    
+      
+    
+
+    <a href="/categories/图像处理/" rel="section"><i class="menu-item-icon fa fa-fw fa-tripadvisor"></i> <br>图像处理</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-深度学习">
+      
+    
+      
+    
+
+    <a href="/categories/深度学习/" rel="section"><i class="menu-item-icon fa fa-fw fa-free-code-camp"></i> <br>深度学习</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-数学基础">
+      
+    
+      
+    
+
+    <a href="/categories/数学/" rel="section"><i class="menu-item-icon fa fa-fw fa-superscript"></i> <br>数学基础</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-优化算法">
+      
+    
+      
+    
+
+    <a href="/categories/算法/" rel="section"><i class="menu-item-icon fa fa-fw fa-line-chart"></i> <br>优化算法</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-软件">
+      
+    
+      
+    
+
+    <a href="/categories/软件/" rel="section"><i class="menu-item-icon fa fa-fw fa-desktop"></i> <br>软件</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-语言">
+      
+    
+      
+    
+
+    <a href="/categories/语言/" rel="section"><i class="menu-item-icon fa fa-fw fa-font"></i> <br>语言</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-摄影">
+      
+    
+      
+    
+
+    <a href="/categories/摄影/" rel="section"><i class="menu-item-icon fa fa-fw fa-instagram"></i> <br>摄影</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-生活">
+      
+    
+      
+    
+
+    <a href="/categories/生活/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>生活</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-其他">
+      
+    
+      
+    
+
+    <a href="/categories/其他/" rel="section"><i class="menu-item-icon fa fa-fw fa-th-list"></i> <br>其他</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+      </li>
+    
+  </ul>
+
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+    </div>
+</nav>
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content page-post-detail">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/p/6fe1.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="夏不哉下">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="春夏秋冬">
+    </span>
+      <header class="post-header">
+
+        
+          <h2 class="post-title" itemprop="name headline">Ubuntu服务器
+
+            
+          </h2>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-05-12 00:00:00" itemprop="dateCreated datePublished" datetime="2019-05-12T00:00:00+08:00">2019-05-12</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-08-17 14:37:26" itemprop="dateModified" datetime="2019-08-17T14:37:26+08:00">2019-08-17</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/深度学习/" itemprop="url" rel="index"><span itemprop="name">深度学习</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            <span class="post-meta-item" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>3.7k</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>3 分钟</span>
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
+<p>服务器学习</p>
+</blockquote>
+<h1 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h1><p>在服务器里切换界面：alt+tab</p>
+<h1 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h1><p>使用命令<a href></a>的命令。</p>
+<p><a href="https://zhuanlan.zhihu.com/p/36801617" target="_blank" rel="noopener">看完这篇Linux基本的操作就会了</a></p>
+<p><a href="https://github.com/jlevy/the-art-of-command-line/blob/master/README-zh.md" target="_blank" rel="noopener">https://github.com/jlevy/the-art-of-command-line/blob/master/README-zh.md</a></p>
+<p><a href="https://linuxjourney.com/" target="_blank" rel="noopener">一个学习linux的网站</a></p>
+<p><a href="https://github.com/skywind3000/awesome-cheatsheets/blob/master/languages/bash.sh" target="_blank" rel="noopener">命令行清单</a></p>
+<h1 id="定义变量"><a href="#定义变量" class="headerlink" title="定义变量"></a>定义变量</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">your_name=&quot;qinjx&quot;</span><br></pre></td></tr></table></figure>
+
+<p>用引号，等号旁边不能有空格。否则会被看成无法识别的命令</p>
+<p>命名只能使用英文字母，数字和下划线，首个字符不能以数字开头。<br>中间不能有空格，可以使用下划线（_）。<br>不能使用标点符号。<br>不能使用bash里的关键字（可用help命令查看保留关键字）</p>
+<h1 id="文件处理"><a href="#文件处理" class="headerlink" title="文件处理"></a>文件处理</h1><h2 id="显示隐藏文件"><a href="#显示隐藏文件" class="headerlink" title="显示隐藏文件"></a>显示隐藏文件</h2><p>ls -a</p>
+<p>桌面面可视化窗口，进入ctrl  + h ，则显示隐藏文件</p>
+<h2 id="创建目录"><a href="#创建目录" class="headerlink" title="创建目录"></a>创建目录</h2><p>Mkdir</p>
+<h2 id="复制删除文件"><a href="#复制删除文件" class="headerlink" title="复制删除文件"></a>复制删除文件</h2><p>cp</p>
+<p>rm</p>
+<p>##下载文件</p>
+<p>ftp下载</p>
+<p>​    如果下载<a href="https://www.baidu.com/s?wd=ftp%E6%9C%8D%E5%8A%A1%E5%99%A8&tn=24004469_oem_dg&rsv_dl=gh_pl_sl_csd" target="_blank" rel="noopener">ftp服务器</a>上的文件，可以用ftp命令。然后用get命令下载文件</p>
+<p>网址下载</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">wget http://data.vision.ee.ethz.ch/cvl/DIV2K/DIV2K_train_HR.zip</span><br><span class="line">1.Wget常用参数</span><br><span class="line">　　◆-b：后台下载，Wget默认的是把文件下载到当前目录。</span><br><span class="line">　　◆-O：将文件下载到指定的目录中。</span><br><span class="line">　　◆-P：保存文件之前先创建指定名称的目录。</span><br><span class="line">　　◆-t：尝试连接次数，当Wget无法与服务器建立连接时，尝试连接多少次。</span><br><span class="line">　　◆-c：断点续传，如果下载中断，那么连接恢复时会从上次断点开始下载。</span><br><span class="line">　　◆-r：使用递归下载</span><br></pre></td></tr></table></figure>
+
+<p>git下载</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone &lt;https://github.com/LimBee/NTIRE2017.git&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="解压文件"><a href="#解压文件" class="headerlink" title="解压文件"></a>解压文件</h2><p><a href> Unzip </a> <a href="https://www.cnblogs.com/chinareny2k/archive/2010/01/05/1639468.html" target="_blank" rel="noopener">https://www.cnblogs.com/chinareny2k/archive/2010/01/05/1639468.html</a>)</p>
+<p><a href="baidu.com">test</a> </p>
+<h2 id="查看动态文件"><a href="#查看动态文件" class="headerlink" title="查看动态文件"></a>查看动态文件</h2><p><a href="http://www.cnblogs.com/peida/archive/2012/11/07/2758084.html" target="_blank" rel="noopener">tail命令</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1、tail -f filename</span><br><span class="line">说明：监视filename文件的尾部内容（默认10行，相当于增加参数 -n 10），刷新显示在屏幕上。退出，按下CTRL+C。</span><br><span class="line">2、tail -n 20 filename</span><br><span class="line">说明：显示filename最后20行。</span><br></pre></td></tr></table></figure>
+
+<h2 id="文件编辑"><a href="#文件编辑" class="headerlink" title="文件编辑"></a>文件编辑</h2><h3 id="vim"><a href="#vim" class="headerlink" title="vim"></a>vim</h3><p>在vi中按u可以撤销一次操作; Ctrl+r 恢复上一步被撤销的操作</p>
+<p> <a href="https://m.pythontab.com/article/47" target="_blank" rel="noopener">vim常用命令之多行注释和多行删除</a></p>
+<h1 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h1><ul>
+<li><p>命令</p>
+<blockquote>
+<p>fg、bg、jobs、&amp;、ctrl + z都是跟系统任务有关的，虽然现在基本上不怎么需要用到这些命令，但学会了也是很实用的</p>
+<p>1.&amp; 最经常被用到</p>
+<p>这个用在一个命令的最后，可以把这个命令放到后台执行</p>
+<p>2.ctrl + z</p>
+<p>可以将一个正在前台执行的命令放到后台，并且暂停</p>
+<p>3.jobs</p>
+<p>查看当前有多少在后台运行的命令</p>
+<p>4.fg</p>
+<p>将后台中的命令调至前台继续运行</p>
+<p>如果后台中有多个命令，可以用 fg %jobnumber将选中的命令调出，%jobnumber是通过jobs命令查到的后台正在执行的命令的序号(不是pid)</p>
+<p>5.bg</p>
+<p>将一个在后台暂停的命令，变成继续执行</p>
+<p>如果后台中有多个命令，可以用bg %jobnumber将选中的命令调出，%jobnumber是通过jobs命令查到的后台正在执行的命令的序号(不是pid)</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="后台执行进程"><a href="#后台执行进程" class="headerlink" title="后台执行进程"></a>后台执行进程</h2><p><a href="https://blog.csdn.net/liuyanfeier/article/details/62422742" target="_blank" rel="noopener">linux后台执行命令：&amp;和nohup</a> </p>
+<p>command &amp;：关掉屏幕，进程结束，不占用屏幕而已 </p>
+<p>nohup commnd &amp;：真正在后台执行 </p>
+<p>PS：需要用户交互的命令不要放在后台执行。 有大量的输出，就进行重定向。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yyfang@mai:~/Documents/Deeplearning_edge/ERRNet_edge/ERRNet_Code$ nohup python main.py --cuda --dataset=<span class="string">"../../../dataset/data_edge_35.h5"</span> &gt;result.txt 2&gt;&amp;1 &amp;</span><br><span class="line">[1] 22223</span><br></pre></td></tr></table></figure>
+
+<p>显示最后的十行</p>
+<h2 id="监视进程"><a href="#监视进程" class="headerlink" title="监视进程"></a>监视进程</h2><p><a href="https://blog.csdn.net/shenhuan1104/article/details/75808146" target="_blank" rel="noopener">https://blog.csdn.net/shenhuan1104/article/details/75808146</a></p>
+<p>查看进程 ps -aux | grep xrdp</p>
+<p>杀死进程 $ kill -s 9 进程号</p>
+<p><strong>管道符“|”用来隔开两个命令，管道符左边命令的输出会作为管道符右边命令的输入。</strong></p>
+<p>把ps的查询结果通过管道给grep查找包含特定字符串的进程。</p>
+<p>$ ps -ef | grep firefox</p>
+<h2 id="监视GPU"><a href="#监视GPU" class="headerlink" title="监视GPU"></a>监视GPU</h2><p>3.监视GPU的使用情况 </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ nvidia-smi </span><br><span class="line">$ watch -n 10 nvidia-smi %10s钟输出一次</span><br></pre></td></tr></table></figure>
+
+<p>指定GPU</p>
+<h1 id="启用相关软件和程序"><a href="#启用相关软件和程序" class="headerlink" title="启用相关软件和程序"></a>启用相关软件和程序</h1><h3 id="matlab"><a href="#matlab" class="headerlink" title="matlab"></a>matlab</h3><p><a href="https://blog.csdn.net/u013066730/article/details/80944063" target="_blank" rel="noopener">https://blog.csdn.net/u013066730/article/details/80944063</a></p>
+<p>命令行之行matlab</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">2.运行m文件</span><br><span class="line">如果m文件名为matlabfile.m</span><br><span class="line">(1)方法一</span><br><span class="line">进入m文件所在目录后，运行</span><br><span class="line">$ matlab -nodesktop -nosplash -r matlabfile</span><br><span class="line">只用文件名matlabfile，不能添加.m</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><a href="https://blog.csdn.net/brandyzhaowei/article/details/7895298" target="_blank" rel="noopener">更改快捷键</a></p>
+<p><img src="https://blog-w.oss-cn-beijing.aliyuncs.com/2019-07-21-082015.png" alt="image-20190721160134598"></p>
+<p><img src="/Users/yyf/Library/Application%20Support/typora-user-images/image-20190721161114733.png" alt="image-20190721161114733"></p>
+</li>
+</ul>
+<h3 id="anaconda"><a href="#anaconda" class="headerlink" title="anaconda"></a>anaconda</h3><p>在终端输入anaconda-navigator</p>
+<p>退出base</p>
+<h2 id="执行python"><a href="#执行python" class="headerlink" title="执行python"></a>执行python</h2><p><strong>参数输入</strong></p>
+<p>Positional argument v.s. keyword argument </p>
+<p>In other words, keyword arguments are only “optional” because they will be set to their default value if not specifically supplied. </p>
+<p><a href="https://docs.python.org/2/library/argparse.html" target="_blank" rel="noopener">多参数输入</a></p>
+<h1 id="远程连接"><a href="#远程连接" class="headerlink" title="远程连接"></a>远程连接</h1><p>xrdp 服务相关</p>
+<h1 id="SSD管理"><a href="#SSD管理" class="headerlink" title="SSD管理"></a>SSD管理</h1><p>预处理数据的时候，要检查硬盘是否有足够大的空间</p>
+<p>df -h</p>
+<h1 id="GPU"><a href="#GPU" class="headerlink" title="GPU"></a>GPU</h1><p>由显卡和GPU组成 相当于内存和CPU的区别</p>
+<p>当显卡内存不够时，和<strong>batchsize</strong>有关和数据集的大小没有关系，一块显卡，64*64的batchsize=16而不能设置成32</p>
+<h1 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h1><p>配置anaconda环境变量，在终端输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export PATH=~/anaconda/bin:$PATH</span><br></pre></td></tr></table></figure>
+
+<p>显示当前conda版本信息，在终端输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda --version</span><br></pre></td></tr></table></figure>
+
+<p>之后我们再次输入命令列出Anaconda自带的包，在终端输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda list</span><br></pre></td></tr></table></figure>
+
+<h1 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h1><ul>
+<li><p>远程桌面死机</p>
+<p>知道服务器远程桌面的服务所使用的协议，关掉相应进程即可。</p>
+<p>不知道的情况下，可猜测对方所使用的进程（例如猜测使用xrdp）</p>
+<p>如果是xrdp的话这行命令应该会有超过一个的结果：ps -aux | grep xrdp  ![image-20190506123440339](/Users/yyf/Library/Application Support/typora-user-images/image-20190506123440339.png)yyfang@mai:~$ kill 22722 # 对应的进程是启动桌面</p>
+</li>
+<li><p>查看服务器容量</p>
+<ul>
+<li><p><u>如何调出这个显示，代表的是什么容量，应该没有包括数据的大小</u>![image-20190613135253231](/Users/yyf/Library/Application Support/typora-user-images/image-20190613135253231.png)</p>
+</li>
+<li><p><a href="http://www.runoob.com/linux/linux-comm-du.html" target="_blank" rel="noopener">Linux du 命令</a></p>
+<p>du -sh 查看当前目录的大小</p>
+<p>du -h test 方便阅读的格式显示test目录所占空间情况</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># du log2012.log </span><br><span class="line">300     log2012.log</span><br><span class="line"># du -h test</span><br><span class="line">608K    test/test6</span><br><span class="line">308K    test/test4</span><br><span class="line">4.0K    test/scf/lib</span><br><span class="line">4.0K    test/scf/service/deploy/product</span><br><span class="line">4.0K    test/scf/service/deploy/info</span><br><span class="line">12K     test/scf/service/deploy</span><br><span class="line">16K     test/scf/service</span><br><span class="line">4.0K    test/scf/doc</span><br><span class="line">4.0K    test/scf/bin</span><br><span class="line">32K     test/scf</span><br><span class="line">8.0K    test/test3</span><br><span class="line">1.3M    test</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="服务器上文件"><a href="#服务器上文件" class="headerlink" title="服务器上文件"></a>服务器上文件</h1><h2 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h2><p>网上下载的一些数据集</p>
+<ul>
+<li>train: 生成的一些.h5训练数据<ul>
+<li>test.h5 用ljc的边缘，未归一化，用了400张图</li>
+<li>poisson10.h5 noiselevel=10的泊松噪声 </li>
+</ul>
+</li>
+</ul>
+<h2 id="Edge-net"><a href="#Edge-net" class="headerlink" title="Edge_net"></a>Edge_net</h2><ul>
+<li><p>generate_data: 生成.h5数据</p>
+</li>
+<li><p>Loggers05</p>
+<ul>
+<li>Poisson10_… 10:22PM开始</li>
+</ul>
+</li>
+<li><p>/python/compare_models: 不同的.pth</p>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+        
+        <div class="post-tags">
+            <a href="/tags/服务器/" rel="tag"># 服务器</a>
+          
+        </div>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+              <a href="/p/b371.html" rel="next" title="富士X100：慢拍的优雅">
+                <i class="fa fa-chevron-left"></i> 富士X100：慢拍的优雅
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+              <a href="/p/ef8a.html" rel="prev" title="Pytorch学习笔记">
+                Pytorch学习笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/head.jpg"
+      alt="夏不哉下">
+  <p class="site-author-name" itemprop="name">夏不哉下</p>
+  <div class="site-description motion-element" itemprop="description"></div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives">
+        
+          <span class="site-state-item-count">38</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/ysix7" title="GitHub &rarr; https://github.com/ysix7" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="/17481201@life.hkbu.edu.hk" title="E-Mail &rarr; 17481201@life.hkbu.edu.hk"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+    
+  </div>
+
+
+
+        </div>
+      </div>
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#快捷键"><span class="nav-number">1.</span> <span class="nav-text">快捷键</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#链接"><span class="nav-number">2.</span> <span class="nav-text">链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#定义变量"><span class="nav-number">3.</span> <span class="nav-text">定义变量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文件处理"><span class="nav-number">4.</span> <span class="nav-text">文件处理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#显示隐藏文件"><span class="nav-number">4.1.</span> <span class="nav-text">显示隐藏文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建目录"><span class="nav-number">4.2.</span> <span class="nav-text">创建目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#复制删除文件"><span class="nav-number">4.3.</span> <span class="nav-text">复制删除文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解压文件"><span class="nav-number">4.4.</span> <span class="nav-text">解压文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看动态文件"><span class="nav-number">4.5.</span> <span class="nav-text">查看动态文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件编辑"><span class="nav-number">4.6.</span> <span class="nav-text">文件编辑</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#vim"><span class="nav-number">4.6.1.</span> <span class="nav-text">vim</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#进程"><span class="nav-number">5.</span> <span class="nav-text">进程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#后台执行进程"><span class="nav-number">5.1.</span> <span class="nav-text">后台执行进程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#监视进程"><span class="nav-number">5.2.</span> <span class="nav-text">监视进程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#监视GPU"><span class="nav-number">5.3.</span> <span class="nav-text">监视GPU</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#启用相关软件和程序"><span class="nav-number">6.</span> <span class="nav-text">启用相关软件和程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#matlab"><span class="nav-number">6.0.1.</span> <span class="nav-text">matlab</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#anaconda"><span class="nav-number">6.0.2.</span> <span class="nav-text">anaconda</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#执行python"><span class="nav-number">6.1.</span> <span class="nav-text">执行python</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#远程连接"><span class="nav-number">7.</span> <span class="nav-text">远程连接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SSD管理"><span class="nav-number">8.</span> <span class="nav-text">SSD管理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GPU"><span class="nav-number">9.</span> <span class="nav-text">GPU</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#环境变量"><span class="nav-number">10.</span> <span class="nav-text">环境变量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常见问题"><span class="nav-number">11.</span> <span class="nav-text">常见问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#服务器上文件"><span class="nav-number">12.</span> <span class="nav-text">服务器上文件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Dataset"><span class="nav-number">12.1.</span> <span class="nav-text">Dataset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Edge-net"><span class="nav-number">12.2.</span> <span class="nav-text">Edge_net</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">夏不哉下</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    
+    <span title="站点总字数">146k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    
+    <span title="站点阅读时长">2:13</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.3.0</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+    <span class="post-meta-divider">|</span>
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+  </div>
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/js/utils.js?v=7.3.0"></script>
+  <script src="/js/motion.js?v=7.3.0"></script>
+
+
+  <script src="/js/affix.js?v=7.3.0"></script>
+  <script src="/js/schemes/pisces.js?v=7.3.0"></script>
+
+
+
+<script src="/js/next-boot.js?v=7.3.0"></script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="/js/local-search.js?v=7.3.0"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+  <script src="/js/scrollspy.js?v=7.3.0"></script>
+<script src="/js/post-details.js?v=7.3.0"></script>
+
+
+</body>
+</html>
