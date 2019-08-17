@@ -59,8 +59,8 @@
 
   <meta name="description" content="Opening今天我讲的内容是第十六章，图模型。主要包含三个基本问题：图模型的结构、推断、学习。表示问题，利用图结构表示彼岸两之间的依赖关系 推断问题，推断预测变量的后验分布。在观测到部分变量e时候，计算其它变量的某个子集 q = {q 1 , q 2 , · · · , q n } 的后验概率 p(q|e)。以及学习问题, 图结构的学习和图中参数的学习。   在前面几周，已经介绍了一些推断的方法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="春夏秋冬">
-<meta property="og:url" content="https://ysix7.github.io/p/0.html">
+<meta property="og:title" content="Graph model">
+<meta property="og:url" content="https://ysix7.github.io/p/3b7a.html">
 <meta property="og:site_name" content="春夏秋冬">
 <meta property="og:description" content="Opening今天我讲的内容是第十六章，图模型。主要包含三个基本问题：图模型的结构、推断、学习。表示问题，利用图结构表示彼岸两之间的依赖关系 推断问题，推断预测变量的后验分布。在观测到部分变量e时候，计算其它变量的某个子集 q = {q 1 , q 2 , · · · , q n } 的后验概率 p(q|e)。以及学习问题, 图结构的学习和图中参数的学习。   在前面几周，已经介绍了一些推断的方法">
 <meta property="og:locale" content="zh-CN">
@@ -82,12 +82,12 @@
 <meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190805215740555.png">
 <meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190805215043749.png">
 <meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190805211429187.png">
-<meta property="og:updated_time" content="2019-08-17T06:37:26.701Z">
+<meta property="og:updated_time" content="2019-08-17T07:46:42.749Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="春夏秋冬">
+<meta name="twitter:title" content="Graph model">
 <meta name="twitter:description" content="Opening今天我讲的内容是第十六章，图模型。主要包含三个基本问题：图模型的结构、推断、学习。表示问题，利用图结构表示彼岸两之间的依赖关系 推断问题，推断预测变量的后验分布。在观测到部分变量e时候，计算其它变量的某个子集 q = {q 1 , q 2 , · · · , q n } 的后验概率 p(q|e)。以及学习问题, 图结构的学习和图中参数的学习。   在前面几周，已经介绍了一些推断的方法">
 <meta name="twitter:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190805205029413.png">
-  <link rel="canonical" href="https://ysix7.github.io/p/0">
+  <link rel="canonical" href="https://ysix7.github.io/p/3b7a">
 
 
 <script id="page-configurations">
@@ -101,7 +101,7 @@
   };
 </script>
 
-  <title> | 春夏秋冬</title>
+  <title>Graph model | 春夏秋冬</title>
   
 
 
@@ -390,7 +390,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/p/0.html">
+    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/p/3b7a.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="夏不哉下">
@@ -404,7 +404,7 @@
       <header class="post-header">
 
         
-          <h2 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">Graph model
 
             
           </h2>
@@ -421,7 +421,7 @@
                 
               
 
-              <time title="创建时间：2019-08-05 11:29:43" itemprop="dateCreated datePublished" datetime="2019-08-05T11:29:43+08:00">2019-08-05</time>
+              <time title="创建时间：2019-08-10 00:00:00" itemprop="dateCreated datePublished" datetime="2019-08-10T00:00:00+08:00">2019-08-10</time>
             </span>
           
             
@@ -432,9 +432,22 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-17 14:37:26" itemprop="dateModified" datetime="2019-08-17T14:37:26+08:00">2019-08-17</time>
+                <time title="修改时间：2019-08-17 15:46:42" itemprop="dateModified" datetime="2019-08-17T15:46:42+08:00">2019-08-17</time>
               </span>
             
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/深度学习/" itemprop="url" rel="index"><span itemprop="name">深度学习</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -550,12 +563,12 @@ p(\mathbf{x})=\prod_{k=1}^{K} p\left(x_{k} | \mathbf{x}_{\pi_{k}}\right)</script
 </li>
 </ul>
 <h1 id="有向图—高斯混合模型"><a href="#有向图—高斯混合模型" class="headerlink" title="有向图—高斯混合模型"></a>有向图—高斯混合模型</h1><p>高斯混合模型（Gaussian Mixture Model，GMM)。假设样本 x 是从 K 个高斯分布中生成的。</p>
-<p>高斯混合模型的概率密度函数为：$p(x)=\sum_{k=1}^{K} \pi_{k} \mathcal{N}\left(x | \mu_{k}, \sigma_{k}\right)​$</p>
+<p>高斯混合模型的概率密度函数为：$p(x)=\sum_{k=1}^{K} \pi_{k} \mathcal{N}\left(x | \mu_{k}, \sigma_{k}\right)$</p>
 <p>有向图结构的定义：Y-&gt;X</p>
 <p>在这个图中，我们定义$P(X|Y=k)=\mathcal{N}\left(x | \mu_{k}, \sigma_{k}\right)$, $P(Y=k)=\pi_k, \sum_{k=1}^{K} \pi_{k}=1$.</p>
-<p>根据这个图：我们可以得到x的边际概率：$p(x)=\sum_{k=1}^{K} \pi_{k} \mathcal{N}\left(x | \mu_{k}, \sigma_{k}\right)​$</p>
+<p>根据这个图：我们可以得到x的边际概率：$p(x)=\sum_{k=1}^{K} \pi_{k} \mathcal{N}\left(x | \mu_{k}, \sigma_{k}\right)$</p>
 <p>参数估计：用最大似然的方法来进行参数估计，给定N 个训练样本D = {x (i) }, 1 ≤ i ≤ N，其训练集的对数边际似然为 $\mathcal{L}(\mathcal{D} | \theta)=\frac{1}{N} \sum_{i=1}^{N}\left(\log p\left(\mathbf{x}^{(i)}, \theta\right)\right.$,并通过EM算法来求解获得参数$u_k,\sigma_k,\pi_k$, </p>
-<p>推断：计算后验分布 p(Y=k|x)$\pi_{k} \mathcal{N}\left(x^{(n)} | \mu_{k}, \sigma_{k}\right)​$</p>
+<p>推断：计算后验分布 p(Y=k|x)$\pi_{k} \mathcal{N}\left(x^{(n)} | \mu_{k}, \sigma_{k}\right)$</p>
 <p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190805231018118.png" alt="image-20190805231018118"></p>
 <h1 id="无向图结构"><a href="#无向图结构" class="headerlink" title="无向图结构"></a>无向图结构</h1><ul>
 <li><p>应用场景</p>
@@ -612,8 +625,8 @@ p(\mathbf{x})=\prod_{k=1}^{K} p\left(x_{k} | \mathbf{x}_{\pi_{k}}\right)</script
     <footer class="post-footer">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
-              <a href="/p/44f5.html" rel="next" title="生成模型vs判别模型">
-                <i class="fa fa-chevron-left"></i> 生成模型vs判别模型
+              <a href="/p/23e4.html" rel="next" title="图像处理相关问题综述">
+                <i class="fa fa-chevron-left"></i> 图像处理相关问题综述
               </a>
             
           </div>
@@ -621,10 +634,6 @@ p(\mathbf{x})=\prod_{k=1}^{K} p\left(x_{k} | \mathbf{x}_{\pi_{k}}\right)</script
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-              <a href="/p/7ab7.html" rel="prev" title="hexo博客搭建">
-                hexo博客搭建 <i class="fa fa-chevron-right"></i>
-              </a>
-            
           </div>
         </div>
     </footer>
