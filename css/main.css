@@ -1609,7 +1609,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #037585;
+  background: #30459d;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1794,7 +1794,7 @@ pre .javascript .function {
   line-height: 1.8;
 }
 .post-toc .nav .nav-child {
-  display: none;
+  display: block;
 }
 .post-toc .nav .active > .nav-child {
   display: block;
