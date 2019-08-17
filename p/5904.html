@@ -455,7 +455,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>4.7k</span>
+              <span>4.6k</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -488,7 +488,6 @@
 <li><p>自定义颜色</p>
 <p><a href="https://www.sojson.com/rgb.html" target="_blank" rel="noopener">RGB颜色查询</a></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">\usepackage&#123;xcolor&#125;</span><br><span class="line">\definecolor&#123;myorange&#125;&#123;rgb&#125;&#123;1, 0.44, 0.11&#125;</span><br><span class="line">\newcommand&#123;\grammar&#125;[1]&#123;\textcolor&#123;myorange&#125;&#123;#1&#125;&#125;</span><br></pre></td></tr></table></figure>
-
 </li>
 </ul>
 <h1 id="画图"><a href="#画图" class="headerlink" title="画图"></a>画图</h1><ul>
@@ -509,7 +508,6 @@
 <li><p>多张图片并列插入</p>
 <p>使用subfigure，如果想换行，在图片后面加上回车键</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;figure&#125;[htbp]</span><br><span class="line">\centering</span><br><span class="line">\subfigure[pic1.]&#123;</span><br><span class="line">\begin&#123;minipage&#125;[t]&#123;0.25\linewidth&#125;</span><br><span class="line">\centering</span><br><span class="line">\includegraphics[width=1in]&#123;images/MSRB1.png&#125;</span><br><span class="line">%\caption&#123;fig1&#125;</span><br><span class="line">\end&#123;minipage&#125;%</span><br><span class="line">&#125;%</span><br><span class="line">\subfigure[pic2.]&#123;</span><br><span class="line">\begin&#123;minipage&#125;[t]&#123;0.25\linewidth&#125;</span><br><span class="line">\centering</span><br><span class="line">\includegraphics[width=1in]&#123;images/MSRB1.png&#125;</span><br><span class="line">%\caption&#123;fig2&#125;</span><br><span class="line">\end&#123;minipage&#125;%</span><br><span class="line">&#125;%</span><br><span class="line">[回车]</span><br><span class="line">\subfigure[pic3.]&#123;</span><br><span class="line">\begin&#123;minipage&#125;[t]&#123;0.25\linewidth&#125;</span><br><span class="line">\centering</span><br><span class="line">\includegraphics[width=1in]&#123;images/MSRB1.png&#125;</span><br><span class="line">%\caption&#123;fig2&#125;</span><br><span class="line">\end&#123;minipage&#125;</span><br><span class="line">&#125;%</span><br><span class="line">\subfigure[pic4.]&#123;</span><br><span class="line">\begin&#123;minipage&#125;[t]&#123;0.25\linewidth&#125;</span><br><span class="line">\centering</span><br><span class="line">\includegraphics[width=1in]&#123;images/MSRB1.png&#125;</span><br><span class="line">%\caption&#123;fig2&#125;</span><br><span class="line">\end&#123;minipage&#125;</span><br><span class="line">&#125;%</span><br><span class="line">[回车]</span><br><span class="line">\centering</span><br><span class="line">\caption&#123; pics&#125;</span><br><span class="line">\end&#123;figure&#125;</span><br></pre></td></tr></table></figure>
-
 <p><img src="https://blog-w.oss-cn-beijing.aliyuncs.com/FYY%E2%9D%A4/006tNc79gy1g37p8vf4a0j30ks098gm1.jpg" alt="image-20190517171605725"></p>
 </li>
 <li><p>一列多张图</p>
@@ -539,17 +537,12 @@
 </li>
 <li><p>latex和matlab表格的连接</p>
 <ul>
-<li><a href="https://www.ilovematlab.cn/thread-246712-1-1.html" target="_blank" rel="noopener">matlab的输出模式规范成[&amp;&amp;\\]的模式</a></li>
+<li><a href="https://www.ilovematlab.cn/thread-246712-1-1.html" target="_blank" rel="noopener">matlab的输出模式规范成[&amp;&amp;\\\]的模式</a></li>
 <li><a href="https://blog.csdn.net/robert_chen1988/article/details/79121377" target="_blank" rel="noopener">latex引用包，把csv读取成表格模式</a></li>
 </ul>
 </li>
 <li><p><a href="https://blog.csdn.net/wh1312142954/article/details/80641292" target="_blank" rel="noopener">表格溢出</a></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;table*&#125;[!t]</span><br><span class="line">\centering</span><br><span class="line">\caption&#123;***&#125;</span><br><span class="line">\label&#123;***&#125;</span><br><span class="line">\resizebox&#123;\textwidth&#125;&#123;!&#125;&#123;</span><br><span class="line">\begin&#123;tabular&#125;&#123;***&#125;</span><br><span class="line">***</span><br><span class="line">\end&#123;tabular&#125;&#125;</span><br><span class="line">\end&#123;table*&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 </li>
 </ul>
 <h1 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h1><ul>
@@ -561,7 +554,6 @@
 </li>
 <li><p>多行公式对齐，并显示一个序号</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">\documentclass[review]&#123;elsarticle&#125;</span><br><span class="line">\usepackage&#123;amsmath&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">\begin&#123;equation&#125; \label&#123;eqn2&#125;</span><br><span class="line">  \begin&#123;split&#125;</span><br><span class="line">  n&amp;=\left[\frac&#123;b-a&#125;&#123;0.01&#125;\right]+1,    \\</span><br><span class="line">  S&amp;=\frac&#123;1&#125;&#123;n&#125;\sum\limits_&#123;j=1&#125;^&#123;n&#125;(\lambda_&#123;0j&#125;-\lambda_&#123;j&#125;).</span><br><span class="line">  \end&#123;split&#125;</span><br><span class="line">\end&#123;equation&#125;</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure>
-
 <p><img src="https://img-blog.csdn.net/20170903144702234?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXkyMDExNTU0OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="img"></p>
 </li>
 </ul>
@@ -846,14 +838,14 @@
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">146k</span>
+    <span title="站点总字数">134k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">2:13</span>
+    <span title="站点阅读时长">2:02</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
   <span class="post-meta-divider">|</span>

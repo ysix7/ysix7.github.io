@@ -494,7 +494,7 @@
 </li>
 <li><p>函数:</p>
 <ul>
-<li>前带<em>的变量: 标明是一个私有函数, 只用于标明,</em></li>
+<li>前带_的变量: 标明是一个私有函数, 只用于标明,_</li>
 <li>_  前带两个_ ,后带两个_ 的函数:  标明是特殊函数</li>
 </ul>
 </li>
@@ -505,7 +505,6 @@
 <h2 id="不同数据类型的size"><a href="#不同数据类型的size" class="headerlink" title="不同数据类型的size"></a>不同数据类型的size</h2><p><img src="https://blog-w.oss-cn-beijing.aliyuncs.com/FYY/006tNc79gy1g333jkjg64j313s0l6jug.jpg" alt="image-20190116150303644"></p>
 <h2 id="list-列表"><a href="#list-列表" class="headerlink" title="list 列表"></a>list 列表</h2><p>创建列表：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">files = []</span><br><span class="line">files.append(os.path.splitext(i))</span><br></pre></td></tr></table></figure>
-
 <p><a href="https://blog.csdn.net/Yeoman92/article/details/56289287" target="_blank" rel="noopener">理解Python中列表，元组，字典，集合的使用</a></p>
 <p>列表的读取方式： files[1]</p>
 <h2 id="numpy数组"><a href="#numpy数组" class="headerlink" title="numpy数组"></a>numpy数组</h2><p><a href="https://blog.csdn.net/Baoli1008/article/details/50531684" target="_blank" rel="noopener">Python Numpy 数组的初始化和基本操作</a></p>
@@ -514,6 +513,7 @@
 <p>1）当浅复制的值是不可变对象（数值，字符串，元组）时和“等于赋值”的情况一样，对象的id值与浅复制原来的值相同。</p>
 <p>2）当浅复制的值是可变对象（列表和元组）时会产生一个“不是那么独立的对象”存在。有两种情况</p>
 <h2 id="不同数据类型"><a href="#不同数据类型" class="headerlink" title="不同数据类型"></a>不同数据类型</h2><p>查看数据类型：type(object)</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -524,7 +524,8 @@
 <th>[‘a’, ‘b’, ‘c’, 1, 2, [1, 2]]</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>元组</td>
 <td>可重复，类型可不同；可以遍历</td>
 <td>只读的，不能修改</td>
@@ -552,7 +553,9 @@
 <td>不支持 索引, 分片, 或其它类序(sequence-like）</td>
 <td>可将元祖和列表转化为集合set2 = set(list1)</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>可变：列表、字典、集合（存在固定集合frozenset）</p>
 <p>不可变：元组、int、 string、 float</p>
 <blockquote>
@@ -562,7 +565,6 @@
 <li>获取文件内的文件名字</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">path = <span class="string">"d:\\data"</span>                           <span class="comment"># 设置路径</span></span><br><span class="line">dirs = os.listdir(path)                    <span class="comment"># 获取指定路径下的文件</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> dirs:                             <span class="comment"># 循环读取路径下的文件并筛选输出</span></span><br><span class="line">    <span class="keyword">if</span> os.path.splitext(i)[<span class="number">1</span>] == <span class="string">".csv"</span>:   <span class="comment"># 筛选csv文件</span></span><br><span class="line">        <span class="keyword">print</span> i</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>组成路径名字</li>
 </ul>
@@ -580,13 +582,11 @@
 </li>
 </ul>
 <h2 id="库的升级"><a href="#库的升级" class="headerlink" title="库的升级"></a>库的升级</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install --upgrade requests  // mac,linux,unix 在命令前加 sudo -H</span><br></pre></td></tr></table></figure>
-
 <h1 id="Python-迭代器与生成器"><a href="#Python-迭代器与生成器" class="headerlink" title="Python 迭代器与生成器"></a>Python 迭代器与生成器</h1><p><a href="https://www.cnblogs.com/wj-1314/p/8490822.html" target="_blank" rel="noopener">生成器和迭代器的关系</a>: 生成器是迭代器的一种</p>
 <p>生成器通过一个函数创建列表，但是不一次性创建完毕，因而节省内存，并且表现得却像是迭代器。</p>
 <p><strong>可迭代对象</strong>（可以用在 for 语句进行循环的对象）</p>
 <p>1.数据类型（列表、元组、字符串、字典等）</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span><span class="keyword">for</span> i <span class="keyword">in</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]:</span><br><span class="line">    print(i)</span><br><span class="line"><span class="number">2.</span>obj = &#123;<span class="string">"a"</span>: <span class="number">123</span>, <span class="string">"b"</span>: <span class="number">456</span>&#125;</span><br><span class="line"><span class="keyword">for</span> k <span class="keyword">in</span> obj:</span><br><span class="line">    print(k)</span><br></pre></td></tr></table></figure>
-
 <p>2.自己创建的迭代器</p>
 <p>迭代器的创建方法:</p>
 <ul>
@@ -598,30 +598,21 @@
 </li>
 <li><p><strong>生成器（generator）</strong></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">container</span><span class="params">(start, end)</span>:</span></span><br><span class="line">    <span class="keyword">while</span> start &lt; end:</span><br><span class="line">        <span class="keyword">yield</span> start</span><br><span class="line">        start += <span class="number">1</span></span><br><span class="line">c = container(<span class="number">0</span>, <span class="number">5</span>)</span><br><span class="line">Python</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">generator</span>'&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
 </li>
 </ul>
 <h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="split"><a href="#split" class="headerlink" title="split"></a>split</h2><p>通过指定分隔符对字符串进行切片，如果参数num 有指定值，则仅分隔 num 个子字符串</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/python</span></span><br><span class="line">str = <span class="string">"Line1-abcdef \nLine2-abc \nLine4-abcd"</span>;</span><br><span class="line"><span class="keyword">print</span> str.split( );</span><br><span class="line"><span class="keyword">print</span> str.split(<span class="string">' '</span>, <span class="number">1</span> );</span><br></pre></td></tr></table></figure>
-
 <h2 id="find"><a href="#find" class="headerlink" title="find"></a>find</h2><p>检测字符串中是否包含子字符串 str ，如果指定 beg（开始） 和 end（结束） 范围，则检查是否包含在指定范围内，如果包含子字符串返回开始的索引值，否则返回-1。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str.find(str, beg=<span class="number">0</span>, end=len(string))</span><br></pre></td></tr></table></figure>
-
 <h2 id="print"><a href="#print" class="headerlink" title="print"></a>print</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'t=&#123;&#125;,loss=&#123;:.6f&#125;'</span>.format(t,loss))</span><br></pre></td></tr></table></figure>
-
 <h3 id="numpy的输出"><a href="#numpy的输出" class="headerlink" title="numpy的输出"></a>numpy的输出</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用set_printoptions设置输出的精度</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x=np.random.random(<span class="number">10</span>)</span><br><span class="line">np.set_printoptions(precision=<span class="number">3</span>)</span><br><span class="line">print(x)</span><br><span class="line"><span class="comment"># 抑制使用对小数的科学记数法</span></span><br><span class="line">y=np.array([<span class="number">1.5e-10</span>,<span class="number">1.5</span>,<span class="number">1500</span>])</span><br><span class="line">print(y)</span><br><span class="line"><span class="comment"># [  1.500e-10   1.500e+00   1.500e+03]</span></span><br><span class="line">np.set_printoptions(suppress=<span class="literal">True</span>)</span><br><span class="line">print(y)</span><br></pre></td></tr></table></figure>
-
 <h2 id="合并两个矩阵"><a href="#合并两个矩阵" class="headerlink" title="合并两个矩阵"></a>合并两个矩阵</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#hstack()在行上合并 这个实验结果不对 </span></span><br><span class="line">np.hstack((a,b))  </span><br><span class="line"><span class="comment">#vstack()在列上合并  </span></span><br><span class="line">np.vstack((a,b))</span><br></pre></td></tr></table></figure>
-
 <h2 id="squeeze"><a href="#squeeze" class="headerlink" title="squeeze"></a><a href="https://blog.csdn.net/zenghaitao0128/article/details/78512715" target="_blank" rel="noopener">squeeze</a></h2><p><strong>语法</strong>：numpy.squeeze(a,axis = None)</p>
 <p>1）a表示输入的数组；<br>2）axis用于指定需要删除的维度，但是指定的维度必须为单维度，否则将会报错；<br>3）axis的取值可为None 或 int 或 tuple of ints, 可选。若axis为空，则删除所有单维度的条目；</p>
 <p>从数组的形状中删除单维度条目，即把shape中为1的维度去掉</p>
 <p><strong>作用</strong>：从数组的形状中删除单维度条目，即把shape中为1的维度去掉</p>
 <p><strong>例子：</strong></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">e  = np.arange(<span class="number">10</span>).reshape(<span class="number">1</span>,<span class="number">10</span>,<span class="number">1</span>)</span><br><span class="line">e: array([[[<span class="number">0</span>],</span><br><span class="line">        [<span class="number">1</span>],</span><br><span class="line">        [<span class="number">2</span>],</span><br><span class="line">        [<span class="number">3</span>],</span><br><span class="line">        [<span class="number">4</span>],</span><br><span class="line">        [<span class="number">5</span>],</span><br><span class="line">        [<span class="number">6</span>],</span><br><span class="line">        [<span class="number">7</span>],</span><br><span class="line">        [<span class="number">8</span>],</span><br><span class="line">        [<span class="number">9</span>]]])</span><br><span class="line"></span><br><span class="line">np.squeeze(e)</span><br><span class="line">e: array([<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>])</span><br><span class="line"><span class="comment">#正常显示图示案例</span></span><br><span class="line"><span class="comment">#通过np.squeeze()函数转换后，要显示的数组变成了秩为1的数组，即（5，）</span></span><br><span class="line">plt.plot(np.squeeze(squares))    </span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-
 <h1 id="库-1"><a href="#库-1" class="headerlink" title="库"></a>库</h1><p>numpy：提供很多矩阵的操作</p>
 <h1 id="python的注释格式"><a href="#python的注释格式" class="headerlink" title="python的注释格式"></a>python的注释格式</h1><p><a href="https://blog.csdn.net/teacher20133/article/details/79894828" target="_blank" rel="noopener">python的注释格式</a></p>
 <h1 id="Python-图像"><a href="#Python-图像" class="headerlink" title="Python 图像"></a>Python 图像</h1><ul>
@@ -639,7 +630,7 @@
 </li>
 </ul>
 <h1 id="Debug"><a href="#Debug" class="headerlink" title="Debug"></a>Debug</h1><ul>
-<li><input checked disabled type="checkbox"> 文件阅读时，出现无法创建文件的问题。（该文件被另一进程阅读中）</li>
+<li>[x] 文件阅读时，出现无法创建文件的问题。（该文件被另一进程阅读中）</li>
 </ul>
 <blockquote>
 <p>why can the same file not opened by several processes?</p>
@@ -647,7 +638,7 @@
 <p>The best way to deal with this is by simply opening the HDF5-file for read-only in both Python scripts. That should work perfectly fine.</p>
 </blockquote>
 <ul>
-<li><input checked disabled type="checkbox"> NoneType之所以出现，该参数没有被创建或者赋值，只被取了名字。</li>
+<li>[x] NoneType之所以出现，该参数没有被创建或者赋值，只被取了名字。</li>
 </ul>
 <blockquote>
 <p>要理解这个，首先要理解Python对象，python对象具有三个特性：身份、类型、值。<br>  这三个特性在对象创建时被赋值。只有值可以改变，其他只读。类型本身也是对象。<br>  Null与None是Python的特殊类型，Null对象或者是None Type，它只有一个值None.<br>  它不支持任何运算也没有任何内建方法. None和任何其他的数据类型比较永远返回False。<br>  None有自己的数据类型NoneType。你可以将None复制给任何变量，但是你不能创建其他NoneType对象。<br>  一句话总结：Null对象是python对象，又叫做NoneType，None是这个对象的值。<br>  看过了NoneType的解释，之所以出现None就很好理解了。 </p>
@@ -904,14 +895,14 @@
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">146k</span>
+    <span title="站点总字数">134k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">2:13</span>
+    <span title="站点阅读时长">2:02</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
   <span class="post-meta-divider">|</span>

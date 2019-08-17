@@ -68,7 +68,14 @@
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79gy1g30q089fiwj30s00f0tbp.jpg">
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79gy1g30q07ezv5j30q40l8n0w.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79gy1g30q06hft4j316u0u07ea.jpg">
+<meta property="og:image" content="https://ysix7.github.io/Library/Application%20Support/typora-user-images/image-20190514135849553.png">
+<meta property="og:image" content="https://ysix7.github.io/Library/Application%20Support/typora-user-images/image-20190514135858557.png">
+<meta property="og:image" content="https://ysix7.github.io/Library/Application%20Support/typora-user-images/image-20190514135655177.png">
+<meta property="og:image" content="https://ysix7.github.io/Library/Application%20Support/typora-user-images/image-20190514133839750.png">
+<meta property="og:image" content="https://ysix7.github.io/Library/Application%20Support/typora-user-images/image-20190514135511723.png">
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79gy1g30r10uhfrj30n60q4k2e.jpg">
+<meta property="og:image" content="https://ysix7.github.io/Library/Application%20Support/typora-user-images/image-20190514132028216.png">
+<meta property="og:image" content="https://ysix7.github.io/Library/Application%20Support/typora-user-images/image-20190514131803277.png">
 <meta property="og:updated_time" content="2019-08-17T06:37:26.728Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深度学习网络学习">
@@ -454,7 +461,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>3.4k</span>
+              <span>2.6k</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -464,7 +471,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span>3 分钟</span>
+              <span>2 分钟</span>
             </span>
           
 
@@ -508,18 +515,11 @@
 </li>
 </ol>
 <p><strong>残差单元：</strong> 克服了梯度消失的问题</p>
-<p>##卷积神经网络中的组成</p>
-<p>####步长和补零</p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1g30q089fiwj30s00f0tbp.jpg" alt="image-20190116203754878"></p>
-<p>####卷积核：三维结构</p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1g30q07ezv5j30q40l8n0w.jpg" alt="image-20190116201711290"></p>
-<p>####池化层</p>
-<p>池化层的输入一般来源于上一个卷积层，主要作用是提供了很强的鲁棒性（例如max-pooling是取一小块区域中的最大值，此时若此区域中的其他值略有变化，或者图像稍有平移，pooling后的结果仍不变），并且减少了参数的数量，防止过拟合现象的发生。池化层一般没有参数，所以反向传播的时候，只需对输入参数求导，不需要进行权值更新。</p>
-<p>####Inception模块</p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1g30q06hft4j316u0u07ea.jpg" alt="image-20190116215438302"></p>
-<p>####bottle layer的作用</p>
-<p>#循环神经网络RNN 4.30</p>
-<ul>
+<h2 id="卷积神经网络中的组成"><a href="#卷积神经网络中的组成" class="headerlink" title="卷积神经网络中的组成"></a>卷积神经网络中的组成</h2><h4 id="步长和补零"><a href="#步长和补零" class="headerlink" title="步长和补零"></a>步长和补零</h4><p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1g30q089fiwj30s00f0tbp.jpg" alt="image-20190116203754878"></p>
+<h4 id="卷积核：三维结构"><a href="#卷积核：三维结构" class="headerlink" title="卷积核：三维结构"></a>卷积核：三维结构</h4><p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1g30q07ezv5j30q40l8n0w.jpg" alt="image-20190116201711290"></p>
+<h4 id="池化层"><a href="#池化层" class="headerlink" title="池化层"></a>池化层</h4><p>池化层的输入一般来源于上一个卷积层，主要作用是提供了很强的鲁棒性（例如max-pooling是取一小块区域中的最大值，此时若此区域中的其他值略有变化，或者图像稍有平移，pooling后的结果仍不变），并且减少了参数的数量，防止过拟合现象的发生。池化层一般没有参数，所以反向传播的时候，只需对输入参数求导，不需要进行权值更新。</p>
+<h4 id="Inception模块"><a href="#Inception模块" class="headerlink" title="Inception模块"></a>Inception模块</h4><p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1g30q06hft4j316u0u07ea.jpg" alt="image-20190116215438302"></p>
+<h4 id="bottle-layer的作用"><a href="#bottle-layer的作用" class="headerlink" title="bottle layer的作用"></a>bottle layer的作用</h4><h1 id="循环神经网络RNN-4-30"><a href="#循环神经网络RNN-4-30" class="headerlink" title="循环神经网络RNN 4.30"></a>循环神经网络RNN 4.30</h1><ul>
 <li><p>阅读</p>
 <ul>
 <li><a href="https://pytorch.org/tutorials/intermediate/char_rnn_classification_tutorial.html" target="_blank" rel="noopener">Pytorch Example: A character-level RNN 识别名字的种类</a></li>
@@ -557,7 +557,7 @@
 </li>
 <li><p><strong>生成对抗网络的工作原理</strong>：以图像生成模型举例。假设我们有一个图片生成模型（generator），它的目标是生成一张真实的图片。与此同时我们有一个图像判别模型（discriminator），它的目标是能够正确判别一张图片是生成出来的还是真实存在的。那么如果我们把刚才的场景映射成图片生成模型和判别模型之间的博弈，就变成了如下模式：生成模型生成一些图片-&gt;判别模型学习区分生成的图片和真实图片-&gt;生成模型根据判别模型改进自己，生成新的图片-&gt;····<strong>（训练过程由生成模型和判别模型组成）</strong></p>
 </li>
-<li><p>最简单的数据<strong>生成模型</strong>：如果有数据集S={x1，…xn}，假设这些数据的分布P{X}服从g(x;θ)，在观测数据上通过最大化似然函数得到θ的值，即最大似然法：$$\max <em>{\theta} \sum</em>{i=1}^{n} \log g\left(x_{i} ; \theta\right)​$$。当这个<strong>生成模型是</strong>神经网络的时候，就是<strong>生成式对抗网络（GAN）</strong></p>
+<li><p>最简单的数据<strong>生成模型</strong>：如果有数据集S={x1，…xn}，假设这些数据的分布P{X}服从g(x;θ)，在观测数据上通过最大化似然函数得到θ的值，即最大似然法：<script type="math/tex">\max _{\theta} \sum_{i=1}^{n} \log g\left(x_{i} ; \theta\right)​</script>。当这个<strong>生成模型是</strong>神经网络的时候，就是<strong>生成式对抗网络（GAN）</strong></p>
 </li>
 <li><p>文献综述</p>
 </li>
@@ -565,17 +565,17 @@
 <h1 id="网络绘图"><a href="#网络绘图" class="headerlink" title="网络绘图"></a>网络绘图</h1><p>画图软件</p>
 <ul>
 <li><p><strong>Visio</strong></p>
-<p>![image-20190514135849553](../../../../Library/Application Support/typora-user-images/image-20190514135849553.png)</p>
-<p>![image-20190514135858557](../../../../Library/Application Support/typora-user-images/image-20190514135858557.png)</p>
+<p><img src="../../../../Library/Application Support/typora-user-images/image-20190514135849553.png" alt="image-20190514135849553"></p>
+<p><img src="../../../../Library/Application Support/typora-user-images/image-20190514135858557.png" alt="image-20190514135858557"></p>
 </li>
 <li><p><strong>NN-SVG</strong>，适合卷积神经网络, <a href="http://alexlenail.me/NN-SVG/LeNet.html" target="_blank" rel="noopener">在线链接</a></p>
-<p>![image-20190514135655177](../../../../Library/Application Support/typora-user-images/image-20190514135655177.png)</p>
+<p><img src="../../../../Library/Application Support/typora-user-images/image-20190514135655177.png" alt="image-20190514135655177"></p>
 </li>
-<li><p><strong>PlotNeuralNet</strong>，基于Latex，<a href="github链接-<https://github.com/HarisIqbal88/PlotNeuralNet>">github的链接</a>，导出pdf</p>
-<p>![image-20190514133839750](../../../../Library/Application Support/typora-user-images/image-20190514133839750.png)</p>
+<li><p><strong>PlotNeuralNet</strong>，基于Latex，<a href="github链接-&lt;https://github.com/HarisIqbal88/PlotNeuralNet">github的链接</a>，导出pdf</p>
+<p><img src="../../../../Library/Application Support/typora-user-images/image-20190514133839750.png" alt="image-20190514133839750"></p>
 </li>
 <li><p>提供很多<strong>模版</strong>的<strong>在线</strong>画图<a href="https://www.draw.io/" target="_blank" rel="noopener">网页</a></p>
-<p>![image-20190514135511723](../../../../Library/Application Support/typora-user-images/image-20190514135511723.png)</p>
+<p><img src="../../../../Library/Application Support/typora-user-images/image-20190514135511723.png" alt="image-20190514135511723"></p>
 </li>
 </ul>
 <p>神经网络的例子</p>
@@ -592,16 +592,15 @@
 </ul>
 <ul>
 <li><p>MSRB for SR</p>
-<p>![image-20190514132028216](../../../../Library/Application Support/typora-user-images/image-20190514132028216.png)</p>
+<p><img src="../../../../Library/Application Support/typora-user-images/image-20190514132028216.png" alt="image-20190514132028216"></p>
 </li>
 <li><p>MSRB for denoising</p>
-<p>![image-20190514131803277](../../../../Library/Application Support/typora-user-images/image-20190514131803277.png)</p>
+<p><img src="../../../../Library/Application Support/typora-user-images/image-20190514131803277.png" alt="image-20190514131803277"></p>
 </li>
 <li><p>SR: MSRN</p>
 </li>
 </ul>
-<p>#常见问题</p>
-<ul>
+<h1 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h1><ul>
 <li><p>DNN（Deep Neural Network）和Deep CNN的区别</p>
 <p>过去传统的神经网络ANN（Artifical Neural Network），都是层次较少的网络型结构，所以又被称为浅层网络（shallow neural network），DNN与传统SNN的区别就在于其网络层次结构更多，等复杂，因此由于其层次更多，在图论上说就是图的深度更深，所以被冠名为深度神经网络（Deep Neural Network)</p>
 <p>Deep CNN是使用了卷积的网络。DNN是最基本的网络结构。</p>
@@ -817,7 +816,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#课程链接"><span class="nav-number">1.</span> <span class="nav-text">课程链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#最新资讯和链接"><span class="nav-number">2.</span> <span class="nav-text">最新资讯和链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#卷积神经网络CNN"><span class="nav-number">3.</span> <span class="nav-text">卷积神经网络CNN</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Alex-net"><span class="nav-number">3.0.1.</span> <span class="nav-text">Alex net</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VGG"><span class="nav-number">3.0.2.</span> <span class="nav-text">VGG</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RESNET"><span class="nav-number">3.0.3.</span> <span class="nav-text">RESNET</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#强化学习"><span class="nav-number">4.</span> <span class="nav-text">强化学习</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#对抗神经网络GAN"><span class="nav-number">5.</span> <span class="nav-text">对抗神经网络GAN</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网络绘图"><span class="nav-number">6.</span> <span class="nav-text">网络绘图</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#课程链接"><span class="nav-number">1.</span> <span class="nav-text">课程链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#最新资讯和链接"><span class="nav-number">2.</span> <span class="nav-text">最新资讯和链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#卷积神经网络CNN"><span class="nav-number">3.</span> <span class="nav-text">卷积神经网络CNN</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Alex-net"><span class="nav-number">3.0.1.</span> <span class="nav-text">Alex net</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VGG"><span class="nav-number">3.0.2.</span> <span class="nav-text">VGG</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RESNET"><span class="nav-number">3.0.3.</span> <span class="nav-text">RESNET</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#卷积神经网络中的组成"><span class="nav-number">3.1.</span> <span class="nav-text">卷积神经网络中的组成</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#步长和补零"><span class="nav-number">3.1.0.1.</span> <span class="nav-text">步长和补零</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#卷积核：三维结构"><span class="nav-number">3.1.0.2.</span> <span class="nav-text">卷积核：三维结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#池化层"><span class="nav-number">3.1.0.3.</span> <span class="nav-text">池化层</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Inception模块"><span class="nav-number">3.1.0.4.</span> <span class="nav-text">Inception模块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#bottle-layer的作用"><span class="nav-number">3.1.0.5.</span> <span class="nav-text">bottle layer的作用</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#循环神经网络RNN-4-30"><span class="nav-number">4.</span> <span class="nav-text">循环神经网络RNN 4.30</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#强化学习"><span class="nav-number">5.</span> <span class="nav-text">强化学习</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#对抗神经网络GAN"><span class="nav-number">6.</span> <span class="nav-text">对抗神经网络GAN</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网络绘图"><span class="nav-number">7.</span> <span class="nav-text">网络绘图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常见问题"><span class="nav-number">8.</span> <span class="nav-text">常见问题</span></a></li></ol></div>
             
 
           </div>
@@ -853,14 +852,14 @@
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">146k</span>
+    <span title="站点总字数">134k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">2:13</span>
+    <span title="站点阅读时长">2:02</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
   <span class="post-meta-divider">|</span>

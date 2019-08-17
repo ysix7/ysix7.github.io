@@ -529,7 +529,7 @@
 <li><p>应用数学会议</p>
 </li>
 <li><p>检索工具</p>
-<p>期刊影响因子查询网站：<a href="http://www.letpub.com.cn/index.php?journalid=3328&page=journalapp&view=detail" target="_blank" rel="noopener">中文</a>、 <a href="https://jcr.clarivate.com/JCRLandingPageAction.action?Init=Yes&SrcApp=IC2LS&SID=J2-4XwAp32l42uZt12TwkA6PPRWUdDytSwG-18x2dEBNx2FAmx2Bx2BLS9TPTpUU0DGKQx3Dx3DNs8V1Mx2BQp597TwzF85F1aAx3Dx3D-WwpRYkX4Gz8e7T4uNl5SUQx3Dx3D-wBEj1mx2B0mykql8H4kstFLwx3Dx3D" target="_blank" rel="noopener">英文网站</a></p>
+<p>期刊影响因子查询网站：<a href="http://www.letpub.com.cn/index.php?journalid=3328&amp;page=journalapp&amp;view=detail" target="_blank" rel="noopener">中文</a>、 <a href="https://jcr.clarivate.com/JCRLandingPageAction.action?Init=Yes&amp;SrcApp=IC2LS&amp;SID=J2-4XwAp32l42uZt12TwkA6PPRWUdDytSwG-18x2dEBNx2FAmx2Bx2BLS9TPTpUU0DGKQx3Dx3DNs8V1Mx2BQp597TwzF85F1aAx3Dx3D-WwpRYkX4Gz8e7T4uNl5SUQx3Dx3D-wBEj1mx2B0mykql8H4kstFLwx3Dx3D" target="_blank" rel="noopener">英文网站</a></p>
 </li>
 <li><p>出版商、数据库、检索工具</p>
 <ul>
@@ -608,12 +608,27 @@
 <li><p>全变分模型（变分法的一种）</p>
 <ul>
 <li><p>ROF模型, 1992</p>
-<p> L. Rudin, S. Osher, E. Fatemi, Nonlinear Total Variation based noise removal algorithm, Physica D 60 259-268, 1992. <a href="http://www.math-info.univ-paris5.fr/~lomn/Cours/ECE/PhysicaRudinOsher.pdf" target="_blank" rel="noopener"><strong>++paper</strong></a><br> $$<br> \min <em>{u} \int</em>{\Omega}\left(\alpha|\nabla u|+\frac{1}{2}(u-z)^{2}\right)<br> $$</p>
-</li>
-<li><p><a href="http://manu46.magtech.com.cn/ces/CN/article/downloadArticleFile.do?attachType=PDF&id=10254" target="_blank" rel="noopener">与ROF相关联的偏微分方程以及推导</a></p>
-<p>目标方程：<br>$$<br>\begin{array}{l}{J[u(x, y)]=\iint_{\Omega}|\nabla u(x, y)| \mathrm{d} x \mathrm{d} y+\quad \frac{\lambda}{2} \iint_{\Omega}\left(u(x, y)-u^{0}(x, y)\right)^{2} \mathrm{d} x \mathrm{d} y}\end{array}<br>$$<br>该泛函是<br>$$<br>J[u(x, y)]=\iint_{\Omega} F\left(x, y, u, \frac{\partial u}{\partial x}, \frac{\partial u}{\partial y}\right) \mathrm{d} x \mathrm{d} y<br>$$<br>型的泛函，其中(式1)<br>$$<br>\begin{aligned} F=&amp;|\nabla u(x, y)|+\frac{\lambda}{2}\left(u(x, y)-u^{0}(x, y)\right)^{2}= \&amp;\sqrt{\left(\frac{\partial u(x, y)}{\partial x}\right)^{2}+\left(\frac{\partial u(x, y)}{\partial y}\right)^{2}}+\frac{\lambda}{2}\left(u(x, y)-u^{0}(x, y)\right)^{2} \end{aligned}<br>$$ {222}<br>该类函数求极值的必要条件，即欧拉-拉格朗日方程(PDE):<br>$$<br>F_{H}-\frac{\partial}{\partial x}\left{F_{p}\right}-\frac{\partial}{\partial y}\left{F_{q}\right}=0<br>$$<br>其中, $p=\frac{\partial u(x, y)}{\partial x}, q=\frac{\partial u(x, y)}{\partial y}​$.</p>
-<p>对于式1，有$F_{H}=\lambda\left(u-u^{0}\right), F_{p}=\frac{\frac{\partial u}{\partial x}}{|\nabla u|}, F_{q}=\frac{\frac{\partial u}{\partial y}}{|\nabla u|}$, 代入后有：<br>$$<br>\begin{array}{l}{\lambda\left(u-u^{0}\right)-\left{\frac{\partial}{\partial x}\left{\left(\frac{\frac{\partial u}{\partial x}}{|\nabla u|}\right)\right}+\frac{\partial}{\partial y}\left{\frac{\frac{\partial u}{\partial y}}{|\nabla u|}\right}\right}=0} \ {\Rightarrow \lambda\left(u-u^{0}\right)-\left(\frac{\partial}{\partial x}, \frac{\partial}{\partial y}\right) \cdot\left(\frac{\frac{\partial u}{\partial x}}{|\nabla u|}, \frac{\frac{\partial u}{\partial y}}{|\nabla u|}\right)=0} \ {\Rightarrow \lambda\left(u-u^{0}\right)-\left(\frac{\partial}{\partial x}, \frac{\partial}{\partial y}\right) \cdot\left(\frac{1}{|\nabla u|}\left(\frac{\partial u}{\partial x}, \frac{\partial u}{\partial y}\right)\right)=0} \ {\Rightarrow \lambda\left(u-u^{0}\right)-\nabla \cdot\left(\frac{\nabla u}{|\nabla u|}\right)=0}\end{array}<br>$$<br>其中，$\nabla=\left(\frac{\partial}{\partial x}, \frac{\partial}{\partial y}\right)$为梯度算子。</p>
-<p>TV复原模型的欧拉一拉格朗日方程为 ：<br>$$<br>-\nabla \cdot\left(\frac{\nabla u}{|\nabla u|}\right)+\lambda\left(u-u^{0}\right)=0<br>$$</p>
+<p> L. Rudin, S. Osher, E. Fatemi, Nonlinear Total Variation based noise removal algorithm, Physica D 60 259-268, 1992. <a href="http://www.math-info.univ-paris5.fr/~lomn/Cours/ECE/PhysicaRudinOsher.pdf" target="_blank" rel="noopener"><strong>++paper</strong></a></p>
+<script type="math/tex; mode=display">
+ \min _{u} \int_{\Omega}\left(\alpha|\nabla u|+\frac{1}{2}(u-z)^{2}\right)</script></li>
+<li><p><a href="http://manu46.magtech.com.cn/ces/CN/article/downloadArticleFile.do?attachType=PDF&amp;id=10254" target="_blank" rel="noopener">与ROF相关联的偏微分方程以及推导</a></p>
+<p>目标方程：</p>
+<script type="math/tex; mode=display">
+\begin{array}{l}{J[u(x, y)]=\iint_{\Omega}|\nabla u(x, y)| \mathrm{d} x \mathrm{d} y+\quad \frac{\lambda}{2} \iint_{\Omega}\left(u(x, y)-u^{0}(x, y)\right)^{2} \mathrm{d} x \mathrm{d} y}\end{array}</script><p>该泛函是</p>
+<script type="math/tex; mode=display">
+J[u(x, y)]=\iint_{\Omega} F\left(x, y, u, \frac{\partial u}{\partial x}, \frac{\partial u}{\partial y}\right) \mathrm{d} x \mathrm{d} y</script><p>型的泛函，其中(式1)</p>
+<script type="math/tex; mode=display">
+\begin{aligned} F=&|\nabla u(x, y)|+\frac{\lambda}{2}\left(u(x, y)-u^{0}(x, y)\right)^{2}= \\&\sqrt{\left(\frac{\partial u(x, y)}{\partial x}\right)^{2}+\left(\frac{\partial u(x, y)}{\partial y}\right)^{2}}+\frac{\lambda}{2}\left(u(x, y)-u^{0}(x, y)\right)^{2} \end{aligned}
+$$ {222}
+该类函数求极值的必要条件，即欧拉-拉格朗日方程(PDE):</script><p>F_{H}-\frac{\partial}{\partial x}\left\{F_{p}\right\}-\frac{\partial}{\partial y}\left\{F_{q}\right\}=0</p>
+<script type="math/tex; mode=display">
+其中, $p=\frac{\partial u(x, y)}{\partial x}, q=\frac{\partial u(x, y)}{\partial y}​$.
+
+对于式1，有$F_{H}=\lambda\left(u-u^{0}\right), F_{p}=\frac{\frac{\partial u}{\partial x}}{|\nabla u|}, F_{q}=\frac{\frac{\partial u}{\partial y}}{|\nabla u|}$, 代入后有：</script><p>\begin{array}{l}{\lambda\left(u-u^{0}\right)-\left\{\frac{\partial}{\partial x}\left\{\left(\frac{\frac{\partial u}{\partial x}}{|\nabla u|}\right)\right\}+\frac{\partial}{\partial y}\left\{\frac{\frac{\partial u}{\partial y}}{|\nabla u|}\right\}\right\}=0} \\ {\Rightarrow \lambda\left(u-u^{0}\right)-\left(\frac{\partial}{\partial x}, \frac{\partial}{\partial y}\right) \cdot\left(\frac{\frac{\partial u}{\partial x}}{|\nabla u|}, \frac{\frac{\partial u}{\partial y}}{|\nabla u|}\right)=0} \\ {\Rightarrow \lambda\left(u-u^{0}\right)-\left(\frac{\partial}{\partial x}, \frac{\partial}{\partial y}\right) \cdot\left(\frac{1}{|\nabla u|}\left(\frac{\partial u}{\partial x}, \frac{\partial u}{\partial y}\right)\right)=0} \\ {\Rightarrow \lambda\left(u-u^{0}\right)-\nabla \cdot\left(\frac{\nabla u}{|\nabla u|}\right)=0}\end{array}</p>
+<script type="math/tex; mode=display">
+其中，$\nabla=\left(\frac{\partial}{\partial x}, \frac{\partial}{\partial y}\right)$为梯度算子。
+
+TV复原模型的欧拉一拉格朗日方程为 ：</script><p>-\nabla \cdot\left(\frac{\nabla u}{|\nabla u|}\right)+\lambda\left(u-u^{0}\right)=0<br>$$</p>
 </li>
 <li><p>using a gradient projection method.</p>
 </li>
@@ -632,14 +647,17 @@
 <p>《Constrained restoration and the recovery of discontinuities》</p>
 </li>
 <li><p>(二阶) Chambolle and Lions, 1997, Numer. Math.</p>
-<p><a href="http://www.math.ucla.edu/~lvese/285j.1.09f/ChambolleLions.pdf" target="_blank" rel="noopener">《Image recovery via total variation minimization and related problems》</a>: Chambolle and Lions do this by minimizing the inf-convolution of the TV norm and a second order functional.<br>$$<br>\begin{array}{l}{\min <em>{u</em>{1}, u_{2}} \int_{\Omega}\left|\nabla u_{1}\right|+\alpha\left|d^{2} u_{2}\right|+\lambda\left|u_{1}+u_{2}-u_{0}\right|^{2}} \ {=\min <em>{u, v} \int</em>{\Omega}|\nabla u-\nabla v|+\alpha|\nabla(\nabla v)|+\lambda\left|u-u_{0}\right|^{2}}\end{array}<br>$$</p>
-<p>$$<br>\min <em>{u} \int</em>{\Omega}\left(\alpha \left|d^{2} u\right|+|\nabla u|+\frac{1}{2}(u-z)^{2}\right)<br>$$</p>
-<ul>
+<p><a href="http://www.math.ucla.edu/~lvese/285j.1.09f/ChambolleLions.pdf" target="_blank" rel="noopener">《Image recovery via total variation minimization and related problems》</a>: Chambolle and Lions do this by minimizing the inf-convolution of the TV norm and a second order functional. </p>
+<script type="math/tex; mode=display">
+\begin{array}{l}{\min _{u_{1}, u_{2}} \int_{\Omega}\left|\nabla u_{1}\right|+\alpha\left|d^{2} u_{2}\right|+\lambda\left|u_{1}+u_{2}-u_{0}\right|^{2}} \\ {=\min _{u, v} \int_{\Omega}|\nabla u-\nabla v|+\alpha|\nabla(\nabla v)|+\lambda\left|u-u_{0}\right|^{2}}\end{array}</script><script type="math/tex; mode=display">
+\min _{u} \int_{\Omega}\left(\alpha \left|d^{2} u\right|+|\nabla u|+\frac{1}{2}(u-z)^{2}\right)</script><ul>
 <li><p>(母鸡) P. Blomgren, T. F. Chan, and P. Mulet, 1997</p>
 <p>《Extensions to total variation denoising》: The approach is performed by redefining the Total Variation functional R(u) in view of the properties of TV-norm and H1-seminorm. However, it is not completely clear how to choose a function Φ, which makes the regularizing functional R(u) being convex. </p>
 </li>
 <li><p>(四阶)  Chan T, Marquina A, Mulet P.,  2000, SIAM J Sci Comput,</p>
-<p>《High-order total variation-based image restoration》: ”In this paper we present an improved model, constructed by adding a nonlinear fourth order diffusive term to the Euler–Lagrange equations of the variational TV model. “<br>$$<br>\int_{\Omega}\left(\alpha|\nabla u|_{\beta}+\mu \Phi(|\nabla u|)(\mathcal{L}(u))^{2}+\frac{1}{2}(u-z)^{2}\right)<br>$$<br>where, $\mathcal{L}(u)​$ is an elliptic operator and $\Phi(|\nabla u|)​$ is  the adaptive function. This model retain the good properties of the TV functional and <strong>penalize “wrong” edges created in regions which “should” be smooth</strong>. The adaptive functional, in which the action of the second order term is lessened where the gradient is large(avoid oversmooth).</p>
+<p>《High-order total variation-based image restoration》: ”In this paper we present an improved model, constructed by adding a nonlinear fourth order diffusive term to the Euler–Lagrange equations of the variational TV model. “</p>
+<script type="math/tex; mode=display">
+\int_{\Omega}\left(\alpha|\nabla u|_{\beta}+\mu \Phi(|\nabla u|)(\mathcal{L}(u))^{2}+\frac{1}{2}(u-z)^{2}\right)</script><p>where, $\mathcal{L}(u)​$ is an elliptic operator and $\Phi(|\nabla u|)​$ is  the adaptive function. This model retain the good properties of the TV functional and <strong>penalize “wrong” edges created in regions which “should” be smooth</strong>. The adaptive functional, in which the action of the second order term is lessened where the gradient is large(avoid oversmooth).</p>
 </li>
 <li><p>(二阶) O. M. Lysaker and X.-C. Tai, Int. J. Comp. Vis., 2006</p>
 <p>《Iterative image restoration combining total variation minimization and a second-order functional》:Instead of combing TV norm and second order derivatives within one regularization functional, <strong>Lysaker and Tai [5]</strong> use two regularization functionals.</p>
@@ -653,11 +671,12 @@
 </li>
 </ul>
 </li>
-<li><p><strong>TGV</strong>, Bredies, K., Kunisch, K., &amp; Pock, T. (2010),  <em>SIAM Journal on Imaging Sciences</em><br>$$<br>\mathrm{TGV}<em>{\alpha}^{k}=\left(\sum</em>{l=0}^{k-1} I_{K_{\alpha_{l}}^{l}}\right)^{*}<br>$$</p>
-<p>$$<br>\operatorname{TGV}<em>{\alpha}^{k}(u)=\underset{w</em>{0}+\ldots+u_{k-1}=u \atop l=0, \ldots, k-1}{\inf } \sum_{l=0}^{k-1} \alpha_{l}\left|\nabla^{k-l} u_{l}+w_{l}\right|_{1}<br>$$</p>
-<p>《Total generalized variation.》 <a href="https://www.mathworks.com/matlabcentral/fileexchange/49717-image-denoising-by-total-generalized-variation-via-fft" target="_blank" rel="noopener">code link here</a>,  <a href="https://imsc.uni-graz.at/mobis/publications/SFB-Report-2009-038.pdf" target="_blank" rel="noopener">paper link</a></p>
+<li><p><strong>TGV</strong>, Bredies, K., Kunisch, K., &amp; Pock, T. (2010),  <em>SIAM Journal on Imaging Sciences</em></p>
+<script type="math/tex; mode=display">
+\mathrm{TGV}_{\alpha}^{k}=\left(\sum_{l=0}^{k-1} I_{K_{\alpha_{l}}^{l}}\right)^{*}</script><script type="math/tex; mode=display">
+\operatorname{TGV}_{\alpha}^{k}(u)=\underset{w_{0}+\ldots+u_{k-1}=u \atop l=0, \ldots, k-1}{\inf } \sum_{l=0}^{k-1} \alpha_{l}\left\|\nabla^{k-l} u_{l}+w_{l}\right\|_{1}</script><p>《Total generalized variation.》 <a href="https://www.mathworks.com/matlabcentral/fileexchange/49717-image-denoising-by-total-generalized-variation-via-fft" target="_blank" rel="noopener">code link here</a>,  <a href="https://imsc.uni-graz.at/mobis/publications/SFB-Report-2009-038.pdf" target="_blank" rel="noopener">paper link</a></p>
 <p>limitation: converge slowly</p>
-<p>一个加速版本：K. Shirai, M. Okuda, (2014), “FFT based solution for multivariable l2 equations using KKT system  via FFT and efficient pixel-wise inverse calculation,” <em>IEEE ICASSP</em>, <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6854076" target="_blank" rel="noopener">paper link</a></p>
+<p>一个加速版本：K. Shirai, M. Okuda, (2014), “FFT based solution for multivariable l2 equations using KKT system  via FFT and efficient pixel-wise inverse calculation,” <em>IEEE ICASSP</em>, <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=6854076" target="_blank" rel="noopener">paper link</a></p>
 <p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1g3b56ub0boj30iy0723yn.jpg" alt></p>
 <p>A. Beck, and M. Teboulle, A Fast Iterative Shrinkage-Thresholding Algorithm for Linear Inverse Problems, SIAM J. Imaging Sci., Vol. 2, 183–202, 2009.</p>
 </li>
@@ -666,8 +685,9 @@
 <li><p>Euler’s elastica</p>
 </li>
 <li><p>K Papafitsoros, (2014), <em>JMIV</em></p>
-<p>《A combined first and second order variational approach for image reconstruction. 》<br>$$<br>J(u)=\frac{1}{2}\left|u_{0}-T u\right|<em>{2}^{2}+\alpha|\nabla u|</em>{1}+\beta\left|\nabla^{2} u\right|_{1}<br>$$</p>
-</li>
+<p>《A combined first and second order variational approach for image reconstruction. 》</p>
+<script type="math/tex; mode=display">
+J(u)=\frac{1}{2}\left\|u_{0}-T u\right\|_{2}^{2}+\alpha\|\nabla u\|_{1}+\beta\left\|\nabla^{2} u\right\|_{1}</script></li>
 <li><p>从MAP的角度出发</p>
 <ul>
 <li><p>C. Louchet and L. Moisan， 2008</p>
@@ -690,10 +710,11 @@
 <li><p>增加细节的改进：non-local+TV的方法.</p>
 <ul>
 <li><p>NLTV, Gilboa and Osher, 2004, Multiscale Model. Simul.</p>
-<p>《Nonlocal operators with applications to image processing》<br>$$<br>J_{\mathrm{NLTV}}(u)+\lambda|u-I|^{2}<br>$$</p>
-</li>
-<li><p>$$<br>\int_{\mathcal{P}} \sqrt{\int_{\mathcal{B}}(u(p)-u(p+q))^{2} v(p, q) \mathrm{d} q \mathrm{d} p}<br>$$</p>
-</li>
+<p>《Nonlocal operators with applications to image processing》</p>
+<script type="math/tex; mode=display">
+J_{\mathrm{NLTV}}(u)+\lambda\|u-I\|^{2}</script></li>
+<li><script type="math/tex; mode=display">
+\int_{\mathcal{P}} \sqrt{\int_{\mathcal{B}}(u(p)-u(p+q))^{2} v(p, q) \mathrm{d} q \mathrm{d} p}</script></li>
 <li><p>NLTVG, Peyré, G., Bougleux, S., Cohen, L.D, 2011, Inverse Probl. Imaging</p>
 <p>《Non-local regularization of inverse problems.》</p>
 </li>
@@ -734,19 +755,20 @@
 </ul>
 <h2 id="高斯噪声"><a href="#高斯噪声" class="headerlink" title="高斯噪声"></a>高斯噪声</h2><p>均值为0，平方差为$\sigma^2$的高斯白噪声。</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># 调用imnoise</span><br><span class="line">g = imnoise(I, (noise_level/<span class="number">255</span>)^<span class="number">2</span>)</span><br><span class="line">g = I + <span class="built_in">sqrt</span>((noise_level/<span class="number">255</span>)^<span class="number">2</span>)*<span class="built_in">randn</span>(M,N);</span><br><span class="line">其中的I是经过im2double(I) <span class="comment">% I = I/255归一化的。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">case</span> <span class="string">'gaussian'</span> <span class="comment">% Gaussian white noise</span></span><br><span class="line">    b = a + <span class="built_in">sqrt</span>(p4)*<span class="built_in">randn</span>(sizeA) + p3;</span><br><span class="line">    </span><br><span class="line"># 直接</span><br><span class="line">g = I + sigma * <span class="built_in">randn</span>(M,N);</span><br><span class="line">其中I是归一化后的，sigma = noise_level/<span class="number">255</span>;</span><br><span class="line"># 如果I是[0,255]之间的原图。</span><br><span class="line">g = I + alpha * <span class="built_in">randn</span>(<span class="built_in">size</span>(S)); </span><br><span class="line">那么，alpha = sigma*<span class="number">255</span>;</span><br></pre></td></tr></table></figure>
-
 <h2 id="斑点噪声（乘性噪声）"><a href="#斑点噪声（乘性噪声）" class="headerlink" title="斑点噪声（乘性噪声）"></a>斑点噪声（乘性噪声）</h2><ul>
 <li>噪声模型诶</li>
 </ul>
-<p>$$<br>f=u n<br>$$</p>
-<p>$$<br>p(f | u, L)=\frac{2 L^{L}}{\Gamma(L) u^{2 L}} f^{2 L-1} e^{-\frac{L f^{2}}{u^{2}}}<br>$$</p>
-<ul>
+<script type="math/tex; mode=display">
+f=u n</script><script type="math/tex; mode=display">
+p(f | u, L)=\frac{2 L^{L}}{\Gamma(L) u^{2 L}} f^{2 L-1} e^{-\frac{L f^{2}}{u^{2}}}</script><ul>
 <li><p>TV去噪模型</p>
 <ul>
-<li><p>（AA模型）G. Aubert and J. Aujol. (2008). A variational approach to remove multiplicative noise. SIAM J. Appl. Math., 68:925–946, .<br>$$<br>\inf <em>{u \in S(\Omega)} \int</em>{\Omega}\left(\log (A u)+\frac{f}{A u}\right) d x+\lambda \int_{\Omega}|D u|<br>$$</p>
-</li>
-<li><p>Dong, Y., &amp; Zeng, T. (2013). A convex variational model for restoring blurred images with multiplicative noise. <em>SIAM Journal on Imaging Sciences</em>, <em>6</em>(3), 1598-1625.<br>$$<br>\inf <em>{u \in \overline{S}(\Omega)} E(u) :=\int</em>{\Omega}\left(\log u+\frac{f}{u}\right) d x+\alpha \int_{\Omega}\left(\sqrt{\frac{u}{f}}-1\right)^{2} d x+\lambda \int_{\Omega}|D u|<br>$$</p>
-</li>
+<li><p>（AA模型）G. Aubert and J. Aujol. (2008). A variational approach to remove multiplicative noise. SIAM J. Appl. Math., 68:925–946, .</p>
+<script type="math/tex; mode=display">
+\inf _{u \in S(\Omega)} \int_{\Omega}\left(\log (A u)+\frac{f}{A u}\right) d x+\lambda \int_{\Omega}|D u|</script></li>
+<li><p>Dong, Y., &amp; Zeng, T. (2013). A convex variational model for restoring blurred images with multiplicative noise. <em>SIAM Journal on Imaging Sciences</em>, <em>6</em>(3), 1598-1625.</p>
+<script type="math/tex; mode=display">
+\inf _{u \in \overline{S}(\Omega)} E(u) :=\int_{\Omega}\left(\log u+\frac{f}{u}\right) d x+\alpha \int_{\Omega}\left(\sqrt{\frac{u}{f}}-1\right)^{2} d x+\lambda \int_{\Omega}|D u|</script></li>
 <li><p>Fang, F., Fang, Y., &amp; Zeng, T. (2018). On the Convex Model of Speckle Reduction: IVLOPDE, Bergen, Norway, August 29 – September 2, 2016. <a href="https://doi.org/10.1007/978-3-319-91274-5_6" target="_blank" rel="noopener">https://doi.org/10.1007/978-3-319-91274-5_6</a></p>
 </li>
 </ul>
@@ -755,16 +777,14 @@
 <h2 id="泊松噪声"><a href="#泊松噪声" class="headerlink" title="泊松噪声"></a><strong>泊松噪声</strong></h2><ul>
 <li><p>泊松噪声<strong>既不是加性噪声，也不是乘性噪声</strong>，而是一种信号依赖噪声。</p>
 </li>
-<li><p>加噪模型：f= 10*poissrnd(u/10)，noiselevel=10<br>$$<br>\operatorname{Pr}(\boldsymbol{g} | \boldsymbol{f})=\prod_{i, j} \frac{\left[\boldsymbol{f}<em>{i, j}\right]^{g</em>{i, j}} \exp \left(-\boldsymbol{f}<em>{i, j}\right)}{\left(\boldsymbol{g}</em>{i, j}\right) !}<br>$$</p>
-</li>
+<li><p>加噪模型：f= 10*poissrnd(u/10)，noiselevel=10</p>
+<script type="math/tex; mode=display">
+\operatorname{Pr}(\boldsymbol{g} | \boldsymbol{f})=\prod_{i, j} \frac{\left[\boldsymbol{f}_{i, j}\right]^{g_{i, j}} \exp \left(-\boldsymbol{f}_{i, j}\right)}{\left(\boldsymbol{g}_{i, j}\right) !}</script></li>
 <li><p>TV去噪</p>
 <ul>
-<li><p>Ｃsisｚár [１] 最早提出了 Kullbaｃk－Leibler （ KL )－divergenｃe 保真项用于去除 灰色图像中的泊松噪声Ｃsisｚár I． Wｈy least squares and ｍaxiｍuｍ entrｏpy Ａn Ａxiｏｍatiｃ Ａpprｏaｃｈ tｏ Inferenｃe fｏr linear Inverse Ｐrｏbleｍs[J]． Ａnnals ｏf Statistiｃs ， １９９１ ， １９ （ ４ ） : ２０3２－２０６６</p>
-</li>
-<li><p>Luisier 等 [２] 在小波变换中构 造了一个 SURE 估计量用于泊松噪声的去除。</p>
-</li>
-<li><p>Gｏng 等 [3] 提出了一个 l １ +l ２ 保真项去除泊松噪声及一切未 知噪声。</p>
-</li>
+<li>Ｃsisｚár [１] 最早提出了 Kullbaｃk－Leibler （ KL )－divergenｃe 保真项用于去除 灰色图像中的泊松噪声Ｃsisｚár I． Wｈy least squares and ｍaxiｍuｍ entrｏpy Ａn Ａxiｏｍatiｃ Ａpprｏaｃｈ tｏ Inferenｃe fｏr linear Inverse Ｐrｏbleｍs[J]． Ａnnals ｏf Statistiｃs ， １９９１ ， １９ （ ４ ） : ２０3２－２０６６</li>
+<li>Luisier 等 [２] 在小波变换中构 造了一个 SURE 估计量用于泊松噪声的去除。</li>
+<li>Gｏng 等 [3] 提出了一个 l １ +l ２ 保真项去除泊松噪声及一切未 知噪声。</li>
 <li><p>Zｈang 等学者 [４－5] 使用重新赋权的 l ２ 方 法逼近 KL－divergenｃe 保真项</p>
 </li>
 <li><p>Wen, Y., Chan, R. H., &amp; Zeng, T. (2016). Primal-dual algorithms for total variation based image restoration under Poisson noise. <em>Science China Mathematics</em>, <em>59</em>(1), 141-160.</p>
@@ -775,9 +795,9 @@
 </ul>
 </li>
 </ul>
-<p>$$<br>\min <em>{f \in S} \Psi(\boldsymbol{f}) \equiv D</em>{K L}(H \boldsymbol{f}+\boldsymbol{b}, \boldsymbol{g})+\lambda \operatorname{TV}(\boldsymbol{f})<br>$$</p>
-<p>$$<br>D_{K L}(\boldsymbol{z}, \boldsymbol{g})=\left\langle\boldsymbol{g}, \ln \frac{\boldsymbol{g}}{\boldsymbol{z}}\right\rangle+\langle\mathbf{1}, \boldsymbol{z}-\boldsymbol{g}\rangle<br>$$</p>
-</li>
+<script type="math/tex; mode=display">
+\min _{f \in S} \Psi(\boldsymbol{f}) \equiv D_{K L}(H \boldsymbol{f}+\boldsymbol{b}, \boldsymbol{g})+\lambda \operatorname{TV}(\boldsymbol{f})</script><script type="math/tex; mode=display">
+D_{K L}(\boldsymbol{z}, \boldsymbol{g})=\left\langle\boldsymbol{g}, \ln \frac{\boldsymbol{g}}{\boldsymbol{z}}\right\rangle+\langle\mathbf{1}, \boldsymbol{z}-\boldsymbol{g}\rangle</script></li>
 <li><p><a href="http://www.cs.tut.fi/~foi/invansc/" target="_blank" rel="noopener">code link: BM3D for Poisson</a></p>
 </li>
 </ul>
@@ -788,9 +808,8 @@
 <li><p>TV去噪</p>
 <ul>
 <li><p>（Nikolova in 2004）</p>
-<p>$$\underset{u \in \mathbb{R}^{\Omega}}{\operatorname{argmin}}|u-v|<em>{1}+\lambda \sum</em>{i} \phi(\nabla u(i))$$</p>
-</li>
-<li><p>$\underset{u \in \mathbb{R}^{\Omega}}{\operatorname{argmin}}|u-v|<em>{0}+\lambda \sum</em>{i} \phi(\nabla u(i))$（因为nonconvex，先研究了第一个替代问题，之后出现对该问题求解）</p>
+<script type="math/tex; mode=display">\underset{u \in \mathbb{R}^{\Omega}}{\operatorname{argmin}}\|u-v\|_{1}+\lambda \sum_{i} \phi(\nabla u(i))</script></li>
+<li><p>$\underset{u \in \mathbb{R}^{\Omega}}{\operatorname{argmin}}|u-v|_{0}+\lambda \sum_{i} \phi(\nabla u(i))$（因为nonconvex，先研究了第一个替代问题，之后出现对该问题求解）</p>
 </li>
 <li><p><a href="https://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Yuan_L0TV_A_New_2015_CVPR_paper.pdf" target="_blank" rel="noopener">2015 CVPR: A New Method for Image Restoration in the Presence of<br>Impulse Noise</a> with <a href="https://github.com/peisuke/L0TV" target="_blank" rel="noopener">code:C</a></p>
 </li>
@@ -805,16 +824,16 @@
 <li>[2016 JSC] Removing mixture of gaussian and impulse noise by patch-based weighted means</li>
 </ul>
 </li>
-<li><p>2019 JMIV: Mixing Non-Local and TV-Lp methods</p>
-</li>
+<li>2019 JMIV: Mixing Non-Local and TV-Lp methods</li>
 </ul>
 <h1 id="去模糊"><a href="#去模糊" class="headerlink" title="去模糊"></a>去模糊</h1><ul>
 <li><p>文献</p>
 <ul>
 <li><p>An image sharpening Operator Combined with Framelet for Image Deblurring</p>
 <ul>
-<li><p>提出的模型<br>$$<br>\min <em>{u} \mathcal{J}(u) \equiv \frac{\lambda}{2}|A u-f|</em>{2}^{2}+|W u|<em>{1}+\mu|u-g|</em>{1}<br>$$</p>
-</li>
+<li><p>提出的模型</p>
+<script type="math/tex; mode=display">
+\min _{u} \mathcal{J}(u) \equiv \frac{\lambda}{2}\|A u-f\|_{2}^{2}+\|W u\|_{1}+\mu\|u-g\|_{1}</script></li>
 <li><p>采用变分法，正则项选择选择了Tight frame：|WtW|=1</p>
 </li>
 <li><p>将一个sharpen算子和传统tight frame的方法结合一起：用一个方法计算出有助于sharp的图像g, 并用L1-nirm去靠近。（和去模糊的构造正解之间的关系？待解决）</p>
@@ -837,7 +856,7 @@
 </ul>
 <h1 id="待读文章"><a href="#待读文章" class="headerlink" title="待读文章"></a>待读文章</h1><ul>
 <li>Fooling automated surveillance cameras: adversarial patches to attack person detection（对抗性补丁）<ul>
-<li><a href="https://www.toutiao.com/i6683309485538148878/?tt_from=weixin_moments&utm_campaign=client_share&wxshare_count=2&from=timeline&share_type=original&timestamp=1556438502&app=news_article&utm_source=weixin_moments&isappinstalled=0&utm_medium=toutiao_android&req_id=20190428160142010022056040158C1D8&group_id=6683309485538148878&pbid=6684376147831522823" target="_blank" rel="noopener">微信推送：包括论文地址和代码地址</a></li>
+<li><a href="https://www.toutiao.com/i6683309485538148878/?tt_from=weixin_moments&amp;utm_campaign=client_share&amp;wxshare_count=2&amp;from=timeline&amp;share_type=original&amp;timestamp=1556438502&amp;app=news_article&amp;utm_source=weixin_moments&amp;isappinstalled=0&amp;utm_medium=toutiao_android&amp;req_id=20190428160142010022056040158C1D8&amp;group_id=6683309485538148878&amp;pbid=6684376147831522823" target="_blank" rel="noopener">微信推送：包括论文地址和代码地址</a></li>
 <li><strong>对抗性补丁”(adversarial patch)</strong>，正是这块补丁 “欺骗” 了 AI 系统</li>
 </ul>
 </li>
@@ -851,7 +870,7 @@
 <p>一篇文章写完后，千万不要急需发表，修改工作十分重要。首先，打印出来，自己逐句逐字认认真真通读一遍，把不通顺的语句，错别字，标点符号等全部改正，保证不出现低级错误。</p>
 <p>5.保持足够的耐心</p>
 <h1 id="论文表达摘录"><a href="#论文表达摘录" class="headerlink" title="论文表达摘录"></a>论文表达摘录</h1><p><a href="https://wenku.baidu.com/view/657973c9a1c7aa00b52acb09.html" target="_blank" rel="noopener">论文句式摘要</a></p>
-<p><a href="https://wenku.baidu.com/view/c545632027284b73f24250cc?pcf=2&re=view" target="_blank" rel="noopener">英文科技写作句型和词汇表达总结(2010-)</a></p>
+<p><a href="https://wenku.baidu.com/view/c545632027284b73f24250cc?pcf=2&amp;re=view" target="_blank" rel="noopener">英文科技写作句型和词汇表达总结(2010-)</a></p>
 <ul>
 <li><p>插入语</p>
 <ul>
@@ -1134,14 +1153,14 @@
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">146k</span>
+    <span title="站点总字数">134k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">2:13</span>
+    <span title="站点阅读时长">2:02</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
   <span class="post-meta-divider">|</span>

@@ -65,12 +65,20 @@
 <meta property="og:site_name" content="春夏秋冬">
 <meta property="og:description" content="统计学知识 极大似然估计与最大后验概率估计  极大似然估计：p(X=头痛|Y=中风)=0.8 P(X=头痛|Y=感冒)=0.5 P(X=头痛|Y=) X=头痛  Y=argmaxP(X=头痛|Y)  Y=中风 最大后验概率：Y = argmax p(Y|X=头痛)=P(X|Y)P(Y)  生成模型和判别模型的区别  判别模型 p(y|x), 给一个X，判断y=1的值。 生产模型 p(y|x)等价于">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190805094448732.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190729131441690.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190729131908499.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190729142335602.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190730121750632.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190729142122283.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190729142014942.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190729194524762.png">
 <meta property="og:image" content="https://cdn.mathpix.com/snip/images/BoYo4j40Vwd6QP_7xPqn0mVOtUnXcqccFwDph72E8PQ.original.fullsize.png">
 <meta property="og:updated_time" content="2019-08-17T06:37:26.726Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="概率图模型">
 <meta name="twitter:description" content="统计学知识 极大似然估计与最大后验概率估计  极大似然估计：p(X=头痛|Y=中风)=0.8 P(X=头痛|Y=感冒)=0.5 P(X=头痛|Y=) X=头痛  Y=argmaxP(X=头痛|Y)  Y=中风 最大后验概率：Y = argmax p(Y|X=头痛)=P(X|Y)P(Y)  生成模型和判别模型的区别  判别模型 p(y|x), 给一个X，判断y=1的值。 生产模型 p(y|x)等价于">
-<meta name="twitter:image" content="https://cdn.mathpix.com/snip/images/BoYo4j40Vwd6QP_7xPqn0mVOtUnXcqccFwDph72E8PQ.original.fullsize.png">
+<meta name="twitter:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190805094448732.png">
   <link rel="canonical" href="https://ysix7.github.io/p/d0e9">
 
 
@@ -451,7 +459,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>4.5k</span>
+              <span>3.6k</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -461,7 +469,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span>4 分钟</span>
+              <span>3 分钟</span>
             </span>
           
 
@@ -485,13 +493,13 @@
 </ul>
 <p>判别模型 p(y|x), 给一个X，判断y=1的值。</p>
 <p>生产模型 p(y|x)等价于p(x|y)p(y)=p(x,y)。需要构造一个p(x|y=1)p(y=1)的根据黄牛特征得到的黄牛模型，p(x|y=0)p(y=0)的水牛模型，比较联合概率密度。</p>
-<p>![image-20190805094448732](/Users/yyf/Library/Application Support/typora-user-images/image-20190805094448732.png)</p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190805094448732.png" alt="image-20190805094448732"></p>
 <p>深度学习中的生成模型：深度学习的三大生成模型：<a href="https://cloud.tencent.com/developer/article/1077346" target="_blank" rel="noopener">VAE、GAN、GAN</a>、<a href="http://www.sohu.com/a/164497415_610300" target="_blank" rel="noopener">十个生成模型(GANs)的最佳案例和原理</a>、</p>
 <h2 id="概率图模型-structured-probabilistic-models"><a href="#概率图模型-structured-probabilistic-models" class="headerlink" title="概率图模型 structured probabilistic models."></a>概率图模型 structured probabilistic models.</h2><p>概率图模型：用图论表现随机变量之间的条件依赖关系的<u>建模方法</u>。典型的概率图模型包括贝叶斯网络和马尔可夫随机场，分别对应着有向图模型和无向图模型。</p>
 <p>它们提供了将概率模型的结构可视化的简单方式，而对图形的观察可以加深对模型性质的认识，其中最主要的性质就是变量之间的条件独立性。此外，概率图模型还可以表示学习和推断过程中的复杂计算，隐式地承载了图形背后的数学表达。</p>
 <p>优点：图模型建模方式的优点是：多变量分布通常可以表示为一些<strong>局部函数</strong>（<em>local functions</em>）的乘积，而每个局部函数依赖于更小的变量子集。通过因子化（<em>factorization</em>）和条件独立性（<em>conditional independence</em>），使得复杂的多变量分布可以用少得多的参数进行刻画。</p>
-<p>![image-20190729131441690](/Users/yyf/Library/Application Support/typora-user-images/image-20190729131441690.png)</p>
-<p>![image-20190729131908499](/Users/yyf/Library/Application Support/typora-user-images/image-20190729131908499.png)</p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190729131441690.png" alt="image-20190729131441690"></p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190729131908499.png" alt="image-20190729131908499"></p>
 <blockquote>
 <p>1、概率模型是利用训练样本数据，通过学习条件概率分布P(X|Y)来进行推断决策，而非概率模型是通过学习得到决策函数Y=f(X)来进行决策。</p>
 <p>2、生成模型的目标是求联合概率分布P(X,Y)，然后由条件公式求取条件概率分布P(X|Y)。即P(X|Y) = P(X,Y) / P(X)。</p>
@@ -503,7 +511,7 @@
 </blockquote>
 <h2 id="深度学习和概率图模型的关系"><a href="#深度学习和概率图模型的关系" class="headerlink" title="深度学习和概率图模型的关系"></a>深度学习和概率图模型的关系</h2><ul>
 <li><p>参考</p>
-<p><a href="https://www.jianshu.com/p/b5520c30ba43?utm_campaign=maleskine&utm_content=note&utm_medium=seo_notes&utm_source=recommendation" target="_blank" rel="noopener">深度学习之外的人工智能——概率图模型</a></p>
+<p><a href="https://www.jianshu.com/p/b5520c30ba43?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=seo_notes&amp;utm_source=recommendation" target="_blank" rel="noopener">深度学习之外的人工智能——概率图模型</a></p>
 </li>
 <li><p>与深度学习的关系</p>
 </li>
@@ -526,27 +534,25 @@
 <p>标准的 RBM 是具有二值的可见和隐藏单元的基于能量的模型。其能量函数为$E(\boldsymbol{v}, \boldsymbol{h})=-\boldsymbol{b}^{\top} \boldsymbol{v}-\boldsymbol{c}^{\top} \boldsymbol{h}-\boldsymbol{v}^{\top} \boldsymbol{W h}$</p>
 </li>
 </ol>
-<p>##概率图(结构化)模型的优点</p>
-<ul>
+<h2 id="概率图-结构化-模型的优点"><a href="#概率图-结构化-模型的优点" class="headerlink" title="概率图(结构化)模型的优点"></a>概率图(结构化)模型的优点</h2><ul>
 <li><p>显著降低表示概率分布、学习和推断的成本。如有向图中的参数表示。1+4+4+9的例子</p>
 </li>
 <li><p>有向模型中采样还可以被加速，但是对于无向模型情况则较为复杂。？</p>
 </li>
 </ul>
-<p>##概率图模型的应用</p>
-<ul>
+<h2 id="概率图模型的应用"><a href="#概率图模型的应用" class="headerlink" title="概率图模型的应用"></a>概率图模型的应用</h2><ul>
 <li><p><a href="https://blog.csdn.net/jzwong/article/details/69948615" target="_blank" rel="noopener">MRF去噪</a>：无向图中的马尔可夫模型？    </p>
 <p>能否看到一个具体的学习、建模过程。</p>
 </li>
 </ul>
 <h1 id="有向图模型-贝叶斯网络-信念网络"><a href="#有向图模型-贝叶斯网络-信念网络" class="headerlink" title="有向图模型/贝叶斯网络/信念网络"></a>有向图模型/贝叶斯网络/信念网络</h1><ul>
 <li><p>有向图模型以及联合分布</p>
-<p>![image-20190729142335602](/Users/yyf/Library/Application Support/typora-user-images/image-20190729142335602.png)</p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190729142335602.png" alt="image-20190729142335602"></p>
 </li>
 </ul>
 <ul>
 <li><p>常见的有向图：sigmoid 信念网络、朴素贝叶斯分类器、隐马尔可夫模型(HMM)</p>
-<p>![image-20190730121750632](/Users/yyf/Library/Application Support/typora-user-images/image-20190730121750632.png)</p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190730121750632.png" alt="image-20190730121750632"></p>
 </li>
 <li><p><a href="https://zhuanlan.zhihu.com/p/26811689" target="_blank" rel="noopener">一个能看懂的HMM例子：每天观察一个病人的状态</a></p>
 </li>
@@ -555,10 +561,10 @@
 <li><p>常见的无向图：对数线性模型、条件随机场(CRF）</p>
 </li>
 <li><p>无向图模型</p>
-<p>![image-20190729142122283](/Users/yyf/Library/Application Support/typora-user-images/image-20190729142122283.png)</p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190729142122283.png" alt="image-20190729142122283"></p>
 </li>
 <li><p>无向图的联合概率可以分解为一系列定义在最大团上的非负函数的乘积形式。</p>
-<p>![image-20190729142014942](/Users/yyf/Library/Application Support/typora-user-images/image-20190729142014942.png)</p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190729142014942.png" alt="image-20190729142014942"></p>
 <p>组成：配分函数$Z=\int \tilde{p}(\mathbf{x}) d \mathbf{x}$。</p>
 </li>
 </ul>
@@ -585,7 +591,7 @@
 <p>问题：和推断的关系？</p>
 <p><a href="https://zhuanlan.zhihu.com/p/37121528" target="_blank" rel="noopener">蒙特卡洛采样</a>、<a href="https://zhuanlan.zhihu.com/p/32982140" target="_blank" rel="noopener">非数学话的解释蒙特卡洛采样</a>、</p>
 <h1 id="推断"><a href="#推断" class="headerlink" title="推断"></a>推断</h1><p>利用图的结构，来计算出一些变量的后验信息</p>
-<p>![image-20190729194524762](/Users/yyf/Library/Application Support/typora-user-images/image-20190729194524762.png)</p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190729194524762.png" alt="image-20190729194524762"></p>
 <p>推断和最大似然任务的关系：在计算最大对数似然函数的时候，中间步骤需要一些变量的后验信息。</p>
 <p>例子：EM算法</p>
 <ol>
@@ -831,7 +837,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#统计学知识"><span class="nav-number">1.</span> <span class="nav-text">统计学知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概率图模型-structured-probabilistic-models"><span class="nav-number">1.1.</span> <span class="nav-text">概率图模型 structured probabilistic models.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#深度学习和概率图模型的关系"><span class="nav-number">1.2.</span> <span class="nav-text">深度学习和概率图模型的关系</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#有向图模型-贝叶斯网络-信念网络"><span class="nav-number">2.</span> <span class="nav-text">有向图模型/贝叶斯网络/信念网络</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#无向图-马尔可夫随机场-马尔可夫网"><span class="nav-number">3.</span> <span class="nav-text">无向图/马尔可夫随机场/马尔可夫网</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#常见的无向图：条件随机场-词性分类"><span class="nav-number">3.1.</span> <span class="nav-text">常见的无向图：条件随机场, 词性分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见的无向图：去噪"><span class="nav-number">3.2.</span> <span class="nav-text">常见的无向图：去噪</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#采样"><span class="nav-number">4.</span> <span class="nav-text">采样</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#推断"><span class="nav-number">5.</span> <span class="nav-text">推断</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#学习"><span class="nav-number">6.</span> <span class="nav-text">学习</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#玻耳兹曼机-RBM"><span class="nav-number">7.</span> <span class="nav-text">玻耳兹曼机(RBM)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">7.1.</span> <span class="nav-text">参考</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#采样："><span class="nav-number">8.</span> <span class="nav-text">采样：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他参考"><span class="nav-number">9.</span> <span class="nav-text">其他参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#统计学知识"><span class="nav-number">1.</span> <span class="nav-text">统计学知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概率图模型-structured-probabilistic-models"><span class="nav-number">1.1.</span> <span class="nav-text">概率图模型 structured probabilistic models.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#深度学习和概率图模型的关系"><span class="nav-number">1.2.</span> <span class="nav-text">深度学习和概率图模型的关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#概率图-结构化-模型的优点"><span class="nav-number">1.3.</span> <span class="nav-text">概率图(结构化)模型的优点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#概率图模型的应用"><span class="nav-number">1.4.</span> <span class="nav-text">概率图模型的应用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#有向图模型-贝叶斯网络-信念网络"><span class="nav-number">2.</span> <span class="nav-text">有向图模型/贝叶斯网络/信念网络</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#无向图-马尔可夫随机场-马尔可夫网"><span class="nav-number">3.</span> <span class="nav-text">无向图/马尔可夫随机场/马尔可夫网</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#常见的无向图：条件随机场-词性分类"><span class="nav-number">3.1.</span> <span class="nav-text">常见的无向图：条件随机场, 词性分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见的无向图：去噪"><span class="nav-number">3.2.</span> <span class="nav-text">常见的无向图：去噪</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#采样"><span class="nav-number">4.</span> <span class="nav-text">采样</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#推断"><span class="nav-number">5.</span> <span class="nav-text">推断</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#学习"><span class="nav-number">6.</span> <span class="nav-text">学习</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#玻耳兹曼机-RBM"><span class="nav-number">7.</span> <span class="nav-text">玻耳兹曼机(RBM)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">7.1.</span> <span class="nav-text">参考</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#采样："><span class="nav-number">8.</span> <span class="nav-text">采样：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他参考"><span class="nav-number">9.</span> <span class="nav-text">其他参考</span></a></li></ol></div>
             
 
           </div>
@@ -867,14 +873,14 @@
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">146k</span>
+    <span title="站点总字数">134k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">2:13</span>
+    <span title="站点阅读时长">2:02</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
   <span class="post-meta-divider">|</span>

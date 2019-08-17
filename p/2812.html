@@ -519,13 +519,20 @@
 <p>mother wavelet：母小波</p>
 <p>father wavelet：<strong>scaling function</strong>/父小波/尺度函数</p>
 <p>对任意V_j的function可以分解为：</p>
-<p>（1）scaling fucntion的形式：<br>$$<br>\begin{array}{c}{\varphi_{j, k}} \end{array}<br>$$<br>（2）第二种就是它上一个子空间的basis以及上一级子空间的wavelet function<br>$$<br>\begin{array}{c}{\varphi_{j-1, k}} \ {\psi_{j-1, k}}\end{array}<br>$$<br>（3）一直利用上上..级的scaling function，则得到<strong>小波展开形式</strong>：<br>$$<br>f(t)=\sum_{k=-\infty}^{\infty} c_{k} \varphi(t-k)+\sum_{k=-\infty}^{\infty} \sum_{j=0}^{\infty} d_{j, k} \psi\left(2^{j} t-k\right)<br>$$<br>其中，$\varphi(t)$是父小波，$\psi_{j, k}(t)$是母小波。<br>scaling function不是凭空插进去的，而是通过不断的嵌套迭代出来的</p>
+<p>（1）scaling fucntion的形式：</p>
+<script type="math/tex; mode=display">
+\begin{array}{c}{\varphi_{j, k}} \end{array}</script><p>（2）第二种就是它上一个子空间的basis以及上一级子空间的wavelet function</p>
+<script type="math/tex; mode=display">
+\begin{array}{c}{\varphi_{j-1, k}} \\ {\psi_{j-1, k}}\end{array}</script><p>（3）一直利用上上..级的scaling function，则得到<strong>小波展开形式</strong>：</p>
+<script type="math/tex; mode=display">
+f(t)=\sum_{k=-\infty}^{\infty} c_{k} \varphi(t-k)+\sum_{k=-\infty}^{\infty} \sum_{j=0}^{\infty} d_{j, k} \psi\left(2^{j} t-k\right)</script><p>其中，$\varphi(t)$是父小波，$\psi_{j, k}(t)$是母小波。<br>scaling function不是凭空插进去的，而是通过不断的嵌套迭代出来的</p>
 </li>
 <li><p>为什么使用第3种方式（小波变换）来表达信号</p>
 <p>计算</p>
 <blockquote>
-<p>那为什么我们最后选定的是这种选取方式呢?实际上，刚才介绍的这个性质已经告诉我们，对于任何的scale j0，我们都可以给我们的signal space找到一组orthonormal basis，这个basis是通过组合scale j0上的scaling function以及所有在scale j，j&gt;j0上的wavelets得到的。这样，基于这个orthonormal basis，所有信号空间中的信号都可以写成组成这个basis的functions的线性组合：<br>$$<br>\begin{array}{l}{c_{j_{0}, k}=\left\langle s(n), \varphi_{j_{0}, k}(n)\right\rangle} \ { d_{j, k}=\left\langle s(n), \psi_{j, k}(n)\right\rangle}\end{array}<br>$$</p>
-</blockquote>
+<p>那为什么我们最后选定的是这种选取方式呢?实际上，刚才介绍的这个性质已经告诉我们，对于任何的scale j0，我们都可以给我们的signal space找到一组orthonormal basis，这个basis是通过组合scale j0上的scaling function以及所有在scale j，j&gt;j0上的wavelets得到的。这样，基于这个orthonormal basis，所有信号空间中的信号都可以写成组成这个basis的functions的线性组合：</p>
+<script type="math/tex; mode=display">
+\begin{array}{l}{c_{j_{0}, k}=\left\langle s(n), \varphi_{j_{0}, k}(n)\right\rangle} \\ { d_{j, k}=\left\langle s(n), \psi_{j, k}(n)\right\rangle}\end{array}</script></blockquote>
 <p>两种函数相当于高通滤波和低通滤波的作用</p>
 <blockquote>
 <p>wavelet function和scaling function背后的物理意义了：wavelet function等同于对信号做高通滤波保留变化细节，而scaling function等同于对信号做低通滤波保留平滑的shape!</p>
@@ -586,7 +593,9 @@
 <p>(都不是MRA-based tight frame，那么是MRA-based tight frame什么又是其他tight frame)</p>
 </li>
 <li><p>改进Gibbs：R.R. Coifman and D.L. Donoho提出了平移不变量算法可<br>有效地避免这种现象的发生</p>
-<p>首先让含有噪声的原始信号进行多次循环平移（比如进行 n 次）,其次运用阈值算法对平移后的信号进行去噪处理,然后再平均去噪的信号,此称为“平移-去噪-平均”的平移不变量算法的原理。<br>$$<br>\overline{T}\left(x,\left(S_{h}\right)<em>{h \in H</em>{n}}\right)=A v e_{h \in H_{k}} S_{-h}\left(T\left(S_{h}(x)\right)\right)<br>$$<br>[57] R.R. Coifman and D.L. Donoho, Translation-invariant de-noising, Lecture Notes in Statistics-New York-Springer Verlag (1995), 125–125.</p>
+<p>首先让含有噪声的原始信号进行多次循环平移（比如进行 n 次）,其次运用阈值算法对平移后的信号进行去噪处理,然后再平均去噪的信号,此称为“平移-去噪-平均”的平移不变量算法的原理。</p>
+<script type="math/tex; mode=display">
+\overline{T}\left(x,\left(S_{h}\right)_{h \in H_{n}}\right)=A v e_{h \in H_{k}} S_{-h}\left(T\left(S_{h}(x)\right)\right)</script><p>[57] R.R. Coifman and D.L. Donoho, Translation-invariant de-noising, Lecture Notes in Statistics-New York-Springer Verlag (1995), 125–125.</p>
 </li>
 <li><p>贝叶斯方法去噪(利用sparsity了没有？)，需要利用先验证模型</p>
 <ul>
@@ -608,18 +617,22 @@
 <ul>
 <li>Analysis based：The analysis based approach was ﬁrst proposed in [84, 170].</li>
 </ul>
-<p>$$<br>\min <em>{u \in \mathbb{R}^{n}} \frac{1}{2}|A u-f|</em>{D}^{2}+|\mbox{diag}(\lambda) W u|_{1}<br>$$</p>
-<p>[170] J.L. Starck, M. Elad, and D.L. Donoho, Image decomposition via the combination of sparse representations and a variational approach, IEEE transactions on image processing 14 (2005), no. 10, 1570–1582.</p>
+<script type="math/tex; mode=display">
+\min _{u \in \mathbb{R}^{n}} \frac{1}{2}\|A u-f\|_{D}^{2}+\|\mbox{diag}(\lambda) W u\|_{1}</script><p>[170] J.L. Starck, M. Elad, and D.L. Donoho, Image decomposition via the combination of sparse representations and a variational approach, IEEE transactions on image processing 14 (2005), no. 10, 1570–1582.</p>
 <p>[84] M. Elad, J.L. Starck, P. Querre, and D.L. Donoho, Simultaneous cartoon and texture image inpainting using morphological component analysis (MCA), Applied and Computational Harmonic Analysis 19 (2005), no. 3, 340–358.</p>
 </li>
-<li><p>synthesis based: The synthesis based approach was first introduced in [66, 86, 87, 90, 91].<br>$$<br>\min <em>{\alpha \in \mathbb{R}^{m}} \frac{1}{2}\left|A W^{\top} \alpha-f\right|</em>{D}^{2}+|\mbox{diag}(\lambda) \alpha|_{1}<br>$$<br>[90]M.A.T. Figueiredo and R.D. Nowak, An EM algorithm for wavelet-based image restoration, IEEE Transactions on Image Processing 12 (2003), no. 8, 906–916.</p>
+<li><p>synthesis based: The synthesis based approach was first introduced in [66, 86, 87, 90, 91].</p>
+<script type="math/tex; mode=display">
+\min _{\alpha \in \mathbb{R}^{m}} \frac{1}{2}\left\|A W^{\top} \alpha-f\right\|_{D}^{2}+\|\mbox{diag}(\lambda) \alpha\|_{1}</script><p>[90]M.A.T. Figueiredo and R.D. Nowak, An EM algorithm for wavelet-based image restoration, IEEE Transactions on Image Processing 12 (2003), no. 8, 906–916.</p>
 <p>[91]A bound optimization approach to wavelet-based image deconvolution, Image Processing, 2005. ICIP 2005. IEEE International Conference on, vol. 2, IEEE, 2005, pp. II–782.</p>
 <p>[86] M.J. Fadili and J.L. Starck, Sparse representations and bayesian image inpainting, Proc.</p>
 <p>SPARS 5 (2005).</p>
 <p>[66] I. Daubechies, G. Teschke, and L. Vese, Iteratively solving linear inverse problems under general convex constraints, Inverse Problems and Imaging 1 (2007), no. 1, 29.</p>
 <p>[87]MJ Fadili, J.L. Starck, and F. Murtagh, Inpainting and zooming using sparse representations, The Computer Journal 52 (2009), no. 1, 64.</p>
 </li>
-<li><p>balanced method：The balanced approach was ﬁrst used in [34, 36] for high resolution image reconstruction.<br>$$<br>\min <em>{\alpha \in \mathbb{R}^{m}} \frac{1}{2}\left|A W^{\top} \alpha-f\right|</em>{D}^{2}+\frac{\kappa}{2}\left|\left(I-W W^{\top}\right) \alpha\right|<em>{2}^{2}+|\mbox{diag}(\lambda) \alpha|</em>{1}<br>$$<br>求解算法：the proximal forward and backward splitting algorithm</p>
+<li><p>balanced method：The balanced approach was ﬁrst used in [34, 36] for high resolution image reconstruction.</p>
+<script type="math/tex; mode=display">
+\min _{\alpha \in \mathbb{R}^{m}} \frac{1}{2}\left\|A W^{\top} \alpha-f\right\|_{D}^{2}+\frac{\kappa}{2}\left\|\left(I-W W^{\top}\right) \alpha\right\|_{2}^{2}+\|\mbox{diag}(\lambda) \alpha\|_{1}</script><p>求解算法：the proximal forward and backward splitting algorithm</p>
 <p>[34]R.H. Chan, T.F. Chan, L. Shen, and Z. Shen, Wavelet algorithms for high-resolution image reconstruction, SIAM Journal on Scientiﬁc Computing 24 (2003), no. 4, 1408–1432.</p>
 <p>[36]Tight frame: an eﬃcient way for high-resolution image reconstruction, Applied and Computational Harmonic Analysis 17 (2004), no. 1, 91–115.</p>
 </li>
@@ -662,8 +675,7 @@
 </li>
 <li><p>Apply soft or hard thresholding to the resulting coefficients, thereby suppressing<br>those coefficients smaller than a certain amplitude.</p>
 </li>
-<li><p>Transform back into the original domain.</p>
-</li>
+<li>Transform back into the original domain.</li>
 </ul>
 </li>
 <li><p>两种分类方法</p>
@@ -722,8 +734,6 @@
 <blockquote>
 <p>on wavelet frame based image restoration [35, 36, 37, 38, 39, 40, 41, 42, 43, 21].</p>
 <p>Split Bregman methods and frame based image restoration. Therefore, there are mainly three formulations utilizing the sparseness of the wavelet frame coeﬃcients, namely <strong>analysis based approach, synthesis based approach,</strong> and balanced approach. Detailed and integrated descriptions of the three approaches can be found in [34].</p>
-</blockquote>
-<blockquote>
 <p>[34] 一本书 B. Dong and Z. Shen, “MRA Based Wavelet Frames and Applications,” IAS Lecture Notes Series, Summer Program on “The Mathematics of Image Processing”, Park City Mathematics Institute, 2010</p>
 <p>The analysis based approach was ﬁrst proposed in [84, 170].</p>
 <p>[84] M. Elad, J.L. Starck, P. Querre, and D.L. Donoho, Simultaneous cartoon and texture image inpainting using morphological component analysis (MCA), Applied and Computational Harmonic Analysis 19 (2005), no. 3, 340–358.</p>
@@ -734,24 +744,15 @@
 <h1 id="去噪综述"><a href="#去噪综述" class="headerlink" title="去噪综述"></a>去噪综述</h1><ul>
 <li><p>参考文献：</p>
 <ul>
-<li><p>Survey of Image Denoising Techniques </p>
-</li>
-<li><p>小波域图像降噪概述</p>
-</li>
-<li><p>B. Dong and Z. Shen, “MRA Based Wavelet Frames and Applications,” IAS Lecture Notes Series, Summer Program on “The Mathematics of Image Processing”, Park City Mathematics Institute, 2010</p>
-</li>
-<li><p><a href="http://ir.gxun.edu.cn/online-view/530500/4587/1/%E5%9F%BA%E4%BA%8E%E5%B0%8F%E6%B3%A2%E7%9A%84%E4%BF%A1%E5%8F%B7%E5%8E%BB%E5%99%AA%E5%88%86%E6%9E%90.pdf" target="_blank" rel="noopener">模极大，域值，平移不变</a></p>
-</li>
-<li><p><a href="http://wenhuix.github.io/research/denoise.html" target="_blank" rel="noopener">NLM，BM3D去噪原理</a></p>
-</li>
-<li><p><a href="http://read.pudn.com/downloads70/ebook/254108/ch5.pdf" target="_blank" rel="noopener">维纳滤波器的时域解</a></p>
-</li>
-<li><p><a href><u>维纳滤波的频域解(尚未找到)</u></a></p>
-</li>
-<li><p><a href="https://blog.csdn.net/ytang_/article/details/75451934" target="_blank" rel="noopener">低通滤波</a></p>
-</li>
-<li><p><img src="https://blog-w.oss-cn-beijing.aliyuncs.com/FYY/2019-06-13-144621.png" alt="image-20190611162242926"></p>
-</li>
+<li>Survey of Image Denoising Techniques </li>
+<li>小波域图像降噪概述</li>
+<li>B. Dong and Z. Shen, “MRA Based Wavelet Frames and Applications,” IAS Lecture Notes Series, Summer Program on “The Mathematics of Image Processing”, Park City Mathematics Institute, 2010</li>
+<li><a href="http://ir.gxun.edu.cn/online-view/530500/4587/1/%E5%9F%BA%E4%BA%8E%E5%B0%8F%E6%B3%A2%E7%9A%84%E4%BF%A1%E5%8F%B7%E5%8E%BB%E5%99%AA%E5%88%86%E6%9E%90.pdf" target="_blank" rel="noopener">模极大，域值，平移不变</a></li>
+<li><a href="http://wenhuix.github.io/research/denoise.html" target="_blank" rel="noopener">NLM，BM3D去噪原理</a></li>
+<li><a href="http://read.pudn.com/downloads70/ebook/254108/ch5.pdf" target="_blank" rel="noopener">维纳滤波器的时域解</a></li>
+<li><a href><u>维纳滤波的频域解(尚未找到)</u></a></li>
+<li><a href="https://blog.csdn.net/ytang_/article/details/75451934" target="_blank" rel="noopener">低通滤波</a></li>
+<li><img src="https://blog-w.oss-cn-beijing.aliyuncs.com/FYY/2019-06-13-144621.png" alt="image-20190611162242926"></li>
 <li><p><img src="https://blog-w.oss-cn-beijing.aliyuncs.com/FYY/2019-06-13-144627.png" alt="image-20190611162329876"></p>
 </li>
 <li><p><a href="https://wenku.baidu.com/view/73dae422ccbff121dd368387.html" target="_blank" rel="noopener">小波变换去噪基础知识整理</a></p>
@@ -768,7 +769,10 @@
 <ul>
 <li><p>均值滤波(Mean)是一种最简单的滤波器，其利用邻域内像素的平均值作为替换值来消除图像的孤立点噪声。通常伴有过模糊的问题。另一种均值滤波通过，通过对样本多次观察取平均来降噪。</p>
 </li>
-<li><p>维纳滤波(Weiner)是由Weinar在二十世纪四十年代提出来，通过最小均方差寻找准则，从噪声图像中提取最佳线性滤波的方法，因此也叫最小均方滤波/最佳线性滤波器。<br>$$<br>\begin{array}{c}{<br>y(n)=\hat{s}(n)=\sum_{m=0}^{+\infty} h(m) x(n-m)} \ \min_{x}{E\left[e^{2}(n)\right]=E\left[\left(s(n)-\sum_{m=0}^{+\infty} h(m) x(n-m)\right)^{2}\right]}\end{array}<br>$$<br>其中h(m)是无污染信号，x(n)是线性滤波。</p>
+<li><p>维纳滤波(Weiner)是由Weinar在二十世纪四十年代提出来，通过最小均方差寻找准则，从噪声图像中提取最佳线性滤波的方法，因此也叫最小均方滤波/最佳线性滤波器。</p>
+<script type="math/tex; mode=display">
+\begin{array}{c}{
+y(n)=\hat{s}(n)=\sum_{m=0}^{+\infty} h(m) x(n-m)} \\ \min_{x}{E\left[e^{2}(n)\right]=E\left[\left(s(n)-\sum_{m=0}^{+\infty} h(m) x(n-m)\right)^{2}\right]}\end{array}</script><p>其中h(m)是无污染信号，x(n)是线性滤波。</p>
 <blockquote>
 <p>Wiener, Norbert (1949), <em>Extrapolation, Interpolation, and Smoothing of Stationary Time Series</em>. New York: Wiley.</p>
 </blockquote>
@@ -792,7 +796,7 @@
 </blockquote>
 </li>
 </ul>
-<ol start="2">
+<ol>
 <li><p>小波域去噪见小波域去噪综述</p>
 </li>
 <li><p>变分法是另外一大类重要的分支。它将病体问题转化成一个最小化方程问题。目标方程由一个包真项和正则项组成，保真项是 ，正则项，去噪的结果就是通过优化算法获得的方程解。在不同的正则项中，全变分最受欢迎。</p>
@@ -881,40 +885,40 @@
 </li>
 </ul>
 <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><ul>
-<li><input disabled type="checkbox"> <p>在做wavelet domain denoising的综述中，从来没有提到变分模型；wavelet frame的综述中，从来没有提到过thresholding的方法。</p>
+<li><p>[ ] 在做wavelet domain denoising的综述中，从来没有提到变分模型；wavelet frame的综述中，从来没有提到过thresholding的方法。</p>
 <blockquote>
 <p>框架理论最初是由 Duffin 和 Schaffcf 在 1952 年研究非调和 Fourier 级数时提出来的，在最开始提出的时 候，框架并没有广泛地引起其他学者的研究兴趣。直到 1986 年，Daubechies、Grossmann 和 Meyer 对框 架理论有了突破性的研究，至此框架理论才开始吸引了大批学者的关注。近些年来，在框架理论的研究 过程中，用到了算子理论以及 Banach 空间理论。直到 D. R. I. Arson、Deguang Han 和 Xingde Dai 等人把 算子代数理论运用到框架的研究中，框架理论研究才更上了一个层次，并从整体上把握和研究了框架和 基的性质 。至此，结合了算子理论的框架理论快速发展，其性质以及应用得到更加广泛地研究与推广。</p>
 </blockquote>
 </li>
-<li><input disabled type="checkbox"> <p>基于稀疏表示的小波去噪，是否有不基于稀疏的小波去噪，我感觉小波就是利用了稀疏 。那么稀疏除了小波域，还有没有其他方法</p>
+<li><p>[ ] 基于稀疏表示的小波去噪，是否有不基于稀疏的小波去噪，我感觉小波就是利用了稀疏 。那么稀疏除了小波域，还有没有其他方法</p>
 </li>
-<li><input disabled type="checkbox"> <p>傅立叶变化,余弦变化,小波变化同属于转化，都是在搞基。其中小波的特点是稀疏。</p>
+<li><p>[ ] 傅立叶变化,余弦变化,小波变化同属于转化，都是在搞基。其中小波的特点是稀疏。</p>
 <p>紧框架也是一种转化，特点是冗余基，系属性更好。框架理论：包括傅立叶变化，小波变化。</p>
 <p>基于多解析度的紧框架：具有快速重构和分解的优点。</p>
 </li>
-<li><input disabled type="checkbox"> <p>MRA，Wavelet frame, MRA-based wavelet frame，<strong>MRA-based tight wavelet frame</strong>(generalization) 的发展过程</p>
+<li><p>[ ] MRA，Wavelet frame, MRA-based wavelet frame，<strong>MRA-based tight wavelet frame</strong>(generalization) 的发展过程</p>
 </li>
-<li><input disabled type="checkbox"> <p>图像有哪些wavelet transformation有哪些，tight frame有哪些，怎么样算属于MRA(Multi-resolution Analysis)</p>
+<li><p>[ ] 图像有哪些wavelet transformation有哪些，tight frame有哪些，怎么样算属于MRA(Multi-resolution Analysis)</p>
 </li>
-<li><input disabled type="checkbox"> <p>如何选择这些不同的变换</p>
+<li><p>[ ] 如何选择这些不同的变换</p>
 </li>
-<li><input disabled type="checkbox"> <p>(2D)<a href="https://ww2.mathworks.cn/matlabcentral/fileexchange/32086-dt-cwt-based-image-fusion" target="_blank" rel="noopener">DT-CWT</a>是什么、(1D)<a href="https://ww2.mathworks.cn/help/wavelet/examples/dual-tree-wavelet-transforms.html" target="_blank" rel="noopener">DT-WT</a> 这两个是什么，如何用matlab实现，应该是MRA-based tight frame的一种</p>
+<li><p>[ ] (2D)<a href="https://ww2.mathworks.cn/matlabcentral/fileexchange/32086-dt-cwt-based-image-fusion" target="_blank" rel="noopener">DT-CWT</a>是什么、(1D)<a href="https://ww2.mathworks.cn/help/wavelet/examples/dual-tree-wavelet-transforms.html" target="_blank" rel="noopener">DT-WT</a> 这两个是什么，如何用matlab实现，应该是MRA-based tight frame的一种</p>
 </li>
-<li><input disabled type="checkbox"> <p>基于小波框架的变分模型哪篇论文中最先提出。参照MRA-Based Wavelet Frames and Applications的文献回顾即可</p>
+<li><p>[ ] 基于小波框架的变分模型哪篇论文中最先提出。参照MRA-Based Wavelet Frames and Applications的文献回顾即可</p>
 </li>
 </ul>
-<p>$$<br>\left(\mathrm{P}<em>{1}\right) \quad \min _{x \in \mathbb{R}^{n}}|x|</em>{\ell_{1}} \quad \text { subject to } \quad y=\Phi x<br>$$</p>
-<ul>
-<li><input checked disabled type="checkbox"> <p>未选中什么是振铃现象，什么是Gibbs现象，图像中如何表现</p>
+<script type="math/tex; mode=display">
+\left(\mathrm{P}_{1}\right) \quad \min _{x \in \mathbb{R}^{n}}\|x\|_{\ell_{1}} \quad \text { subject to } \quad y=\Phi x</script><ul>
+<li><p>[x] 未选中什么是振铃现象，什么是Gibbs现象，图像中如何表现</p>
 <p>两者形容的是同一种现象。振铃效应（Ringingeffect）是影响复原图像质量的众多因素之一，其典型表现是在图像灰度剧烈变化的邻域出现类吉布斯（Gibbs）分布</p>
 <p>所谓“振铃”，就是指输出图像的灰度剧烈变化处产生的震荡，就好像钟被敲击后产生的空气震荡。如下图：</p>
 <p><img src="https://blog-w.oss-cn-beijing.aliyuncs.com/FYY/2019-06-14-082421.png" alt></p>
 </li>
-<li><input disabled type="checkbox"> <p>CWT是什么：continuous wavelet transform </p>
+<li><p>[ ] CWT是什么：continuous wavelet transform </p>
 </li>
-<li><input disabled type="checkbox"> <p>图像有哪些wavelet transformation，去噪应该选择哪种转变（Haar是一种）</p>
+<li><p>[ ] 图像有哪些wavelet transformation，去噪应该选择哪种转变（Haar是一种）</p>
 </li>
-<li><input disabled type="checkbox"> <p>是否所有小波域下的去噪方法都利用了稀疏性，所有小波转化都是为了得到稀疏性？</p>
+<li><p>[ ] 是否所有小波域下的去噪方法都利用了稀疏性，所有小波转化都是为了得到稀疏性？</p>
 </li>
 </ul>
 <h1 id="实验记录"><a href="#实验记录" class="headerlink" title="实验记录"></a>实验记录</h1><p>利用non-convex tight frame去噪记录</p>
@@ -963,8 +967,8 @@
         </div>
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
-              <a href="/p/ab3e.html" rel="next" title="电影清单">
-                <i class="fa fa-chevron-left"></i> 电影清单
+              <a href="/p/c077.html" rel="next" title="菜谱Collection">
+                <i class="fa fa-chevron-left"></i> 菜谱Collection
               </a>
             
           </div>
@@ -972,8 +976,8 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-              <a href="/p/4221.html" rel="prev" title="健身清单">
-                健身清单 <i class="fa fa-chevron-right"></i>
+              <a href="/p/ab3e.html" rel="prev" title="电影清单">
+                电影清单 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1193,14 +1197,14 @@
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">146k</span>
+    <span title="站点总字数">134k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">2:13</span>
+    <span title="站点阅读时长">2:02</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
   <span class="post-meta-divider">|</span>

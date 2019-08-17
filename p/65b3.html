@@ -57,17 +57,39 @@
   };
 </script>
 
-  <meta name="description" content="Preliminaries lowercontinuity  一阶算法 Proximal point algorithm  Gradient projection method.  Dual-projection   An Algorithm for Total Variation Minimization and Applications   ALM和PPA   ReferenceADMM（19">
+  <meta name="description" content="Preliminaries lowercontinuity  一阶算法 Proximal point algorithm Gradient projection method. Dual-projection   An Algorithm for Total Variation Minimization and Applications   ALM和PPA  ReferenceADMM（1975，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="L1算法综述">
 <meta property="og:url" content="https://ysix7.github.io/p/65b3.html">
 <meta property="og:site_name" content="春夏秋冬">
-<meta property="og:description" content="Preliminaries lowercontinuity  一阶算法 Proximal point algorithm  Gradient projection method.  Dual-projection   An Algorithm for Total Variation Minimization and Applications   ALM和PPA   ReferenceADMM（19">
+<meta property="og:description" content="Preliminaries lowercontinuity  一阶算法 Proximal point algorithm Gradient projection method. Dual-projection   An Algorithm for Total Variation Minimization and Applications   ALM和PPA  ReferenceADMM（1975，">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190625042850317.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190625050639305.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190625043847524.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190625045710093.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190625063509825.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190625063519479.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190625054707041.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190625054906321.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190625055124896.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190625055357144.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190625055621617.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190625055607524.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190723150552390.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190723175554735.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190723175611856.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190625062450759.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190625062337998.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190625063019627.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190625063050310.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190625072208966.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190625072239269.png">
 <meta property="og:updated_time" content="2019-08-17T06:37:26.730Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="L1算法综述">
-<meta name="twitter:description" content="Preliminaries lowercontinuity  一阶算法 Proximal point algorithm  Gradient projection method.  Dual-projection   An Algorithm for Total Variation Minimization and Applications   ALM和PPA   ReferenceADMM（19">
+<meta name="twitter:description" content="Preliminaries lowercontinuity  一阶算法 Proximal point algorithm Gradient projection method. Dual-projection   An Algorithm for Total Variation Minimization and Applications   ALM和PPA  ReferenceADMM（1975，">
+<meta name="twitter:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190625042850317.png">
   <link rel="canonical" href="https://ysix7.github.io/p/65b3">
 
 
@@ -448,7 +470,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>7.7k</span>
+              <span>5.3k</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -458,7 +480,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span>7 分钟</span>
+              <span>5 分钟</span>
             </span>
           
 
@@ -475,17 +497,14 @@
 <li>lowercontinuity</li>
 </ul>
 <h1 id="一阶算法"><a href="#一阶算法" class="headerlink" title="一阶算法"></a>一阶算法</h1><ul>
-<li><p>Proximal point algorithm</p>
-</li>
-<li><p>Gradient projection method.</p>
-</li>
+<li>Proximal point algorithm</li>
+<li>Gradient projection method.</li>
 <li><p>Dual-projection </p>
 <ul>
 <li>An Algorithm for Total Variation Minimization and Applications</li>
 </ul>
 </li>
-<li><p>ALM和PPA</p>
-</li>
+<li>ALM和PPA</li>
 </ul>
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><h3 id="ADMM（1975，1976，2011）"><a href="#ADMM（1975，1976，2011）" class="headerlink" title="ADMM（1975，1976，2011）"></a>ADMM（1975，1976，2011）</h3><ul>
 <li><p>Gabay, D., and Mercier, B., A dual algorithm for the solution of nonlinear variational problems via finite-element approximations, Comp. Math. Appl., 2 (1976), pp. 17-40.</p>
@@ -503,8 +522,7 @@
 </li>
 <li><p>首次提出。Goldstein, T., &amp; Osher, S. (2009). The split Bregman method for L1-regularized problems. SIAM journal on imaging sciences, 2(2), 323-343.</p>
 </li>
-<li><p>和ADMM的等价性。Esser, E. (2009). Applications of Lagrangian-based alternating direction methods and connections to split Bregman. <em>CAM report</em>, <em>9</em>, 31.</p>
-</li>
+<li>和ADMM的等价性。Esser, E. (2009). Applications of Lagrangian-based alternating direction methods and connections to split Bregman. <em>CAM report</em>, <em>9</em>, 31.</li>
 </ul>
 <h2 id="Split-Bregman（1967，2009）"><a href="#Split-Bregman（1967，2009）" class="headerlink" title="Split Bregman（1967，2009）"></a>Split Bregman（1967，2009）</h2><ul>
 <li><p>发展过程</p>
@@ -524,45 +542,48 @@
 <li><p>Bregman distance</p>
 </li>
 <li><p>1.Bregman Iteration直接解决的问题: <strong>[21]有convergence的证明</strong>；[4]中提出Bregman Iteration</p>
-<p>![image-20190625042850317](/Users/yyf/Library/Application Support/typora-user-images/image-20190625042850317.png)</p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190625042850317.png" alt="image-20190625042850317"></p>
 <p>结论：通过Bregman Iteration, 解converge到(2.1)的最小，且满足H(u)=0</p>
 <p><strong>Theorem 2.1: H(u)收敛到0[21]</strong></p>
-<p>![image-20190625050639305](/Users/yyf/Library/Application Support/typora-user-images/image-20190625050639305.png)</p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190625050639305.png" alt="image-20190625050639305"></p>
 </li>
-<li><p>2.Bregman iteration  for  <strong>constrained optimization problems</strong> （2.4）<br>$$<br>\min _{u} E(u) \text { such that } \mathrm{Au}=\mathrm{b}<br>$$</p>
-</li>
+<li><p>2.Bregman iteration  for  <strong>constrained optimization problems</strong> （2.4）</p>
+<script type="math/tex; mode=display">
+\min _{u} E(u) \text { such that } \mathrm{Au}=\mathrm{b}</script></li>
 </ul>
-<p>​    将其转化为无约束问题(2.5)(<strong>等价，当lambda很大的情况下，但是lambda很大是不好求解</strong>)<br>$$<br>\min <em>{u} E(u)+\frac{\lambda}{2}|A u-b|</em>{2}^{2}<br>$$<br>​    使用Bregman Iteration：[30] and [21]</p>
-<p>![image-20190625043847524](/Users/yyf/Library/Application Support/typora-user-images/image-20190625043847524.png)    当A是线性的时候可以将其简化为</p>
-<p>![image-20190625045710093](/Users/yyf/Library/Application Support/typora-user-images/image-20190625045710093.png)</p>
+<p>​    将其转化为无约束问题(2.5)(<strong>等价，当lambda很大的情况下，但是lambda很大是不好求解</strong>)</p>
+<script type="math/tex; mode=display">
+\min _{u} E(u)+\frac{\lambda}{2}\|A u-b\|_{2}^{2}</script><p>​    使用Bregman Iteration：[30] and [21]</p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190625043847524.png" alt="image-20190625043847524">    当A是线性的时候可以将其简化为</p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190625045710093.png" alt="image-20190625045710093"></p>
 <p>​    利用Bregman iteration获得(2.5)的解；根据Theorem 2.1, 这个解满足Au=b； 根据这个性质证明这个解是(2.4)的最小解, Theorem 2.2就是解的等价性证明</p>
 <p><strong>（问题）：意味着任何一个lambda下的2.5的解，都等价于(2.4)的解。</strong></p>
 <p>Bregman的优点：收敛快(原因见appendix); 可以保持$\lambda$是常数，不需要变大，因此稳定。</p>
 <p>对于这个约束问题，和其他方法的比较：</p>
-<p>![image-20190625063509825](/Users/yyf/Library/Application Support/typora-user-images/image-20190625063509825.png)</p>
-<p>![image-20190625063519479](/Users/yyf/Library/Application Support/typora-user-images/image-20190625063519479.png)</p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190625063509825.png" alt="image-20190625063509825"></p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190625063519479.png" alt="image-20190625063519479"></p>
 <ul>
-<li><ol start="3">
+<li><ol>
 <li><strong>Split</strong> Bregman for l1-regularized optimization problem (1.1) </li>
 </ol>
-<p>$$<br>\min _{u}|\Phi(u)|+H(u)<br>$$</p>
-<p>where |·| denotes the l1-norm, and both |Φ(u)| and H(u) are convex functions, Φ(·) to be diﬀerentiable.</p>
+<script type="math/tex; mode=display">
+\min _{u}|\Phi(u)|+H(u)</script><p>where |·| denotes the l1-norm, and both |Φ(u)| and H(u) are convex functions, Φ(·) to be diﬀerentiable.</p>
 <p>引入一个变量d, 转化成一个约束问题</p>
 <p>(3.1) $\min _{u, d}|d|+H(u) \text { such that } d=\Phi(u)​$</p>
 <p>转化成一个无约束问题</p>
-<p>(3.2) $\min <em>{u, d}|d|+H(u)+\frac{\lambda}{2}|d-\Phi(u)|</em>{2}^{2}$</p>
+<p>(3.2) $\min _{u, d}|d|+H(u)+\frac{\lambda}{2}|d-\Phi(u)|_{2}^{2}$</p>
 <p>套用(2.6-2.8)并转化成(2.9-2.10)的形式，得到<strong>the Split Bregman Iteration</strong></p>
-<p>![image-20190625054707041](/Users/yyf/Library/Application Support/typora-user-images/image-20190625054707041.png)</p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190625054707041.png" alt="image-20190625054707041"></p>
 <p>通过iteratively minimizing解决（3.7）</p>
-<p>![image-20190625054906321](/Users/yyf/Library/Application Support/typora-user-images/image-20190625054906321.png)</p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190625054906321.png" alt="image-20190625054906321"></p>
 <p>整个算法</p>
-<p>![image-20190625055124896](/Users/yyf/Library/Application Support/typora-user-images/image-20190625055124896.png)</p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190625055124896.png" alt="image-20190625055124896"></p>
 <p>内循环N=1即可，直观理解</p>
-<p>![image-20190625055357144](/Users/yyf/Library/Application Support/typora-user-images/image-20190625055357144.png)</p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190625055357144.png" alt="image-20190625055357144"></p>
 </li>
 <li><p>Application</p>
-<p>![image-20190625055621617](/Users/yyf/Library/Application Support/typora-user-images/image-20190625055621617.png)</p>
-<p>![image-20190625055607524](/Users/yyf/Library/Application Support/typora-user-images/image-20190625055607524.png)</p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190625055621617.png" alt="image-20190625055621617"></p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190625055607524.png" alt="image-20190625055607524"></p>
 </li>
 </ul>
 </li>
@@ -576,12 +597,12 @@
 <li><p>ADMM是一种ALM的方法。PPA也是。</p>
 </li>
 <li><p>Related Algorithm</p>
-<p>![image-20190723150552390](/Users/yyf/Library/Application Support/typora-user-images/image-20190723150552390.png)</p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190723150552390.png" alt="image-20190723150552390"></p>
 </li>
 <li><p>来自Dual ascent+approximate</p>
 <p>Primal ascent，因为函数不具有连续性，有很多断掉的极大值点。</p>
-<p>![image-20190723175554735](/Users/yyf/Library/Application Support/typora-user-images/image-20190723175554735.png)</p>
-<p>![image-20190723175611856](/Users/yyf/Library/Application Support/typora-user-images/image-20190723175611856.png)</p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190723175554735.png" alt="image-20190723175554735"></p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190723175611856.png" alt="image-20190723175611856"></p>
 </li>
 </ul>
 <h2 id="PPA（1976）"><a href="#PPA（1976）" class="headerlink" title="PPA（1976）"></a>PPA（1976）</h2><h2 id="Primal-dual（2011）"><a href="#Primal-dual（2011）" class="headerlink" title="Primal-dual（2011）"></a>Primal-dual（2011）</h2><ul>
@@ -591,26 +612,28 @@
 <li><p>A highly eﬃcient semismooth Newton augmented Lagrangian method for solving Lasso problems</p>
 <p><a href="http://www.mypolyuweb.hk/~dfsun/" target="_blank" rel="noopener">code++</a></p>
 </li>
-<li><p>无约束问题转化成约束问题<br>$$<br>\text { (P) } \max -{f(x)=h(\mathcal{A} x)-\langle c, x\rangle+ p(x)}<br>$$</p>
-<p>$$<br>\text { (P) } \min  {f(x)=h(\mathcal{A} x)-\langle c, x\rangle+p(x)}<br>$$</p>
-</li>
+<li><p>无约束问题转化成约束问题</p>
+<script type="math/tex; mode=display">
+\text { (P) } \max -\{f(x)=h(\mathcal{A} x)-\langle c, x\rangle+ p(x)\}</script><script type="math/tex; mode=display">
+\text { (P) } \min  \{f(x)=h(\mathcal{A} x)-\langle c, x\rangle+p(x)\}</script></li>
 </ul>
-<p>$$<br>\text { (P) } \max -{f(x)=h(\mathcal{A} x)-\langle c, x\rangle+ p(x)}<br>$$</p>
-<p>$$<br>\text { (D) } \min \left{h^{<em>}(y)+p^{</em>}(z) | \mathcal{A}^{*} y+z=c\right}<br>$$</p>
-<p>  从(P)到(D)的转化过程：与增广拉格朗日的关系？</p>
+<script type="math/tex; mode=display">
+\text { (P) } \max -\{f(x)=h(\mathcal{A} x)-\langle c, x\rangle+ p(x)\}</script><script type="math/tex; mode=display">
+\text { (D) } \min \left\{h^{*}(y)+p^{*}(z) | \mathcal{A}^{*} y+z=c\right\}</script><p>  从(P)到(D)的转化过程：与增广拉格朗日的关系？</p>
 <ul>
-<li><p>Assumption:![image-20190625062450759](/Users/yyf/Library/Application Support/typora-user-images/image-20190625062450759.png)</p>
+<li><p>Assumption:<img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190625062450759.png" alt="image-20190625062450759"></p>
 </li>
-<li><p>算法基础：An inexact augmented Lagrangian method for (D)[42]: $\lambda$是越来越大的<br>$$<br>l(y, z, x)=h^{<em>}(y)+p^{</em>}(z)-\left\langle x, \mathcal{A}^{*} y+z-c\right\rangle, \quad \forall(y, z, x) \in \mathcal{Y} \times \mathcal{X} \times \mathcal{X}<br>$$</p>
-<p>$$<br>\mathcal{L}_{\sigma}(y, z ; x) :=l(y, z, x)+\frac{\sigma}{2}\left|\mathcal{A}^{*} y+z-c\right|^{2}, \quad \forall(y, z, x) \in \mathcal{Y} \times \mathcal{X} \times \mathcal{X}<br>$$</p>
-<p>![image-20190625062337998](/Users/yyf/Library/Application Support/typora-user-images/image-20190625062337998.png)</p>
+<li><p>算法基础：An inexact augmented Lagrangian method for (D)[42]: $\lambda$是越来越大的 </p>
+<script type="math/tex; mode=display">
+l(y, z, x)=h^{*}(y)+p^{*}(z)-\left\langle x, \mathcal{A}^{*} y+z-c\right\rangle, \quad \forall(y, z, x) \in \mathcal{Y} \times \mathcal{X} \times \mathcal{X}</script><script type="math/tex; mode=display">
+\mathcal{L}_{\sigma}(y, z ; x) :=l(y, z, x)+\frac{\sigma}{2}\left\|\mathcal{A}^{*} y+z-c\right\|^{2}, \quad \forall(y, z, x) \in \mathcal{Y} \times \mathcal{X} \times \mathcal{X}</script><p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190625062337998.png" alt="image-20190625062337998"></p>
 </li>
 <li><p>算法核心</p>
 <ul>
 <li>将(18) 转化成 (22)</li>
 </ul>
-<p>![image-20190625063019627](/Users/yyf/Library/Application Support/typora-user-images/image-20190625063019627.png)</p>
-<p>![image-20190625063050310](/Users/yyf/Library/Application Support/typora-user-images/image-20190625063050310.png)</p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190625063019627.png" alt="image-20190625063019627"></p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190625063050310.png" alt="image-20190625063050310"></p>
 <ul>
 <li><p>解决（22）：Ax = 0 的方法</p>
 <p>牛顿法法</p>
@@ -623,15 +646,16 @@
 </li>
 </ul>
 <h2 id="Nonconvex-牛顿法"><a href="#Nonconvex-牛顿法" class="headerlink" title="Nonconvex  + 牛顿法"></a>Nonconvex  + 牛顿法</h2><ul>
-<li>目标问题：square-root regression problem<br>$$<br>\min _{\beta \in \mathbb{R}^{n}}{g(\beta) :=|X \beta-b|+\lambda p(\beta)-q(\beta)}<br>$$</li>
+<li>目标问题：square-root regression problem<script type="math/tex; mode=display">
+\min _{\beta \in \mathbb{R}^{n}}\{g(\beta) :=\|X \beta-b\|+\lambda p(\beta)-q(\beta)\}</script></li>
 </ul>
 <h1 id="收敛性证明"><a href="#收敛性证明" class="headerlink" title="收敛性证明"></a>收敛性证明</h1><p>一般流程：解的存在性、唯一性到算法的收敛性</p>
 <p>先证明解的存在性、通过严格凸问题得到解的唯一性、假设存在唯一解，然后收敛到最小解</p>
 <ul>
 <li><p>例子：</p>
 <p>存在性证明：A CONVEX VARIATIONAL MODEL FOR RESTORING BLURRED IMAGES WITH MULTIPLICATIVE NOISE; On the convex model of speckle reduction</p>
-<p>![image-20190625072208966](/Users/yyf/Library/Application Support/typora-user-images/image-20190625072208966.png)</p>
-<p>![image-20190625072239269](/Users/yyf/Library/Application Support/typora-user-images/image-20190625072239269.png)</p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190625072208966.png" alt="image-20190625072208966"></p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190625072239269.png" alt="image-20190625072239269"></p>
 <p>唯一性：A CONVEX VARIATIONAL MODEL FOR RESTORING BLURRED IMAGES WITH MULTIPLICATIVE NOISE; On the convex model of speckle reduction</p>
 <p>收敛性：</p>
 </li>
@@ -881,14 +905,14 @@
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">146k</span>
+    <span title="站点总字数">134k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">2:13</span>
+    <span title="站点阅读时长">2:02</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
   <span class="post-meta-divider">|</span>

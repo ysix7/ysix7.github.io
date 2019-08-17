@@ -57,19 +57,19 @@
   };
 </script>
 
-  <meta name="description" content="Pytorch学习笔记——随时更新  Pytorch环境 查看pytorch版本 1234&amp;gt;&amp;gt;&amp;gt; import torch&amp;gt;&amp;gt;&amp;gt; print(torch.__version__)0.4.0# 更新之后  更新pytorch 1conda update pytorch torchvision    Backward Propagation 算法 机器学习中的线性">
+  <meta name="description" content="Pytorch学习笔记——随时更新  Pytorch环境 查看pytorch版本 1234&amp;gt;&amp;gt;&amp;gt; import torch&amp;gt;&amp;gt;&amp;gt; print(torch.__version__)0.4.0# 更新之后  更新pytorch 1conda update pytorch torchvision   Backward Propagation 算法 机器学习中的线性代">
 <meta name="keywords" content="pytorch">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Pytorch学习笔记">
 <meta property="og:url" content="https://ysix7.github.io/p/ef8a.html">
 <meta property="og:site_name" content="春夏秋冬">
-<meta property="og:description" content="Pytorch学习笔记——随时更新  Pytorch环境 查看pytorch版本 1234&amp;gt;&amp;gt;&amp;gt; import torch&amp;gt;&amp;gt;&amp;gt; print(torch.__version__)0.4.0# 更新之后  更新pytorch 1conda update pytorch torchvision    Backward Propagation 算法 机器学习中的线性">
+<meta property="og:description" content="Pytorch学习笔记——随时更新  Pytorch环境 查看pytorch版本 1234&amp;gt;&amp;gt;&amp;gt; import torch&amp;gt;&amp;gt;&amp;gt; print(torch.__version__)0.4.0# 更新之后  更新pytorch 1conda update pytorch torchvision   Backward Propagation 算法 机器学习中的线性代">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79gy1g30qn2yrggj30mi09z3zv.jpg">
 <meta property="og:updated_time" content="2019-08-17T06:37:26.724Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Pytorch学习笔记">
-<meta name="twitter:description" content="Pytorch学习笔记——随时更新  Pytorch环境 查看pytorch版本 1234&amp;gt;&amp;gt;&amp;gt; import torch&amp;gt;&amp;gt;&amp;gt; print(torch.__version__)0.4.0# 更新之后  更新pytorch 1conda update pytorch torchvision    Backward Propagation 算法 机器学习中的线性">
+<meta name="twitter:description" content="Pytorch学习笔记——随时更新  Pytorch环境 查看pytorch版本 1234&amp;gt;&amp;gt;&amp;gt; import torch&amp;gt;&amp;gt;&amp;gt; print(torch.__version__)0.4.0# 更新之后  更新pytorch 1conda update pytorch torchvision   Backward Propagation 算法 机器学习中的线性代">
 <meta name="twitter:image" content="https://ws4.sinaimg.cn/large/006tNc79gy1g30qn2yrggj30mi09z3zv.jpg">
   <link rel="canonical" href="https://ysix7.github.io/p/ef8a">
 
@@ -483,7 +483,6 @@
 </li>
 <li><p>更新pytorch</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda update pytorch torchvision</span><br></pre></td></tr></table></figure>
-
 </li>
 </ul>
 <p>Backward Propagation 算法</p>
@@ -515,10 +514,8 @@
 <li><p>tensor的创建</p>
 <p>直接创建：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">torch.tensor([..]).type(..)</span><br><span class="line">torch.FloatTensor()</span><br></pre></td></tr></table></figure>
-
 <p>创建随机矩阵：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dtype = torch.Floatensor </span><br><span class="line">dtype = torch.cuda.Floatensor </span><br><span class="line">torch.randn((M,N),type(dtype)</span><br></pre></td></tr></table></figure>
-
 <p> 从其他数据类型:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">data = [[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>]]</span><br><span class="line">tensor = torch.FloatTensor(data)</span><br></pre></td></tr></table></figure>
 </li>
@@ -539,13 +536,10 @@
 <li><p>出现的问题</p>
 <p>端口冲突通过指定端口解决：</p>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tensorboard --logdir=/tmp   --port=8008 <span class="comment">#绝对路径</span></span><br><span class="line">tensorboard --logdir=./tmp  --port=8008 <span class="comment">#相对路径</span></span><br></pre></td></tr></table></figure>
-
 <p> <a href="https://stackoverflow.com/questions/45095820/tensorboard-command-not-found?rq=1" target="_blank" rel="noopener">tensorbard命令无法找到</a>：</p>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 -m tensorboard.main --logdir=~/my/training/dir</span><br></pre></td></tr></table></figure>
-
 <p>进入目录：</p>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pip show tensorflow</span><br><span class="line"><span class="built_in">cd</span> /home/abc/xy/.<span class="built_in">local</span>/lib/python2.7/site-packages</span><br><span class="line">python main.py --logdir=/path/to/log_file/</span><br></pre></td></tr></table></figure>
-
 <p> 路径的名称要小心，路径得是根目录, 不需要引号</p>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yyfang@mai:~$  ge/ERRNet_Code/logs --port=8008</span><br></pre></td></tr></table></figure>
 </li>
@@ -553,7 +547,6 @@
 </li>
 </ol>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> iteration % <span class="number">100</span> == <span class="number">0</span>:</span><br><span class="line">    print(<span class="string">"===&gt; Epoch[&#123;&#125;](&#123;&#125;/&#123;&#125;): Loss: &#123;:.6f&#125;"</span>.format(epoch, iteration, len(training_data_loader),loss.data.item()))</span><br><span class="line">    info = &#123; <span class="string">'loss'</span>: loss.data.item()&#125;</span><br><span class="line">    itera = (epoch<span class="number">-1</span>)*len(training_data_loader)+iteration</span><br><span class="line">    <span class="keyword">for</span> tag, value <span class="keyword">in</span> info.items():</span><br><span class="line">        logger.scalar_summary(tag, value, itera)</span><br><span class="line">        <span class="keyword">for</span> tag, value <span class="keyword">in</span> model.named_parameters():</span><br><span class="line">            <span class="comment">#                 print(value.grad)</span></span><br><span class="line">            logger.histo_summary(tag, to_np(value), itera)</span><br><span class="line">            logger.histo_summary(tag+<span class="string">'/grad'</span>, to_np(value.grad), iteration)               </span><br><span class="line"></span><br><span class="line">            images = input  * <span class="number">255.</span> <span class="comment"># ?[0,1]?????[0,255]??</span></span><br><span class="line">            images[images &lt; <span class="number">0</span>] = <span class="number">0</span></span><br><span class="line">            images[images &gt; <span class="number">255.</span>] = <span class="number">255.</span></span><br><span class="line">            a =to_np(images.view(<span class="number">-1</span>, <span class="number">64</span>, <span class="number">64</span>)[:<span class="number">8</span>])</span><br><span class="line">            <span class="comment">#             info_input = &#123;'input': to_np(images.view(-1, 64, 64)[:2])&#125;</span></span><br><span class="line">            imagelabel = label  * <span class="number">255.</span> <span class="comment"># ?[0,1]?????[0,255]??</span></span><br><span class="line">            imagelabel[imagelabel &lt; <span class="number">0</span>] = <span class="number">0</span></span><br><span class="line">            imagelabel[imagelabel &gt; <span class="number">255.</span>] = <span class="number">255.</span></span><br><span class="line">            b = to_np(imagelabel.view(<span class="number">-1</span>, <span class="number">64</span>, <span class="number">64</span>)[:<span class="number">8</span>])</span><br><span class="line">            c = np.hstack((a,b))</span><br><span class="line">            <span class="comment">#             print(images)</span></span><br><span class="line">            info_label = &#123;<span class="string">'inpput/label'</span>: c&#125;    </span><br><span class="line">            <span class="keyword">for</span> tag, images <span class="keyword">in</span> info_label.items():</span><br><span class="line">                logger.image_summary(tag, images, itera)</span><br><span class="line">                <span class="comment">#             for tag, images in info_label.items():</span></span><br><span class="line">                <span class="comment">#                  logger.image_summary(tag, images, iteration)</span></span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> iteration % <span class="number">5000</span> == <span class="number">0</span>:</span><br><span class="line">                    number = opt.number</span><br><span class="line">                    save_checkpoint_iter(model, number)</span><br><span class="line">                    opt.number += <span class="number">1</span></span><br></pre></td></tr></table></figure>
-
 <h1 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h1><ol>
 <li><p>训练集(train set) 验证集(validation set) 测试集(test set）</p>
 <p>training set： 用来训练模型</p>
@@ -575,7 +568,6 @@
 <li><p><a href="https://docs.fast.ai/torch_core.html#to_np" target="_blank" rel="noopener">To_np函数</a>: 转化数据类型</p>
 <p>包含在库<a href="https://docs.fast.ai/overview.html#core" target="_blank" rel="noopener">fastai</a>中</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> fastai.basics <span class="keyword">import</span> *</span><br></pre></td></tr></table></figure>
-
 </li>
 </ul>
 <h1 id="网络结构-nn包"><a href="#网络结构-nn包" class="headerlink" title="网络结构-nn包"></a>网络结构-nn包</h1><p><a href="https://pytorch-cn.readthedocs.io/zh/latest/package_references/torch-nn/#linear-layers" target="_blank" rel="noopener">torch_nn中文文档</a></p>
@@ -605,7 +597,6 @@
 </ul>
 <h1 id="并行运算Parallel"><a href="#并行运算Parallel" class="headerlink" title="并行运算Parallel"></a>并行运算Parallel</h1><p>pytorch中如果使用DataParallel，<strong>那么保存的模型key值前面会多出’modules.’</strong>，这样如果训练的时候使用的是多GPU，而测试的时候使用的是单GPU，模型载入就会出现问题。</p>
 <h1 id="例子：设置GPU和预训练模型"><a href="#例子：设置GPU和预训练模型" class="headerlink" title="例子：设置GPU和预训练模型"></a>例子：设置GPU和预训练模型</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"> criterion =  nn.MSELoss(size_average=<span class="literal">False</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置GPU</span></span><br><span class="line"> print(<span class="string">"===&gt; Setting GPU"</span>)</span><br><span class="line"> <span class="keyword">if</span> cuda:</span><br><span class="line">     <span class="comment"># 调用多个GPU</span></span><br><span class="line">     model = nn.DataParallel(model, device_ids=[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]).cuda()</span><br><span class="line">     <span class="comment"># 调用单个GPU model = model.cuda()</span></span><br><span class="line">     criterion = criterion.cuda()</span><br><span class="line"> <span class="keyword">else</span>:</span><br><span class="line">     model = model.cpu()</span><br><span class="line"></span><br><span class="line"> <span class="comment"># 加载预预训练好的模型及权重</span></span><br><span class="line"> <span class="keyword">if</span> opt.pretrained:</span><br><span class="line">     <span class="keyword">if</span> os.path.isfile(opt.pretrained):</span><br><span class="line">         print(<span class="string">"=&gt; loading model '&#123;&#125;'"</span>.format(opt.pretrained))</span><br><span class="line">         weights = torch.load(opt.pretrained)</span><br><span class="line">         model.load_state_dict(weights[<span class="string">'model'</span>].state_dict())</span><br><span class="line">     <span class="keyword">else</span>:</span><br><span class="line">         print(<span class="string">"=&gt; no model found at '&#123;&#125;'"</span>.format(opt.pretrained))</span><br><span class="line">         </span><br><span class="line"> <span class="comment"># 保存模型的参数</span></span><br><span class="line"> <span class="comment"># Save checkpoint</span></span><br><span class="line">     save_file = os.path.join(TMP_DIR, <span class="string">'checkpoint_epoch&#123;&#125;.pth'</span>.format(epoch))</span><br><span class="line">     save_checkpoint(&#123;</span><br><span class="line">         <span class="string">'epoch'</span>: epoch,</span><br><span class="line">         <span class="string">'state_dict'</span>: model.state_dict(),</span><br><span class="line">         <span class="string">'optimizer'</span>: optimizer.state_dict()</span><br><span class="line">                      &#125;, filename=save_file)</span><br></pre></td></tr></table></figure>
-
 <h1 id="Debug"><a href="#Debug" class="headerlink" title="Debug"></a>Debug</h1><ul>
 <li><p>Anaconda中，import和实际的不符</p>
 <p>Anaconda清除历史，否则同一个格子刷新，并不会影响前面已经import的内容</p>
@@ -879,14 +870,14 @@
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">146k</span>
+    <span title="站点总字数">134k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">2:13</span>
+    <span title="站点阅读时长">2:02</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
   <span class="post-meta-divider">|</span>

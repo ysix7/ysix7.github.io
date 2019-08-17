@@ -57,20 +57,36 @@
   };
 </script>
 
-  <meta name="description" content="Opening今天我讲的内容是第十六章，图模型。主要包含三个基本问题：图模型的结构、推断、学习。表示问题，利用图结构表示彼岸两之间的依赖关系 推断问题，推断预测变量的后验分布。在观测到部分变量e时候，计算其它变量的某个子集 q = {q 1 , q 2 , · · · , q n } 的后验概率 p(q|e)。以及学习问题, 图结构的学习和图中参数的学习。 ![image-201908052050">
+  <meta name="description" content="Opening今天我讲的内容是第十六章，图模型。主要包含三个基本问题：图模型的结构、推断、学习。表示问题，利用图结构表示彼岸两之间的依赖关系 推断问题，推断预测变量的后验分布。在观测到部分变量e时候，计算其它变量的某个子集 q = {q 1 , q 2 , · · · , q n } 的后验概率 p(q|e)。以及学习问题, 图结构的学习和图中参数的学习。   在前面几周，已经介绍了一些推断的方法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="春夏秋冬">
 <meta property="og:url" content="https://ysix7.github.io/p/0.html">
 <meta property="og:site_name" content="春夏秋冬">
-<meta property="og:description" content="Opening今天我讲的内容是第十六章，图模型。主要包含三个基本问题：图模型的结构、推断、学习。表示问题，利用图结构表示彼岸两之间的依赖关系 推断问题，推断预测变量的后验分布。在观测到部分变量e时候，计算其它变量的某个子集 q = {q 1 , q 2 , · · · , q n } 的后验概率 p(q|e)。以及学习问题, 图结构的学习和图中参数的学习。 ![image-201908052050">
+<meta property="og:description" content="Opening今天我讲的内容是第十六章，图模型。主要包含三个基本问题：图模型的结构、推断、学习。表示问题，利用图结构表示彼岸两之间的依赖关系 推断问题，推断预测变量的后验分布。在观测到部分变量e时候，计算其它变量的某个子集 q = {q 1 , q 2 , · · · , q n } 的后验概率 p(q|e)。以及学习问题, 图结构的学习和图中参数的学习。   在前面几周，已经介绍了一些推断的方法">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190805205029413.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190805183117338.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190805194737417.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190805202457364.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190805211242662.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190805211207481.png">
 <meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190805204929639.png">
 <meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190805210626683.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190805232955885.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190805233143964.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190805233307927.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190805233213328.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190805233118468.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190805233903604.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190805231018118.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190805215740555.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190805215043749.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190805211429187.png">
 <meta property="og:updated_time" content="2019-08-17T06:37:26.701Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="春夏秋冬">
-<meta name="twitter:description" content="Opening今天我讲的内容是第十六章，图模型。主要包含三个基本问题：图模型的结构、推断、学习。表示问题，利用图结构表示彼岸两之间的依赖关系 推断问题，推断预测变量的后验分布。在观测到部分变量e时候，计算其它变量的某个子集 q = {q 1 , q 2 , · · · , q n } 的后验概率 p(q|e)。以及学习问题, 图结构的学习和图中参数的学习。 ![image-201908052050">
-<meta name="twitter:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190805204929639.png">
+<meta name="twitter:description" content="Opening今天我讲的内容是第十六章，图模型。主要包含三个基本问题：图模型的结构、推断、学习。表示问题，利用图结构表示彼岸两之间的依赖关系 推断问题，推断预测变量的后验分布。在观测到部分变量e时候，计算其它变量的某个子集 q = {q 1 , q 2 , · · · , q n } 的后验概率 p(q|e)。以及学习问题, 图结构的学习和图中参数的学习。   在前面几周，已经介绍了一些推断的方法">
+<meta name="twitter:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190805205029413.png">
   <link rel="canonical" href="https://ysix7.github.io/p/0">
 
 
@@ -438,7 +454,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>7.4k</span>
+              <span>5.6k</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -448,7 +464,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span>7 分钟</span>
+              <span>5 分钟</span>
             </span>
           
 
@@ -463,14 +479,14 @@
       
         <h1 id="Opening"><a href="#Opening" class="headerlink" title="Opening"></a>Opening</h1><p>今天我讲的内容是第十六章，图模型。主要包含三个基本问题：图模型的结构、推断、学习。表示问题，利用图结构表示彼岸两之间的依赖关系</p>
 <p>推断问题，推断预测变量的后验分布。在观测到部分变量e时候，计算其它变量的某个子集 q = {q 1 , q 2 , · · · , q n } 的后验概率 p(q|e)。以及学习问题, 图结构的学习和图中参数的学习。</p>
-<p>![image-20190805205029413](/Users/yyf/Library/Application Support/typora-user-images/image-20190805205029413.png)</p>
-<p>![image-20190805183117338](/Users/yyf/Library/Application Support/typora-user-images/image-20190805183117338.png)</p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190805205029413.png" alt="image-20190805205029413"></p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190805183117338.png" alt="image-20190805183117338"></p>
 <p>在前面几周，已经介绍了一些推断的方法，以及参数的学习方法，例如EM算法。今天，我将首先补充一下图结构的知识。并通过举例一些实际应用例子，来看图结构如何协同推断和学习来解决一个问题，如同如文本分类、以及图像去噪。</p>
 <h1 id="有向图结构"><a href="#有向图结构" class="headerlink" title="有向图结构"></a>有向图结构</h1><ul>
 <li><p>图结构分为无向图和有向图</p>
 <p>有向图：Directed Graphical model，也称为贝叶斯网络（Bayesian Network），或信念网络（Belief Network）</p>
 <p>无向图：</p>
-<p>![image-20190805194737417](/Users/yyf/Library/Application Support/typora-user-images/image-20190805194737417.png)</p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190805194737417.png" alt="image-20190805194737417"></p>
 </li>
 <li><p>有向图的联合分布</p>
 <p>以图(a)为例，p(x1,x2,x3,x4)=p(x1)p(x2|x1)p(x3|x1,x2)p(x4|x1,x2,x3 )。</p>
@@ -482,10 +498,12 @@
 <p>For any acyclic Bayesian network G, the joint probability distribution of X can be decomposed into a multiplicative form of the local conditional probability of each random variable X.</p>
 <p>In this graph, then the </p>
 </blockquote>
-<p>对于任意一个无环贝叶斯网络G，X 的联合概率分布可以分解为每个随机变量 $X_k$ 的<strong>局部条件概率的连乘形式</strong><br>$$<br>p(\mathbf{x})=\prod_{k=1}^{K} p\left(x_{k} | \mathbf{x}<em>{\pi</em>{k}}\right)<br>$$<br>其中$x_{\pi k}$表示节点k的父节点。P(Xk|Xπk)是局部条件概率</p>
+<p>对于任意一个无环贝叶斯网络G，X 的联合概率分布可以分解为每个随机变量 $X_k$ 的<strong>局部条件概率的连乘形式</strong></p>
+<script type="math/tex; mode=display">
+p(\mathbf{x})=\prod_{k=1}^{K} p\left(x_{k} | \mathbf{x}_{\pi_{k}}\right)</script><p>其中$x_{\pi k}$表示节点k的父节点。P(Xk|Xπk)是局部条件概率</p>
 <p>根据这个公式：我们遍历图（a）中的每一个节点，即可以得到联合分布</p>
 <p>p(x)=p(x1)p(x3|x1)p(x2|x1)p(x4|x3,x2). ——和我们之前的结果一样。</p>
-<p>![image-20190805202457364](/Users/yyf/Library/Application Support/typora-user-images/image-20190805202457364.png)</p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190805202457364.png" alt="image-20190805202457364"></p>
 <hr>
 <p>现在我们来讨论用一个图结构来表示概率分布的优点。</p>
 <p>假设X1 , X2 , X3 , X4 是二值变量，在没有图中变量依赖关系的情况下，可以用<strong>一个联合概率表</strong>来显式地记录每一种取值的概率P(X)，共需要2^4 −1 = 15个参数。如果我们用4 个表格来记录这 4 个局部条件概率的乘积，只需要 1 + 2 + 2 + 4 = 9 个独立参数。</p>
@@ -496,8 +514,8 @@
 </li>
 <li><p>几种常见的有向图（不讲）</p>
 <p>很多经典的机器学习模型可以使用有向图模型来描述，比如朴素贝叶斯分类器、隐马尔可夫模型、深度信念网络等。各自具有特定的结构，适用于不同的任务。</p>
-<p>![image-20190805211242662](/Users/yyf/Library/Application Support/typora-user-images/image-20190805211242662.png)</p>
-<p>![image-20190805211207481](/Users/yyf/Library/Application Support/typora-user-images/image-20190805211207481.png)</p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190805211242662.png" alt="image-20190805211242662"></p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190805211207481.png" alt="image-20190805211207481"></p>
 </li>
 </ul>
 <h1 id="有向图—文本分类"><a href="#有向图—文本分类" class="headerlink" title="有向图—文本分类"></a>有向图—文本分类</h1><ul>
@@ -518,17 +536,17 @@
 <ul>
 <li>简单来说。生成模型是计算一个p(x,y)的联合分布，而判别模型是生成p(y|x)，</li>
 </ul>
-<p>![image-20190805232955885](/Users/yyf/Library/Application Support/typora-user-images/image-20190805232955885.png)</p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190805232955885.png" alt="image-20190805232955885"></p>
 <ul>
 <li>两个模型的应用。生成模型和判别模型都可以用来进行分类问题。</li>
 </ul>
-<p>![image-20190805233143964](/Users/yyf/Library/Application Support/typora-user-images/image-20190805233143964.png)</p>
-<p>![image-20190805233307927](/Users/yyf/Library/Application Support/typora-user-images/image-20190805233307927.png)</p>
-<p>![image-20190805233213328](/Users/yyf/Library/Application Support/typora-user-images/image-20190805233213328.png)</p>
-<p>![image-20190805233118468](/Users/yyf/Library/Application Support/typora-user-images/image-20190805233118468.png)</p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190805233143964.png" alt="image-20190805233143964"></p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190805233307927.png" alt="image-20190805233307927"></p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190805233213328.png" alt="image-20190805233213328"></p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190805233118468.png" alt="image-20190805233118468"></p>
 <ul>
 <li><p>两个模型的建模以及我的总结</p>
-<p>![image-20190805233903604](/Users/yyf/Library/Application Support/typora-user-images/image-20190805233903604.png)</p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190805233903604.png" alt="image-20190805233903604"></p>
 </li>
 </ul>
 <h1 id="有向图—高斯混合模型"><a href="#有向图—高斯混合模型" class="headerlink" title="有向图—高斯混合模型"></a>有向图—高斯混合模型</h1><p>高斯混合模型（Gaussian Mixture Model，GMM)。假设样本 x 是从 K 个高斯分布中生成的。</p>
@@ -538,7 +556,7 @@
 <p>根据这个图：我们可以得到x的边际概率：$p(x)=\sum_{k=1}^{K} \pi_{k} \mathcal{N}\left(x | \mu_{k}, \sigma_{k}\right)​$</p>
 <p>参数估计：用最大似然的方法来进行参数估计，给定N 个训练样本D = {x (i) }, 1 ≤ i ≤ N，其训练集的对数边际似然为 $\mathcal{L}(\mathcal{D} | \theta)=\frac{1}{N} \sum_{i=1}^{N}\left(\log p\left(\mathbf{x}^{(i)}, \theta\right)\right.$,并通过EM算法来求解获得参数$u_k,\sigma_k,\pi_k$, </p>
 <p>推断：计算后验分布 p(Y=k|x)$\pi_{k} \mathcal{N}\left(x^{(n)} | \mu_{k}, \sigma_{k}\right)​$</p>
-<p>![image-20190805231018118](/Users/yyf/Library/Application Support/typora-user-images/image-20190805231018118.png)</p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190805231018118.png" alt="image-20190805231018118"></p>
 <h1 id="无向图结构"><a href="#无向图结构" class="headerlink" title="无向图结构"></a>无向图结构</h1><ul>
 <li><p>应用场景</p>
 <p>我们可以看到，在有向图中，通常存在明确方向上的因果关系。当相互的作用并没 有本质性的指向，或者是明确的双向相互作用时，使用<strong>无向模型</strong>更加合适。作为一个这种情况的例子，假设我们希望对三个二值随机变量建模。X1-X2-X3。其中X1，X2，X3分别代表你的室友，你和你的同事是否😷。我们假设，你的室友和同事 并不认识，所以他们不太可能直接相互传染一些疾病，因而我们的模型中两者之间没有直接的连接。然而，你传染给你的室友和你的室友传染给你都是非常容易的，所以模型不存在一个明确的单向箭头。并且，你的室友和你很有可能其中之一将感冒传染给你，然后通过你再传染给了另一个人。</p>
@@ -546,30 +564,32 @@
 </li>
 <li><p>无向图的联合分布的分解方式</p>
 <p>无向图模型，也称为马尔可夫随机场（Markov Random Field，MRF）或 马尔可夫网络（Markov Network）</p>
-<p>无向图的联合分布方式：对于一个马尔可夫随机场G,当p(x)可以表示为,一系列定义在最大团上的非负函数的乘积形式,即$$p(\mathbf{x})=\frac{1}{Z} \prod_{c \in \mathcal{C}} \phi_{c}\left(\mathbf{x}_{c}\right)$$。其中：最大团（Maximal Clique）就是其中的点是全连接的子集，并且无法被一个更大的团包含。对于 图中的每一个团C，一个 因子（factor）ϕ(C)(也称为 团势能（clique potential)，衡量了团中变量每一种可能的联合状态所对应的密切程度，因而必须为0。为了归一化</p>
+<p>无向图的联合分布方式：对于一个马尔可夫随机场G,当p(x)可以表示为,一系列定义在最大团上的非负函数的乘积形式,即<script type="math/tex">p(\mathbf{x})=\frac{1}{Z} \prod_{c \in \mathcal{C}} \phi_{c}\left(\mathbf{x}_{c}\right)</script>。其中：最大团（Maximal Clique）就是其中的点是全连接的子集，并且无法被一个更大的团包含。对于 图中的每一个团C，一个 因子（factor）ϕ(C)(也称为 团势能（clique potential)，衡量了团中变量每一种可能的联合状态所对应的密切程度，因而必须为0。为了归一化</p>
 </li>
 </ul>
-<p>![image-20190805215740555](/Users/yyf/Library/Application Support/typora-user-images/image-20190805215740555.png)</p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190805215740555.png" alt="image-20190805215740555"></p>
 <ul>
 <li><p>例子中的计算方法</p>
 <p>在我们这个模型中，我们可以为你和你的室友定义这样一个势能函数。</p>
-<p>![image-20190805215043749](/Users/yyf/Library/Application Support/typora-user-images/image-20190805215043749.png)</p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190805215043749.png" alt="image-20190805215043749"></p>
 <p>状态为 1 代表了健康的状态，相对的状态为 0 则表示不好的健康状态（即感染 了感冒）。你们两个通常都是健康的，所以对应的状态拥有最高的密切程度。两个人 中只有一个人是生病的密切程度是最低的，因为这是一个很罕见的状态。两个人都生病的状态（通过一个人来传染给了另一个人）有一个稍高的密切程度，尽管仍然 不及两个人都健康的密切程度。 同样地，我们可以为你和你的同事定义一个。</p>
 <p>现在我们可以得到非归一化的概率分布。如hc=0，hy=1，hx=1的情况下，p；hc=0，hy=1，hx=1的情况下，p。和我们预设的情形相符合。</p>
 </li>
 <li><p>无向图中联合分布的能量表达方法</p>
-<p>现在我们返回到这个联合分布的定义。我们注意到，为了有效定义每一种情况，势能函数必须大于0. 由于势能函数必须为正的，因此我们一般定义为$\phi_{c}\left(\mathbf{x}<em>{c}\right)=\exp \left(-E</em>{c}\left(\mathbf{x}<em>{c}\right)\right)$，其中E(xc)为能量函数（energy function) 。因此，无向图上定义的概率分布可以表示为：<br>$$<br>\begin{aligned} P(\mathbf{x}) &amp;=\frac{1}{Z} \prod</em>{c \in \mathcal{C}} \exp \left(-E_{c}\left(\mathbf{x}<em>{c}\right)\right) \ &amp;=\frac{1}{Z} \exp \left(\sum</em>{c \in \mathcal{C}}-E_{c}\left(\mathbf{x}_{c}\right)\right)\&amp;=\frac{1}{Z} \exp \left(-E\left(\mathbf{x}\right)\right)<br>\end{aligned}<br>$$<br>这种形式的分布又称为玻尔兹曼分布（Boltzmann Distribution）。任何一个无向图模型都可以用公式(11.21) 来表示其联合概率。服从式 (16.7) 形式的任意分布都是 玻尔兹曼分布（Boltzmann distribution） 的一个实例。正是基于这个原因， 我们把许多基于能量的模型称为玻尔兹曼机（Boltzmann Machine）。现在我们来讲一个基于无向图的应用，去噪。</p>
+<p>现在我们返回到这个联合分布的定义。我们注意到，为了有效定义每一种情况，势能函数必须大于0. 由于势能函数必须为正的，因此我们一般定义为$\phi_{c}\left(\mathbf{x}_{c}\right)=\exp \left(-E_{c}\left(\mathbf{x}_{c}\right)\right)$，其中E(xc)为能量函数（energy function) 。因此，无向图上定义的概率分布可以表示为：</p>
+<script type="math/tex; mode=display">
+\begin{aligned} P(\mathbf{x}) &=\frac{1}{Z} \prod_{c \in \mathcal{C}} \exp \left(-E_{c}\left(\mathbf{x}_{c}\right)\right) \\ &=\frac{1}{Z} \exp \left(\sum_{c \in \mathcal{C}}-E_{c}\left(\mathbf{x}_{c}\right)\right)\\&=\frac{1}{Z} \exp \left(-E\left(\mathbf{x}\right)\right) 
+\end{aligned}</script><p>这种形式的分布又称为玻尔兹曼分布（Boltzmann Distribution）。任何一个无向图模型都可以用公式(11.21) 来表示其联合概率。服从式 (16.7) 形式的任意分布都是 玻尔兹曼分布（Boltzmann distribution） 的一个实例。正是基于这个原因， 我们把许多基于能量的模型称为玻尔兹曼机（Boltzmann Machine）。现在我们来讲一个基于无向图的应用，去噪。</p>
 </li>
 <li><p>常见的无向图(不讲)</p>
-<p>![image-20190805211429187](/Users/yyf/Library/Application Support/typora-user-images/image-20190805211429187.png)</p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190805211429187.png" alt="image-20190805211429187"></p>
 </li>
 <li><p>总结</p>
 <p>利用图模型的局部马尔可夫性，我们可以对多变量的联合概率进行简化，从而降低建模的复杂度。（可加到有向图的后面）Using the local Markov property of the graph model, we can simplify the joint probability of multivariates, thus reducing the complexity of modeling. (can be added to the back of the directed graph)</p>
 <p>局部马尔可夫性质：对一个更一般的贝叶斯网络，其局部马尔可夫性质为：每个随机变量在给定父节点的情况下，条件独立于它的非后代节点。对与一个无向图而言，即一个变量 Xk 在给定它的邻居的情况下独立于所有其它变量。</p>
 </li>
 </ul>
-<p>#无向图—图像去噪</p>
-<p>无向图：图像去噪。</p>
+<h1 id="无向图—图像去噪"><a href="#无向图—图像去噪" class="headerlink" title="无向图—图像去噪"></a>无向图—图像去噪</h1><p>无向图：图像去噪。</p>
 <ul>
 <li><p><a href="http://deanhan.com/2018/04/22/MRF/" target="_blank" rel="noopener">基于马尔科夫随机场的图像去噪方法+python代码</a></p>
 </li>
@@ -786,7 +806,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Opening"><span class="nav-number">1.</span> <span class="nav-text">Opening</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#有向图结构"><span class="nav-number">2.</span> <span class="nav-text">有向图结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#有向图—文本分类"><span class="nav-number">3.</span> <span class="nav-text">有向图—文本分类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#生成模型和判别模型的区别"><span class="nav-number">4.</span> <span class="nav-text">生成模型和判别模型的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#有向图—高斯混合模型"><span class="nav-number">5.</span> <span class="nav-text">有向图—高斯混合模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#无向图结构"><span class="nav-number">6.</span> <span class="nav-text">无向图结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#受限玻耳兹曼机"><span class="nav-number">7.</span> <span class="nav-text">受限玻耳兹曼机</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#受限玻耳兹曼姬和深度学习的关系"><span class="nav-number">8.</span> <span class="nav-text">受限玻耳兹曼姬和深度学习的关系</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Opening"><span class="nav-number">1.</span> <span class="nav-text">Opening</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#有向图结构"><span class="nav-number">2.</span> <span class="nav-text">有向图结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#有向图—文本分类"><span class="nav-number">3.</span> <span class="nav-text">有向图—文本分类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#生成模型和判别模型的区别"><span class="nav-number">4.</span> <span class="nav-text">生成模型和判别模型的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#有向图—高斯混合模型"><span class="nav-number">5.</span> <span class="nav-text">有向图—高斯混合模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#无向图结构"><span class="nav-number">6.</span> <span class="nav-text">无向图结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#无向图—图像去噪"><span class="nav-number">7.</span> <span class="nav-text">无向图—图像去噪</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#受限玻耳兹曼机"><span class="nav-number">8.</span> <span class="nav-text">受限玻耳兹曼机</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#受限玻耳兹曼姬和深度学习的关系"><span class="nav-number">9.</span> <span class="nav-text">受限玻耳兹曼姬和深度学习的关系</span></a></li></ol></div>
             
 
           </div>
@@ -822,14 +842,14 @@
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">146k</span>
+    <span title="站点总字数">134k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">2:13</span>
+    <span title="站点阅读时长">2:02</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
   <span class="post-meta-divider">|</span>

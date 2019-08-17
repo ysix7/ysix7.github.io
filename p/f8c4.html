@@ -57,17 +57,21 @@
   };
 </script>
 
-  <meta name="description" content="变分不等式变分不等式(VI)的定义： ![image-20190710190816957](/Users/yyf/Library/Application Support/typora-user-images/image-20190710190816957.png)  最优化问题的转化： ​                                $x^{*}=\arg \min _{x \i">
+  <meta name="description" content="变分不等式变分不等式(VI)的定义：   最优化问题的转化： ​                                $x^{*}=\arg \min _{x \in X} f(x)​$   ​    等价于满足$\operatorname{VI}(\nabla f, X)​$即 ​                                    $\nabla f\left(x^">
 <meta property="og:type" content="article">
 <meta property="og:title" content="变分不等式的收敛性证明">
 <meta property="og:url" content="https://ysix7.github.io/p/f8c4.html">
 <meta property="og:site_name" content="春夏秋冬">
-<meta property="og:description" content="变分不等式变分不等式(VI)的定义： ![image-20190710190816957](/Users/yyf/Library/Application Support/typora-user-images/image-20190710190816957.png)  最优化问题的转化： ​                                $x^{*}=\arg \min _{x \i">
+<meta property="og:description" content="变分不等式变分不等式(VI)的定义：   最优化问题的转化： ​                                $x^{*}=\arg \min _{x \in X} f(x)​$   ​    等价于满足$\operatorname{VI}(\nabla f, X)​$即 ​                                    $\nabla f\left(x^">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190710190816957.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190710201934772.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190710204453147.png">
 <meta property="og:updated_time" content="2019-08-17T06:37:26.730Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="变分不等式的收敛性证明">
-<meta name="twitter:description" content="变分不等式变分不等式(VI)的定义： ![image-20190710190816957](/Users/yyf/Library/Application Support/typora-user-images/image-20190710190816957.png)  最优化问题的转化： ​                                $x^{*}=\arg \min _{x \i">
+<meta name="twitter:description" content="变分不等式变分不等式(VI)的定义：   最优化问题的转化： ​                                $x^{*}=\arg \min _{x \in X} f(x)​$   ​    等价于满足$\operatorname{VI}(\nabla f, X)​$即 ​                                    $\nabla f\left(x^">
+<meta name="twitter:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190710190816957.png">
   <link rel="canonical" href="https://ysix7.github.io/p/f8c4">
 
 
@@ -448,7 +452,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>1.8k</span>
+              <span>1.5k</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -458,7 +462,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span>2 分钟</span>
+              <span>1 分钟</span>
             </span>
           
 
@@ -472,7 +476,7 @@
 
       
         <h1 id="变分不等式"><a href="#变分不等式" class="headerlink" title="变分不等式"></a>变分不等式</h1><p>变分不等式(VI)的定义：</p>
-<p>![image-20190710190816957](/Users/yyf/Library/Application Support/typora-user-images/image-20190710190816957.png)</p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190710190816957.png" alt="image-20190710190816957"></p>
 <ul>
 <li><p><strong>最优化问题的转化：</strong></p>
 <p>​                                $x^{*}=\arg \min _{x \in X} f(x)​$</p>
@@ -483,30 +487,35 @@
 <ul>
 <li>优化问题</li>
 </ul>
-<p>$$<br>x^{*} \in \arg \min {\theta(x)+f(x) | x \in \mathcal{X}}<br>$$</p>
-<p>​    其中$f(x),\theta(x)$是convex function, $\theta$不一定可微, 等价于：<br>$$<br>x^{<em>} \in \mathcal{X}, \quad \theta(x)-\theta\left(x^{</em>}\right)+\left(x-x^{<em>}\right)^{T} \nabla f\left(x^{</em>}\right) \geq 0, \quad \forall x \in \mathcal{X}<br>$$</p>
-<p>![image-20190710201934772](/Users/yyf/Library/Application Support/typora-user-images/image-20190710201934772.png)</p>
+<script type="math/tex; mode=display">
+x^{*} \in \arg \min \{\theta(x)+f(x) | x \in \mathcal{X}\}</script><p>​    其中$f(x),\theta(x)$是convex function, $\theta$不一定可微, 等价于：</p>
+<script type="math/tex; mode=display">
+x^{*} \in \mathcal{X}, \quad \theta(x)-\theta\left(x^{*}\right)+\left(x-x^{*}\right)^{T} \nabla f\left(x^{*}\right) \geq 0, \quad \forall x \in \mathcal{X}</script><p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190710201934772.png" alt="image-20190710201934772"></p>
 <p>​    </p>
 <p>​        </p>
 <p>​        </p>
 <h1 id="优化问题转化VI不等式问题"><a href="#优化问题转化VI不等式问题" class="headerlink" title="优化问题转化VI不等式问题"></a>优化问题转化VI不等式问题</h1><p>将不同的优化问题转化成等价的VI问题：</p>
 <ul>
-<li><p>一元约束问题$\min {\theta(x) | A x=b, x \in \mathcal{X}}$</p>
+<li><p>一元约束问题$\min \{\theta(x) | A x=b, x \in \mathcal{X}\}$</p>
 <p>等价于拉格朗日：$L(x, \lambda)=\theta(x)-\lambda^{T}(A x-b), \quad(x, \lambda) \in \mathcal{X} \times \Re^{m}$</p>
 <p>转化后等于VI inequality：$w^{<em>} \in \Omega, \quad \theta(x)-\theta\left(x^{</em>}\right)+\left(w-w^{<em>}\right)^{T} F\left(w^{</em>}\right) \geq 0, \quad \forall w \in \Omega$</p>
 </li>
 <li><p>二元三元。。</p>
 </li>
-<li><p>min-max问题: $\min <em>{x \in \mathcal{X}} \max _{y \in \mathcal{Y}}\left{\mathcal{L}(x, y)=\theta</em>{1}(x)-y^{T} A x-\theta_{2}(y)\right}$</p>
+<li><p>min-max问题: $\min _{x \in \mathcal{X}} \max _{y \in \mathcal{Y}}\left\{\mathcal{L}(x, y)=\theta_{1}(x)-y^{T} A x-\theta_{2}(y)\right\}$</p>
 </li>
 </ul>
-<h1 id="PPA的收敛性用PI不等式证明"><a href="#PPA的收敛性用PI不等式证明" class="headerlink" title="PPA的收敛性用PI不等式证明"></a>PPA的收敛性用PI不等式证明</h1><p>方程：<br>$$<br>\min {\theta(x)+f(x) | x \in \mathcal{X}}<br>$$<br>where θ(x) and f(x) are convex but θ(x) is not necessary smooth, X is a closed convex set.</p>
-<p>![image-20190710204453147](/Users/yyf/Library/Application Support/typora-user-images/image-20190710204453147.png)</p>
+<h1 id="PPA的收敛性用PI不等式证明"><a href="#PPA的收敛性用PI不等式证明" class="headerlink" title="PPA的收敛性用PI不等式证明"></a>PPA的收敛性用PI不等式证明</h1><p>方程：</p>
+<script type="math/tex; mode=display">
+\min \{\theta(x)+f(x) | x \in \mathcal{X}\}</script><p>where θ(x) and f(x) are convex but θ(x) is not necessary smooth, X is a closed convex set.</p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190710204453147.png" alt="image-20190710204453147"></p>
 <h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><ul>
 <li><p>Monotone operator</p>
 <p>单调函数（x-y）（F（x）-F(y)）&gt;0， 则F是单调函数</p>
 </li>
-<li><p>凸函数满足的性质<br>$$<br>(x-y)^{T}(\nabla f(x)-\nabla f(y)) \geq 0<br>$$<br>We say the gradient rf of the convex function f is a <strong>monotone operator.</strong></p>
+<li><p>凸函数满足的性质</p>
+<script type="math/tex; mode=display">
+(x-y)^{T}(\nabla f(x)-\nabla f(y)) \geq 0</script><p>We say the gradient rf of the convex function f is a <strong>monotone operator.</strong></p>
 </li>
 <li><p>min max Lagrangian 和 max min Lagrangian的关系</p>
 </li>
@@ -751,14 +760,14 @@
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">146k</span>
+    <span title="站点总字数">134k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">2:13</span>
+    <span title="站点阅读时长">2:02</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
   <span class="post-meta-divider">|</span>

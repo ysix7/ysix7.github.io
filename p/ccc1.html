@@ -57,19 +57,25 @@
   };
 </script>
 
-  <meta name="description" content="正则 Tikhonov正则   问题 lower semicontinuous这个性质的作用在哪里。好像通常用在证明收敛性。  PCA是什么，有什么应用  不同的空间。把图像函数f定义在某个空间上是为了measure，为什么要measure，有哪些typical space  SVD去噪  欧拉方程：欧拉方程是泛函极值条件的微分表达式  tensor  一   Norm不同的norm [semi-">
+  <meta name="description" content="正则 Tikhonov正则   问题 lower semicontinuous这个性质的作用在哪里。好像通常用在证明收敛性。 PCA是什么，有什么应用 不同的空间。把图像函数f定义在某个空间上是为了measure，为什么要measure，有哪些typical space SVD去噪 欧拉方程：欧拉方程是泛函极值条件的微分表达式 tensor  一   Norm不同的norm [semi-norm和">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数学基础知识">
 <meta property="og:url" content="https://ysix7.github.io/p/ccc1.html">
 <meta property="og:site_name" content="春夏秋冬">
-<meta property="og:description" content="正则 Tikhonov正则   问题 lower semicontinuous这个性质的作用在哪里。好像通常用在证明收敛性。  PCA是什么，有什么应用  不同的空间。把图像函数f定义在某个空间上是为了measure，为什么要measure，有哪些typical space  SVD去噪  欧拉方程：欧拉方程是泛函极值条件的微分表达式  tensor  一   Norm不同的norm [semi-">
+<meta property="og:description" content="正则 Tikhonov正则   问题 lower semicontinuous这个性质的作用在哪里。好像通常用在证明收敛性。 PCA是什么，有什么应用 不同的空间。把图像函数f定义在某个空间上是为了measure，为什么要measure，有哪些typical space SVD去噪 欧拉方程：欧拉方程是泛函极值条件的微分表达式 tensor  一   Norm不同的norm [semi-norm和">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://wikimedia.org/api/rest_v1/media/math/render/svg/37f3753e1ac34f985393aa606a63bd77e72e0ad6">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190625043131777.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190725143410105.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190725145706825.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190725171210467.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190725171030761.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190726181150976.png">
 <meta property="og:image" content="https://blog-w.oss-cn-beijing.aliyuncs.com/2019-08-12-044904.png">
 <meta property="og:updated_time" content="2019-08-17T06:37:26.715Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数学基础知识">
-<meta name="twitter:description" content="正则 Tikhonov正则   问题 lower semicontinuous这个性质的作用在哪里。好像通常用在证明收敛性。  PCA是什么，有什么应用  不同的空间。把图像函数f定义在某个空间上是为了measure，为什么要measure，有哪些typical space  SVD去噪  欧拉方程：欧拉方程是泛函极值条件的微分表达式  tensor  一   Norm不同的norm [semi-">
+<meta name="twitter:description" content="正则 Tikhonov正则   问题 lower semicontinuous这个性质的作用在哪里。好像通常用在证明收敛性。 PCA是什么，有什么应用 不同的空间。把图像函数f定义在某个空间上是为了measure，为什么要measure，有哪些typical space SVD去噪 欧拉方程：欧拉方程是泛函极值条件的微分表达式 tensor  一   Norm不同的norm [semi-norm和">
 <meta name="twitter:image" content="https://wikimedia.org/api/rest_v1/media/math/render/svg/37f3753e1ac34f985393aa606a63bd77e72e0ad6">
   <link rel="canonical" href="https://ysix7.github.io/p/ccc1">
 
@@ -451,7 +457,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>2.3k</span>
+              <span>1.6k</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -461,7 +467,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span>2 分钟</span>
+              <span>1 分钟</span>
             </span>
           
 
@@ -479,16 +485,11 @@
 </ul>
 <p><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/37f3753e1ac34f985393aa606a63bd77e72e0ad6" alt="{\displaystyle \|A\mathbf {x} -\mathbf {b} \|_{2}^{2}+\|\Gamma \mathbf {x} \|_{2}^{2}}"></p>
 <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><ul>
-<li><p>lower semicontinuous这个性质的作用在哪里。好像通常用在证明收敛性。</p>
-</li>
-<li><p>PCA是什么，有什么应用</p>
-</li>
-<li><p>不同的空间。把图像函数f定义在某个空间上是为了measure，为什么要measure，有哪些typical space</p>
-</li>
-<li><p>SVD去噪</p>
-</li>
-<li><p>欧拉方程：欧拉方程是泛函极值条件的微分表达式</p>
-</li>
+<li>lower semicontinuous这个性质的作用在哪里。好像通常用在证明收敛性。</li>
+<li>PCA是什么，有什么应用</li>
+<li>不同的空间。把图像函数f定义在某个空间上是为了measure，为什么要measure，有哪些typical space</li>
+<li>SVD去噪</li>
+<li>欧拉方程：欧拉方程是泛函极值条件的微分表达式</li>
 <li><p>tensor</p>
 </li>
 <li><p>一</p>
@@ -496,48 +497,47 @@
 </ul>
 <h1 id="Norm"><a href="#Norm" class="headerlink" title="Norm"></a>Norm</h1><p><a href="https://medium.com/@montjoile/l0-norm-l1-norm-l2-norm-l-infinity-norm-7a7d18a4f40c" target="_blank" rel="noopener">不同的norm</a></p>
 <p>[semi-norm和norm]</p>
-<p>![image-20190625043131777](/Users/yyf/Library/Application Support/typora-user-images/image-20190625043131777.png)</p>
-<p>#证明解的存在性</p>
-<ul>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190625043131777.png" alt="image-20190625043131777"></p>
+<h1 id="证明解的存在性"><a href="#证明解的存在性" class="headerlink" title="证明解的存在性"></a>证明解的存在性</h1><ul>
 <li><p>一个函数在某个空间内有界的意思</p>
 <p>$0&lt;c_{1} \leq u_{n} \leq c_{2}, \text{which implies that u n is bounded in} L^{1}(\Omega)$</p>
-<p>$\left{u_{n}\right} \text { is bounded in } B V(\Omega)$</p>
+<p>$\left\{u_{n}\right\} \text { is bounded in } B V(\Omega)$</p>
 </li>
-<li><p>泛函， is bounded below, we can choose a minimizing sequence $\left{u_{n} : n=1,2, \cdots\right} \in \overline{S}(\Omega)$</p>
+<li><p>泛函， is bounded below, we can choose a minimizing sequence $\left\{u_{n} : n=1,2, \cdots\right\} \in \overline{S}(\Omega)$</p>
 </li>
 <li><p>序列的强收敛和弱收敛</p>
-<p>![image-20190725143410105](/Users/yyf/Library/Application Support/typora-user-images/image-20190725143410105.png)</p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190725143410105.png" alt="image-20190725143410105"></p>
 </li>
 <li><p>Fatous’ lemma</p>
-<p>![image-20190725145706825](/Users/yyf/Library/Application Support/typora-user-images/image-20190725145706825.png)</p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190725145706825.png" alt="image-20190725145706825"></p>
 </li>
 </ul>
 <h1 id="各类函数空间"><a href="#各类函数空间" class="headerlink" title="各类函数空间"></a>各类函数空间</h1><ul>
 <li><p>$l_p$空间</p>
-<p>![image-20190725171210467](/Users/yyf/Library/Application Support/typora-user-images/image-20190725171210467.png)</p>
-<p>![image-20190725171030761](/Users/yyf/Library/Application Support/typora-user-images/image-20190725171030761.png)</p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190725171210467.png" alt="image-20190725171210467"></p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190725171030761.png" alt="image-20190725171030761"></p>
 </li>
 <li><p>$W^{1, 1}(\Omega)$ is usually defined as all functions $v \in L^{1}(\Omega)$, with weak derivatives of first order and these derivatives shall belong to $L^{1}(\Omega)$.</p>
 <p>The space $W^{1, \infty}(\Omega)$ is usually defined as all functions $v \in L^{\infty}(\Omega)$with weak derivatives of first order<br>and these derivatives shall belong to $L^{\infty}(\Omega) .$</p>
 </li>
 <li><p>BV空间，BH空间</p>
-<p>The space $[\mathrm{BV}(\Omega)]^{m}$ with $|u|<em>{\mathrm{BV}(\Omega)} :=\int</em>{\Omega}|u| d x+|D u|(\Omega)$ is a Banach space.</p>
-<p>![image-20190726181150976](/Users/yyf/Library/Application Support/typora-user-images/image-20190726181150976.png)</p>
+<p>The space $[\mathrm{BV}(\Omega)]^{m}$ with $|u|_{\mathrm{BV}(\Omega)} :=\int_{\Omega}|u| d x+|D u|(\Omega)$ is a Banach space.</p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190726181150976.png" alt="image-20190726181150976"></p>
 </li>
 </ul>
 <h1 id="证明收敛速度"><a href="#证明收敛速度" class="headerlink" title="证明收敛速度"></a>证明收敛速度</h1><p><img src="https://blog-w.oss-cn-beijing.aliyuncs.com/2019-08-12-044904.png" alt="image-20190724181456673"></p>
 <ul>
 <li><p>converge sublinearly</p>
-<p>$\lim <em>{k \rightarrow \infty} \frac{\left|x</em>{k+1}-L\right|}{\left|x_{k}-L\right|}=1$</p>
+<p>$\lim _{k \rightarrow \infty} \frac{\left|x_{k+1}-L\right|}{\left|x_{k}-L\right|}=1$</p>
 </li>
 <li><p><em>converge linearly</em> </p>
-<p>$\lim <em>{k \rightarrow \infty} \frac{\left|x</em>{k+1}-L\right|}{\left|x_{k}-L\right|}=\mu, \mu \in(0,1)$ </p>
+<p>$\lim _{k \rightarrow \infty} \frac{\left|x_{k+1}-L\right|}{\left|x_{k}-L\right|}=\mu, \mu \in(0,1)$ </p>
 </li>
 <li><p><em>converge superlinearly</em> </p>
-<p>$\lim <em>{k \rightarrow \infty} \frac{\left|x</em>{k+1}-L\right|}{\left|x_{k}-L\right|}=0$</p>
+<p>$\lim _{k \rightarrow \infty} \frac{\left|x_{k+1}-L\right|}{\left|x_{k}-L\right|}=0$</p>
 </li>
 <li><p><em>Q-linear convergence</em>: distinguish superlinear rates of convergence. </p>
-<p>$\lim <em>{k \rightarrow \infty} \frac{\left|x</em>{k+1}-L\right|}{\left|x_{k}-L\right|^{q}}&lt;M$</p>
+<p>$\lim _{k \rightarrow \infty} \frac{\left|x_{k+1}-L\right|}{\left|x_{k}-L\right|^{q}}&lt;M$</p>
 </li>
 <li><p>Monotone operator</p>
 </li>
@@ -747,7 +747,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#正则"><span class="nav-number">1.</span> <span class="nav-text">正则</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#问题"><span class="nav-number">2.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Norm"><span class="nav-number">3.</span> <span class="nav-text">Norm</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#各类函数空间"><span class="nav-number">4.</span> <span class="nav-text">各类函数空间</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#证明收敛速度"><span class="nav-number">5.</span> <span class="nav-text">证明收敛速度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#傅立叶变换"><span class="nav-number">6.</span> <span class="nav-text">傅立叶变换</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#正则"><span class="nav-number">1.</span> <span class="nav-text">正则</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#问题"><span class="nav-number">2.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Norm"><span class="nav-number">3.</span> <span class="nav-text">Norm</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#证明解的存在性"><span class="nav-number">4.</span> <span class="nav-text">证明解的存在性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#各类函数空间"><span class="nav-number">5.</span> <span class="nav-text">各类函数空间</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#证明收敛速度"><span class="nav-number">6.</span> <span class="nav-text">证明收敛速度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#傅立叶变换"><span class="nav-number">7.</span> <span class="nav-text">傅立叶变换</span></a></li></ol></div>
             
 
           </div>
@@ -783,14 +783,14 @@
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">146k</span>
+    <span title="站点总字数">134k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">2:13</span>
+    <span title="站点阅读时长">2:02</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
   <span class="post-meta-divider">|</span>
