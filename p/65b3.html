@@ -64,8 +64,6 @@
 <meta property="og:site_name" content="春夏秋冬">
 <meta property="og:description" content="lowercontinuity  一阶算法 Proximal point algorithm Gradient projection method. Dual-projection   An Algorithm for Total Variation Minimization and Applications   ALM和PPA  ReferenceADMM（1975，1976，2011） Ga">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190625054707041.png">
-<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190625054906321.png">
 <meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190625055124896.png">
 <meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190625055357144.png">
 <meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190625055621617.png">
@@ -79,11 +77,11 @@
 <meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190625063050310.png">
 <meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190625072208966.png">
 <meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190625072239269.png">
-<meta property="og:updated_time" content="2019-08-21T13:40:22.178Z">
+<meta property="og:updated_time" content="2019-08-23T06:08:09.229Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="L1算法综述">
 <meta name="twitter:description" content="lowercontinuity  一阶算法 Proximal point algorithm Gradient projection method. Dual-projection   An Algorithm for Total Variation Minimization and Applications   ALM和PPA  ReferenceADMM（1975，1976，2011） Ga">
-<meta name="twitter:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190625054707041.png">
+<meta name="twitter:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190625055124896.png">
   <link rel="canonical" href="https://ysix7.github.io/p/65b3">
 
 
@@ -429,7 +427,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-21 21:40:22" itemprop="dateModified" datetime="2019-08-21T21:40:22+08:00">2019-08-21</time>
+                <time title="修改时间：2019-08-23 14:08:09" itemprop="dateModified" datetime="2019-08-23T14:08:09+08:00">2019-08-23</time>
               </span>
             
           
@@ -464,7 +462,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>7k</span>
+              <span>7.5k</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -474,7 +472,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span>6 分钟</span>
+              <span>7 分钟</span>
             </span>
           
 
@@ -514,9 +512,9 @@
 <h3 id="Split-Bregman"><a href="#Split-Bregman" class="headerlink" title="Split Bregman"></a>Split Bregman</h3><ul>
 <li><p>Bregman distance图像复原. Osher, S., Burger, M., Goldfarb, D., Xu, J., &amp; Yin, W. (2005). <a href="http://www.corc.ieor.columbia.edu/reports/techreports/tr-2004-03.pdf" target="_blank" rel="noopener">An iterative regularization method for total variation-based image restoration</a>. <em>Multiscale Modeling &amp; Simulation</em>, <em>4</em>(2), 460-489.  也是利用了Bregman distance 处理denoising</p>
 </li>
-<li><p>首次提出。Goldstein, T., &amp; Osher, S. (2009). The split Bregman method for L1-regularized problems. SIAM journal on imaging sciences, 2(2), 323-343.</p>
+<li><p>(首次提出) Goldstein, T., &amp; Osher, S. (2009). The split Bregman method for L1-regularized problems. SIAM journal on imaging sciences, 2(2), 323-343.</p>
 </li>
-<li>和ADMM的等价性。Esser, E. (2009). Applications of Lagrangian-based alternating direction methods and connections to split Bregman. <em>CAM report</em>, <em>9</em>, 31.</li>
+<li>(与ADMM的等价性) Esser, E. (2009). Applications of Lagrangian-based alternating direction methods and connections to split Bregman. <em>CAM report</em>, <em>9</em>, 31.</li>
 </ul>
 <h2 id="Split-Bregman（1967，2009）"><a href="#Split-Bregman（1967，2009）" class="headerlink" title="Split Bregman（1967，2009）"></a>Split Bregman（1967，2009）</h2><ul>
 <li><p>参考文献：</p>
@@ -572,32 +570,34 @@
 <p><strong>Proof1:</strong> 参考theorem 2.2</p>
 <p>Assumption: $Au_{k+1}=b$,</p>
 <p><strong>Proof2:</strong> “A Combined First and Second Order Variational Approach for Image Reconstruction”</p>
+<p>问题：意味着任何一个lambda下的2.5的迭代解，都等价于(2.4)的解？迭代所得的解未必是(2.5)的解</p>
+</li>
+<li><p>Bregman的优点：收敛快(原因见appendix); 可以保持$\lambda$是常数，不需要变大，因此稳定。 在其他$\lambda_k$增大的情况下，需要以一种极慢的步子增大，使得算法的效率变低。</p>
 </li>
 </ul>
 </li>
-</ul>
-<pre><code>问题：意味着任何一个lambda下的2.5的迭代解，都等价于(2.4)的解？迭代所得的解未必是(2.5)的解
-</code></pre><ul>
-<li>Bregman的优点：收敛快(原因见appendix); 可以保持$\lambda$是常数，不需要变大，因此稳定。 在其他$\lambda_k$增大的情况下，需要以一种极慢的步子增大，使得算法的效率变低。</li>
-</ul>
-<ul>
 <li><p>Split Bregman for l1-regularized optimization problem (1.1) </p>
 <ul>
-<li>目标方程<script type="math/tex; mode=display">
-\min _{u}|\Phi(u)|+H(u)</script>where |·| denotes the l1-norm, and both |Φ(u)| and H(u) are convex functions, Φ(·) to be diﬀerentiable.</li>
-</ul>
-<p>引入一个变量d, 转化成一个约束问题</p>
-<p>(3.1) $\min _{u, d}|d|+H(u) \text { such that } d=\Phi(u)$</p>
-<p>转化成一个无约束问题</p>
-<p>(3.2) $\min _{u, d}|d|+H(u)+\frac{\lambda}{2}|d-\Phi(u)|_{2}^{2}$</p>
-<p>套用(2.6-2.8)并转化成(2.9-2.10)的形式，得到<strong>the Split Bregman Iteration</strong></p>
-<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190625054707041.png" alt="image-20190625054707041"></p>
-<p>通过iteratively minimizing解决（3.7）</p>
-<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190625054906321.png" alt="image-20190625054906321"></p>
-<p>整个算法</p>
+<li><p>目标方程</p>
+<script type="math/tex; mode=display">
+\min _{u}|\Phi(u)|+H(u)</script><p>where |·| denotes the l1-norm, and both |Φ(u)| and H(u) are convex functions, Φ(·) to be diﬀerentiable.</p>
+</li>
+<li><p>引入一个变量d, 转化成一个约束问题</p>
+<p>(3.1) $\min \limits_{u, d}|d|+H(u) \text { such that } d=\Phi(u)$转化成一个无约束问题</p>
+<p>(3.2) $\min\limits_{u, d}|d|+H(u)+\frac{\lambda}{2}|d-\Phi(u)|_{2}^{2}$进一步转化成无约束问题</p>
+</li>
+<li><p>Bregman iteration</p>
+<script type="math/tex; mode=display">
+\begin{aligned}\left(u^{k+1}, d^{k+1}\right) &=\min _{u, d}|d|+H(u)+\frac{\lambda}{2}\left\|d-\Phi(u)-b^{k}\right\|_{2}^{2} (3.7)\\ b^{k+1} &=b^{k}+\left(\Phi\left(u^{k+1}\right)-d^{k+1}\right) (3.8)\end{aligned}</script></li>
+<li><p>Splitting technique to solve (3.7)</p>
+<script type="math/tex; mode=display">
+\begin{array}{l}{\text { Step } 1 : u^{k+1}=\min _{u} H(u)+\frac{\lambda}{2}\left\|d^{k}-\Phi(u)-b^{k}\right\|_{2}^{2}} \\ {\text { Step } 2 : d^{k+1}=\min _{d}|d|+\frac{\lambda}{2}\left\|d-\Phi\left(u^{k+1}\right)-b^{k}\right\|_{2}^{2}}\end{array}</script></li>
+<li><p>Generalized Split Bregman Iteration</p>
 <p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190625055124896.png" alt="image-20190625055124896"></p>
 <p>内循环N=1即可，直观理解</p>
 <p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190625055357144.png" alt="image-20190625055357144"></p>
+</li>
+</ul>
 </li>
 <li><p>Application</p>
 <p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190625055621617.png" alt="image-20190625055621617"></p>
@@ -701,8 +701,8 @@ l(y, z, x)=h^{*}(y)+p^{*}(z)-\left\langle x, \mathcal{A}^{*} y+z-c\right\rangle,
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-              <a href="/p/f8c4.html" rel="prev" title="变分不等式的收敛性证明">
-                变分不等式的收敛性证明 <i class="fa fa-chevron-right"></i>
+              <a href="/p/157d.html" rel="prev" title="Semismooth牛顿法">
+                Semismooth牛顿法 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -914,14 +914,14 @@ l(y, z, x)=h^{*}(y)+p^{*}(z)-\left\langle x, \mathcal{A}^{*} y+z-c\right\rangle,
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">119k</span>
+    <span title="站点总字数">120k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">1:48</span>
+    <span title="站点阅读时长">1:49</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
   <span class="post-meta-divider">|</span>
@@ -1017,6 +1017,55 @@ l(y, z, x)=h^{*}(y)+p^{*}(z)-\left\langle x, \mathcal{A}^{*} y+z-c\right\rangle,
 
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', function() {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
   
 
   

@@ -1192,6 +1192,172 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/p/f8c4.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="夏不哉下">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="春夏秋冬">
+    </span>
+      <header class="post-header">
+
+        
+          <h2 class="post-title" itemprop="name headline">
+              
+              <a href="/p/f8c4.html" class="post-title-link" itemprop="url">变分不等式的收敛性证明</a>
+            
+          </h2>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-01 00:00:00" itemprop="dateCreated datePublished" datetime="2019-07-01T00:00:00+08:00">2019-07-01</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-08-17 14:37:26" itemprop="dateModified" datetime="2019-08-17T14:37:26+08:00">2019-08-17</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/" itemprop="url" rel="index"><span itemprop="name">算法</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>1.5k</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1 分钟</span>
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+            <h1 id="变分不等式"><a href="#变分不等式" class="headerlink" title="变分不等式"></a>变分不等式</h1><p>变分不等式(VI)的定义：</p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190710190816957.png" alt="image-20190710190816957"></p>
+<ul>
+<li><p><strong>最优化问题的转化：</strong></p>
+<p>​                                $x^{*}=\arg \min _{x \in X} f(x)​$</p>
+</li>
+</ul>
+<p>​    等价于满足$\operatorname{VI}(\nabla f, X)​$即</p>
+<p>​                                    $\nabla f\left(x^{<em>}\right)^{T}\left(x^{\prime}-x^{</em>}\right) \geq 0, \forall x^{\prime} \in X$</p>
+<ul>
+<li>优化问题</li>
+</ul>
+<script type="math/tex; mode=display">
+x^{*} \in \arg \min \{\theta(x)+f(x) | x \in \mathcal{X}\}</script><p>​    其中$f(x),\theta(x)$是convex function, $\theta$不一定可微, 等价于：</p>
+<script type="math/tex; mode=display">
+x^{*} \in \mathcal{X}, \quad \theta(x)-\theta\left(x^{*}\right)+\left(x-x^{*}\right)^{T} \nabla f\left(x^{*}\right) \geq 0, \quad \forall x \in \mathcal{X}</script><p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190710201934772.png" alt="image-20190710201934772"></p>
+<p>​    </p>
+<p>​        </p>
+<p>​        </p>
+<h1 id="优化问题转化VI不等式问题"><a href="#优化问题转化VI不等式问题" class="headerlink" title="优化问题转化VI不等式问题"></a>优化问题转化VI不等式问题</h1><p>将不同的优化问题转化成等价的VI问题：</p>
+<ul>
+<li><p>一元约束问题$\min \{\theta(x) | A x=b, x \in \mathcal{X}\}$</p>
+<p>等价于拉格朗日：$L(x, \lambda)=\theta(x)-\lambda^{T}(A x-b), \quad(x, \lambda) \in \mathcal{X} \times \Re^{m}$</p>
+<p>转化后等于VI inequality：$w^{<em>} \in \Omega, \quad \theta(x)-\theta\left(x^{</em>}\right)+\left(w-w^{<em>}\right)^{T} F\left(w^{</em>}\right) \geq 0, \quad \forall w \in \Omega$</p>
+</li>
+<li><p>二元三元。。</p>
+</li>
+<li><p>min-max问题: $\min _{x \in \mathcal{X}} \max _{y \in \mathcal{Y}}\left\{\mathcal{L}(x, y)=\theta_{1}(x)-y^{T} A x-\theta_{2}(y)\right\}$</p>
+</li>
+</ul>
+<h1 id="PPA的收敛性用PI不等式证明"><a href="#PPA的收敛性用PI不等式证明" class="headerlink" title="PPA的收敛性用PI不等式证明"></a>PPA的收敛性用PI不等式证明</h1><p>方程：</p>
+<script type="math/tex; mode=display">
+\min \{\theta(x)+f(x) | x \in \mathcal{X}\}</script><p>where θ(x) and f(x) are convex but θ(x) is not necessary smooth, X is a closed convex set.</p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190710204453147.png" alt="image-20190710204453147"></p>
+<h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><ul>
+<li><p>Monotone operator</p>
+<p>单调函数（x-y）（F（x）-F(y)）&gt;0， 则F是单调函数</p>
+</li>
+<li><p>凸函数满足的性质</p>
+<script type="math/tex; mode=display">
+(x-y)^{T}(\nabla f(x)-\nabla f(y)) \geq 0</script><p>We say the gradient rf of the convex function f is a <strong>monotone operator.</strong></p>
+</li>
+<li><p>min max Lagrangian 和 max min Lagrangian的关系</p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/p/157d.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1616,172 +1782,6 @@ M_{\lambda} f(x) :=\min _{u} f(u)+\frac{1}{2 \lambda}\|u-x\|_{2}^{2}</script><sc
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/p/f8c4.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="夏不哉下">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="春夏秋冬">
-    </span>
-      <header class="post-header">
-
-        
-          <h2 class="post-title" itemprop="name headline">
-              
-              <a href="/p/f8c4.html" class="post-title-link" itemprop="url">变分不等式的收敛性证明</a>
-            
-          </h2>
-        
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
-              <time title="创建时间：2019-07-01 00:00:00" itemprop="dateCreated datePublished" datetime="2019-07-01T00:00:00+08:00">2019-07-01</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-17 14:37:26" itemprop="dateModified" datetime="2019-08-17T14:37:26+08:00">2019-08-17</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/" itemprop="url" rel="index"><span itemprop="name">算法</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">本文字数：</span>
-              
-              <span>1.5k</span>
-            </span>
-          
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              
-              <span>1 分钟</span>
-            </span>
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-            <h1 id="变分不等式"><a href="#变分不等式" class="headerlink" title="变分不等式"></a>变分不等式</h1><p>变分不等式(VI)的定义：</p>
-<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190710190816957.png" alt="image-20190710190816957"></p>
-<ul>
-<li><p><strong>最优化问题的转化：</strong></p>
-<p>​                                $x^{*}=\arg \min _{x \in X} f(x)​$</p>
-</li>
-</ul>
-<p>​    等价于满足$\operatorname{VI}(\nabla f, X)​$即</p>
-<p>​                                    $\nabla f\left(x^{<em>}\right)^{T}\left(x^{\prime}-x^{</em>}\right) \geq 0, \forall x^{\prime} \in X$</p>
-<ul>
-<li>优化问题</li>
-</ul>
-<script type="math/tex; mode=display">
-x^{*} \in \arg \min \{\theta(x)+f(x) | x \in \mathcal{X}\}</script><p>​    其中$f(x),\theta(x)$是convex function, $\theta$不一定可微, 等价于：</p>
-<script type="math/tex; mode=display">
-x^{*} \in \mathcal{X}, \quad \theta(x)-\theta\left(x^{*}\right)+\left(x-x^{*}\right)^{T} \nabla f\left(x^{*}\right) \geq 0, \quad \forall x \in \mathcal{X}</script><p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190710201934772.png" alt="image-20190710201934772"></p>
-<p>​    </p>
-<p>​        </p>
-<p>​        </p>
-<h1 id="优化问题转化VI不等式问题"><a href="#优化问题转化VI不等式问题" class="headerlink" title="优化问题转化VI不等式问题"></a>优化问题转化VI不等式问题</h1><p>将不同的优化问题转化成等价的VI问题：</p>
-<ul>
-<li><p>一元约束问题$\min \{\theta(x) | A x=b, x \in \mathcal{X}\}$</p>
-<p>等价于拉格朗日：$L(x, \lambda)=\theta(x)-\lambda^{T}(A x-b), \quad(x, \lambda) \in \mathcal{X} \times \Re^{m}$</p>
-<p>转化后等于VI inequality：$w^{<em>} \in \Omega, \quad \theta(x)-\theta\left(x^{</em>}\right)+\left(w-w^{<em>}\right)^{T} F\left(w^{</em>}\right) \geq 0, \quad \forall w \in \Omega$</p>
-</li>
-<li><p>二元三元。。</p>
-</li>
-<li><p>min-max问题: $\min _{x \in \mathcal{X}} \max _{y \in \mathcal{Y}}\left\{\mathcal{L}(x, y)=\theta_{1}(x)-y^{T} A x-\theta_{2}(y)\right\}$</p>
-</li>
-</ul>
-<h1 id="PPA的收敛性用PI不等式证明"><a href="#PPA的收敛性用PI不等式证明" class="headerlink" title="PPA的收敛性用PI不等式证明"></a>PPA的收敛性用PI不等式证明</h1><p>方程：</p>
-<script type="math/tex; mode=display">
-\min \{\theta(x)+f(x) | x \in \mathcal{X}\}</script><p>where θ(x) and f(x) are convex but θ(x) is not necessary smooth, X is a closed convex set.</p>
-<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190710204453147.png" alt="image-20190710204453147"></p>
-<h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><ul>
-<li><p>Monotone operator</p>
-<p>单调函数（x-y）（F（x）-F(y)）&gt;0， 则F是单调函数</p>
-</li>
-<li><p>凸函数满足的性质</p>
-<script type="math/tex; mode=display">
-(x-y)^{T}(\nabla f(x)-\nabla f(y)) \geq 0</script><p>We say the gradient rf of the convex function f is a <strong>monotone operator.</strong></p>
-</li>
-<li><p>min max Lagrangian 和 max min Lagrangian的关系</p>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/p/65b3.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1825,7 +1825,7 @@ x^{*} \in \mathcal{X}, \quad \theta(x)-\theta\left(x^{*}\right)+\left(x-x^{*}\ri
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-21 21:40:22" itemprop="dateModified" datetime="2019-08-21T21:40:22+08:00">2019-08-21</time>
+                <time title="修改时间：2019-08-23 14:08:09" itemprop="dateModified" datetime="2019-08-23T14:08:09+08:00">2019-08-23</time>
               </span>
             
           
@@ -1852,7 +1852,7 @@ x^{*} \in \mathcal{X}, \quad \theta(x)-\theta\left(x^{*}\right)+\left(x-x^{*}\ri
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>7k</span>
+              <span>7.5k</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -1862,7 +1862,7 @@ x^{*} \in \mathcal{X}, \quad \theta(x)-\theta\left(x^{*}\right)+\left(x-x^{*}\ri
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span>6 分钟</span>
+              <span>7 分钟</span>
             </span>
           
 
@@ -1903,9 +1903,9 @@ x^{*} \in \mathcal{X}, \quad \theta(x)-\theta\left(x^{*}\right)+\left(x-x^{*}\ri
 <h3 id="Split-Bregman"><a href="#Split-Bregman" class="headerlink" title="Split Bregman"></a>Split Bregman</h3><ul>
 <li><p>Bregman distance图像复原. Osher, S., Burger, M., Goldfarb, D., Xu, J., &amp; Yin, W. (2005). <a href="http://www.corc.ieor.columbia.edu/reports/techreports/tr-2004-03.pdf" target="_blank" rel="noopener">An iterative regularization method for total variation-based image restoration</a>. <em>Multiscale Modeling &amp; Simulation</em>, <em>4</em>(2), 460-489.  也是利用了Bregman distance 处理denoising</p>
 </li>
-<li><p>首次提出。Goldstein, T., &amp; Osher, S. (2009). The split Bregman method for L1-regularized problems. SIAM journal on imaging sciences, 2(2), 323-343.</p>
+<li><p>(首次提出) Goldstein, T., &amp; Osher, S. (2009). The split Bregman method for L1-regularized problems. SIAM journal on imaging sciences, 2(2), 323-343.</p>
 </li>
-<li>和ADMM的等价性。Esser, E. (2009). Applications of Lagrangian-based alternating direction methods and connections to split Bregman. <em>CAM report</em>, <em>9</em>, 31.</li>
+<li>(与ADMM的等价性) Esser, E. (2009). Applications of Lagrangian-based alternating direction methods and connections to split Bregman. <em>CAM report</em>, <em>9</em>, 31.</li>
 </ul>
 <h2 id="Split-Bregman（1967，2009）"><a href="#Split-Bregman（1967，2009）" class="headerlink" title="Split Bregman（1967，2009）"></a>Split Bregman（1967，2009）</h2><ul>
 <li><p>参考文献：</p>
@@ -1961,32 +1961,34 @@ x^{*} \in \mathcal{X}, \quad \theta(x)-\theta\left(x^{*}\right)+\left(x-x^{*}\ri
 <p><strong>Proof1:</strong> 参考theorem 2.2</p>
 <p>Assumption: $Au_{k+1}=b$,</p>
 <p><strong>Proof2:</strong> “A Combined First and Second Order Variational Approach for Image Reconstruction”</p>
+<p>问题：意味着任何一个lambda下的2.5的迭代解，都等价于(2.4)的解？迭代所得的解未必是(2.5)的解</p>
+</li>
+<li><p>Bregman的优点：收敛快(原因见appendix); 可以保持$\lambda$是常数，不需要变大，因此稳定。 在其他$\lambda_k$增大的情况下，需要以一种极慢的步子增大，使得算法的效率变低。</p>
 </li>
 </ul>
 </li>
-</ul>
-<pre><code>问题：意味着任何一个lambda下的2.5的迭代解，都等价于(2.4)的解？迭代所得的解未必是(2.5)的解
-</code></pre><ul>
-<li>Bregman的优点：收敛快(原因见appendix); 可以保持$\lambda$是常数，不需要变大，因此稳定。 在其他$\lambda_k$增大的情况下，需要以一种极慢的步子增大，使得算法的效率变低。</li>
-</ul>
-<ul>
 <li><p>Split Bregman for l1-regularized optimization problem (1.1) </p>
 <ul>
-<li>目标方程<script type="math/tex; mode=display">
-\min _{u}|\Phi(u)|+H(u)</script>where |·| denotes the l1-norm, and both |Φ(u)| and H(u) are convex functions, Φ(·) to be diﬀerentiable.</li>
-</ul>
-<p>引入一个变量d, 转化成一个约束问题</p>
-<p>(3.1) $\min _{u, d}|d|+H(u) \text { such that } d=\Phi(u)$</p>
-<p>转化成一个无约束问题</p>
-<p>(3.2) $\min _{u, d}|d|+H(u)+\frac{\lambda}{2}|d-\Phi(u)|_{2}^{2}$</p>
-<p>套用(2.6-2.8)并转化成(2.9-2.10)的形式，得到<strong>the Split Bregman Iteration</strong></p>
-<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190625054707041.png" alt="image-20190625054707041"></p>
-<p>通过iteratively minimizing解决（3.7）</p>
-<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190625054906321.png" alt="image-20190625054906321"></p>
-<p>整个算法</p>
+<li><p>目标方程</p>
+<script type="math/tex; mode=display">
+\min _{u}|\Phi(u)|+H(u)</script><p>where |·| denotes the l1-norm, and both |Φ(u)| and H(u) are convex functions, Φ(·) to be diﬀerentiable.</p>
+</li>
+<li><p>引入一个变量d, 转化成一个约束问题</p>
+<p>(3.1) $\min \limits_{u, d}|d|+H(u) \text { such that } d=\Phi(u)$转化成一个无约束问题</p>
+<p>(3.2) $\min\limits_{u, d}|d|+H(u)+\frac{\lambda}{2}|d-\Phi(u)|_{2}^{2}$进一步转化成无约束问题</p>
+</li>
+<li><p>Bregman iteration</p>
+<script type="math/tex; mode=display">
+\begin{aligned}\left(u^{k+1}, d^{k+1}\right) &=\min _{u, d}|d|+H(u)+\frac{\lambda}{2}\left\|d-\Phi(u)-b^{k}\right\|_{2}^{2} (3.7)\\ b^{k+1} &=b^{k}+\left(\Phi\left(u^{k+1}\right)-d^{k+1}\right) (3.8)\end{aligned}</script></li>
+<li><p>Splitting technique to solve (3.7)</p>
+<script type="math/tex; mode=display">
+\begin{array}{l}{\text { Step } 1 : u^{k+1}=\min _{u} H(u)+\frac{\lambda}{2}\left\|d^{k}-\Phi(u)-b^{k}\right\|_{2}^{2}} \\ {\text { Step } 2 : d^{k+1}=\min _{d}|d|+\frac{\lambda}{2}\left\|d-\Phi\left(u^{k+1}\right)-b^{k}\right\|_{2}^{2}}\end{array}</script></li>
+<li><p>Generalized Split Bregman Iteration</p>
 <p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190625055124896.png" alt="image-20190625055124896"></p>
 <p>内循环N=1即可，直观理解</p>
 <p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190625055357144.png" alt="image-20190625055357144"></p>
+</li>
+</ul>
 </li>
 <li><p>Application</p>
 <p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190625055621617.png" alt="image-20190625055621617"></p>
@@ -2474,14 +2476,14 @@ l(y, z, x)=h^{*}(y)+p^{*}(z)-\left\langle x, \mathcal{A}^{*} y+z-c\right\rangle,
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">119k</span>
+    <span title="站点总字数">120k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">1:48</span>
+    <span title="站点阅读时长">1:49</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
   <span class="post-meta-divider">|</span>
@@ -2596,8 +2598,59 @@ l(y, z, x)=h^{*}(y)+p^{*}(z)-\left\langle x, \mathcal{A}^{*} y+z-c\right\rangle,
       
     
       
+        
+      
     
       
+    
+  
+    
+      <script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', function() {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
     
   
 
