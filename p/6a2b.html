@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="generator" content="Hexo 3.9.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/cloud32.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/cloud16.png?v=7.3.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-pace-theme-minimal.min.css?v=1.0.2">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
+    save_scroll: false,
+    copycode: {"enable":false,"show_result":false,"style":null},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    }
+  };
+</script>
+
+  <meta name="description" content="通用近似定理只有参数足够多，一层网络可以近似任何函数。但是训练难度大，维度可能💥。 卷积 卷积的特点：局部连接、权值共享、空间或时间上的采样 卷积的作用：减少参数、提取局部不变性特征 Motivation：一个视神经元的感受野，来激活该神经元 互相关是什么  滑动步长和填充 不同滑动步长和填充的作用  根据输出长度：窄卷积、等宽卷机   卷积网络的结构用卷机层代替全连接网络。  Referenc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深度_卷积神经网络">
+<meta property="og:url" content="https://ysix7.github.io/p/6a2b.html">
+<meta property="og:site_name" content="春夏秋冬">
+<meta property="og:description" content="通用近似定理只有参数足够多，一层网络可以近似任何函数。但是训练难度大，维度可能💥。 卷积 卷积的特点：局部连接、权值共享、空间或时间上的采样 卷积的作用：减少参数、提取局部不变性特征 Motivation：一个视神经元的感受野，来激活该神经元 互相关是什么  滑动步长和填充 不同滑动步长和填充的作用  根据输出长度：窄卷积、等宽卷机   卷积网络的结构用卷机层代替全连接网络。  Referenc">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Desktop/012842_Z2z8_876354.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Desktop/012854_DfxF_876354.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Desktop/012904_j6uj_876354.png">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=output+%3D+%28input+-+1%29%2Astride%2Boutputpadding+-+2%2Apadding%2Bkernelsize">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190910203420911.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190910203514585.png">
+<meta property="og:image" content="https://blog-w.oss-cn-beijing.aliyuncs.com/2019-09-10-070344.png">
+<meta property="og:image" content="https://static.oschina.net/uploads/space/2018/0311/013017_pIe9_876354.png">
+<meta property="og:image" content="https://static.oschina.net/uploads/space/2018/0311/013047_ApKN_876354.png">
+<meta property="og:image" content="https://pic3.zhimg.com/80/v2-4c7116b1d363bcf9e492e8437dcc108a_hd.jpg">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Mobile%20Documents/com~apple~CloudDocs/tasks/Unet.png">
+<meta property="og:updated_time" content="2019-09-12T07:34:40.493Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="深度_卷积神经网络">
+<meta name="twitter:description" content="通用近似定理只有参数足够多，一层网络可以近似任何函数。但是训练难度大，维度可能💥。 卷积 卷积的特点：局部连接、权值共享、空间或时间上的采样 卷积的作用：减少参数、提取局部不变性特征 Motivation：一个视神经元的感受野，来激活该神经元 互相关是什么  滑动步长和填充 不同滑动步长和填充的作用  根据输出长度：窄卷积、等宽卷机   卷积网络的结构用卷机层代替全连接网络。  Referenc">
+<meta name="twitter:image" content="https://ysix7.github.io/Users/yyf/Desktop/012842_Z2z8_876354.png">
+  <link rel="canonical" href="https://ysix7.github.io/p/6a2b">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>深度_卷积神经网络 | 春夏秋冬</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  <div class="container sidebar-position-left">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">春夏秋冬</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">12</span></a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-分类">
+      
+    
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-归档">
+      
+    
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-图像处理">
+      
+    
+      
+    
+
+    <a href="/categories/图像处理/" rel="section"><i class="menu-item-icon fa fa-fw fa-tripadvisor"></i> <br>图像处理</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-深度学习">
+      
+    
+      
+    
+
+    <a href="/categories/深度学习/" rel="section"><i class="menu-item-icon fa fa-fw fa-free-code-camp"></i> <br>深度学习</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-数学基础">
+      
+    
+      
+    
+
+    <a href="/categories/数学/" rel="section"><i class="menu-item-icon fa fa-fw fa-superscript"></i> <br>数学基础</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-优化算法">
+      
+    
+      
+    
+
+    <a href="/categories/算法/" rel="section"><i class="menu-item-icon fa fa-fw fa-line-chart"></i> <br>优化算法</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-软件">
+      
+    
+      
+    
+
+    <a href="/categories/软件/" rel="section"><i class="menu-item-icon fa fa-fw fa-desktop"></i> <br>软件</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-语言">
+      
+    
+      
+    
+
+    <a href="/categories/语言/" rel="section"><i class="menu-item-icon fa fa-fw fa-font"></i> <br>语言</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-摄影">
+      
+    
+      
+    
+
+    <a href="/categories/摄影/" rel="section"><i class="menu-item-icon fa fa-fw fa-instagram"></i> <br>摄影</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-生活">
+      
+    
+      
+    
+
+    <a href="/categories/生活/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>生活</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-其他">
+      
+    
+      
+    
+
+    <a href="/categories/其他/" rel="section"><i class="menu-item-icon fa fa-fw fa-th-list"></i> <br>其他</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+      </li>
+    
+  </ul>
+
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+    </div>
+</nav>
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content page-post-detail">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/p/6a2b.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="夏不哉下">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="春夏秋冬">
+    </span>
+      <header class="post-header">
+
+        
+          <h2 class="post-title" itemprop="name headline">深度_卷积神经网络
+
+            
+          </h2>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-09-03 16:06:04" itemprop="dateCreated datePublished" datetime="2019-09-03T16:06:04+08:00">2019-09-03</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-09-12 15:34:40" itemprop="dateModified" datetime="2019-09-12T15:34:40+08:00">2019-09-12</time>
+              </span>
+            
+          
+
+          
+            <span class="post-meta-item" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>4.2k</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>4 分钟</span>
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="通用近似定理"><a href="#通用近似定理" class="headerlink" title="通用近似定理"></a>通用近似定理</h1><p>只有参数足够多，一层网络可以近似任何函数。但是训练难度大，维度可能💥。</p>
+<h1 id="卷积"><a href="#卷积" class="headerlink" title="卷积"></a>卷积</h1><ul>
+<li>卷积的特点：局部连接、权值共享、空间或时间上的采样</li>
+<li>卷积的作用：减少参数、提取局部不变性特征</li>
+<li>Motivation：一个视神经元的感受野，来激活该神经元</li>
+<li><u>互相关是什么</u></li>
+</ul>
+<h1 id="滑动步长和填充"><a href="#滑动步长和填充" class="headerlink" title="滑动步长和填充"></a>滑动步长和填充</h1><ul>
+<li><p>不同滑动步长和填充的作用</p>
+</li>
+<li><p>根据输出长度：窄卷积、等宽卷机</p>
+</li>
+</ul>
+<h1 id="卷积网络的结构"><a href="#卷积网络的结构" class="headerlink" title="卷积网络的结构"></a>卷积网络的结构</h1><p>用卷机层代替全连接网络。</p>
+<ul>
+<li><p>Reference: <a href="https://zhuanlan.zhihu.com/p/29119239" target="_blank" rel="noopener">CNN中卷积层的计算细节</a>、<a href="https://zhuanlan.zhihu.com/p/41696749" target="_blank" rel="noopener">卷积层与池化层</a>、<a href="https://blog.csdn.net/l691899397/article/details/52250190" target="_blank" rel="noopener">池化层的实现、反向传播</a></p>
+</li>
+<li><p>卷机层的特点：局部感知、参数共享、池化</p>
+</li>
+</ul>
+<p><img src="/Users/yyf/Desktop/012842_Z2z8_876354.png" alt="012842_Z2z8_876354.png"></p>
+<p><img src="/Users/yyf/Desktop/012854_DfxF_876354.png" alt="012854_DfxF_876354.png"></p>
+<p><img src="/Users/yyf/Desktop/012904_j6uj_876354.png" alt="img"></p>
+<h2 id="汇聚层-池化层-pool层"><a href="#汇聚层-池化层-pool层" class="headerlink" title="汇聚层/池化层/pool层"></a>汇聚层/池化层/pool层</h2><p>减少神经元个数。池化层的输入一般来源于上一个卷积层，主要作用是提供了很强的鲁棒性（例如max-pooling是取一小块区域中的最大值，此时若此区域中的其他值略有变化，或者图像稍有平移，pooling后的结果仍不变），并且减少了参数的数量，防止过拟合现象的发生。<strong>池化层一般没有参数，所以反向传播的时候，只需对输入参数求导，不需要进行权值更新。</strong></p>
+<h2 id="bottle-layer-1-1卷积？"><a href="#bottle-layer-1-1卷积？" class="headerlink" title="bottle layer/1*1卷积？"></a>bottle layer/1*1卷积？</h2><p>降维</p>
+<h2 id="Dropout"><a href="#Dropout" class="headerlink" title="Dropout?"></a>Dropout?</h2><p><a href="https://zhuanlan.zhihu.com/p/38200980" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/38200980</a></p>
+<p><a href="https://blog.csdn.net/stdcoutzyx/article/details/49022443" target="_blank" rel="noopener">https://blog.csdn.net/stdcoutzyx/article/details/49022443</a></p>
+<h2 id="反卷积"><a href="#反卷积" class="headerlink" title="反卷积"></a>反卷积</h2><p><u>转置卷机：低维特征到高维特征？</u><a href="https://blog.csdn.net/Fate_fjh/article/details/52882134" target="_blank" rel="noopener">反卷积</a></p>
+<p>输出维度的大小：</p>
+<p><img src="https://www.zhihu.com/equation?tex=output+%3D+%28input+-+1%29%2Astride%2Boutputpadding+-+2%2Apadding%2Bkernelsize" alt="output = (input - 1)*stride+outputpadding - 2*padding+kernelsize"></p>
+<p>函数：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">torch</span>.<span class="title">nn</span>.<span class="title">ConvTranspose2d</span><span class="params">(in_channels, out_channels, kernel_size, stride=<span class="number">1</span>, padding=<span class="number">0</span>, </span></span></span><br><span class="line"><span class="class"><span class="params">                                                       output_padding=<span class="number">0</span>, groups=<span class="number">1</span>, bias=True, dilation=<span class="number">1</span>)</span></span></span><br><span class="line"><span class="class">##</span></span><br><span class="line"><span class="class"><span class="title">in_channels</span><span class="params">(int)</span> – 输入信号的通道数</span></span><br><span class="line"><span class="class"><span class="title">out_channels</span><span class="params">(int)</span> – 卷积产生的通道数</span></span><br><span class="line"><span class="class"><span class="title">kerner_size</span><span class="params">(int or tuple)</span> - 卷积核的大小</span></span><br><span class="line"><span class="class"><span class="title">stride</span><span class="params">(int or tuple,optional)</span> - 卷积步长，即要将输入扩大的倍数。</span></span><br><span class="line"><span class="class"><span class="title">padding</span><span class="params">(int or tuple, optional)</span> - 输入的每一条边补充0的层数，高宽都增加2*<span class="title">padding</span></span></span><br><span class="line"><span class="class"><span class="title">output_padding</span><span class="params">(int or tuple, optional)</span> - 输出边补充0的层数，高宽都增加<span class="title">padding</span></span></span><br><span class="line"><span class="class"><span class="title">groups</span><span class="params">(int, optional)</span> – 从输入通道到输出通道的阻塞连接数</span></span><br><span class="line">bias(bool, optional) - 如果bias=True，添加偏置</span><br><span class="line">dilation(int <span class="keyword">or</span> tuple, optional) – 卷积核元素之间的间距</span><br></pre></td></tr></table></figure>
+<h2 id="空洞卷机"><a href="#空洞卷机" class="headerlink" title="空洞卷机"></a>空洞卷机</h2><p>目的增加输出单元的感受野，通过增加空洞来增加大小。</p>
+<p>(如何增大感受野：增大卷机核大小，增加深度，再卷机之前进行<u>汇聚操作</u>)</p>
+<h2 id="concat-f-a-b-c-d"><a href="#concat-f-a-b-c-d" class="headerlink" title="concat/ f= [a,b,c,d]"></a>concat/ f= [a,b,c,d]</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">outputs = [branch1, branch2, branch3, branch4]</span><br><span class="line"><span class="keyword">return</span> torch.cat(outputs, <span class="number">1</span>) <span class="comment"># 按照维数1进行拼接，按列拼接。</span></span><br></pre></td></tr></table></figure>
+<h2 id="batch-normalization"><a href="#batch-normalization" class="headerlink" title="batch normalization?"></a>batch normalization?</h2><h1 id="上采样"><a href="#上采样" class="headerlink" title="上采样"></a><a href="https://zhuanlan.zhihu.com/p/48501100" target="_blank" rel="noopener">上采样</a></h1><blockquote>
+<p>在应用在计算机视觉的深度学习领域，由于输入图像通过卷积神经网络(CNN)提取特征后，输出的尺寸往往会变小，而有时我们需要将图像恢复到原来的尺寸以便进行进一步的计算(e.g.:图像的语义分割)，这个采用扩大图像尺寸，实现图像由小分辨率到大分辨率的映射的操作，叫做上采样(Upsample)。</p>
+<p>上采样有3种常见的方法：双线性插值(bilinear)，反卷积(Transposed Convolution)，反池化(Unpooling)，我们这里只讨论反卷积。这里指的反卷积，也叫转置卷积，它并不是正向卷积的完全逆过程，用一句话来解释：</p>
+</blockquote>
+<ul>
+<li><p>参考</p>
+<p><a href="https://zhuanlan.zhihu.com/p/67907490" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/67907490</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/48501100" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/48501100</a></p>
+</li>
+<li><p>插值法</p>
+<ol>
+<li>最近邻插值(Nearest neighbor interpolation)</li>
+<li>双线性插值(Bi-Linear interpolation)</li>
+<li>双立方插值(Bi-Cubic interpolation)</li>
+</ol>
+</li>
+<li></li>
+</ul>
+<h1 id="卷积网络中的反向传播"><a href="#卷积网络中的反向传播" class="headerlink" title="卷积网络中的反向传播"></a>卷积网络中的反向传播</h1><ul>
+<li><p>更新W</p>
+</li>
+<li><p>更新b</p>
+</li>
+<li><p>计算反向误差</p>
+</li>
+<li><p>池化层的求导：池化层一般没有参数，所以反向传播的时候，只需对输入参数求导，不需要进行权值更新。</p>
+<p>max-pooling</p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190910203420911.png" alt="image-20190910203420911"></p>
+<p>mean-pooling</p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190910203514585.png" alt="image-20190910203514585"></p>
+</li>
+</ul>
+<h1 id="几个重要的卷积神经"><a href="#几个重要的卷积神经" class="headerlink" title="几个重要的卷积神经"></a>几个重要的卷积神经</h1><blockquote>
+<p>CNN发展至今，已经有很多变种，其中有几个经典模型在CNN发展历程中有着里程碑的意义，它们分别是：LeNet、Alexnet、Googlenet、VGG、DRL等</p>
+</blockquote>
+<h2 id="LeNet-1998"><a href="#LeNet-1998" class="headerlink" title="LeNet, 1998"></a>LeNet, 1998</h2><ul>
+<li><p>参考文献</p>
+<ul>
+<li><p>Ann LeCun 在1998年发表了关于LeNet的经典论文《Gradient-Based Learning Applied to Document Recognition 》用于识别支票上的手写字体</p>
+</li>
+<li><p><a href="https://my.oschina.net/u/876354/blog/1632862" target="_blank" rel="noopener">大话CNN经典模型：LeNet</a></p>
+</li>
+<li><p><a href="https://github.com/tiny-dnn/tiny-dnn/tree/master/examples/mnist" target="_blank" rel="noopener">原论文代码复现: tiny-dnn/tiny-dnn</a>、<a href="https://www.kaggle.com/vincentman0403/pytorch-v0-3-1b-on-mnist-by-lenet/output" target="_blank" rel="noopener">简化版本</a>(主要体现在评论区说的s2到c3的过程上, 原paper之所以那样实现，也是受限于当时的计算资源。现简化版本也符合pytorch的实现框架。)</p>
+</li>
+</ul>
+</li>
+<li><p>网络结构</p>
+<p><img src="https://blog-w.oss-cn-beijing.aliyuncs.com/2019-09-10-070344.png" alt="image-20190910150340473"></p>
+<p>S2，S4: 在汇聚层使用非线性激活函数$Y^{\prime d}=f\left(w^{d} \cdot Y^{d}+b^{d}\right)$。因此，在汇聚层也有两个参数需要训练。</p>
+<p>C3层使用了一个局部连接：</p>
+</li>
+</ul>
+<p><img src="https://static.oschina.net/uploads/space/2018/0311/013017_pIe9_876354.png" alt="img"></p>
+<p>​    F6层：84个神经元，可组成一张7*12的特征图像，可以对不同的字体进行编码</p>
+<p><img src="https://static.oschina.net/uploads/space/2018/0311/013047_ApKN_876354.png" alt="013047_ApKN_876354.png"></p>
+<p>​    输出层：    $y_{i}=\sum_{i}\left(x_{j}-w_{i j}\right)^{2}$</p>
+<ul>
+<li>激活函数：</li>
+</ul>
+<h2 id="AlexNet-2012"><a href="#AlexNet-2012" class="headerlink" title="AlexNet, 2012"></a>AlexNet, 2012</h2><ul>
+<li><p>Reference：<a href="https://zhuanlan.zhihu.com/p/22734982" target="_blank" rel="noopener">论文解读</a>、</p>
+</li>
+<li><p>AlexNet赢得了2012 年 ImageNet图像分类竞赛的冠军</p>
+</li>
+<li><p>突破点：BigData+GPU 进行并行训练，采用了 ReLU 作为非线性激活函数，使用 Dropout 防止过拟合，使用数据增强来提高模型准确率等。</p>
+</li>
+<li><p>激活函数：ReLU，线性整流函数（Rectified Linear Unit, ReLU），又称修正线性单元</p>
+<p>$\max \left(0, \mathbf{w}^{T} \mathbf{x}+b\right)$</p>
+</li>
+<li><p>AlexNet中的Pooling是重叠的，每次取3 * 3的像素做Max-Pooling，然后每次只越过2格，这样每个Pooling之间都会有一定得重叠，有利于更好地克服过拟合</p>
+</li>
+<li>减少过拟合<ul>
+<li>Data Augmentation</li>
+<li><strong>Dropout</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="Googlenet-2014"><a href="#Googlenet-2014" class="headerlink" title="Googlenet, 2014"></a>Googlenet, 2014</h2><ul>
+<li><p>Reference: <a href="https://github.com/pytorch/vision/blob/master/torchvision/models/googlenet.py" target="_blank" rel="noopener">代码</a>、<a href="https://zhuanlan.zhihu.com/p/30756181" target="_blank" rel="noopener">Inception的发展</a></p>
+</li>
+<li><p>won ImageNet 2014.</p>
+</li>
+<li><p>Inception结构</p>
+<p><img src="https://pic3.zhimg.com/80/v2-4c7116b1d363bcf9e492e8437dcc108a_hd.jpg" alt="img"></p>
+</li>
+<li><p><a href="https://pic3.zhimg.com/v2-23d077105e9f28aa56afa9e50975b69a_r.jpg" target="_blank" rel="noopener">网络结构</a></p>
+</li>
+<li><p>两个辅助的softmax分支，作用有两点，一是为了避免梯度消失，用于向前传导梯度。反向传播时如果有一层求导为0，链式求导结果则为0。二是将中间某一层输出用作分类，起到模型融合作用。</p>
+</li>
+</ul>
+<h2 id="VGG-待补充"><a href="#VGG-待补充" class="headerlink" title="VGG(待补充)"></a>VGG(待补充)</h2><h2 id="ResNet"><a href="#ResNet" class="headerlink" title="ResNet"></a>ResNet</h2><ul>
+<li><p>Reference</p>
+<ul>
+<li><p>He K, Zhang X, Ren S, Sun J. Deep residual learning for image recognition. InProceedings of the IEEE conference on computer vision and pattern recognition 2016 (pp. 770-778).</p>
+</li>
+<li><p>Identity Mappings in Deep Residual Networks</p>
+<blockquote>
+<p>1202层的ResNet出现了过拟合的问题，有待进一步改进。第二年，何的团队分析了ResNet成功的关键因素——residual block背后的算法，并对residual block以及after-addition activation进行改进，通过一系列的ablation experiments验证了，在residual block和after-addition activation上都使用identity mapping（恒等映射）时，能对模型训练产生很好的效果，通过这项改进，也成功的训练出了具有很好效果的ResNet-1001。</p>
+</blockquote>
+</li>
+<li><p><a href="https://zhuanlan.zhihu.com/p/42833949" target="_blank" rel="noopener">为什么要skip connect，深层网络难以训练的根本原因不是提速消失</a></p>
+</li>
+<li><p>为什么Residual网络效果好的原因，有很多论文在分析</p>
+</li>
+<li><p><a href="http://icml.cc/2016/tutorials/icml2016_tutorial_deep_residual_networks_kaiminghe.pdf" target="_blank" rel="noopener">何恺明的tutorial</a>(<a href="https://icml.cc/2016/tutorials/icml2016_tutorial_deep_residual_networks_kaiminghe.pdf" target="_blank" rel="noopener">https://icml.cc/2016/tutorials/icml2016_tutorial_deep_residual_networks_kaiminghe.pdf</a>)</p>
+</li>
+</ul>
+</li>
+<li><p>ResNet, 2015, 微软亚洲研究院的何凯明等人提出</p>
+</li>
+<li><p>主要贡献：网络层数从32层提到152层</p>
+</li>
+<li><p>特点：</p>
+<ol>
+<li>网络较瘦，控制了参数数量；</li>
+<li>存在明显层级，特征图个数逐层递进，保证输出特征表达能力；</li>
+<li>使用了较少的池化层，大量使用下采样，提高传播效率；</li>
+<li>没有使用Dropout，利用BN和全局平均池化进行正则化，加快了训练速度；</li>
+<li>层数较高时减少了3x3卷积个数，并用1x1卷积控制了3x3卷积的输入输出特征图数量，称这种结构为“瓶颈”(bottleneck)。</li>
+</ol>
+</li>
+<li><p><strong>残差单元：</strong> 克服了<a href="https://zhuanlan.zhihu.com/p/33006526" target="_blank" rel="noopener">梯度消失</a>的问题。<a href="https://blog.csdn.net/superCally/article/details/55671064" target="_blank" rel="noopener">DRN怎样解决了梯度消失问题？</a></p>
+</li>
+</ul>
+<h2 id="Unet，"><a href="#Unet，" class="headerlink" title="Unet，"></a>Unet，</h2><ul>
+<li><p>网络结构</p>
+<p><img src="/Users/yyf/Library/Mobile Documents/com~apple~CloudDocs/tasks/Unet.png" alt="Unet"></p>
+</li>
+</ul>
+<p>右边有上采样：</p>
+<p>上采样的方法</p>
+<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><ul>
+<li><p>叠加的时候concat为什么在维度1</p>
+<p><a href="https://blog.csdn.net/u012193416/article/details/79479935" target="_blank" rel="noopener">https://blog.csdn.net/u012193416/article/details/79479935</a></p>
+<p><a href="https://blog.csdn.net/qq_39709535/article/details/80803003" target="_blank" rel="noopener">https://blog.csdn.net/qq_39709535/article/details/80803003</a></p>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+              <a href="/p/43c9.html" rel="next" title="深度_可解释网络">
+                <i class="fa fa-chevron-left"></i> 深度_可解释网络
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+              <a href="/p/0.html" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/head.jpg"
+      alt="夏不哉下">
+  <p class="site-author-name" itemprop="name">夏不哉下</p>
+  <div class="site-description motion-element" itemprop="description"></div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives">
+        
+          <span class="site-state-item-count">59</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/ysix7" title="GitHub &rarr; https://github.com/ysix7" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="/17481201@life.hkbu.edu.hk" title="E-Mail &rarr; 17481201@life.hkbu.edu.hk"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+    
+  </div>
+
+
+
+        </div>
+      </div>
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#通用近似定理"><span class="nav-number">1.</span> <span class="nav-text">通用近似定理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#卷积"><span class="nav-number">2.</span> <span class="nav-text">卷积</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#滑动步长和填充"><span class="nav-number">3.</span> <span class="nav-text">滑动步长和填充</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#卷积网络的结构"><span class="nav-number">4.</span> <span class="nav-text">卷积网络的结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#汇聚层-池化层-pool层"><span class="nav-number">4.1.</span> <span class="nav-text">汇聚层/池化层/pool层</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bottle-layer-1-1卷积？"><span class="nav-number">4.2.</span> <span class="nav-text">bottle layer/1*1卷积？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dropout"><span class="nav-number">4.3.</span> <span class="nav-text">Dropout?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#反卷积"><span class="nav-number">4.4.</span> <span class="nav-text">反卷积</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#空洞卷机"><span class="nav-number">4.5.</span> <span class="nav-text">空洞卷机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#concat-f-a-b-c-d"><span class="nav-number">4.6.</span> <span class="nav-text">concat/ f= [a,b,c,d]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#batch-normalization"><span class="nav-number">4.7.</span> <span class="nav-text">batch normalization?</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#上采样"><span class="nav-number">5.</span> <span class="nav-text">上采样</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#卷积网络中的反向传播"><span class="nav-number">6.</span> <span class="nav-text">卷积网络中的反向传播</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#几个重要的卷积神经"><span class="nav-number">7.</span> <span class="nav-text">几个重要的卷积神经</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#LeNet-1998"><span class="nav-number">7.1.</span> <span class="nav-text">LeNet, 1998</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AlexNet-2012"><span class="nav-number">7.2.</span> <span class="nav-text">AlexNet, 2012</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Googlenet-2014"><span class="nav-number">7.3.</span> <span class="nav-text">Googlenet, 2014</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VGG-待补充"><span class="nav-number">7.4.</span> <span class="nav-text">VGG(待补充)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ResNet"><span class="nav-number">7.5.</span> <span class="nav-text">ResNet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Unet，"><span class="nav-number">7.6.</span> <span class="nav-text">Unet，</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#问题"><span class="nav-number">8.</span> <span class="nav-text">问题</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">夏不哉下</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    
+    <span title="站点总字数">163k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    
+    <span title="站点阅读时长">2:29</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.3.0</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+    <span class="post-meta-divider">|</span>
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+  </div>
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/js/utils.js?v=7.3.0"></script>
+  <script src="/js/motion.js?v=7.3.0"></script>
+
+
+  <script src="/js/affix.js?v=7.3.0"></script>
+  <script src="/js/schemes/pisces.js?v=7.3.0"></script>
+
+
+
+<script src="/js/next-boot.js?v=7.3.0"></script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="/js/local-search.js?v=7.3.0"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+  <script src="/js/scrollspy.js?v=7.3.0"></script>
+<script src="/js/post-details.js?v=7.3.0"></script>
+
+
+</body>
+</html>

@@ -169,7 +169,7 @@
       
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">13</span></a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">12</span></a>
 
   </li>
       
@@ -366,7 +366,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/p/221.html">
+    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/p/0.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="夏不哉下">
@@ -382,7 +382,7 @@
         
           <h2 class="post-title" itemprop="name headline">
               
-              <a href="/p/221.html" class="post-title-link" itemprop="url">自编码器</a>
+              <a href="/p/0.html" class="post-title-link" itemprop="url">未命名</a>
             
           </h2>
         
@@ -398,32 +398,7 @@
                 
               
 
-              <time title="创建时间：2019-07-29 00:00:00" itemprop="dateCreated datePublished" datetime="2019-07-29T00:00:00+08:00">2019-07-29</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-17 16:57:41" itemprop="dateModified" datetime="2019-08-17T16:57:41+08:00">2019-08-17</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/深度学习/" itemprop="url" rel="index"><span itemprop="name">深度学习</span></a></span>
-
-                
-                
-              
+              <time title="创建时间：2019-09-10 14:55:42" itemprop="dateCreated datePublished" datetime="2019-09-10T14:55:42+08:00">2019-09-10</time>
             </span>
           
 
@@ -436,1423 +411,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>500</span>
-            </span>
-          
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              
-              <span>1 分钟</span>
-            </span>
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-            <ul>
-<li><p>参考</p>
-<p><a href="https://zhuanlan.zhihu.com/p/34238979" target="_blank" rel="noopener">自编码器是什么？有什么用？这里有一份入门指南（附代码）</a></p>
-<p><a href="https://www.jiqizhixin.com/graph/technologies/b9c4f5ac-15b2-42aa-a261-75158a8a8be7" target="_blank" rel="noopener">发展</a></p>
-</li>
-<li><p>自编码器</p>
-<p><img src="https://pic1.zhimg.com/80/v2-ace24887b5ccf1696785bcc7b9abe218_hd.jpg" alt="img"></p>
-<p>整个自编码器可以用函数g(f(x)) = r来描述，其中输出r与原始相近。</p>
-</li>
-<li><p>作用</p>
-<p>如果自编码器的唯一目的是让输出值等于输入值，那这个算法将毫无用处。事实上，我们希望通过训练输出值等于输入值的自编码器，<strong>让潜在表征h将具有价值属性</strong>。自编码器能从数据样本中<strong>进行无监督学习</strong>，这意味着可将这个算法应用到某个数据集中，来取得良好的性能，且不需要任何新的特征工程，只需要适当地训练数据。</p>
-</li>
-<li><p>实现</p>
-<ul>
-<li><p><strong>限制h的维度使其小于输入x</strong>，这种情况下称作有损自编码器。通过训练有损表征，使得自编码器能学习到数据中最重要的特征。</p>
-</li>
-<li><p>正则</p>
-</li>
-</ul>
-</li>
-<li><p>应用</p>
-<p>第一是<strong>数据去噪</strong>，第二是<strong><u>为进行可视化而降维</u></strong>。设置合适的维度和稀疏约束，自编码器可以学习到比<u>PCA等技术</u>更有意思的数据投影。</p>
-</li>
-<li><p>种类</p>
-<ol>
-<li><p>香草自编码器</p>
-</li>
-<li><p>多层自编码器</p>
-</li>
-<li><p>卷积自编码器</p>
-</li>
-<li><p>正则自编码器：使用损失函数来鼓励模型学习其他特性</p>
-<p>常用两种正则自编码器</p>
-<ul>
-<li>稀疏自编码器：通过对损失函数施加惩罚项</li>
-<li>降噪自编码器：是通过改变损失函数的<u>重构误差</u>项来学习一些有用信息。</li>
-</ul>
-</li>
-</ol>
-</li>
-<li><p>去噪自编码器DAE</p>
-<p><img src="https://blog-w.oss-cn-beijing.aliyuncs.com/2019-06-17-121048.png" alt="image-20190617201043895"></p>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/p/4dde.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="夏不哉下">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="春夏秋冬">
-    </span>
-      <header class="post-header">
-
-        
-          <h2 class="post-title" itemprop="name headline">
-              
-              <a href="/p/4dde.html" class="post-title-link" itemprop="url">淘宝收藏</a>
-            
-          </h2>
-        
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
-              <time title="创建时间：2019-07-29 00:00:00" itemprop="dateCreated datePublished" datetime="2019-07-29T00:00:00+08:00">2019-07-29</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-17 14:37:26" itemprop="dateModified" datetime="2019-08-17T14:37:26+08:00">2019-08-17</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/生活/" itemprop="url" rel="index"><span itemprop="name">生活</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">本文字数：</span>
-              
-              <span>20</span>
-            </span>
-          
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              
-              <span>1 分钟</span>
-            </span>
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-            <h1 id="裤裤"><a href="#裤裤" class="headerlink" title="裤裤"></a>裤裤</h1><ul>
-<li><p>短裤</p>
-<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190720152120722.png" alt="image-20190720152120722"></p>
-</li>
-</ul>
-<h1 id="衣服"><a href="#衣服" class="headerlink" title="衣服"></a>衣服</h1><ul>
-<li>一家红裙子店</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/p/39a8.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="夏不哉下">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="春夏秋冬">
-    </span>
-      <header class="post-header">
-
-        
-          <h2 class="post-title" itemprop="name headline">
-              
-              <a href="/p/39a8.html" class="post-title-link" itemprop="url">粤语口语</a>
-            
-          </h2>
-        
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
-              <time title="创建时间：2019-07-29 00:00:00" itemprop="dateCreated datePublished" datetime="2019-07-29T00:00:00+08:00">2019-07-29</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-17 14:37:26" itemprop="dateModified" datetime="2019-08-17T14:37:26+08:00">2019-08-17</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/语言/" itemprop="url" rel="index"><span itemprop="name">语言</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">本文字数：</span>
-              
-              <span>431</span>
-            </span>
-          
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              
-              <span>1 分钟</span>
-            </span>
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-            <p>粤语学习笔记</p>
-<ul>
-<li><p>广东话和普通话的区别<br><a href="https://wenku.baidu.com/view/33face69011ca300a6c390cf.html" target="_blank" rel="noopener">https://wenku.baidu.com/view/33face69011ca300a6c390cf.html</a><br>粤语口语<br><a href="https://hal.archives-ouvertes.fr/hal-00271141/document" target="_blank" rel="noopener">https://hal.archives-ouvertes.fr/hal-00271141/document</a></p>
-</li>
-<li><p>学粤语的一个不错的网页，中文大学链接</p>
-<p><a href="https://www.ilc.cuhk.edu.hk/chinese/canton_express/others/download.html" target="_blank" rel="noopener">https://www.ilc.cuhk.edu.hk/chinese/canton_express/others/download.html</a></p>
-</li>
-</ul>
-<p>j带头的字</p>
-<p>今 jin-&gt;gen</p>
-<p>尽量 jin-&gt;zen</p>
-<p>叫jiao-&gt;gao</p>
-<p>静候 jing-&gt;zeng</p>
-<p>自由：zi-&gt;zei you</p>
-<p>坚持：jian-&gt;gin ci</p>
-<p>枯枝-&gt;fuzi</p>
-<p>收成：sou seng</p>
-<p>这一次：zeiyici</p>
-<p>你要：nei you </p>
-<p>失守 sei sou </p>
-<p>始终 si zhong</p>
-<p>成-&gt;seng </p>
-<p>记载-&gt;gei zai</p>
-
-          
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/p/ef9c.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="夏不哉下">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="春夏秋冬">
-    </span>
-      <header class="post-header">
-
-        
-          <h2 class="post-title" itemprop="name headline">
-              
-              <a href="/p/ef9c.html" class="post-title-link" itemprop="url">生活中的英文口语</a>
-            
-          </h2>
-        
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
-              <time title="创建时间：2019-07-29 00:00:00" itemprop="dateCreated datePublished" datetime="2019-07-29T00:00:00+08:00">2019-07-29</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-17 14:37:26" itemprop="dateModified" datetime="2019-08-17T14:37:26+08:00">2019-08-17</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/语言/" itemprop="url" rel="index"><span itemprop="name">语言</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">本文字数：</span>
-              
-              <span>125</span>
-            </span>
-          
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              
-              <span>1 分钟</span>
-            </span>
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-            <h1 id="重读音"><a href="#重读音" class="headerlink" title="重读音"></a>重读音</h1><p>动词+介词：</p>
-<ol>
-<li>轻轻带过介词，如look at </li>
-<li>重读介词如：take off</li>
-</ol>
-<p>动词+名词:</p>
-<h1 id="日常摘录"><a href="#日常摘录" class="headerlink" title="日常摘录"></a>日常摘录</h1><h2 id="关于吃饭、点餐、结账"><a href="#关于吃饭、点餐、结账" class="headerlink" title="关于吃饭、点餐、结账"></a>关于吃饭、点餐、结账</h2><p><a href="https://mp.weixin.qq.com/s/RxP7LA77z6MZQJ9K7XAdhA" target="_blank" rel="noopener">6/13 续杯、点餐</a></p>
-<p>split the fare</p>
-<p>I have a god feeling</p>
-<p>I could tell</p>
-
-          
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/p/9de6.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="夏不哉下">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="春夏秋冬">
-    </span>
-      <header class="post-header">
-
-        
-          <h2 class="post-title" itemprop="name headline">
-              
-              <a href="/p/9de6.html" class="post-title-link" itemprop="url">presentation常用英文口语</a>
-            
-          </h2>
-        
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
-              <time title="创建时间：2019-07-29 00:00:00" itemprop="dateCreated datePublished" datetime="2019-07-29T00:00:00+08:00">2019-07-29</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-17 14:37:26" itemprop="dateModified" datetime="2019-08-17T14:37:26+08:00">2019-08-17</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/语言/" itemprop="url" rel="index"><span itemprop="name">语言</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">本文字数：</span>
-              
-              <span>402</span>
-            </span>
-          
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              
-              <span>1 分钟</span>
-            </span>
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-            <h1 id="英语pre摘录"><a href="#英语pre摘录" class="headerlink" title="英语pre摘录"></a>英语pre摘录</h1><p> It’s been a while 有阵子了</p>
-<p><u>It all boils down to</u> realizing that it is natural (and interesting!) to consider different topologies on the same set 𝑋, each of which comes with a notion of convergence.这一切归结为</p>
-<p>我的声音够大吗</p>
-<p>你可以重复一下这个问题吗</p>
-<p>我没有想过这个问题，但是我觉得</p>
-<p>介绍下一位演讲嘉宾</p>
-<p>对这部一部分你们应该有更深的印象</p>
-<h1 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h1><p>Maximum a posteriori estimation MAP</p>
-<p>posteriori probability 后验概率</p>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://wenku.baidu.com/view/be4d8c2aa55177232f60ddccda38376baf1fe0fb.html?re=view" target="_blank" rel="noopener">Presentation English(英语 演讲用到的各种表达)</a></p>
-<p><a href="http://language.chinadaily.com.cn/2016-04/11/content_24431931.htm" target="_blank" rel="noopener">Presentation实用表达总结</a></p>
-
-          
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/p/44bc.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="夏不哉下">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="春夏秋冬">
-    </span>
-      <header class="post-header">
-
-        
-          <h2 class="post-title" itemprop="name headline">
-              
-              <a href="/p/44bc.html" class="post-title-link" itemprop="url">Mac/ipad/iphone软件清单</a>
-            
-          </h2>
-        
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
-              <time title="创建时间：2019-07-27 10:08:36" itemprop="dateCreated datePublished" datetime="2019-07-27T10:08:36+08:00">2019-07-27</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-17 14:37:26" itemprop="dateModified" datetime="2019-08-17T14:37:26+08:00">2019-08-17</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/软件/" itemprop="url" rel="index"><span itemprop="name">软件</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">本文字数：</span>
-              
-              <span>38</span>
-            </span>
-          
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              
-              <span>1 分钟</span>
-            </span>
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-            <h1 id="Mac软件工具"><a href="#Mac软件工具" class="headerlink" title="Mac软件工具"></a>Mac软件工具</h1><h1 id="Ipad软件工具"><a href="#Ipad软件工具" class="headerlink" title="Ipad软件工具"></a>Ipad软件工具</h1><p>做笔记功能</p>
-<ul>
-<li><a href="https://www.zhihu.com/question/291326958" target="_blank" rel="noopener">notability功能介绍</a></li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/p/f8c4.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="夏不哉下">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="春夏秋冬">
-    </span>
-      <header class="post-header">
-
-        
-          <h2 class="post-title" itemprop="name headline">
-              
-              <a href="/p/f8c4.html" class="post-title-link" itemprop="url">变分不等式的收敛性证明</a>
-            
-          </h2>
-        
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
-              <time title="创建时间：2019-07-01 00:00:00" itemprop="dateCreated datePublished" datetime="2019-07-01T00:00:00+08:00">2019-07-01</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-17 14:37:26" itemprop="dateModified" datetime="2019-08-17T14:37:26+08:00">2019-08-17</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/" itemprop="url" rel="index"><span itemprop="name">算法</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">本文字数：</span>
-              
-              <span>1.5k</span>
-            </span>
-          
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              
-              <span>1 分钟</span>
-            </span>
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-            <h1 id="变分不等式"><a href="#变分不等式" class="headerlink" title="变分不等式"></a>变分不等式</h1><p>变分不等式(VI)的定义：</p>
-<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190710190816957.png" alt="image-20190710190816957"></p>
-<ul>
-<li><p><strong>最优化问题的转化：</strong></p>
-<p>​                                $x^{*}=\arg \min _{x \in X} f(x)​$</p>
-</li>
-</ul>
-<p>​    等价于满足$\operatorname{VI}(\nabla f, X)​$即</p>
-<p>​                                    $\nabla f\left(x^{<em>}\right)^{T}\left(x^{\prime}-x^{</em>}\right) \geq 0, \forall x^{\prime} \in X$</p>
-<ul>
-<li>优化问题</li>
-</ul>
-<script type="math/tex; mode=display">
-x^{*} \in \arg \min \{\theta(x)+f(x) | x \in \mathcal{X}\}</script><p>​    其中$f(x),\theta(x)$是convex function, $\theta$不一定可微, 等价于：</p>
-<script type="math/tex; mode=display">
-x^{*} \in \mathcal{X}, \quad \theta(x)-\theta\left(x^{*}\right)+\left(x-x^{*}\right)^{T} \nabla f\left(x^{*}\right) \geq 0, \quad \forall x \in \mathcal{X}</script><p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190710201934772.png" alt="image-20190710201934772"></p>
-<p>​    </p>
-<p>​        </p>
-<p>​        </p>
-<h1 id="优化问题转化VI不等式问题"><a href="#优化问题转化VI不等式问题" class="headerlink" title="优化问题转化VI不等式问题"></a>优化问题转化VI不等式问题</h1><p>将不同的优化问题转化成等价的VI问题：</p>
-<ul>
-<li><p>一元约束问题$\min \{\theta(x) | A x=b, x \in \mathcal{X}\}$</p>
-<p>等价于拉格朗日：$L(x, \lambda)=\theta(x)-\lambda^{T}(A x-b), \quad(x, \lambda) \in \mathcal{X} \times \Re^{m}$</p>
-<p>转化后等于VI inequality：$w^{<em>} \in \Omega, \quad \theta(x)-\theta\left(x^{</em>}\right)+\left(w-w^{<em>}\right)^{T} F\left(w^{</em>}\right) \geq 0, \quad \forall w \in \Omega$</p>
-</li>
-<li><p>二元三元。。</p>
-</li>
-<li><p>min-max问题: $\min _{x \in \mathcal{X}} \max _{y \in \mathcal{Y}}\left\{\mathcal{L}(x, y)=\theta_{1}(x)-y^{T} A x-\theta_{2}(y)\right\}$</p>
-</li>
-</ul>
-<h1 id="PPA的收敛性用PI不等式证明"><a href="#PPA的收敛性用PI不等式证明" class="headerlink" title="PPA的收敛性用PI不等式证明"></a>PPA的收敛性用PI不等式证明</h1><p>方程：</p>
-<script type="math/tex; mode=display">
-\min \{\theta(x)+f(x) | x \in \mathcal{X}\}</script><p>where θ(x) and f(x) are convex but θ(x) is not necessary smooth, X is a closed convex set.</p>
-<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190710204453147.png" alt="image-20190710204453147"></p>
-<h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><ul>
-<li><p>Monotone operator</p>
-<p>单调函数（x-y）（F（x）-F(y)）&gt;0， 则F是单调函数</p>
-</li>
-<li><p>凸函数满足的性质</p>
-<script type="math/tex; mode=display">
-(x-y)^{T}(\nabla f(x)-\nabla f(y)) \geq 0</script><p>We say the gradient rf of the convex function f is a <strong>monotone operator.</strong></p>
-</li>
-<li><p>min max Lagrangian 和 max min Lagrangian的关系</p>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/p/157d.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="夏不哉下">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="春夏秋冬">
-    </span>
-      <header class="post-header">
-
-        
-          <h2 class="post-title" itemprop="name headline">
-              
-              <a href="/p/157d.html" class="post-title-link" itemprop="url">Semismooth牛顿法</a>
-            
-          </h2>
-        
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
-              <time title="创建时间：2019-07-01 00:00:00" itemprop="dateCreated datePublished" datetime="2019-07-01T00:00:00+08:00">2019-07-01</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-17 14:37:26" itemprop="dateModified" datetime="2019-08-17T14:37:26+08:00">2019-08-17</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/" itemprop="url" rel="index"><span itemprop="name">算法</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">本文字数：</span>
-              
-              <span>17k</span>
-            </span>
-          
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              
-              <span>15 分钟</span>
-            </span>
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-            <p>参考文献</p>
-<ul>
-<li><a href="https://arxiv.org/pdf/1607.05428.pdf" target="_blank" rel="noopener">A highly efficient semismooth Newton augmented Lagrangian<br>method for solving Lasso problems</a>，<a href="http://www.math.nus.edu.sg/~mattohkc/SuiteLasso.html" target="_blank" rel="noopener">论文代码</a></li>
-<li><a href="https://arxiv.org/pdf/1903.11460.pdf" target="_blank" rel="noopener">A sparse semismooth Newton based proximal<br>majorization-minimization algorithm for nonconvex<br>square-root-loss regression problems</a>, </li>
-</ul>
-<h1 id="h-Ax-p-x"><a href="#h-Ax-p-x" class="headerlink" title="h(Ax)+p(x)"></a>h(Ax)+p(x)</h1><ul>
-<li><p>论文中的模型：Primal/Dual</p>
-<script type="math/tex; mode=display">
-\text { (P) } \max -\{f(x)=h(\mathcal{A} x)-\langle c, x\rangle+ p(x)\}</script><script type="math/tex; mode=display">
-\text { (P) } \min  \{f(x)=h(\mathcal{A} x)-\langle c, x\rangle+p(x)\}</script><script type="math/tex; mode=display">
-\text { (D) } \min \left\{h^{*}(y)+p^{*}(z) | \mathcal{A}^{*} y+z=c\right\}</script><p>where, $\mathcal{A} \in R^{MN}​$, $p, h : \mathcal{Y} \rightarrow \Re \text { and } p : \mathcal{X} \rightarrow(-\infty,+\infty]​$ are two closed proper convex functions.</p>
-<p>对于Dual问题：</p>
-<p>$h^<em>$ is essentially smooth with  $\nabla h^{</em>}$ is locally Lipschitz continuous and directionally diﬀerentiable on int $\operatorname{int}\left(\operatorname{dom} h^{*}\right)$.</p>
-</li>
-<li><p>对偶问题的拉格朗日$l​$和增广拉格朗日$\mathcal{L}​$</p>
-<script type="math/tex; mode=display">
-l(y, z, x)=h^{*}(y)+p^{*}(z)-\left\langle x, \mathcal{A}^{*} y+z-c\right\rangle, \quad \forall(y, z, x) \in \mathcal{Y} \times \mathcal{X} \times \mathcal{X}</script><script type="math/tex; mode=display">
-\begin{aligned}
-\mathcal{L}_{\sigma}(y, z ; x) &=l(y, z, x)+\frac{\sigma}{2}\left\|\mathcal{A}^{*} y+z-c\right\|^{2}, \quad \forall(y, z, x) \in \mathcal{Y} \times \mathcal{X} \times \mathcal{X}\\
-&=h^{*}(y)+p^{*}(z)
-+\frac{\sigma}{2}\left\|\mathcal{A}^{*} y+z-c-\frac{x}{\sigma}\right\|^{2}-\frac{1}{2 \sigma}\|x\|^{2}
-\end{aligned}</script></li>
-<li><p>算法框架<strong>（第一层循环）</strong></p>
-<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190625062337998.png" alt="image-20190625062337998"></p>
-</li>
-<li><p>将(18)中的拉格朗日方程转化成<strong>单变量</strong>拉格朗日方程</p>
-<ul>
-<li><p>Define $\min _{y, z} \Psi(y, z) :=\mathcal{L}_{\sigma}(y, z ; \tilde{x})​$</p>
-</li>
-<li><p>Define $\psi(y) :=\inf _{z} \Psi(y, z)​$</p>
-</li>
-<li><p>（18）中的拉格朗日转化成单变量光滑方程 </p>
-<script type="math/tex; mode=display">
-\begin{aligned} \Psi(y) &=\inf _{z}\{ h^{*}(y)+p^{*}(z)
-+\frac{\sigma}{2}\left\|\mathcal{A}^{*} y+z-c-\frac{x}{\sigma}\right\|^{2}-\frac{1}{2 \sigma}\|x\|^{2}\} \\ 
-&=h^*(y)+\sigma \inf _{z}\left\{\frac{1}{\sigma} p^*(z)+\frac{1}{2}\left\|z-(c-A^*y+\frac{x}{\sigma})\right\|^{2}\right\}-\frac{1}{2 \sigma}\|x\|^{2} \\ &=h^*(y)+\sigma M_{\frac{1}{\sigma}}p^*(c-A^*y+\frac{x}{\sigma})-\frac{1}{2 \sigma}\|x\|^{2} \end{aligned})</script><p>with $z = \arg\min_z  p^<em>(z)/\sigma+\frac{1}{2}\left|z-(c-A^</em>y+\frac{x}{\sigma})\right|^{2}=\operatorname{Prox}_{p^{<em>} / \sigma}\left(x / \sigma-\mathcal{A}^{</em>} \overline{y}+c\right)$ .</p>
-</li>
-<li><p>$\psi(y)$  is a smooth function whose gradient is derived as:</p>
-</li>
-</ul>
-<script type="math/tex; mode=display">
-\begin{aligned} \nabla\Psi(y) &= \nabla h^{*}(y)-\mathcal{A} \operatorname{Prox}_{\sigma p}\left(\tilde{x}-\sigma\left(\mathcal{A}^{*} y-c\right)\right)
-\end{aligned}</script><ul>
-<li><p>将 $z =\operatorname{Prox}_{p^{<em>} / \sigma}\left(x / \sigma-\mathcal{A}^{</em>} \overline{y}+c\right)​$ 代入 (18) 得到</p>
-<script type="math/tex; mode=display">\psi(y)=h^{*}(y)+p^{*}\left(\operatorname{Prox}_{p^{*} / \sigma}\left(x / \sigma-\mathcal{A}^{*} y+c\right)\right)+\frac{1}{2 \sigma}\left\|\operatorname{Prox}_{\sigma p}\left(x-\sigma\left(\mathcal{A}^{*} y-c\right)\right)\right\|^{2}-\frac{1}{2 \sigma}\|x\|^{2}</script></li>
-</ul>
-<blockquote>
-<p> Moreau-Yosida regularization and proximal mapping</p>
-<script type="math/tex; mode=display">
-M_{\lambda} f(x) :=\min _{u} f(u)+\frac{1}{2 \lambda}\|u-x\|_{2}^{2}</script><script type="math/tex; mode=display">
-\nabla M_{\lambda} f(x)=\frac{1}{\lambda}\left(x-\operatorname{Prox}_{\lambda f}(x)\right)</script><script type="math/tex; mode=display">
-\operatorname{Prox}_{\lambda f}(x) :=\arg \min _{u \in \mathcal{X}} f(x)+\frac{1}{2 \lambda}\|u-x\|^{2}</script><script type="math/tex; mode=display">
-\operatorname{Prox}_{\lambda p}(x)+\lambda \operatorname{Prox}_{p^{*}(x) / \lambda}(x / \lambda)=x\operatorname{Prox}_{\lambda p}(x)+\lambda \operatorname{Prox}_{p^{*}(x) / \lambda}(x / \lambda)=x</script></blockquote>
-</li>
-<li><p>$\min _{y, z} \Psi(y, z) $等价于以下单变量非线形方程 <strong>(22)</strong></p>
-<script type="math/tex; mode=display">
-\nabla\Psi(y)=0</script><p>whose the generalized Hessian of $\Psi$ at y is defined as</p>
-<script type="math/tex; mode=display">
-\hat{\partial}^{2} \psi(y) :=\partial\left(\nabla h^{*}\right)(y)+\sigma \mathcal{A} \partial \operatorname{Prox}_{\sigma p}\left(\tilde{x}-\sigma\left(\mathcal{A}^{*} y-c\right)\right) \mathcal{A}^{*}</script><p>Defining the $H \in \partial^{2} h^{<em>}(y)$ and $U \in \partial \operatorname{Prox}_{\sigma p}\left(\tilde{x}-\sigma\left(\mathcal{A}^{</em>} y-c\right)\right)$, then, we have</p>
-<script type="math/tex; mode=display">
-V :=H+\sigma \mathcal{A} U \mathcal{A}^{*}</script></li>
-<li><p>利用牛顿法和Hessian 矩阵求解非线形等式(22) <strong>(第二层循环)</strong></p>
-<ul>
-<li><p>寻找方向$d$：$V_{j} d+\nabla \psi\left(y^{j}\right)=0$（24）</p>
-<p>$V \in \hat{\partial}^{2} \psi(y)$, $\hat{\partial}^{2} \psi(y) :=\partial\left(\nabla h^{<em>}\right)(y)+\sigma \mathcal{A} \partial \operatorname{Prox}_{\sigma p}\left(\tilde{x}-\sigma\left(\mathcal{A}^{</em>} y-c\right)\right) \mathcal{A}^{*}$</p>
-<p>$V :=H+\sigma \mathcal{A} U \mathcal{A}^{*}​$</p>
-</li>
-<li><p>步长：set $\alpha_{j}=\delta^{m_{j}}​$</p>
-<p>$y^{j}+\delta^{m} d^{j} \in \operatorname{int}\left(\operatorname{dom} h^{*}\right) \quad \text { and } \quad \psi\left(y^{j}+\delta^{m} d^{j}\right) \leq \psi\left(y^{j}\right)+\mu \delta^{m}\left\langle\nabla \psi\left(y^{j}\right), d^{j}\right\rangle​$</p>
-</li>
-<li><p>更新：$y^{j+1}=y^{j}+\alpha_{j} d^{j}$</p>
-</li>
-<li><p>迭代终止条件：$\nabla \psi\left(y^{j}\right)$ is sufficiently small</p>
-</li>
-</ul>
-</li>
-<li><p>求解线性问题（24）$V_{j} d=-\nabla \psi\left(y^{j}\right)​$</p>
-<ul>
-<li><p>方法一：利用$V_j​$的稀疏性求出解析解</p>
-<script type="math/tex; mode=display">
-\left(H+\sigma A U A^{T}\right) d=-\nabla \psi(y), H = LL^T</script><script type="math/tex; mode=display">
-\left(I_{m}+\sigma\left(L^{-1} A\right) U\left(L^{-1} A\right)^{T}\right)\left(L^{T} d\right)=-L^{-1} \nabla \psi(y)</script><p>考虑简化后的情况：</p>
-<script type="math/tex; mode=display">
-\left(I_{m}+\sigma A U A^{T}\right) d=-\nabla \psi(y)</script><script type="math/tex; mode=display">
-\mbox{with } A U A^{T}=(A U)(A U)^{T}=A_{\mathcal{J}} A_{\mathcal{J}}^{T}</script><script type="math/tex; mode=display">
-\left(I_{m}+\sigma A U A^{T}\right)^{-1}=\left(I_{m}+\sigma A_{\mathcal{J}} A_{\mathcal{J}}^{T}\right)^{-1}=I_{m}-A_{\mathcal{J}}\left(\sigma^{-1} I_{r}+A_{\mathcal{J}}^{T} A_{\mathcal{J}}\right)^{-1} A_{\mathcal{J}}^{T}</script><p>维度降低：利用U是一个对角由0和1组成的对角矩阵，$\mathcal{O}\left(m^{2} n\right)$-&gt;$\mathcal{O}\left(m^{2} r\right)$-&gt;$\mathcal{O}\left(r^{2} m\right)$</p>
-<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190627171823537.png" alt="image-20190627171823537"></p>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>方法二：Pcg 循环（第三层循环）</p>
-<p>Do $V_jd^j​$</p>
-<p>Until $\left|V_{j} d^{j}+\nabla \psi\left(y^{j}\right)\right| \leq \min \left(\overline{\eta},\left|\nabla \psi\left(y^{j}\right)\right|^{1+\tau}\right)​$</p>
-<p>尝试过的加速办法：</p>
-<ul>
-<li><p>与$\tau$的大小有关</p>
-</li>
-<li><p>将该循环写成c语言</p>
-</li>
-<li><p>每次牛顿迭代从上一次d的结果开始。在算法快收敛的时候可以加速。</p>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>速度分析</p>
-<ul>
-<li><p>循环一：lnexact Lagrangian methd </p>
-</li>
-<li><p>循环二：牛顿法迭代求解问题（22）</p>
-<p><strong>影响循环二迭代次数的因素：</strong></p>
-<p>1.该循环的中止条件: $\left|\nabla \psi_{k}\left(y^{k+1}\right)\right|$ 足够小</p>
-<p>2.循环三中的精度$\tau$：该循环的收敛速度与循环三中pcg的精度有关</p>
-<script type="math/tex; mode=display">
-\left\|y^{j+1}-\overline{y}\right\|=O\left(\left\|y^{j}-\overline{y}\right\|^{1+\tau}\right)</script></li>
-<li><p>循环三(若使用pcg的方法求解(24))：</p>
-<p><strong>影响循环三迭代次数的因素: $\tau$的大小</strong></p>
-<p>1.该循环终止条件：$\left|V_{j} d^{j}+\nabla \psi\left(y^{j}\right)\right| \leq \min \left(\overline{\eta},\left|\nabla \psi\left(y^{j}\right)\right|^{1+\tau}\right),\tau=(0,1]$</p>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="h-x-p-Bx"><a href="#h-x-p-Bx" class="headerlink" title="h(x)+p(Bx)"></a>h(x)+p(Bx)</h1><ul>
-<li><p>目标方程： $\min|y-g|+\lambda|\nabla y|_1$</p>
-<p>无法套用论文中$h(Ay)+p(y)​$的Dual方法的原因：</p>
-<p>如果$p(y)=\lambda|\nabla y|_1​$，那么p*的显式无法表达。</p>
-<p>如果$h(Ay)=\lambda|\nabla y|_1, A=\nabla$, 那么依然无法将问题转化成单变量的<strong>smooth</strong>问题，因为h项会被保留</p>
-</li>
-<li><p>$\nabla$的矩阵形式</p>
-<p>(补充)</p>
-</li>
-<li><p>提出模型 $h(y)+p(By),  h(y)=|Ay-g|, p(Bx)=|\nabla y|_1​$，$B=\nabla​$</p>
-<p>（P）$\min h(y)+p(By)​$, $h(y)=|Ay-g|​$, $p(Bx)=|\nabla y|_1​$</p>
-<p>（D）$\min \left\{h^{<em>}(y)+p^{</em>}(z) | \mathcal{B}^{<em>} z+y=c\right\}$, $h^{</em>}(y)=\frac{1}{2}|b+y|^{2}-\frac{1}{2}|b|^{2}$, $p^{*}(z)=I\left\{|z|_{\infty} \leq \lambda\right\}$</p>
-<p>对于D问题，无法转化成单变量的smooth方程，<strong>推导见附录</strong>(待补充)。因此选择该模型的主问题。</p>
-</li>
-<li><p>对于(P) $h(y)+p(By)​$，转化成单变量的smooth方程</p>
-<p>增广拉格朗日：$\mathcal{L}_{\sigma}(y, z ; x) :=h(y)+p(z)+<x, \mathcal{b} y-z>+\frac{\sigma}{2}|\mathcal{B} y-z|^{2}​$</x,></p>
-<p>​                                $=h(y)+p(z)+\frac{\sigma}{2}\left|\mathcal{B} y+\frac{x}{\sigma}-z\right|^{2}-\frac{1}{2 \sigma}|x|^{2}​$</p>
-<p>转化后的单变量方光滑方程：</p>
-<p>$\mathcal{L}_{\sigma}(y ; x) :=h(y)+p\left(\operatorname{Prox} \frac{p}{\sigma}\left(\mathcal{B} y+\frac{x}{\sigma}\right)\right)+\frac{1}{2 \sigma}\left|\operatorname{Prox}_{\sigma p^{*}}\left(\sigma\left(\mathcal{B} y+\frac{x}{\sigma}\right)\right)\right|^{2}-\frac{1}{2 \sigma}|x|^{2}, \overline{z}=\operatorname{Prox}_{\frac{p}{\sigma}}\left(\mathcal{B} y+\frac{x}{\sigma}\right)$</p>
-<p>$\nabla \mathcal{L}_{\sigma}(y) :=\nabla h(y)+\mathcal{B}^{<em>} \operatorname{Prox}_{\sigma p^{</em>}}(\sigma(\mathcal{B} y+\frac{x}{\sigma})$</p>
-<p>$\partial\left(\nabla \mathcal{L}_{\sigma}(y)\right)  :=\partial(\nabla h(y))+\sigma \mathcal{B}^{<em>} \partial \operatorname{Prox}_{\sigma p^{</em>}}\left(\sigma\left(\mathcal{B} y+\frac{x}{\sigma}\right)\right) \mathcal{B}\\=\partial(\nabla h(y))+\sigma \mathcal{B}^{*}\left(I-\partial \operatorname{Prox}_{\frac{p}{\sigma}}\left(\mathcal{B} y+\frac{x}{\sigma}\right)\right) \mathcal{B}​$</p>
-</li>
-<li><p>求解$V_{j} d=-\nabla \psi\left(y^{j}\right)​$</p>
-<ul>
-<li><p>方法一：求逆</p>
-<p>其中, $\partial \operatorname{Prox}_{\sigma p^{<em>}}\left(\sigma\left(\mathcal{B} y+\frac{x}{\sigma}\right)\right)​$的稀疏性随着图像的平滑减弱，因此直接利用该稀疏矩阵求逆，<em>*计算立马随着噪声的减弱而变慢</em></em>。相反，$\partial \operatorname{Prox}_{\frac{p}{\sigma}}\left(\mathcal{B} y+\frac{x}{\sigma}\right)​$的稀疏性随着图像的平滑变稀疏。</p>
-<p>$\left(A^TA+\sigma \mathcal{B}^<em>\mathcal{B}-\sigma \mathcal{B}^{</em>}\partial \operatorname{Prox}_{\frac{p}{\sigma}}\left(\mathcal{B} y+\frac{x}{\sigma}\right)\mathcal{B}\right)d=-\nabla \psi\left(y^{j}\right) ​$</p>
-<p>Denote  $U =\partial \operatorname{Prox}_{\frac{p}{\sigma}}\left(\mathcal{B} y+\frac{x}{\sigma}\right)​$ , $b =-\nabla \psi\left(y^{j}\right) ​$</p>
-<p>we have $\left(A^TA+\sigma \mathcal{B}^<em>\mathcal{B}-\sigma \mathcal{B}^{</em>}U\mathcal{B}\right)d=-\nabla \psi\left(y^{j}\right) ​$</p>
-<ul>
-<li><p>如果没有U，就可以使用FFT快速变化，因为B可以当作[-1 1]构成的卷积</p>
-</li>
-<li><p><strong>如果对可以对$A^TA+\sigma \mathcal{B}^*\mathcal{B}$进行$LL^T$的分解。可将原问题转化成以下形式后求逆</strong></p>
-<script type="math/tex; mode=display">
-\left(I_{m}+\sigma\left(L^{-1} A\right) U\left(L^{-1} A\right)^{T}\right)\left(L^{T} d\right)=-L^{-1} \nabla \psi(y)</script><p>例如在TV denoising的情况下：$A=I$，$B=[B1, B2]$, 则需对$I+\sigma B^*B$进行分解 </p>
-<p><strong>(目前没有实现这个分解, 所以使用pcg求解该线性等式)</strong></p>
-</li>
-</ul>
-</li>
-<li><p><strong>方法二：Pcg 循环（第三层循环）</strong></p>
-<p>Do $V_jd^j​$</p>
-<p>Until $\left|V_{j} d^{j}+\nabla \psi\left(y^{j}\right)\right| \leq \min \left(\overline{\eta},\left|\nabla \psi\left(y^{j}\right)\right|^{1+\tau}\right)​$</p>
-<p>尝试过的加速办法：</p>
-<ul>
-<li><p>将该循环写成c语言</p>
-</li>
-<li><p>加速的办法，每次牛顿迭代从上一次d的结果开始。在算法快收敛的时候可以加速</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>实验结果与实验设置</p>
-<ul>
-<li><p>循环一：lnexact Lagrangian methd </p>
-</li>
-<li><p>循环二：牛顿法迭代求解问题（22）</p>
-<p>设置循环二的中止条件为: $\left|\nabla \psi_{k}\left(y^{k+1}\right)\right|$ &lt;{0.005}</p>
-<p>ps：如果在小于0.005前达到收敛，则终止循环二，进入循环一的下一轮迭代</p>
-<p>该循环的收敛速度与循环三中pcg的精度有关:</p>
-<script type="math/tex; mode=display">
-\left\|y^{j+1}-\overline{y}\right\|=O\left(\left\|y^{j}-\overline{y}\right\|^{1+\tau}\right)</script></li>
-<li><p>循环三<strong>(pcg)</strong>：</p>
-<p><strong>影响循环三迭代次数的因素: $\tau​$的大小</strong></p>
-<p>该循环终止条件：$\left|V_{j} d^{j}+\nabla \psi\left(y^{j}\right)\right| \leq \min \left(\overline{\eta},\left|\nabla \psi\left(y^{j}\right)\right|^{1+\tau}\right),\tau=(0,1]$</p>
-<p>$\tau=1$:<strong>循环三循环(大概20)次，循环二收敛需要*次</strong>，循环一需要*次</p>
-<p>$\tau=2$:<strong>循环三循环*次，循环二收敛需要*次</strong>，循环一需要*次</p>
-<p>(实验结果需要补充)</p>
-</li>
-</ul>
-</li>
-<li><p>实验中存在的问题</p>
-<p>循环二和循环三之间的收敛速度没有满足理论值：</p>
-<script type="math/tex; mode=display">
-\left\|y^{j+1}-\overline{y}\right\|=O\left(\left\|y^{j}-\overline{y}\right\|^{1+\tau}\right)</script></li>
-</ul>
-<p>​    具体的说，循环1中的中间几次迭代中，循环二的收敛速度很慢，没有达到理论值，甚至比线性收敛还要慢。</p>
-<p>​    <strong>（循环二的收敛图需要补充）</strong><br>​                    </p>
-<h1 id="Non-convex-model"><a href="#Non-convex-model" class="headerlink" title="Non-convex model"></a>Non-convex model</h1><h2 id="1-General-Model"><a href="#1-General-Model" class="headerlink" title="1. General Model"></a>1. General Model</h2><ul>
-<li>A nonconvex problem (square-root regression problem)  (3)</li>
-</ul>
-<script type="math/tex; mode=display">
-\min _{\beta \in \Re^{n}}\{g(\beta) :=\underbrace{h(X \beta)}_{f(\beta)}+\underbrace{p(\beta)-q(\beta)}_{r(\beta)}\}</script><p>​    $p : \Re^{n} \rightarrow(-\infty,+\infty] \text { is a proper closed convex function }​$</p>
-<p>​    $q : \Re^{n} \rightarrow \Re \text { is a finite-valued (smooth, not essential) convex function. }$</p>
-<p>​    $ \text {The proximal functions of h and p to be (strongly) semismooth.}$</p>
-<ul>
-<li><p>Examples</p>
-<p>（等待补充）</p>
-</li>
-<li><p>因为原general model (3) 转化成模型 (10)/(P):</p>
-<p>$\text { Given } \sigma&gt;0, \tau&gt;0, \tilde{\beta} \in \mathbb{R}^{n}, \tilde{v} \in \mathbb{R}^{n}, \text { and }\tilde{b} \in \mathbb{R}^{m}$</p>
-<script type="math/tex; mode=display">
-\begin{aligned} \min _{\beta \in \mathbb{R}^{n}}\{h(\beta ; \sigma, \tau, \tilde{\beta}, \tilde{v}, \tilde{b}) :=&\|X \beta-b\|+\lambda p(\beta)-q(\tilde{\beta})-\langle\tilde{v}, \beta-\tilde{\beta}\rangle \\ &+\frac{\sigma}{2}\|\beta-\tilde{\beta}\|^{2}+\frac{\tau}{2}\|X \beta-\tilde{b}\|^{2} \} \end{aligned}</script><p>(1) Linearize the concave term: $-q(\beta)$. 因为此项nonconvex</p>
-<p>(2) Add the proximal term：$\frac{\tau}{2}|X \beta-X \tilde{\beta}|^{2}$. 因为$h(\cdot)$和$p(\beta)$是nonsmooth</p>
-</li>
-<li><p>$\beta^{k+1}=\operatorname{Prox}_{\lambda p / \sigma^{2, k}}\left(\beta^{k}+\left(\nabla q\left(\beta^{k}\right)-X^{T} u^{k+1}\right) / \sigma^{2, k}\right)​$</p>
-</li>
-<li><p>问题</p>
-<ul>
-<li><p>[x] $\frac{\sigma}{2}|\beta-\tilde{\beta}|$的作用：因为是PPA算法</p>
-</li>
-<li><p>[ ] $\frac{\tau}{2}|X \beta-\tilde{b}|^{2}$这个Proximal项的由来</p>
-</li>
-<li><p>[ ] 针对该非凸模型的算法，解的唯一性和算法的收敛性能否被证明？只要是非凸问题，都无法保障解的唯一性？那么该算法的优点？</p>
-</li>
-<li>[ ] 该类问题本来的解法</li>
-</ul>
-</li>
-</ul>
-<h2 id="2-SSN-based-PPM-Algorithm"><a href="#2-SSN-based-PPM-Algorithm" class="headerlink" title="2. SSN-based PPM Algorithm"></a>2. SSN-based PPM Algorithm</h2><ul>
-<li><p><strong>PPM algorithm：</strong> Proximal majorization-minimization</p>
-<p>Initialize:  $\beta^{0} \approx \underset{\beta \in \mathbb{R}^{n}}{\operatorname{argmin}}\left\{h\left(\beta ; \sigma^{1}, \tau^{1}, 0,0, b\right)\right\}​$</p>
-<p>Iteration:  <strong>step 1</strong> $\beta^{k+1}=\underset{\beta \in \mathbb{R}^{n}}{\operatorname{argmin}}\left\{h\left(\beta ; \sigma^{2, k}, \tau^{2, k}, \beta^{k}, \nabla q\left(\beta^{k}\right), X \beta^{k}\right)+\left\langle\delta^{k}, \beta-\beta^{k}\right\rangle\right\}$</p>
-<p>​              <strong>step 2</strong> $\sigma^{2, k+1}=\rho_{k} \sigma^{2, k}, \tau^{2, k+1}=\rho_{k} \tau^{2, k}\text { with } \rho_{k} \in(0,1)​$</p>
-<p>Until:  If $β_{k+1}​$ satisﬁes a prescribed stopping criterion, terminate;</p>
-</li>
-<li><p>Step 1:  solve  the dual of the (10)  which is（12）</p>
-<script type="math/tex; mode=display">
-\begin{aligned} \min _{u \in \mathbb{R}^{m}} &\left\{\varphi(u) :=\langle u, b\rangle+\frac{\tau}{2}\left\|\tau^{-1} u+\tilde{b}-b\right\|^{2}-\left\|\operatorname{Prox}_{\tau^{-1}\|\cdot\|}\left(\tau^{-1} u+\tilde{b}-b\right)\right\|\right.\\ &-\frac{1}{2 \tau}\left\|\operatorname{Prox}_{\tau \delta_{B}}(u+\tau(\tilde{b}-b))\right\|^{2}+\frac{\sigma}{2}\left\|\tilde{\beta}+\sigma^{-1}\left(\tilde{v}-X^{T} u\right)\right\|^{2} \\ &-\lambda p\left(\operatorname{Prox}_{\sigma^{-1} \lambda p}\left(\tilde{\beta}+\sigma^{-1}\left(\tilde{v}-X^{T} u\right)\right)\right)-\frac{1}{2 \sigma}\left\|\operatorname{Prox}_{\sigma(\lambda p) *}\left(\sigma \tilde{\beta}+\tilde{v}-X^{T} u\right)\right\|^{2} \} \end{aligned} (12)</script><p>with $\overline{y}=\operatorname{Prox}_{\tau^{-1}| |}\left(\tau^{-1} \overline{u}+\tilde{b}-b\right), \quad \overline{\beta}=\operatorname{Prox}_{\sigma^{-1} \lambda p}\left(\tilde{\beta}+\sigma^{-1}\left(\tilde{v}-X^{T} \overline{u}\right)\right)​$.</p>
-<p>and $\beta^{k+1}=\operatorname{Prox}_{\lambda p / \sigma^{2, k}}\left(\beta^{k}+\left(\nabla q\left(\beta^{k}\right)-X^{T} u^{k+1}\right) / \sigma^{2, k}\right)​$</p>
-</li>
-<li><p>(12) 的推导过程</p>
-<ul>
-<li><p>令$y=X \beta-b$将(10)转化成约束问题(11)</p>
-<script type="math/tex; mode=display">
-\min _{\beta \in \mathbb{R}^{n}, y \in \mathbb{R}^{m}}\left\{\|X\beta-b\|+\lambda p(\beta)-\langle\tilde{v}, \beta-\tilde{\beta}\rangle+\frac{\sigma}{2}\|\beta-\tilde{\beta}\|^{2}+\frac{\tau}{2}\|y+b-\tilde{b}\|^{2} \right\}\\
-\text{subject to }X \beta-b=y\\</script></li>
-<li><p>将约束问题转化成Lagrangian：</p>
-<p>$L(y,\beta; u) = \left\{|y|+\lambda p(\beta)-\langle\tilde{v}, \beta-\tilde{\beta}\rangle+\frac{\sigma}{2}|\beta-\tilde{\beta}|^{2}+\frac{\tau}{2}|y+b-\tilde{b}|^{2} - <u, x \beta-y-b>\right\}​$ (11)</u,></p>
-</li>
-<li><p>Dual function of  (11)</p>
-<script type="math/tex; mode=display">
-g(u):=\inf _{y,\beta} L(y, \beta;u)</script></li>
-<li><p>对$L(y,\beta; u) ​$进行配方</p>
-<script type="math/tex; mode=display">
-\begin{aligned}
-L(y,\beta; u) 
-&= \|y\|+\lambda p(\beta)-\langle\tilde{v}, \beta-\tilde{\beta}\rangle+\frac{\sigma}{2}\|\beta-\tilde{\beta}\|^{2}+\frac{\tau}{2}\|y+b-\tilde{b}\|^{2} - \langle u, y-X \beta+b\rangle\\
-&=\{\|y\|+\frac{\tau}{2}\|y+b-\tilde{b}\|^{2}-\langle u,y\rangle\}+\{\lambda p(\beta)-\langle\tilde{v}, \beta-\tilde{\beta}\rangle+\frac{\sigma}{2}\|\beta-\tilde{\beta}\|^{2}+\langle X^T u,\beta\rangle\}-\langle u,b\rangle\\
-&=\{\|y\|+\frac{\tau}{2}\|y+b-\tilde{b}-\frac{u}{\tau}\|^{2}\}-\frac{u^2}{2\tau}+\langle \tilde b,u\rangle+\{\lambda p(\beta)+\frac{\sigma}{2}\|\beta-\tilde{\beta}\|^{2}+\langle X^Tu-\tilde{v}, \beta-\tilde{\beta}\rangle+\langle \tilde{\beta},X^Tu\rangle\}\\
-&=\{\|y\|+\frac{\tau}{2}\|y+b-\tilde{b}+\frac{u}{\tau}\|^{2}\}+\{\lambda p(\beta) + \frac{\sigma}{2}\|\beta-\tilde{\beta}+\frac{X^Tu-\tilde{v}}{\sigma}\|^{2}\}...\\
-&-\frac{u^2}{2\tau}+\langle \tilde b,u\rangle+\langle\tilde{\beta},X^Tu\rangle-\|\frac{X^Tu-\tilde{v}}{\sigma}\|^2 \\
-\end{aligned}</script></li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>(12) 的求解：A semismooth Newton‘s method</p>
-<ul>
-<li><p>最小化（12）等价于（12）的一阶条件</p>
-<script type="math/tex; mode=display">
-\nabla \varphi(u)=\operatorname{Prox}_{\tau^{-1} \|}\left(\tau^{-1} u+\tilde{b}-b\right)-X \operatorname{Prox}_{\sigma^{-1} \lambda p}\left(\tilde{\beta}+\sigma^{-1}\left(\tilde{v}-X^{T} u\right)\right)+b\\
-\nabla \varphi(u)=0\qquad(13)\\</script></li>
-<li><p>Solve nonlinear equation（13）by pcg</p>
-<p>$\hat{\partial}^{2} \varphi(u) :=\sigma^{-1} X \partial \operatorname{Prox}_{\sigma^{-1} \lambda p}\left(\tilde{\beta}+\sigma^{-1}\left(\tilde{v}-X^{T} u\right)\right) X^{T}+\tau^{-1} \partial \operatorname{Prox}_{\tau^{-1} |}\left(\tau^{-1} u+\tilde{b}-b\right)$</p>
-<p>$H:=\sigma^{-1} X U X^{T}+\tau^{-1} V \in \hat{\partial}^{2} \varphi(u)​$</p>
-<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190707021520501.png" alt="image-20190707021520501"></p>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="3-Problem"><a href="#3-Problem" class="headerlink" title="3. Problem"></a>3. Problem</h2><h2 id="4-Our-case"><a href="#4-Our-case" class="headerlink" title="4. Our case"></a>4. Our case</h2><ul>
-<li><p>For the ROF model:</p>
-<p>$h(X\beta)=|\nabla \beta|_1$</p>
-<p>$p(\beta)=|\beta-b|_2^2,q(\beta)=0​$</p>
-</li>
-</ul>
-<h1 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h1><ul>
-<li><p>转化成smooth单变量方程的推导过程</p>
-<script type="math/tex; mode=display">
-\begin{aligned} \Psi(\hat{y}, \hat{z}) &=\inf _{z} \Psi(\hat{u}, z) \\ &=G(\hat{y})+\sigma \inf _{z}\left\{\frac{1}{\sigma} F(z)+\frac{1}{2}\left\|z-K \hat{y}-\frac{x}{\sigma}\right\|^{2}\right\}-\frac{1}{2 \sigma}\|x\|^{2} \\ &=G(\hat{y})+\sigma M(F / \sigma)(K \hat{y}+x)-\frac{1}{2 \sigma}\|x\|^{2} \end{aligned}</script><p>Using the Moreau-Yosida regularization:</p>
-<script type="math/tex; mode=display">
-M_{\lambda} f(x) :=\min _{u} f(u)+\frac{1}{2 \lambda}\|u-x\|_{2}^{2}</script><script type="math/tex; mode=display">
-\nabla M_{\lambda} f(x)=\frac{1}{\lambda}\left(x-\operatorname{Prox}_{\lambda f}(x)\right)</script></li>
-<li><p>$h(y)+p(By)$对偶问题无法转化成单变量smooth的原因</p>
-<script type="math/tex; mode=display">
-\begin{array}{c}{\partial \psi(z)=\partial p^{*}(z)-\underline{A x}+\sigma\left(\mathcal{A}^{*} z+y-c\right)} \\ {0 \in \partial \psi(\overline{z})} \\ {0 \in \partial p^{*}(\overline{z})-\mathcal{A} x+\sigma\left(\mathcal{A}^{*} \overline{z}+y-c\right)} \\ {0 \in \sigma\left(\frac{\partial p^{*}(\overline{z})}{\sigma}+\mathcal{A}^{*} z-\left(c-y+\frac{1}{\sigma} \mathcal{A} x\right)\right)}\end{array}</script><p>$z$无法用proximal表示</p>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/p/65b3.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="夏不哉下">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="春夏秋冬">
-    </span>
-      <header class="post-header">
-
-        
-          <h2 class="post-title" itemprop="name headline">
-              
-              <a href="/p/65b3.html" class="post-title-link" itemprop="url">L1算法综述</a>
-            
-          </h2>
-        
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
-              <time title="创建时间：2019-07-01 00:00:00" itemprop="dateCreated datePublished" datetime="2019-07-01T00:00:00+08:00">2019-07-01</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-23 14:08:09" itemprop="dateModified" datetime="2019-08-23T14:08:09+08:00">2019-08-23</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/" itemprop="url" rel="index"><span itemprop="name">算法</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">本文字数：</span>
-              
-              <span>7.5k</span>
+              <span>7.6k</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -1876,203 +435,1178 @@ M_{\lambda} f(x) :=\min _{u} f(u)+\frac{1}{2 \lambda}\|u-x\|_{2}^{2}</script><sc
 
       
           
-            <ul>
-<li>lowercontinuity</li>
+            <p>checkpoint = utility.checkpoint(args)</p>
+<hr>
+<p>self.loader_train = MSDataLoader(<br>                args,<br>                trainset,<br>                batch_size=args.batch_size,<br>                shuffle=True,<br>                pin_memory=not args.cpu<br>            )</p>
+<pre><code>while not t.terminate():
+        t.train()
+        t.test()
+
+def terminate(self):
+    if self.args.test_only:
+        self.test()
+        return True
+    else:
+        epoch = self.scheduler.last_epoch + 1
+        return epoch &gt;= self.args.epochs
+</code></pre><h1 id="训练的例子"><a href="#训练的例子" class="headerlink" title="训练的例子"></a>训练的例子</h1><p>参数设置</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br></pre></td><td class="code"><pre><span class="line">cd Train/</span><br><span class="line"><span class="comment"># MSRN x2  LR: 48 * 48  HR: 96 * 96</span></span><br><span class="line">python main.py --template MSRN --save MSRN_X2 --scale <span class="number">2</span> --reset --save_results --patch_size <span class="number">96</span> --ext sep_reset</span><br><span class="line"></span><br><span class="line"><span class="comment"># MSRN x3  LR: 48 * 48  HR: 144 * 144</span></span><br><span class="line">python main.py --template MSRN --save MSRN_X3 --scale <span class="number">3</span> --reset --save_results --patch_size <span class="number">144</span> --ext sep_reset</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> args.template.find(<span class="string">'MSRN'</span>) &gt;= <span class="number">0</span>:</span><br><span class="line">    args.model = <span class="string">'MSRN'</span></span><br><span class="line">    args.n_blocks = <span class="number">8</span></span><br><span class="line">    args.n_feats = <span class="number">64</span></span><br><span class="line">    args.chop = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">parser.add_argument(<span class="string">'--debug'</span>, action=<span class="string">'store_true'</span>,</span><br><span class="line">                    help=<span class="string">'Enables debug mode'</span>)</span><br><span class="line">parser.add_argument(<span class="string">'--template'</span>, default=<span class="string">'.'</span>,</span><br><span class="line">                    help=<span class="string">'You can set various templates in option.py'</span>)</span><br><span class="line"><span class="comment"># Hardware specifications</span></span><br><span class="line">parser.add_argument(<span class="string">'--n_threads'</span>, type=int, default=<span class="number">8</span>,</span><br><span class="line">                    help=<span class="string">'number of threads for data loading'</span>)</span><br><span class="line">parser.add_argument(<span class="string">'--cpu'</span>, action=<span class="string">'store_true'</span>,</span><br><span class="line">                    help=<span class="string">'use cpu only'</span>)</span><br><span class="line">parser.add_argument(<span class="string">'--n_GPUs'</span>, type=int, default=<span class="number">4</span>,</span><br><span class="line">                    help=<span class="string">'number of GPUs'</span>)</span><br><span class="line">parser.add_argument(<span class="string">'--seed'</span>, type=int, default=<span class="number">1</span>,</span><br><span class="line">                    help=<span class="string">'random seed'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Data specifications</span></span><br><span class="line">parser.add_argument(<span class="string">'--dir_data'</span>, type=str, default=<span class="string">'dataset'</span>,</span><br><span class="line">                    help=<span class="string">'dataset directory'</span>)</span><br><span class="line">parser.add_argument(<span class="string">'--dir_demo'</span>, type=str, default=<span class="string">'test'</span>,</span><br><span class="line">                    help=<span class="string">'demo image directory'</span>)</span><br><span class="line"><span class="comment"># data_train, 'DIV2K'</span></span><br><span class="line">parser.add_argument(<span class="string">'--data_train'</span>, type=str, default=<span class="string">'DIV2K'</span>,</span><br><span class="line">                    help=<span class="string">'train dataset name'</span>)</span><br><span class="line"><span class="comment"># data_test, </span></span><br><span class="line">parser.add_argument(<span class="string">'--data_test'</span>, type=str, default=<span class="string">'DIV2K'</span>,</span><br><span class="line">                    help=<span class="string">'test dataset name'</span>)</span><br><span class="line">parser.add_argument(<span class="string">'--data_range'</span>, type=str, default=<span class="string">'1-800/896-900'</span>,</span><br><span class="line">                    help=<span class="string">'train/test data range'</span>)</span><br><span class="line">parser.add_argument(<span class="string">'--ext'</span>, type=str, default=<span class="string">'sep'</span>,</span><br><span class="line">                    help=<span class="string">'dataset file extension'</span>)</span><br><span class="line">parser.add_argument(<span class="string">'--scale'</span>, type=str, default=<span class="string">'4'</span>,</span><br><span class="line">                    help=<span class="string">'super resolution scale'</span>)</span><br><span class="line"><span class="comment"># patch_size</span></span><br><span class="line">parser.add_argument(<span class="string">'--patch_size'</span>, type=int, default=<span class="number">128</span>,</span><br><span class="line">                    help=<span class="string">'output patch size'</span>)</span><br><span class="line">parser.add_argument(<span class="string">'--rgb_range'</span>, type=int, default=<span class="number">255</span>,</span><br><span class="line">                    help=<span class="string">'maximum value of RGB'</span>)</span><br><span class="line">parser.add_argument(<span class="string">'--n_colors'</span>, type=int, default=<span class="number">3</span>,</span><br><span class="line">                    help=<span class="string">'number of color channels to use'</span>)</span><br><span class="line">parser.add_argument(<span class="string">'--chop'</span>, action=<span class="string">'store_true'</span>,</span><br><span class="line">                    help=<span class="string">'enable memory-efficient forward'</span>)</span><br><span class="line">parser.add_argument(<span class="string">'--no_augment'</span>, action=<span class="string">'store_true'</span>,</span><br><span class="line">                    help=<span class="string">'do not use data augmentation'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Model specifications 怎么找到这个模型？</span></span><br><span class="line">parser.add_argument(<span class="string">'--model'</span>, default=<span class="string">'EDSR'</span>,</span><br><span class="line">                    help=<span class="string">'model name'</span>)</span><br><span class="line"></span><br><span class="line">parser.add_argument(<span class="string">'--act'</span>, type=str, default=<span class="string">'relu'</span>,</span><br><span class="line">                    help=<span class="string">'activation function'</span>)</span><br><span class="line">parser.add_argument(<span class="string">'--pre_train'</span>, type=str, default=<span class="string">'.'</span>,</span><br><span class="line">                    help=<span class="string">'pre-trained model directory'</span>)</span><br><span class="line">parser.add_argument(<span class="string">'--extend'</span>, type=str, default=<span class="string">'.'</span>,</span><br><span class="line">                    help=<span class="string">'pre-trained model directory'</span>)</span><br><span class="line">parser.add_argument(<span class="string">'--n_resblocks'</span>, type=int, default=<span class="number">16</span>,</span><br><span class="line">                    help=<span class="string">'number of residual blocks'</span>)</span><br><span class="line">parser.add_argument(<span class="string">'--n_feats'</span>, type=int, default=<span class="number">64</span>,</span><br><span class="line">                    help=<span class="string">'number of feature maps'</span>)</span><br><span class="line">parser.add_argument(<span class="string">'--res_scale'</span>, type=float, default=<span class="number">1</span>,</span><br><span class="line">                    help=<span class="string">'residual scaling'</span>)</span><br><span class="line">parser.add_argument(<span class="string">'--shift_mean'</span>, default=<span class="literal">True</span>,</span><br><span class="line">                    help=<span class="string">'subtract pixel mean from the input'</span>)</span><br><span class="line">parser.add_argument(<span class="string">'--dilation'</span>, action=<span class="string">'store_true'</span>,</span><br><span class="line">                    help=<span class="string">'use dilated convolution'</span>)</span><br><span class="line">parser.add_argument(<span class="string">'--precision'</span>, type=str, default=<span class="string">'single'</span>,</span><br><span class="line">                    choices=(<span class="string">'single'</span>, <span class="string">'half'</span>),</span><br><span class="line">                    help=<span class="string">'FP precision for test (single | half)'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Option for Residual channel attention network (RCAN)</span></span><br><span class="line">parser.add_argument(<span class="string">'--n_resgroups'</span>, type=int, default=<span class="number">1</span>,</span><br><span class="line">                    help=<span class="string">'number of residual groups'</span>)</span><br><span class="line">parser.add_argument(<span class="string">'--reduction'</span>, type=int, default=<span class="number">16</span>,</span><br><span class="line">                    help=<span class="string">'number of feature maps reduction'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Training specifications</span></span><br><span class="line">parser.add_argument(<span class="string">'--reset'</span>, action=<span class="string">'store_true'</span>,</span><br><span class="line">                    help=<span class="string">'reset the training'</span>)</span><br><span class="line">parser.add_argument(<span class="string">'--test_every'</span>, type=int, default=<span class="number">1000</span>,</span><br><span class="line">                    help=<span class="string">'do test per every N batches'</span>)</span><br><span class="line">parser.add_argument(<span class="string">'--epochs'</span>, type=int, default=<span class="number">1000</span>,</span><br><span class="line">                    help=<span class="string">'number of epochs to train'</span>)</span><br><span class="line">parser.add_argument(<span class="string">'--batch_size'</span>, type=int, default=<span class="number">16</span>,</span><br><span class="line">                    help=<span class="string">'input batch size for training'</span>)</span><br><span class="line">parser.add_argument(<span class="string">'--split_batch'</span>, type=int, default=<span class="number">1</span>,</span><br><span class="line">                    help=<span class="string">'split the batch into smaller chunks'</span>)</span><br><span class="line">parser.add_argument(<span class="string">'--self_ensemble'</span>, action=<span class="string">'store_true'</span>,</span><br><span class="line">                    help=<span class="string">'use self-ensemble method for test'</span>)</span><br><span class="line">parser.add_argument(<span class="string">'--test_only'</span>, action=<span class="string">'store_true'</span>,</span><br><span class="line">                    help=<span class="string">'set this option to test the model'</span>)</span><br><span class="line">parser.add_argument(<span class="string">'--gan_k'</span>, type=int, default=<span class="number">1</span>,</span><br><span class="line">                    help=<span class="string">'k value for adversarial loss'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Optimization specifications</span></span><br><span class="line">parser.add_argument(<span class="string">'--lr'</span>, type=float, default=<span class="number">1e-4</span>,</span><br><span class="line">                    help=<span class="string">'learning rate'</span>)</span><br><span class="line">parser.add_argument(<span class="string">'--lr_decay'</span>, type=int, default=<span class="number">200</span>,</span><br><span class="line">                    help=<span class="string">'learning rate decay per N epochs'</span>)</span><br><span class="line">parser.add_argument(<span class="string">'--decay_type'</span>, type=str, default=<span class="string">'step'</span>,</span><br><span class="line">                    help=<span class="string">'learning rate decay type'</span>)</span><br><span class="line">parser.add_argument(<span class="string">'--gamma'</span>, type=float, default=<span class="number">0.5</span>,</span><br><span class="line">                    help=<span class="string">'learning rate decay factor for step decay'</span>)</span><br><span class="line">parser.add_argument(<span class="string">'--optimizer'</span>, default=<span class="string">'ADAM'</span>,</span><br><span class="line">                    choices=(<span class="string">'SGD'</span>, <span class="string">'ADAM'</span>, <span class="string">'RMSprop'</span>),</span><br><span class="line">                    help=<span class="string">'optimizer to use (SGD | ADAM | RMSprop)'</span>)</span><br><span class="line">parser.add_argument(<span class="string">'--momentum'</span>, type=float, default=<span class="number">0.9</span>,</span><br><span class="line">                    help=<span class="string">'SGD momentum'</span>)</span><br><span class="line">parser.add_argument(<span class="string">'--beta1'</span>, type=float, default=<span class="number">0.9</span>,</span><br><span class="line">                    help=<span class="string">'ADAM beta1'</span>)</span><br><span class="line">parser.add_argument(<span class="string">'--beta2'</span>, type=float, default=<span class="number">0.999</span>,</span><br><span class="line">                    help=<span class="string">'ADAM beta2'</span>)</span><br><span class="line">parser.add_argument(<span class="string">'--epsilon'</span>, type=float, default=<span class="number">1e-8</span>,</span><br><span class="line">                    help=<span class="string">'ADAM epsilon for numerical stability'</span>)</span><br><span class="line">parser.add_argument(<span class="string">'--weight_decay'</span>, type=float, default=<span class="number">0</span>,</span><br><span class="line">                    help=<span class="string">'weight decay'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Loss specifications</span></span><br><span class="line">parser.add_argument(<span class="string">'--loss'</span>, type=str, default=<span class="string">'1*L1'</span>,</span><br><span class="line">                    help=<span class="string">'loss function configuration'</span>)</span><br><span class="line">parser.add_argument(<span class="string">'--skip_threshold'</span>, type=float, default=<span class="string">'1e6'</span>,</span><br><span class="line">                    help=<span class="string">'skipping batch that has large error'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Log specifications</span></span><br><span class="line">parser.add_argument(<span class="string">'--save'</span>, type=str, default=<span class="string">'test'</span>,</span><br><span class="line">                    help=<span class="string">'file name to save'</span>)</span><br><span class="line">parser.add_argument(<span class="string">'--load'</span>, type=str, default=<span class="string">'.'</span>,</span><br><span class="line">                    help=<span class="string">'file name to load'</span>)</span><br><span class="line">parser.add_argument(<span class="string">'--resume'</span>, type=int, default=<span class="number">0</span>,</span><br><span class="line">                    help=<span class="string">'resume from specific checkpoint'</span>)</span><br><span class="line">parser.add_argument(<span class="string">'--save_models'</span>, action=<span class="string">'store_true'</span>,</span><br><span class="line">                    help=<span class="string">'save all intermediate models'</span>)</span><br><span class="line">parser.add_argument(<span class="string">'--print_every'</span>, type=int, default=<span class="number">100</span>,</span><br><span class="line">                    help=<span class="string">'how many batches to wait before logging training status'</span>)</span><br><span class="line">parser.add_argument(<span class="string">'--save_results'</span>, action=<span class="string">'store_true'</span>,</span><br><span class="line">                    help=<span class="string">'save output results'</span>)</span><br></pre></td></tr></table></figure>
+<p>Template.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="dataset"><a href="#dataset" class="headerlink" title="dataset"></a>dataset</h1><p>dataset/DIV2K/DIV2K_train_HR;</p>
+<p>dataset/DIV2K/DIV2K_train_LR_bicubic</p>
+<h1 id="设定模型"><a href="#设定模型" class="headerlink" title="设定模型"></a>设定模型</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">module = import_module(<span class="string">'model.'</span> + args.model.lower()) <span class="comment"># import model.msrn.py</span></span><br><span class="line">self.model = module.make_model(args).to(self.device)  <span class="comment"># msrn.py的make_model: 返回该文件model</span></span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/p/0.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="夏不哉下">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="春夏秋冬">
+    </span>
+      <header class="post-header">
+
+        
+          <h2 class="post-title" itemprop="name headline">
+              
+              <a href="/p/0.html" class="post-title-link" itemprop="url">未命名</a>
+            
+          </h2>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-09-10 12:44:54 / 修改时间：18:03:21" itemprop="dateCreated datePublished" datetime="2019-09-10T12:44:54+08:00">2019-09-10</time>
+            </span>
+          
+            
+
+            
+          
+
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>353</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1 分钟</span>
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+            <h1 id="名词"><a href="#名词" class="headerlink" title="名词"></a>名词</h1><p>国内A股</p>
+<p>H股：在香港上市的国企股。如，中国银行、工商银行、中国人寿。</p>
+<h1 id="股票是什么"><a href="#股票是什么" class="headerlink" title="股票是什么"></a>股票是什么</h1><p>股票除了股息，还有分红，这是另一个话题，有空再讲。</p>
+<p>股票其实是一个“<strong>吸金手段</strong>”，公司用较高的股息，拿股票换取现金，以求发展。</p>
+<h1 id="股票价格"><a href="#股票价格" class="headerlink" title="股票价格"></a>股票价格</h1><p><a href="https://www.zhihu.com/question/19805529" target="_blank" rel="noopener">股票价格的形成: 集合竞价(开盘价)+连续竞价</a>：最大成交量，来获得最大佣金</p>
+<p>集合竞价最后的价格，由“王子灰姑娘”的交易方法决定，具体会因为不同的证券市场而有不同。</p>
+<p><a href="https://www.zhihu.com/question/32260090" target="_blank" rel="noopener">集合竞价的交易时间</a></p>
+<h1 id="股票的种类"><a href="#股票的种类" class="headerlink" title="股票的种类"></a>股票的种类</h1><p><a href="http://www.csrc.gov.cn/pub/gansu/xxfw/tzzzsyd/200608/t20060821_92670.htm" target="_blank" rel="noopener">http://www.csrc.gov.cn/pub/gansu/xxfw/tzzzsyd/200608/t20060821_92670.htm</a></p>
+<p><a href="http://finance.sina.com.cn/stock/hkstock/ggknow/20070904/01213943049.shtml" target="_blank" rel="noopener">A股和H股的区别</a></p>
+<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>H股：指的是指大陆上市公司在香港卖的股票？还是大陆公司又在香港上市，发行股票？那么香港本地上市的的本地公司算什么股票类型？</p>
+
+          
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/p/0.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="夏不哉下">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="春夏秋冬">
+    </span>
+      <header class="post-header">
+
+        
+          <h2 class="post-title" itemprop="name headline">
+              
+              <a href="/p/0.html" class="post-title-link" itemprop="url">未命名</a>
+            
+          </h2>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-09-07 19:55:21" itemprop="dateCreated datePublished" datetime="2019-09-07T19:55:21+08:00">2019-09-07</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-09-24 16:18:59" itemprop="dateModified" datetime="2019-09-24T16:18:59+08:00">2019-09-24</time>
+              </span>
+            
+          
+
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>4.1k</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>4 分钟</span>
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+            <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
+<li><p>文献综述参考自链接： <a href="https://www.zhihu.com/question/66359919" target="_blank" rel="noopener">深度学习在图像去噪方面最近有哪些进展，与传统方法相比效果如何</a>, 作者：徐君</p>
+</li>
+<li><p>对deep learning很好的总结：<a href="https://link.zhihu.com/?target=https%3A//github.com/flyywh/Image-Denoising-State-of-the-art" target="_blank" rel="noopener">flyywh/Image-Denoising-State-of-the-art</a>。这里可以找到很全的各种state-of-the-art算法的链接。</p>
+</li>
 </ul>
-<h1 id="一阶算法"><a href="#一阶算法" class="headerlink" title="一阶算法"></a>一阶算法</h1><ul>
-<li>Proximal point algorithm</li>
-<li>Gradient projection method.</li>
-<li><p>Dual-projection </p>
+<h1 id="高斯噪声去噪"><a href="#高斯噪声去噪" class="headerlink" title="高斯噪声去噪"></a>高斯噪声去噪</h1><h2 id="文献综述"><a href="#文献综述" class="headerlink" title="文献综述"></a>文献综述</h2><ul>
+<li><p><a href="http://papers.nips.cc/paper/3506-natural-image-denoising-with-convolutional-networks.pdf" target="_blank" rel="noopener">(2009 NIPS)</a> Jain, Viren, and Sebastian Seung. “Natural image denoising with convolutional networks.” <em>Advances in neural information processing systems</em>. 2009.</p>
+<p>效果一般。只是比BLS-GSM, FoE的PSNR稍微好一点。</p>
+</li>
+<li><p><a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=6247952" target="_blank" rel="noopener">(2012 MLP)</a> Burger, Harold C., Christian J. Schuler, and Stefan Harmeling. “Image denoising: Can plain neural networks compete with BM3D?.” <em>2012 IEEE conference on computer vision and pattern recognition</em>. IEEE, 2012.</p>
+<p>网络都不是很深，只有3层左右。效果也就是和BM3D差不多的水平。</p>
+</li>
+</ul>
+<p>2014-2015年，出现了一些<strong>判别学习</strong>的方法出现，比如CSF和TNRD，这些方法的PSNR/SSIM基本超过了BM3D，在速度上也不分伯仲。</p>
 <ul>
-<li>An Algorithm for Total Variation Minimization and Applications</li>
-</ul>
+<li><p><a href="https://www.cv-foundation.org/openaccess/content_cvpr_2014/papers/Schmidt_Shrinkage_Fields_for_2014_CVPR_paper.pdf" target="_blank" rel="noopener">(2014 CSF)</a> Schmidt, Uwe, and Stefan Roth. “Shrinkage fields for effective image restoration.” <em>Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition</em>. 2014.</p>
 </li>
-<li>ALM和PPA</li>
-</ul>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><h3 id="ADMM（1975，1976，2011）"><a href="#ADMM（1975，1976，2011）" class="headerlink" title="ADMM（1975，1976，2011）"></a>ADMM（1975，1976，2011）</h3><ul>
-<li><p>Gabay, D., and Mercier, B., A dual algorithm for the solution of nonlinear variational problems via finite-element approximations, Comp. Math. Appl., 2 (1976), pp. 17-40.</p>
-</li>
-<li><p>Glowinski, R., and Marrocco, A., Sur lapproximation par elements finis dordre un, et la resolution par penalisation-dualite dune classe de problemes de Dirichlet nonlineaires, Rev. Francaise dAut. Inf. Rech. Oper., R-2 (1975), pp. 41-76.</p>
-</li>
-<li><p>Existing convergence theory for ADMM</p>
-<p>Eckstein, J., and Bertsekas, D., On the Douglas-Rachford splitting method and the proximal point algorithm for maximal monotone operators, Mathematical Programming 55, NorthHolland, 1992.</p>
-</li>
-<li><p>Boyd, S., Parikh, N., Chu, E., Peleato, B., &amp; Eckstein, J. (2011). Distributed optimization and statistical learning via the alternating direction method of multipliers. <em>Foundations and Trends® in Machine learning</em>, <em>3</em>(1), 1-122.</p>
+<li><p><a href="https://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Chen_On_Learning_Optimized_2015_CVPR_paper.pdf" target="_blank" rel="noopener">(2015 TNRD)</a> Chen, Yunjin, Wei Yu, and Thomas Pock. “On learning optimized reaction diffusion processes for effective image restoration.” <em>Proceedings of the IEEE conference on computer vision and pattern recognition</em>. 2015.</p>
+<blockquote>
+<p>然后Shrinkage Field和TNRD这两篇文章是属于对sparse coding的传统iterative method进行unfolding成为feed forward network的工作，我觉得做得很赞。我最近的工作也在follow这里两个工作。我觉得这种approach可以给更多的inverse problem提供一种principled approach，便于更好地更理智地设计网络结构来解决一切特殊的imaging问题。我近期的工作在扩展这个思路来解决一些高维度问题。<br>作者：Bihan Wen 链接：<a href="https://www.zhihu.com/question/66359919/answer/241936523" target="_blank" rel="noopener">https://www.zhihu.com/question/66359919/answer/241936523</a></p>
+</blockquote>
 </li>
 </ul>
-<h3 id="Split-Bregman"><a href="#Split-Bregman" class="headerlink" title="Split Bregman"></a>Split Bregman</h3><ul>
-<li><p>Bregman distance图像复原. Osher, S., Burger, M., Goldfarb, D., Xu, J., &amp; Yin, W. (2005). <a href="http://www.corc.ieor.columbia.edu/reports/techreports/tr-2004-03.pdf" target="_blank" rel="noopener">An iterative regularization method for total variation-based image restoration</a>. <em>Multiscale Modeling &amp; Simulation</em>, <em>4</em>(2), 460-489.  也是利用了Bregman distance 处理denoising</p>
-</li>
-<li><p>(首次提出) Goldstein, T., &amp; Osher, S. (2009). The split Bregman method for L1-regularized problems. SIAM journal on imaging sciences, 2(2), 323-343.</p>
-</li>
-<li>(与ADMM的等价性) Esser, E. (2009). Applications of Lagrangian-based alternating direction methods and connections to split Bregman. <em>CAM report</em>, <em>9</em>, 31.</li>
-</ul>
-<h2 id="Split-Bregman（1967，2009）"><a href="#Split-Bregman（1967，2009）" class="headerlink" title="Split Bregman（1967，2009）"></a>Split Bregman（1967，2009）</h2><ul>
-<li><p>参考文献：</p>
+<p>2016-2017</p>
 <ul>
-<li><p>Goldstein, T., &amp; Osher, S. (2009). The split Bregman method for L1-regularized problems. SIAM journal on imaging sciences, 2(2), 323-343. (下述文献编号的出处)</p>
+<li><p><a href="http://papers.nips.cc/paper/6172-image-restoration-using-very-deep-convolutional-encoder-decoder-networks-with-symmetric-skip-connections.pdf" target="_blank" rel="noopener">(2016 NIPS)</a> Mao, Xiaojiao, Chunhua Shen, and Yu-Bin Yang. “Image restoration using very deep convolutional encoder-decoder networks with symmetric skip connections.” <em>Advances in neural information processing systems</em>. 2016. </p>
 </li>
-<li><p><a href="http://web.math.ucsb.edu/~cgarcia/UGProjects/BregmanAlgorithms_JacquelineBush.pdf" target="_blank" rel="noopener">Bregman证明</a>（具体针对什么的证明）</p>
+<li><p><a href="https://arxiv.org/pdf/1608.03981.pdf" target="_blank" rel="noopener">(2017 DnCNN)</a> Zhang, Kai, et al. “Beyond a gaussian denoiser: Residual learning of deep cnn for image denoising.” IEEE Transactions on Image Processing 26.7 (2017): 3142-3155. <a href="https://github.com/cszn/DnCNN/tree/master/TrainingCodes/dncnn_pytorch" target="_blank" rel="noopener">code</a></p>
+<p>ResNet+BN简单有效。</p>
+</li>
+<li><p><a href="http://openaccess.thecvf.com/content_CVPRW_2019/papers/NTIRE/Abdelhamed_NTIRE_2019_Challenge_on_Real_Image_Denoising_Methods_and_Results_CVPRW_2019_paper.pdf" target="_blank" rel="noopener">NTIRE 2019 Challenge on Real Image Denoising: Methods and Results</a></p>
 </li>
 </ul>
+<h1 id="真实噪声去噪"><a href="#真实噪声去噪" class="headerlink" title="真实噪声去噪"></a>真实噪声去噪</h1><h2 id="文献综述-1"><a href="#文献综述-1" class="headerlink" title="文献综述"></a>文献综述</h2><ul>
+<li><p><a href="http://www-infobiz.ist.osaka-u.ac.jp/wp-content/uploads/paper/pdf/Nam_CVPR2016.pdf" target="_blank" rel="noopener">(2016 CVPR)</a> Nam, Seonghyeon, et al. “A <strong>holistic approach</strong> to cross-channel image noise modeling and its application to image denoising.” <em>Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition</em>. 2016.</p>
+<p>用之前提到的MLP训练得到真实噪声图里的噪声分布情况,然后用 Bayesian Nonlocal Means Filter算法做去噪的。</p>
 </li>
-<li><p>组成部分</p>
+<li><p><a href="http://openaccess.thecvf.com/content_ICCV_2017/papers/Xu_Multi-Channel_Weighted_Nuclear_ICCV_2017_paper.pdf" target="_blank" rel="noopener">(2017 ICCV)</a> Xu, Jun, et al. “Multi-channel weighted nuclear norm minimization for real color image denoising.” <em>Proceedings of the IEEE International Conference on Computer Vision</em>. 2017.</p>
+<p>考虑到真实噪声图里R,G,B三个通道理的噪声分布不一样的情形,并基于传统的低秩模型提出了一个新的模型</p>
+</li>
+<li><p><a href="https://arxiv.org/pdf/1807.04686.pdf" target="_blank" rel="noopener">(2019 CVPR 左老师组合)</a>Guo, Shi, et al. “Toward convolutional blind denoising of real photographs.” <em>Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition</em>. 2019.</p>
+</li>
+<li><p><a href="https://github.com/visinf/n3net" target="_blank" rel="noopener">(Roth老师组发表在NeurIPS2018的工作paper+code)</a> Tobias Plötz and Stefan Roth, <strong>Neural Nearest Neighbors Networks</strong>, Advances in Neural Information Processing Systems (NeurIPS), 2018</p>
+</li>
+<li><p><a href="https://arxiv.org/pdf/1811.11127.pdf" target="_blank" rel="noopener">(2019 CVPR)</a> Brooks, Tim, et al. “Unprocessing images for learned raw denoising.” <em>Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition</em>. 2019.</p>
+</li>
+</ul>
+<h2 id="难点1-数据集"><a href="#难点1-数据集" class="headerlink" title="难点1: 数据集"></a>难点1: 数据集</h2><ul>
+<li><p>多次拍摄取平均作为ground truth</p>
+<p>(2016 A <strong>holistic approach</strong> ….) 用该方法做了15张512*512图片</p>
+<p><a href="https://arxiv.org/pdf/1804.02603.pdf" target="_blank" rel="noopener">(2018 PolyU dataset)</a> Xu, Jun, et al. “Real-world noisy image denoising: A new benchmark.” <em>arXiv preprint arXiv:1804.02603</em> (2018).<a href="https://github.com/csjunxu/PolyU-Real-World-Noisy-Images-Dataset" target="_blank" rel="noopener">github</a> </p>
+</li>
+<li><p>用低iso和高iso来拍摄同一场景</p>
+<p><a href="http://openaccess.thecvf.com/content_cvpr_2017/papers/Plotz_Benchmarking_Denoising_Algorithms_CVPR_2017_paper.pdf" target="_blank" rel="noopener">(2017 德国Roth组)</a> Plotz, Tobias, and Stefan Roth. “Benchmarking denoising algorithms with real photographs.” <em>Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition</em>. 2017.</p>
+<p>一共50张大图，每张分割成20张512*512的小图，共1000张</p>
+</li>
+</ul>
+<h2 id="难点2-噪声分布"><a href="#难点2-噪声分布" class="headerlink" title="难点2: 噪声分布"></a>难点2: 噪声分布</h2><p>真是图像的噪声和信号想关，难以用一个分布来模拟。</p>
 <ul>
-<li>Bregman Iteration to unconstrained problem</li>
-<li>Bregman Iteration  to constrained problem</li>
-<li>Split Bregman to two variable problem</li>
+<li><p><a href="https://www4.comp.polyu.edu.hk/~cslzhang/paper/TWSC_ECCV2018.pdf" target="_blank" rel="noopener">(2018 ECCV)</a> Xu, Jun, Lei Zhang, and David Zhang. “A trilateral weighted sparse coding scheme for real-world image denoising.” <em>Proceedings of the European Conference on Computer Vision (ECCV)</em>. 2018.</p>
+<p>提出了对不同的图像通道和不同的图像快都采取不同方差的高斯分布去拟合真实噪声。</p>
+</li>
 </ul>
+<h1 id="噪声级别估计"><a href="#噪声级别估计" class="headerlink" title="噪声级别估计"></a>噪声级别估计</h1><h2 id="文献综述-2"><a href="#文献综述-2" class="headerlink" title="文献综述"></a>文献综述</h2><ul>
+<li><p><a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=6607209" target="_blank" rel="noopener">(2013)</a> Liu, Xinhao, Masayuki Tanaka, and Masatoshi Okutomi. “Single-image noise level estimation for blind denoising.” <em>IEEE transactions on image processing</em> 22.12 (2013): 5226-5237.</p>
 </li>
-<li><p><u>Bregman distance</u></p>
+<li><p><a href="https://arxiv.org/pdf/1712.03381.pdf" target="_blank" rel="noopener">https://arxiv.org/pdf/1712.03381.pdf</a> Noise Level Estimation for Overcomplete Dictionary Learning Based on Tight Asymptotic Bounds</p>
 </li>
-<li><p>Bregman Iteration for unconstrained problem</p>
+<li><a href="https://www.itread01.com/content/1544715003.html" target="_blank" rel="noopener">https://www.itread01.com/content/1544715003.html</a> 基於pytorch的噪聲估計網路</li>
+</ul>
+<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><ul>
+<li>构造噪声level的时候如如何</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/p/6a2b.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="夏不哉下">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="春夏秋冬">
+    </span>
+      <header class="post-header">
+
+        
+          <h2 class="post-title" itemprop="name headline">
+              
+              <a href="/p/6a2b.html" class="post-title-link" itemprop="url">深度_卷积神经网络</a>
+            
+          </h2>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-09-03 16:06:04" itemprop="dateCreated datePublished" datetime="2019-09-03T16:06:04+08:00">2019-09-03</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-09-12 15:34:40" itemprop="dateModified" datetime="2019-09-12T15:34:40+08:00">2019-09-12</time>
+              </span>
+            
+          
+
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>4.2k</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>4 分钟</span>
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+            <h1 id="通用近似定理"><a href="#通用近似定理" class="headerlink" title="通用近似定理"></a>通用近似定理</h1><p>只有参数足够多，一层网络可以近似任何函数。但是训练难度大，维度可能💥。</p>
+<h1 id="卷积"><a href="#卷积" class="headerlink" title="卷积"></a>卷积</h1><ul>
+<li>卷积的特点：局部连接、权值共享、空间或时间上的采样</li>
+<li>卷积的作用：减少参数、提取局部不变性特征</li>
+<li>Motivation：一个视神经元的感受野，来激活该神经元</li>
+<li><u>互相关是什么</u></li>
+</ul>
+<h1 id="滑动步长和填充"><a href="#滑动步长和填充" class="headerlink" title="滑动步长和填充"></a>滑动步长和填充</h1><ul>
+<li><p>不同滑动步长和填充的作用</p>
+</li>
+<li><p>根据输出长度：窄卷积、等宽卷机</p>
+</li>
+</ul>
+<h1 id="卷积网络的结构"><a href="#卷积网络的结构" class="headerlink" title="卷积网络的结构"></a>卷积网络的结构</h1><p>用卷机层代替全连接网络。</p>
 <ul>
-<li><p>目标方程(2.1)：$\min_u E(u)+\lambda H(u)$, with $H$ is differentiable and $\min_u H(u)=0$. </p>
+<li><p>Reference: <a href="https://zhuanlan.zhihu.com/p/29119239" target="_blank" rel="noopener">CNN中卷积层的计算细节</a>、<a href="https://zhuanlan.zhihu.com/p/41696749" target="_blank" rel="noopener">卷积层与池化层</a>、<a href="https://blog.csdn.net/l691899397/article/details/52250190" target="_blank" rel="noopener">池化层的实现、反向传播</a></p>
 </li>
-<li><p>Bregman Iteration: 由[4]提出</p>
+<li><p>卷机层的特点：局部感知、参数共享、池化</p>
+</li>
+</ul>
+<p><img src="/Users/yyf/Desktop/012842_Z2z8_876354.png" alt="012842_Z2z8_876354.png"></p>
+<p><img src="/Users/yyf/Desktop/012854_DfxF_876354.png" alt="012854_DfxF_876354.png"></p>
+<p><img src="/Users/yyf/Desktop/012904_j6uj_876354.png" alt="img"></p>
+<h2 id="汇聚层-池化层-pool层"><a href="#汇聚层-池化层-pool层" class="headerlink" title="汇聚层/池化层/pool层"></a>汇聚层/池化层/pool层</h2><p>减少神经元个数。池化层的输入一般来源于上一个卷积层，主要作用是提供了很强的鲁棒性（例如max-pooling是取一小块区域中的最大值，此时若此区域中的其他值略有变化，或者图像稍有平移，pooling后的结果仍不变），并且减少了参数的数量，防止过拟合现象的发生。<strong>池化层一般没有参数，所以反向传播的时候，只需对输入参数求导，不需要进行权值更新。</strong></p>
+<h2 id="bottle-layer-1-1卷积？"><a href="#bottle-layer-1-1卷积？" class="headerlink" title="bottle layer/1*1卷积？"></a>bottle layer/1*1卷积？</h2><p>降维</p>
+<h2 id="Dropout"><a href="#Dropout" class="headerlink" title="Dropout?"></a>Dropout?</h2><p><a href="https://zhuanlan.zhihu.com/p/38200980" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/38200980</a></p>
+<p><a href="https://blog.csdn.net/stdcoutzyx/article/details/49022443" target="_blank" rel="noopener">https://blog.csdn.net/stdcoutzyx/article/details/49022443</a></p>
+<h2 id="反卷积"><a href="#反卷积" class="headerlink" title="反卷积"></a>反卷积</h2><p><u>转置卷机：低维特征到高维特征？</u><a href="https://blog.csdn.net/Fate_fjh/article/details/52882134" target="_blank" rel="noopener">反卷积</a></p>
+<p>输出维度的大小：</p>
+<p><img src="https://www.zhihu.com/equation?tex=output+%3D+%28input+-+1%29%2Astride%2Boutputpadding+-+2%2Apadding%2Bkernelsize" alt="output = (input - 1)*stride+outputpadding - 2*padding+kernelsize"></p>
+<p>函数：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">torch</span>.<span class="title">nn</span>.<span class="title">ConvTranspose2d</span><span class="params">(in_channels, out_channels, kernel_size, stride=<span class="number">1</span>, padding=<span class="number">0</span>, </span></span></span><br><span class="line"><span class="class"><span class="params">                                                       output_padding=<span class="number">0</span>, groups=<span class="number">1</span>, bias=True, dilation=<span class="number">1</span>)</span></span></span><br><span class="line"><span class="class">##</span></span><br><span class="line"><span class="class"><span class="title">in_channels</span><span class="params">(int)</span> – 输入信号的通道数</span></span><br><span class="line"><span class="class"><span class="title">out_channels</span><span class="params">(int)</span> – 卷积产生的通道数</span></span><br><span class="line"><span class="class"><span class="title">kerner_size</span><span class="params">(int or tuple)</span> - 卷积核的大小</span></span><br><span class="line"><span class="class"><span class="title">stride</span><span class="params">(int or tuple,optional)</span> - 卷积步长，即要将输入扩大的倍数。</span></span><br><span class="line"><span class="class"><span class="title">padding</span><span class="params">(int or tuple, optional)</span> - 输入的每一条边补充0的层数，高宽都增加2*<span class="title">padding</span></span></span><br><span class="line"><span class="class"><span class="title">output_padding</span><span class="params">(int or tuple, optional)</span> - 输出边补充0的层数，高宽都增加<span class="title">padding</span></span></span><br><span class="line"><span class="class"><span class="title">groups</span><span class="params">(int, optional)</span> – 从输入通道到输出通道的阻塞连接数</span></span><br><span class="line">bias(bool, optional) - 如果bias=True，添加偏置</span><br><span class="line">dilation(int <span class="keyword">or</span> tuple, optional) – 卷积核元素之间的间距</span><br></pre></td></tr></table></figure>
+<h2 id="空洞卷机"><a href="#空洞卷机" class="headerlink" title="空洞卷机"></a>空洞卷机</h2><p>目的增加输出单元的感受野，通过增加空洞来增加大小。</p>
+<p>(如何增大感受野：增大卷机核大小，增加深度，再卷机之前进行<u>汇聚操作</u>)</p>
+<h2 id="concat-f-a-b-c-d"><a href="#concat-f-a-b-c-d" class="headerlink" title="concat/ f= [a,b,c,d]"></a>concat/ f= [a,b,c,d]</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">outputs = [branch1, branch2, branch3, branch4]</span><br><span class="line"><span class="keyword">return</span> torch.cat(outputs, <span class="number">1</span>) <span class="comment"># 按照维数1进行拼接，按列拼接。</span></span><br></pre></td></tr></table></figure>
+<h2 id="batch-normalization"><a href="#batch-normalization" class="headerlink" title="batch normalization?"></a>batch normalization?</h2><h1 id="上采样"><a href="#上采样" class="headerlink" title="上采样"></a><a href="https://zhuanlan.zhihu.com/p/48501100" target="_blank" rel="noopener">上采样</a></h1><blockquote>
+<p>在应用在计算机视觉的深度学习领域，由于输入图像通过卷积神经网络(CNN)提取特征后，输出的尺寸往往会变小，而有时我们需要将图像恢复到原来的尺寸以便进行进一步的计算(e.g.:图像的语义分割)，这个采用扩大图像尺寸，实现图像由小分辨率到大分辨率的映射的操作，叫做上采样(Upsample)。</p>
+<p>上采样有3种常见的方法：双线性插值(bilinear)，反卷积(Transposed Convolution)，反池化(Unpooling)，我们这里只讨论反卷积。这里指的反卷积，也叫转置卷积，它并不是正向卷积的完全逆过程，用一句话来解释：</p>
+</blockquote>
 <ul>
-<li><script type="math/tex; mode=display">
-\begin{aligned} u^{k+1} &=\min _{u} D_{E}^{p}\left(u, u^{k}\right)+\lambda H(u) \\ &=\min _{u} E(u)-\left\langle p^{k}, u-u^{k}\right\rangle+\lambda H(u) \\ p^{k+1} &=p^{k}-\nabla H(u^{k+1}) \end{aligned}</script><p><u>得到的解是（2.4）的最小值，且满足$H(u)=0$?  应该只是收敛到H(u)=0</u></p>
-<p>$H\left(u^{k}\right) \rightarrow 0$ as $k\rightarrow\infty$. and $H(u^{k+1})\le H(u^k)$.</p>
+<li><p>参考</p>
+<p><a href="https://zhuanlan.zhihu.com/p/67907490" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/67907490</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/48501100" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/48501100</a></p>
 </li>
-</ul>
-</li>
-<li><p>Bregman Iteration的收敛性</p>
-<p>$u^*$: $H\left(u^{k}\right) \rightarrow 0$ as $k\rightarrow\infty$. </p>
-<p>| Theorem 2.1                                                  |<br>| —————————————————————————————— |<br>| 1) Monotonic decrease in $H$: $H(u^{k+1})\leq H(u^k)$<br>2) Convergence to a minimizer of $H$ :$H(u^{k})\leq H(u^<em>)+J(u^</em>)/k$ |</p>
-<p>Proof：参考文献[21]</p>
-</li>
-</ul>
-</li>
-<li><p>Bregman iteration for constrained problem</p>
-<ul>
-<li><p>目标方程(2.4)</p>
-<script type="math/tex; mode=display">
-\min _{u} E(u) \text { such that } \mathrm{Au}=\mathrm{b}</script><p>等价于无约束问题(2.5)当$\lambda\rightarrow\infty$，如PPA算法，但是$\lambda$很大时不好求解</p>
-<script type="math/tex; mode=display">
-\min _{u} E(u)+\frac{\lambda}{2}\|A u-b\|_{2}^{2}</script></li>
-<li><p>对(2.5)使用Bregman iteration [30][21]</p>
-<script type="math/tex; mode=display">
-\begin{aligned} u^{k+1} &=\min _{u} D_{E}^{p}\left(u, u^{k}\right)+\frac{\lambda}{2}\|A u-b\|_{2}^{2} \\ &=\min _{u} E(u)-\left\langle p^{k}, u-u^{k}\right\rangle+\frac{\lambda}{2}\|A u-b\|_{2}^{2} \\ p^{k+1} &=p^{k}-\lambda A^{T}\left(A u^{k+1}-b\right) \end{aligned}</script><p>当$A$是线性的时候，可简化为</p>
-<script type="math/tex; mode=display">
-\begin{aligned} u^{k+1} &=\min _{u} E(u)+\frac{\lambda}{2}\left\|A u-b^{k}\right\|_{2}^{2} \\ b^{k+1} &=b^{k}+b-A u^{k} \end{aligned}</script></li>
-<li><p>证明(2.5)的Bregman迭代可以获得(2.4)的解。（解的等价性证明）</p>
-<p>| <strong>Theorem 2.2</strong>                                              |<br>| —————————————————————————————— |<br>| Let $H:R^n \rightarrow R$ be convex. Let $A: R^n \rightarrow R^m$  be linear. Consider the algorithm (2.9-2.10). Suppose that some iterate, $u^∗$ , satisﬁes $Au^∗ = b$(<strong>利用theorem2.1</strong>). Then $u^∗$ is a solution to the original constrained problem (2.4). |</p>
-<p><strong>Proof1:</strong> 参考theorem 2.2</p>
-<p>Assumption: $Au_{k+1}=b$,</p>
-<p><strong>Proof2:</strong> “A Combined First and Second Order Variational Approach for Image Reconstruction”</p>
-<p>问题：意味着任何一个lambda下的2.5的迭代解，都等价于(2.4)的解？迭代所得的解未必是(2.5)的解</p>
-</li>
-<li><p>Bregman的优点：收敛快(原因见appendix); 可以保持$\lambda$是常数，不需要变大，因此稳定。 在其他$\lambda_k$增大的情况下，需要以一种极慢的步子增大，使得算法的效率变低。</p>
-</li>
-</ul>
-</li>
-<li><p>Split Bregman for l1-regularized optimization problem (1.1) </p>
-<ul>
-<li><p>目标方程</p>
-<script type="math/tex; mode=display">
-\min _{u}|\Phi(u)|+H(u)</script><p>where |·| denotes the l1-norm, and both |Φ(u)| and H(u) are convex functions, Φ(·) to be diﬀerentiable.</p>
-</li>
-<li><p>引入一个变量d, 转化成一个约束问题</p>
-<p>(3.1) $\min \limits_{u, d}|d|+H(u) \text { such that } d=\Phi(u)$转化成一个无约束问题</p>
-<p>(3.2) $\min\limits_{u, d}|d|+H(u)+\frac{\lambda}{2}|d-\Phi(u)|_{2}^{2}$进一步转化成无约束问题</p>
-</li>
-<li><p>Bregman iteration</p>
-<script type="math/tex; mode=display">
-\begin{aligned}\left(u^{k+1}, d^{k+1}\right) &=\min _{u, d}|d|+H(u)+\frac{\lambda}{2}\left\|d-\Phi(u)-b^{k}\right\|_{2}^{2} (3.7)\\ b^{k+1} &=b^{k}+\left(\Phi\left(u^{k+1}\right)-d^{k+1}\right) (3.8)\end{aligned}</script></li>
-<li><p>Splitting technique to solve (3.7)</p>
-<script type="math/tex; mode=display">
-\begin{array}{l}{\text { Step } 1 : u^{k+1}=\min _{u} H(u)+\frac{\lambda}{2}\left\|d^{k}-\Phi(u)-b^{k}\right\|_{2}^{2}} \\ {\text { Step } 2 : d^{k+1}=\min _{d}|d|+\frac{\lambda}{2}\left\|d-\Phi\left(u^{k+1}\right)-b^{k}\right\|_{2}^{2}}\end{array}</script></li>
-<li><p>Generalized Split Bregman Iteration</p>
-<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190625055124896.png" alt="image-20190625055124896"></p>
-<p>内循环N=1即可，直观理解</p>
-<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190625055357144.png" alt="image-20190625055357144"></p>
-</li>
-</ul>
-</li>
-<li><p>Application</p>
-<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190625055621617.png" alt="image-20190625055621617"></p>
-<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190625055607524.png" alt="image-20190625055607524"></p>
-</li>
-</ul>
-<h2 id="ADMM"><a href="#ADMM" class="headerlink" title="ADMM"></a>ADMM</h2><h2 id="ADMM和Split-bregman的关系"><a href="#ADMM和Split-bregman的关系" class="headerlink" title="ADMM和Split bregman的关系"></a>ADMM和Split bregman的关系</h2><ul>
-<li><p>和Split Bregman的等价性proof</p>
-<p>Applications of Lagrangian-Based Alternating Direction Methods and Connections to Split Bregman [2009]</p>
-</li>
-<li><p>ADMM 最早分别由 Glowinski &amp; Marrocco 及 Gabay &amp; Mercier 于 1975 年和 1976 年提出，并被 Boyd 等人于 2011 年重新综述并证明其适用于大规模分布式优化问题。由于 ADMM 的提出早于大规模分布式计算系统和大规模优化问题的出现，所以在 2011 年以前，这种方法并不广为人知。</p>
-</li>
-<li><p>ADMM是一种ALM的方法。PPA也是。</p>
-</li>
-<li><p>Related Algorithm</p>
-<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190723150552390.png" alt="image-20190723150552390"></p>
-</li>
-<li><p>来自Dual ascent+approximate</p>
-<p>Primal ascent，因为函数不具有连续性，有很多断掉的极大值点。</p>
-<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190723175554735.png" alt="image-20190723175554735"></p>
-<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190723175611856.png" alt="image-20190723175611856"></p>
-</li>
-</ul>
-<h2 id="PPA（1976）"><a href="#PPA（1976）" class="headerlink" title="PPA（1976）"></a>PPA（1976）</h2><h2 id="Primal-dual（2011）"><a href="#Primal-dual（2011）" class="headerlink" title="Primal-dual（2011）"></a>Primal-dual（2011）</h2><ul>
-<li>A First-Order Primal-Dual Algorithm for Convex Problems with Applications to Imaging</li>
-</ul>
-<h1 id="二阶算法"><a href="#二阶算法" class="headerlink" title="二阶算法"></a>二阶算法</h1><h2 id="Inexact-Lagrangian-牛顿法"><a href="#Inexact-Lagrangian-牛顿法" class="headerlink" title="Inexact Lagrangian + 牛顿法"></a>Inexact Lagrangian + 牛顿法</h2><ul>
-<li><p>A highly eﬃcient semismooth Newton augmented Lagrangian method for solving Lasso problems</p>
-<p><a href="http://www.mypolyuweb.hk/~dfsun/" target="_blank" rel="noopener">code++</a>、<a href="http://www.math.nus.edu.sg/~mattohkc/SuiteLasso.html" target="_blank" rel="noopener">SuiteLasso</a></p>
-</li>
-<li><p>无约束问题转化成约束问题</p>
-<script type="math/tex; mode=display">
-\text { (P) } \max -\{f(x)=h(\mathcal{A} x)-\langle c, x\rangle+ p(x)\}</script><script type="math/tex; mode=display">
-\text { (P) } \max -\{f(x)=h(\mathcal{A} x)-\langle c, x\rangle+ p(x)\}</script><script type="math/tex; mode=display">
-\text { (P) } \min  \{f(x)=h(\mathcal{A} x)-\langle c, x\rangle+p(x)\}</script></li>
-</ul>
-<script type="math/tex; mode=display">
-\text { (P) } \max -\{f(x)=h(\mathcal{A} x)-\langle c, x\rangle+ p(x)\}</script><script type="math/tex; mode=display">
-\text { (D) } \min \left\{h^{*}(y)+p^{*}(z) | \mathcal{A}^{*} y+z=c\right\}</script><p>  从(P)到(D)的转化过程：与增广拉格朗日的关系？</p>
-<ul>
-<li><p>Assumption:<img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190625062450759.png" alt="image-20190625062450759"></p>
-</li>
-<li><p>算法基础：An inexact augmented Lagrangian method for (D)[42]: $\lambda$是越来越大的 </p>
-<script type="math/tex; mode=display">
-l(y, z, x)=h^{*}(y)+p^{*}(z)-\left\langle x, \mathcal{A}^{*} y+z-c\right\rangle, \quad \forall(y, z, x) \in \mathcal{Y} \times \mathcal{X} \times \mathcal{X}</script><script type="math/tex; mode=display">
-\mathcal{L}_{\sigma}(y, z ; x) :=l(y, z, x)+\frac{\sigma}{2}\left\|\mathcal{A}^{*} y+z-c\right\|^{2}, \quad \forall(y, z, x) \in \mathcal{Y} \times \mathcal{X} \times \mathcal{X}</script><p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190625062337998.png" alt="image-20190625062337998"></p>
-</li>
-<li><p>算法核心</p>
-<ul>
-<li>将(18) 转化成 (22)</li>
-</ul>
-<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190625063019627.png" alt="image-20190625063019627"></p>
-<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190625063050310.png" alt="image-20190625063050310"></p>
-<ul>
-<li><p>解决（22）：Ax = 0 的方法</p>
-<p>牛顿法法</p>
-</li>
-</ul>
-</li>
-<li><p>收敛性分析</p>
-</li>
-<li><p>应用：Yuan, Y., Sun, D., &amp; Toh, K. C. (2018). An efficient semismooth Newton based algorithm for convex clustering. <em>arXiv preprint arXiv:1802.07091</em>.</p>
-</li>
-</ul>
-<h2 id="Nonconvex-牛顿法"><a href="#Nonconvex-牛顿法" class="headerlink" title="Nonconvex  + 牛顿法"></a>Nonconvex  + 牛顿法</h2><ul>
-<li>目标问题：square-root regression problem<script type="math/tex; mode=display">
-\min _{\beta \in \mathbb{R}^{n}}\{g(\beta) :=\|X \beta-b\|+\lambda p(\beta)-q(\beta)\}</script></li>
-</ul>
-<h1 id="收敛性证明"><a href="#收敛性证明" class="headerlink" title="收敛性证明"></a>收敛性证明</h1><p>一般流程：解的存在性、唯一性到算法的收敛性</p>
-<p>先证明解的存在性、通过严格凸问题得到解的唯一性、假设存在唯一解，然后收敛到最小解</p>
-<ul>
-<li><p>例子：</p>
-<p>存在性证明：A CONVEX VARIATIONAL MODEL FOR RESTORING BLURRED IMAGES WITH MULTIPLICATIVE NOISE; On the convex model of speckle reduction</p>
-<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190625072208966.png" alt="image-20190625072208966"></p>
-<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190625072239269.png" alt="image-20190625072239269"></p>
-<p>唯一性：A CONVEX VARIATIONAL MODEL FOR RESTORING BLURRED IMAGES WITH MULTIPLICATIVE NOISE; On the convex model of speckle reduction</p>
-<p>收敛性：</p>
-</li>
-</ul>
-<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><ol>
-<li>牛顿法中，P和D之间与拉格朗日的关系</li>
-<li>semismooth到底什么意思</li>
-<li>在Split Bregman中，Split Bregman下的任何lambda都是原约束问题的解？</li>
+<li><p>插值法</p>
+<ol>
+<li>最近邻插值(Nearest neighbor interpolation)</li>
+<li>双线性插值(Bi-Linear interpolation)</li>
+<li>双立方插值(Bi-Cubic interpolation)</li>
 </ol>
+</li>
+<li></li>
+</ul>
+<h1 id="卷积网络中的反向传播"><a href="#卷积网络中的反向传播" class="headerlink" title="卷积网络中的反向传播"></a>卷积网络中的反向传播</h1><ul>
+<li><p>更新W</p>
+</li>
+<li><p>更新b</p>
+</li>
+<li><p>计算反向误差</p>
+</li>
+<li><p>池化层的求导：池化层一般没有参数，所以反向传播的时候，只需对输入参数求导，不需要进行权值更新。</p>
+<p>max-pooling</p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190910203420911.png" alt="image-20190910203420911"></p>
+<p>mean-pooling</p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190910203514585.png" alt="image-20190910203514585"></p>
+</li>
+</ul>
+<h1 id="几个重要的卷积神经"><a href="#几个重要的卷积神经" class="headerlink" title="几个重要的卷积神经"></a>几个重要的卷积神经</h1><blockquote>
+<p>CNN发展至今，已经有很多变种，其中有几个经典模型在CNN发展历程中有着里程碑的意义，它们分别是：LeNet、Alexnet、Googlenet、VGG、DRL等</p>
+</blockquote>
+<h2 id="LeNet-1998"><a href="#LeNet-1998" class="headerlink" title="LeNet, 1998"></a>LeNet, 1998</h2><ul>
+<li><p>参考文献</p>
+<ul>
+<li><p>Ann LeCun 在1998年发表了关于LeNet的经典论文《Gradient-Based Learning Applied to Document Recognition 》用于识别支票上的手写字体</p>
+</li>
+<li><p><a href="https://my.oschina.net/u/876354/blog/1632862" target="_blank" rel="noopener">大话CNN经典模型：LeNet</a></p>
+</li>
+<li><p><a href="https://github.com/tiny-dnn/tiny-dnn/tree/master/examples/mnist" target="_blank" rel="noopener">原论文代码复现: tiny-dnn/tiny-dnn</a>、<a href="https://www.kaggle.com/vincentman0403/pytorch-v0-3-1b-on-mnist-by-lenet/output" target="_blank" rel="noopener">简化版本</a>(主要体现在评论区说的s2到c3的过程上, 原paper之所以那样实现，也是受限于当时的计算资源。现简化版本也符合pytorch的实现框架。)</p>
+</li>
+</ul>
+</li>
+<li><p>网络结构</p>
+<p><img src="https://blog-w.oss-cn-beijing.aliyuncs.com/2019-09-10-070344.png" alt="image-20190910150340473"></p>
+<p>S2，S4: 在汇聚层使用非线性激活函数$Y^{\prime d}=f\left(w^{d} \cdot Y^{d}+b^{d}\right)$。因此，在汇聚层也有两个参数需要训练。</p>
+<p>C3层使用了一个局部连接：</p>
+</li>
+</ul>
+<p><img src="https://static.oschina.net/uploads/space/2018/0311/013017_pIe9_876354.png" alt="img"></p>
+<p>​    F6层：84个神经元，可组成一张7*12的特征图像，可以对不同的字体进行编码</p>
+<p><img src="https://static.oschina.net/uploads/space/2018/0311/013047_ApKN_876354.png" alt="013047_ApKN_876354.png"></p>
+<p>​    输出层：    $y_{i}=\sum_{i}\left(x_{j}-w_{i j}\right)^{2}$</p>
+<ul>
+<li>激活函数：</li>
+</ul>
+<h2 id="AlexNet-2012"><a href="#AlexNet-2012" class="headerlink" title="AlexNet, 2012"></a>AlexNet, 2012</h2><ul>
+<li><p>Reference：<a href="https://zhuanlan.zhihu.com/p/22734982" target="_blank" rel="noopener">论文解读</a>、</p>
+</li>
+<li><p>AlexNet赢得了2012 年 ImageNet图像分类竞赛的冠军</p>
+</li>
+<li><p>突破点：BigData+GPU 进行并行训练，采用了 ReLU 作为非线性激活函数，使用 Dropout 防止过拟合，使用数据增强来提高模型准确率等。</p>
+</li>
+<li><p>激活函数：ReLU，线性整流函数（Rectified Linear Unit, ReLU），又称修正线性单元</p>
+<p>$\max \left(0, \mathbf{w}^{T} \mathbf{x}+b\right)$</p>
+</li>
+<li><p>AlexNet中的Pooling是重叠的，每次取3 * 3的像素做Max-Pooling，然后每次只越过2格，这样每个Pooling之间都会有一定得重叠，有利于更好地克服过拟合</p>
+</li>
+<li>减少过拟合<ul>
+<li>Data Augmentation</li>
+<li><strong>Dropout</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="Googlenet-2014"><a href="#Googlenet-2014" class="headerlink" title="Googlenet, 2014"></a>Googlenet, 2014</h2><ul>
+<li><p>Reference: <a href="https://github.com/pytorch/vision/blob/master/torchvision/models/googlenet.py" target="_blank" rel="noopener">代码</a>、<a href="https://zhuanlan.zhihu.com/p/30756181" target="_blank" rel="noopener">Inception的发展</a></p>
+</li>
+<li><p>won ImageNet 2014.</p>
+</li>
+<li><p>Inception结构</p>
+<p><img src="https://pic3.zhimg.com/80/v2-4c7116b1d363bcf9e492e8437dcc108a_hd.jpg" alt="img"></p>
+</li>
+<li><p><a href="https://pic3.zhimg.com/v2-23d077105e9f28aa56afa9e50975b69a_r.jpg" target="_blank" rel="noopener">网络结构</a></p>
+</li>
+<li><p>两个辅助的softmax分支，作用有两点，一是为了避免梯度消失，用于向前传导梯度。反向传播时如果有一层求导为0，链式求导结果则为0。二是将中间某一层输出用作分类，起到模型融合作用。</p>
+</li>
+</ul>
+<h2 id="VGG-待补充"><a href="#VGG-待补充" class="headerlink" title="VGG(待补充)"></a>VGG(待补充)</h2><h2 id="ResNet"><a href="#ResNet" class="headerlink" title="ResNet"></a>ResNet</h2><ul>
+<li><p>Reference</p>
+<ul>
+<li><p>He K, Zhang X, Ren S, Sun J. Deep residual learning for image recognition. InProceedings of the IEEE conference on computer vision and pattern recognition 2016 (pp. 770-778).</p>
+</li>
+<li><p>Identity Mappings in Deep Residual Networks</p>
+<blockquote>
+<p>1202层的ResNet出现了过拟合的问题，有待进一步改进。第二年，何的团队分析了ResNet成功的关键因素——residual block背后的算法，并对residual block以及after-addition activation进行改进，通过一系列的ablation experiments验证了，在residual block和after-addition activation上都使用identity mapping（恒等映射）时，能对模型训练产生很好的效果，通过这项改进，也成功的训练出了具有很好效果的ResNet-1001。</p>
+</blockquote>
+</li>
+<li><p><a href="https://zhuanlan.zhihu.com/p/42833949" target="_blank" rel="noopener">为什么要skip connect，深层网络难以训练的根本原因不是提速消失</a></p>
+</li>
+<li><p>为什么Residual网络效果好的原因，有很多论文在分析</p>
+</li>
+<li><p><a href="http://icml.cc/2016/tutorials/icml2016_tutorial_deep_residual_networks_kaiminghe.pdf" target="_blank" rel="noopener">何恺明的tutorial</a>(<a href="https://icml.cc/2016/tutorials/icml2016_tutorial_deep_residual_networks_kaiminghe.pdf" target="_blank" rel="noopener">https://icml.cc/2016/tutorials/icml2016_tutorial_deep_residual_networks_kaiminghe.pdf</a>)</p>
+</li>
+</ul>
+</li>
+<li><p>ResNet, 2015, 微软亚洲研究院的何凯明等人提出</p>
+</li>
+<li><p>主要贡献：网络层数从32层提到152层</p>
+</li>
+<li><p>特点：</p>
+<ol>
+<li>网络较瘦，控制了参数数量；</li>
+<li>存在明显层级，特征图个数逐层递进，保证输出特征表达能力；</li>
+<li>使用了较少的池化层，大量使用下采样，提高传播效率；</li>
+<li>没有使用Dropout，利用BN和全局平均池化进行正则化，加快了训练速度；</li>
+<li>层数较高时减少了3x3卷积个数，并用1x1卷积控制了3x3卷积的输入输出特征图数量，称这种结构为“瓶颈”(bottleneck)。</li>
+</ol>
+</li>
+<li><p><strong>残差单元：</strong> 克服了<a href="https://zhuanlan.zhihu.com/p/33006526" target="_blank" rel="noopener">梯度消失</a>的问题。<a href="https://blog.csdn.net/superCally/article/details/55671064" target="_blank" rel="noopener">DRN怎样解决了梯度消失问题？</a></p>
+</li>
+</ul>
+<h2 id="Unet，"><a href="#Unet，" class="headerlink" title="Unet，"></a>Unet，</h2><ul>
+<li><p>网络结构</p>
+<p><img src="/Users/yyf/Library/Mobile Documents/com~apple~CloudDocs/tasks/Unet.png" alt="Unet"></p>
+</li>
+</ul>
+<p>右边有上采样：</p>
+<p>上采样的方法</p>
+<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><ul>
+<li><p>叠加的时候concat为什么在维度1</p>
+<p><a href="https://blog.csdn.net/u012193416/article/details/79479935" target="_blank" rel="noopener">https://blog.csdn.net/u012193416/article/details/79479935</a></p>
+<p><a href="https://blog.csdn.net/qq_39709535/article/details/80803003" target="_blank" rel="noopener">https://blog.csdn.net/qq_39709535/article/details/80803003</a></p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/p/43c9.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="夏不哉下">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="春夏秋冬">
+    </span>
+      <header class="post-header">
+
+        
+          <h2 class="post-title" itemprop="name headline">
+              
+              <a href="/p/43c9.html" class="post-title-link" itemprop="url">深度_可解释网络</a>
+            
+          </h2>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-09-02 13:49:48 / 修改时间：14:10:31" itemprop="dateCreated datePublished" datetime="2019-09-02T13:49:48+08:00">2019-09-02</time>
+            </span>
+          
+            
+
+            
+          
+
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>193</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1 分钟</span>
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+            <h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ul>
+<li><p><a href="https://distill.pub/2018/building-blocks/?from=groupmessage&amp;isappinstalled=0" target="_blank" rel="noopener">The Building Blocks of Interpretability</a></p>
+</li>
+<li><p><a href="https://arxiv.org/abs/1901.02413" target="_blank" rel="noopener">https://arxiv.org/abs/1901.02413</a></p>
+</li>
+<li><p><a href="https://arxiv.org/abs/1602.04938" target="_blank" rel="noopener">https://arxiv.org/abs/1602.04938</a></p>
+</li>
+<li><p><a href="https://arxiv.org/abs/1806.10574" target="_blank" rel="noopener">https://arxiv.org/abs/1806.10574</a></p>
+</li>
+<li><p><a href="http://www.vision.ee.ethz.ch/ntire18/" target="_blank" rel="noopener">http://www.vision.ee.ethz.ch/ntire18/</a> 会议链接</p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/p/0.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="夏不哉下">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="春夏秋冬">
+    </span>
+      <header class="post-header">
+
+        
+          <h2 class="post-title" itemprop="name headline">
+              
+              <a href="/p/0.html" class="post-title-link" itemprop="url">未命名</a>
+            
+          </h2>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-30 14:17:08" itemprop="dateCreated datePublished" datetime="2019-08-30T14:17:08+08:00">2019-08-30</time>
+            </span>
+          
+
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>0</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1 分钟</span>
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+            
+          
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/p/0.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="夏不哉下">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="春夏秋冬">
+    </span>
+      <header class="post-header">
+
+        
+          <h2 class="post-title" itemprop="name headline">
+              
+              <a href="/p/0.html" class="post-title-link" itemprop="url">未命名</a>
+            
+          </h2>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-29 00:50:00" itemprop="dateCreated datePublished" datetime="2019-08-29T00:50:00+08:00">2019-08-29</time>
+            </span>
+          
+
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>22</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1 分钟</span>
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+            <h1 id="K-means-字典学习"><a href="#K-means-字典学习" class="headerlink" title="K-means 字典学习"></a>K-means 字典学习</h1><h1 id="K-SVD-字典学习"><a href="#K-SVD-字典学习" class="headerlink" title="K-SVD 字典学习"></a>K-SVD 字典学习</h1>
+          
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/p/9719.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="夏不哉下">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="春夏秋冬">
+    </span>
+      <header class="post-header">
+
+        
+          <h2 class="post-title" itemprop="name headline">
+              
+              <a href="/p/9719.html" class="post-title-link" itemprop="url">tight frame去噪和KSVD</a>
+            
+          </h2>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-28 15:29:59 / 修改时间：17:09:46" itemprop="dateCreated datePublished" datetime="2019-08-28T15:29:59+08:00">2019-08-28</time>
+            </span>
+          
+            
+
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/图像处理/" itemprop="url" rel="index"><span itemprop="name">图像处理</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>474</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1 分钟</span>
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+            <h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p>Cai, J. F., Ji, H., Shen, Z., &amp; Ye, G. B. (2014). <strong>Data-driven tight frame construction</strong> and image denoising. <em>Applied and Computational Harmonic Analysis</em>, <em>37</em>(1), 89-105.</p>
+<h1 id="算法框架"><a href="#算法框架" class="headerlink" title="算法框架"></a>算法框架</h1><p>和KSVD的关系</p>
+<h1 id="核心"><a href="#核心" class="headerlink" title="核心"></a>核心</h1><h1 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h1><ul>
+<li><p>与K-SVD的比较</p>
+<blockquote>
+<p>There are images on which the K-SVD method performed better and there are some on which our approaches performed better. <strong>Overall, the performances of our proposed method and the K-SVD method are comparable in terms of PSNR value, and so is the visual quality.</strong></p>
+</blockquote>
+</li>
+<li></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ysix7.github.io/p/c0c5.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="夏不哉下">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="春夏秋冬">
+    </span>
+      <header class="post-header">
+
+        
+          <h2 class="post-title" itemprop="name headline">
+              
+              <a href="/p/c0c5.html" class="post-title-link" itemprop="url">深度_Unet</a>
+            
+          </h2>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-28 12:13:46" itemprop="dateCreated datePublished" datetime="2019-08-28T12:13:46+08:00">2019-08-28</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-09-23 20:52:16" itemprop="dateModified" datetime="2019-09-23T20:52:16+08:00">2019-09-23</time>
+              </span>
+            
+          
+
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>1.2k</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1 分钟</span>
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+            <h1 id="图像语义分割"><a href="#图像语义分割" class="headerlink" title="图像语义分割"></a>图像语义分割</h1><ul>
+<li><a href="https://zhuanlan.zhihu.com/p/43422162" target="_blank" rel="noopener">图像分割综述</a></li>
+</ul>
+<h1 id="U-net"><a href="#U-net" class="headerlink" title="U-net"></a>U-net</h1><ul>
+<li><p><strong>Reference</strong> Ronneberger, Olaf, Philipp Fischer, and Thomas Brox. “U-net: Convolutional networks for biomedical image segmentation.” International Conference on Medical image computing and computer-assisted intervention. Springer, Cham, 2015.</p>
+<p><a href="https://arxiv.org/pdf/1505.04597.pdf" target="_blank" rel="noopener">U-Net论文</a>、<a href="https://blog.csdn.net/dugudaibo/article/details/82934731" target="_blank" rel="noopener">U-Net论文笔记</a>、<a href="https://zhuanlan.zhihu.com/p/37496466" target="_blank" rel="noopener">U-Net论文笔记</a>、<a href="https://zhuanlan.zhihu.com/p/37496466" target="_blank" rel="noopener">U-Net论文笔记知乎</a></p>
+</li>
+<li><p>网络结构</p>
+<p><img src="/Users/yyf/Library/Mobile Documents/com~apple~CloudDocs/tasks/Unet.png" alt="Unet"></p>
+</li>
+<li><p>各层作用</p>
+<p>conv：</p>
+<p>pool：</p>
+<p>up-conv：</p>
+<p>conv 1*1：</p>
+<ul>
+<li>Reference: <a href="https://zhuanlan.zhihu.com/p/29119239" target="_blank" rel="noopener">CNN中卷积层的计算细节</a>、<a href="https://zhuanlan.zhihu.com/p/41696749" target="_blank" rel="noopener">卷积层与池化层</a>、<a href="https://blog.csdn.net/l691899397/article/details/52250190" target="_blank" rel="noopener">池化层的实现、反向传播</a></li>
+</ul>
+<p>up，downsample，deconvolution， batch normalization…</p>
+<p>normalization有很多方法，VGG-Net，Stride</p>
+<p>反卷积：<a href="https://blog.csdn.net/Fate_fjh/article/details/52882134" target="_blank" rel="noopener">https://blog.csdn.net/Fate_fjh/article/details/52882134</a></p>
+</li>
+<li><p>Code链接</p>
+</li>
+<li><p>代码分析</p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190828140935609.png" alt="image-20190828140935609"></p>
+</li>
+</ul>
+<h1 id="Attention-U-net"><a href="#Attention-U-net" class="headerlink" title="Attention U-net"></a>Attention U-net</h1><ul>
+<li><p>Key Idea: Produce foreground masks via feature maps to filter out backgournd information</p>
+<p>关注点在前景，比Unet多了attention gate</p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190828130553570.png" alt="image-20190828130553570"></p>
+</li>
+<li><p>Unet</p>
+</li>
+</ul>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190828130455545.png" alt="image-20190828130455545"></p>
+<ul>
+<li><p>Attention Unet</p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190828130522261.png" alt="image-20190828130522261"></p>
+</li>
+</ul>
+<h1 id="Regularized-UNet-for-Automated-Pancreas-Segmentation"><a href="#Regularized-UNet-for-Automated-Pancreas-Segmentation" class="headerlink" title="Regularized UNet for Automated Pancreas Segmentation"></a>Regularized UNet for Automated Pancreas Segmentation</h1><h1 id="不同Unet的对比"><a href="#不同Unet的对比" class="headerlink" title="不同Unet的对比"></a>不同Unet的对比</h1><p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190731201343360.png" alt="image-20190731201343360"></p>
+<h1 id="Holistically-nested-Convolutional-Neural-Networks"><a href="#Holistically-nested-Convolutional-Neural-Networks" class="headerlink" title="Holistically-nested Convolutional Neural Networks"></a>Holistically-nested Convolutional Neural Networks</h1><h1 id="Hierarchical-3D-fully-Convolutional-Networks-for-Multi-organ-Segmentation"><a href="#Hierarchical-3D-fully-Convolutional-Networks-for-Multi-organ-Segmentation" class="headerlink" title="Hierarchical 3D fully Convolutional Networks for Multi-organ Segmentation"></a>Hierarchical 3D fully Convolutional Networks for Multi-organ Segmentation</h1><h1 id="A-Fixed-Point-Model-for-Pancreas-Segmentation-in-Abdominal-CT-Scans"><a href="#A-Fixed-Point-Model-for-Pancreas-Segmentation-in-Abdominal-CT-Scans" class="headerlink" title="A Fixed-Point Model for Pancreas Segmentation in Abdominal CT Scans"></a>A Fixed-Point Model for Pancreas Segmentation in Abdominal CT Scans</h1><h1 id="A-3D-Coarse-to-Fine-Framework-for-Volumetric-Medical-Image-Segmentation"><a href="#A-3D-Coarse-to-Fine-Framework-for-Volumetric-Medical-Image-Segmentation" class="headerlink" title="A 3D Coarse-to-Fine Framework for Volumetric Medical Image Segmentation"></a>A 3D Coarse-to-Fine Framework for Volumetric Medical Image Segmentation</h1><h1 id="Fully-Automated-Pancreas-Segmentation-with-Two-stage-3D-Convolutional-Neural-Networks"><a href="#Fully-Automated-Pancreas-Segmentation-with-Two-stage-3D-Convolutional-Neural-Networks" class="headerlink" title="Fully Automated Pancreas Segmentation with Two-stage 3D Convolutional Neural Networks"></a>Fully Automated Pancreas Segmentation with Two-stage 3D Convolutional Neural Networks</h1><h1 id="胰脏分割"><a href="#胰脏分割" class="headerlink" title="胰脏分割"></a>胰脏分割</h1><p>从coarse到fine</p>
+<p>Attention U-net： 关注点在前景，比Unet多了attention gate</p>
 
           
         
@@ -2116,7 +1650,7 @@ l(y, z, x)=h^{*}(y)+p^{*}(z)-\left\langle x, \mathcal{A}^{*} y+z-c\right\rangle,
         
           <h2 class="post-title" itemprop="name headline">
               
-              <a href="/p/acef.html" class="post-title-link" itemprop="url">美食地图</a>
+              <a href="/p/acef.html" class="post-title-link" itemprop="url">咖啡</a>
             
           </h2>
         
@@ -2132,7 +1666,7 @@ l(y, z, x)=h^{*}(y)+p^{*}(z)-\left\langle x, \mathcal{A}^{*} y+z-c\right\rangle,
                 
               
 
-              <time title="创建时间：2019-06-21 15:51:06" itemprop="dateCreated datePublished" datetime="2019-06-21T15:51:06+08:00">2019-06-21</time>
+              <time title="创建时间：2019-08-25 22:42:23" itemprop="dateCreated datePublished" datetime="2019-08-25T22:42:23+08:00">2019-08-25</time>
             </span>
           
             
@@ -2143,7 +1677,7 @@ l(y, z, x)=h^{*}(y)+p^{*}(z)-\left\langle x, \mathcal{A}^{*} y+z-c\right\rangle,
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-17 14:37:26" itemprop="dateModified" datetime="2019-08-17T14:37:26+08:00">2019-08-17</time>
+                <time title="修改时间：2019-10-07 16:13:53" itemprop="dateModified" datetime="2019-10-07T16:13:53+08:00">2019-10-07</time>
               </span>
             
           
@@ -2170,7 +1704,7 @@ l(y, z, x)=h^{*}(y)+p^{*}(z)-\left\langle x, \mathcal{A}^{*} y+z-c\right\rangle,
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>1.4k</span>
+              <span>101</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -2194,90 +1728,8 @@ l(y, z, x)=h^{*}(y)+p^{*}(z)-\left\langle x, \mathcal{A}^{*} y+z-c\right\rangle,
 
       
           
-            <h1 id="尖沙咀"><a href="#尖沙咀" class="headerlink" title="尖沙咀"></a>尖沙咀</h1><p><img src="https://blog-w.oss-cn-beijing.aliyuncs.com/2019-07-03-045243.png" alt="image-20190621155028543"></p>
-<p>海港城旁边： DFS，Aqua spirit，</p>
-<p>把地铁口也标上</p>
-<p>买小熊饼干：在美丽华商厦，是个类似重庆大楼的开放的楼</p>
-<p>旺记冰室/一兰拉面：</p>
-<p> 妈咪鸡蛋仔和薯条/；</p>
-<p>冰淇淋；送他们上船；</p>
-<p>点心：好运添，唐宫小聚（新式）</p>
-<p>火锅：火水爐冰室火鍋 旺角</p>
-<p><a href="https://www.openrice.com/zh/hongkong/r-%E7%81%AB%E6%B0%B4%E7%88%90%E5%86%B0%E5%AE%A4%E7%81%AB%E9%8D%8B-%E6%97%BA%E8%A7%92-%E6%B8%AF%E5%BC%8F-%E7%81%AB%E9%8D%8B-r544211/reviews" target="_blank" rel="noopener">https://www.openrice.com/zh/hongkong/r-%E7%81%AB%E6%B0%B4%E7%88%90%E5%86%B0%E5%AE%A4%E7%81%AB%E9%8D%8B-%E6%97%BA%E8%A7%92-%E6%B8%AF%E5%BC%8F-%E7%81%AB%E9%8D%8B-r544211/reviews</a> </p>
-<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190623004929530.png" alt="image-20190623004929530"></p>
-<h1 id="岛上"><a href="#岛上" class="headerlink" title="岛上"></a>岛上</h1><h1 id="拍照"><a href="#拍照" class="headerlink" title="拍照"></a>拍照</h1><p><img src="/Users/yyf/Library/Containers/com.tencent.xinWeChat/Data/Library/Application Support/com.tencent.xinWeChat/2.0b4.0.9/fe11254b8abd42aa6171c5844ef84c2e/Message/MessageTemp/9e20f478899dc29eb19741386f9343c8/Image/191563885086_.pic.jpg" alt="191563885086_.pic"></p>
-<h1 id="购物"><a href="#购物" class="headerlink" title="购物"></a>购物</h1><p><img src="/Users/yyf/Library/Containers/com.tencent.xinWeChat/Data/Library/Application Support/com.tencent.xinWeChat/2.0b4.0.9/fe11254b8abd42aa6171c5844ef84c2e/Message/MessageTemp/9e20f478899dc29eb19741386f9343c8/Image/201563885236_.pic.jpg" alt="201563885236_.pic"></p>
-<h1 id="清单"><a href="#清单" class="headerlink" title="清单"></a>清单</h1><p>去一个岛徒步/长洲岛/西贡，晚上坐船吃冰淇淋：夏天小清新风</p>
-<p>去吃茶餐厅</p>
-<p>去坐傍晚的叮叮车，吃shakeshack</p>
-<p>去逛香港的超市，买寿司当晚餐，咸蛋黄鸡蛋仔</p>
-<p>吃大排档：晚上</p>
-<p>搬家+看演唱会</p>
-<p>点心：周记点点心，</p>
-<h1 id="西安"><a href="#西安" class="headerlink" title="西安"></a>西安</h1><ul>
-<li><a href="https://www.zhihu.com/question/30342566" target="_blank" rel="noopener">西安及周边100公里内有哪些冷门但非常值得一去的地方？</a></li>
-<li><a href="https://www.zhihu.com/question/19863530/answer/30543158?utm_source=wechat_session&amp;utm_medium=social&amp;utm_oi=31718778077184" target="_blank" rel="noopener">西安值得吃的地方</a></li>
-<li><a href="https://www.zhihu.com/question/28309082/answer/93052568" target="_blank" rel="noopener">西安有哪些可以安静地待一下午的地方？</a></li>
-<li>踩过的雷：top1的六🈴️汤包</li>
-</ul>
-<p><strong>市区：</strong></p>
-<ul>
-<li><p>大雁塔：美术馆、回民街、洒金桥、钟鼓楼</p>
-</li>
-<li><p>西安明城墙： 推荐环墙一周的自行车。西安城墙是中国现存规模最大、保存最完整的古代城垣。现存城墙为眀代建筑,全长13.7千米,位于西安市中心,送我们过去的司机师傅说起城墙那种油然而生发自內心的自豪感满满都是</p>
-</li>
-<li><p>大明宫遗址公园：这个是热门，但冷门玩法是傍晚去</p>
-</li>
-<li><p>八仙宫古玩市场，八仙庵，，离永兴坊不远</p>
-</li>
-<li><p>顺城巷：一侧是巍巍古城墙，一侧是秀丽端庄的明清古建。、食店、酒吧、咖啡屋，更有一些秦腔或相声曲艺社，院门半掩静待听客到访。</p>
-</li>
-<li><p>环城公园：以护城河为线，在城墙根下围绕着明城墙修建的环城公园，是西安本地人运动、散步、休闲的好去处</p>
-</li>
-</ul>
-<p><strong>较远：</strong></p>
-<ul>
-<li><p>秦岭：东梁山(冷门)；黑河；楼观台；黎元坪。</p>
-</li>
-<li><p>西岳庙。一般游客都会去华山,很少会去西岳庙。但是西岳庙有着非常精美的明清建筑,而且面积</p>
-</li>
-</ul>
-<p>巨大,文革期间用作军营所以保存的不错,不过这里和华山是联票,如果去华山的话一定要抽时间</p>
-<p>去西岳庙。</p>
-<ul>
-<li>碑林博物馆。这个根本就不算冷门,不过还是小众一些,书法爱好者的圣地。而且这里面还有昭陵</li>
-</ul>
-<p>骏和景云钟。里面的佛像石刻更是精美绝伦。另外碑林旁边有一个卧龙寺,是陕西第一所寺庙,</p>
-<p>也可以看看。</p>
-<ul>
-<li>关中民俗艺术博物院。坐标南五台</li>
-</ul>
-<p>坐标南五台。是一家私人关中民俗博物院,建筑精美,藏品丰富。</p>
-<p>很感激有这样的收藏家能够将关中民俗有条理的收藏保存,对外开放,</p>
-<p>门票略贵,120元,但还是非常值得去感受一下,尤其是如果身边有外国友人,非常推荐带他们来</p>
-<p>这里,绝对会对西安、对中国会有更深一层的认识。</p>
-<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190706003050116.png" alt="image-20190706003050116"></p>
-<h1 id="西安吃的"><a href="#西安吃的" class="headerlink" title="西安吃的"></a>西安吃的</h1><p>马峰小炒（好吃！！但拍得不好看，见谅）：</p>
-<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190706004524589.png" alt="image-20190706004524589"></p>
-<p><strong>定家小酥肉</strong></p>
-<p>地址：酿皮隔壁</p>
-<p><strong>东南亚甑糕 西羊市</strong></p>
-<p>面：<strong>马虎面馆 连锁店</strong>，<strong>马虎面馆 连锁店</strong>，<strong>英子牛肉面 景观路</strong></p>
-<p>夜宵：小佐烤肉(开元路总店)</p>
-<h1 id="咖啡馆、小情调"><a href="#咖啡馆、小情调" class="headerlink" title="咖啡馆、小情调"></a>咖啡馆、小情调</h1><ul>
-<li><p><strong>曼蒂广场</strong></p>
-<p>人不多的一个商场,店其实也不多。但是艺术感很强,经常有一些画或雕塑的小展览。里面的虫儿</p>
-<p>咖啡、均记咖啡的装修风格我都很喜欢。就连这里的<strong>米家大雨泡馍</strong>都是咖啡馆式的木质深色装修风</p>
-<p>格,很是雅致,如果请人吃泡馍还不想环境脏乱差的话可以考虑这里。</p>
-</li>
-<li><p><strong>陕西省图书馆</strong>。</p>
-</li>
-<li><p><strong>曲江书城</strong></p>
-<p>书城提供很多座位、小沙发，看书很惬意。</p>
-</li>
-<li><p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190706005746707.png" alt="image-20190706005746707"></p>
-</li>
-</ul>
+            <h1 id="咖啡的配方"><a href="#咖啡的配方" class="headerlink" title="咖啡的配方"></a>咖啡的配方</h1><h1 id="打奶"><a href="#打奶" class="headerlink" title="打奶"></a>打奶</h1><p><a href="https://www.youtube.com/watch?v=-kvY2AmbLOE" target="_blank" rel="noopener">https://www.youtube.com/watch?v=-kvY2AmbLOE</a></p>
+<p>拿铁、拉花 <a href="https://www.youtube.com/watch?v=h3S_ClRFxX4" target="_blank" rel="noopener">https://www.youtube.com/watch?v=h3S_ClRFxX4</a></p>
 
           
         
@@ -2302,7 +1754,7 @@ l(y, z, x)=h^{*}(y)+p^{*}(z)-\left\langle x, \mathcal{A}^{*} y+z-c\right\rangle,
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -2338,7 +1790,7 @@ l(y, z, x)=h^{*}(y)+p^{*}(z)-\left\langle x, \mathcal{A}^{*} y+z-c\right\rangle,
         
           <a href="/archives">
         
-          <span class="site-state-item-count">38</span>
+          <span class="site-state-item-count">59</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -2410,9 +1862,7 @@ l(y, z, x)=h^{*}(y)+p^{*}(z)-\left\langle x, \mathcal{A}^{*} y+z-c\right\rangle,
         
           
         
-          
-        
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
@@ -2476,14 +1926,14 @@ l(y, z, x)=h^{*}(y)+p^{*}(z)-\left\langle x, \mathcal{A}^{*} y+z-c\right\rangle,
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">120k</span>
+    <span title="站点总字数">163k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">1:49</span>
+    <span title="站点阅读时长">2:29</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
   <span class="post-meta-divider">|</span>
@@ -2598,59 +2048,8 @@ l(y, z, x)=h^{*}(y)+p^{*}(z)-\left\langle x, \mathcal{A}^{*} y+z-c\right\rangle,
       
     
       
-        
-      
     
       
-    
-  
-    
-      <script type="text/x-mathjax-config">
-
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-      processEscapes: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-      equationNumbers: {
-        autoNumber: 'AMS'
-      }
-    }
-  });
-
-  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
-      if (data.display) {
-        var next = data.script.nextSibling;
-        while (next && next.nodeName.toLowerCase() === '#text') {
-          next = next.nextSibling;
-        }
-        if (next && next.nodeName.toLowerCase() === 'br') {
-          next.parentNode.removeChild(next);
-        }
-      }
-    });
-  });
-
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for (i = 0; i < all.length; i += 1) {
-      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
-      if (element.nodeName.toLowerCase() == 'li') {
-        element = element.parentNode;
-      }
-      element.classList.add('has-jax');
-    }
-  });
-</script>
-<script>
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', function() {
-    MathJax.Hub.Typeset();
-  }, window.MathJax);
-</script>
-
     
   
 

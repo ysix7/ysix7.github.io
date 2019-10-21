@@ -57,18 +57,26 @@
   };
 </script>
 
-  <meta name="description" content="参考资料 Edge detection ppt  Edge detection blog  Edge detection matlab  图像的二阶信息   传统数学方法发展过程 一阶、二阶、优点、缺点、鲁棒性 canny  Sobel code++ I. Sobel. Camera models and machine perception. Technical report, DTIC Doc">
+  <meta name="description" content="参考资料 Edge detection ppt Edge detection blog Edge detection matlab 图像的二阶信息   传统数学方法发展过程 一阶、二阶、优点、缺点、鲁棒性 canny  Sobel code++ I. Sobel. Camera models and machine perception. Technical report, DTIC Docume">
 <meta property="og:type" content="article">
 <meta property="og:title" content="图形边缘提取">
 <meta property="og:url" content="https://ysix7.github.io/p/be62.html">
 <meta property="og:site_name" content="春夏秋冬">
-<meta property="og:description" content="参考资料 Edge detection ppt  Edge detection blog  Edge detection matlab  图像的二阶信息   传统数学方法发展过程 一阶、二阶、优点、缺点、鲁棒性 canny  Sobel code++ I. Sobel. Camera models and machine perception. Technical report, DTIC Doc">
+<meta property="og:description" content="参考资料 Edge detection ppt Edge detection blog Edge detection matlab 图像的二阶信息   传统数学方法发展过程 一阶、二阶、优点、缺点、鲁棒性 canny  Sobel code++ I. Sobel. Camera models and machine perception. Technical report, DTIC Docume">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190623174549671.png">
-<meta property="og:updated_time" content="2019-08-17T06:37:26.733Z">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190830163049183.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190830163634802.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190902205601640.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190903005732909.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190904102152196.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20191008153226604.png">
+<meta property="og:image" content="https://blog-w.oss-cn-beijing.aliyuncs.com/2019-10-08-121937.png">
+<meta property="og:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20191009143222897.png">
+<meta property="og:updated_time" content="2019-10-09T14:52:57.371Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="图形边缘提取">
-<meta name="twitter:description" content="参考资料 Edge detection ppt  Edge detection blog  Edge detection matlab  图像的二阶信息   传统数学方法发展过程 一阶、二阶、优点、缺点、鲁棒性 canny  Sobel code++ I. Sobel. Camera models and machine perception. Technical report, DTIC Doc">
+<meta name="twitter:description" content="参考资料 Edge detection ppt Edge detection blog Edge detection matlab 图像的二阶信息   传统数学方法发展过程 一阶、二阶、优点、缺点、鲁棒性 canny  Sobel code++ I. Sobel. Camera models and machine perception. Technical report, DTIC Docume">
 <meta name="twitter:image" content="https://ysix7.github.io/Users/yyf/Library/Application%20Support/typora-user-images/image-20190623174549671.png">
   <link rel="canonical" href="https://ysix7.github.io/p/be62">
 
@@ -175,7 +183,7 @@
       
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">13</span></a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">12</span></a>
 
   </li>
       
@@ -415,7 +423,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-17 14:37:26" itemprop="dateModified" datetime="2019-08-17T14:37:26+08:00">2019-08-17</time>
+                <time title="修改时间：2019-10-09 22:52:57" itemprop="dateModified" datetime="2019-10-09T22:52:57+08:00">2019-10-09</time>
               </span>
             
           
@@ -450,7 +458,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>933</span>
+              <span>8.9k</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -460,7 +468,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span>1 分钟</span>
+              <span>8 分钟</span>
             </span>
           
 
@@ -474,14 +482,11 @@
 
       
         <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
-<li><p><a href="http://www.me.umn.edu/courses/me5286/vision/VisionNotes/2017/ME5286-Lecture7-2017-EdgeDetection2.pdf" target="_blank" rel="noopener">Edge detection ppt</a></p>
-</li>
-<li><p><a href="http://www.aishack.in/tutorials/sobel-laplacian-edge-detectors/" target="_blank" rel="noopener">Edge detection blog</a></p>
-</li>
-<li><p><a href>Edge detection matlab</a></p>
-</li>
-<li><p><a href="https://blog.csdn.net/saltriver/article/details/78990575" target="_blank" rel="noopener">图像的二阶信息</a></p>
-</li>
+<li><a href="http://www.me.umn.edu/courses/me5286/vision/VisionNotes/2017/ME5286-Lecture7-2017-EdgeDetection2.pdf" target="_blank" rel="noopener">Edge detection ppt</a></li>
+<li><a href="http://www.aishack.in/tutorials/sobel-laplacian-edge-detectors/" target="_blank" rel="noopener">Edge detection blog</a></li>
+<li><a href>Edge detection matlab</a></li>
+<li><a href="https://blog.csdn.net/saltriver/article/details/78990575" target="_blank" rel="noopener">图像的二阶信息</a></li>
+<li></li>
 </ul>
 <h1 id="传统数学方法"><a href="#传统数学方法" class="headerlink" title="传统数学方法"></a>传统数学方法</h1><p>发展过程</p>
 <p>一阶、二阶、优点、缺点、鲁棒性</p>
@@ -506,11 +511,253 @@
 <li><p>Liu, Y., Cheng, M.M., Hu, X., Wang, K., Bai, X.: <strong>Richer convolutional features for edge detection.</strong> In: Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 3000–3009 (2017)</p>
 </li>
 </ul>
-<h1 id="Laplacian的方法"><a href="#Laplacian的方法" class="headerlink" title="Laplacian的方法"></a>Laplacian的方法</h1><h1 id="边缘加强去噪"><a href="#边缘加强去噪" class="headerlink" title="边缘加强去噪"></a>边缘加强去噪</h1><p>二阶算子或者一阶算子</p>
+<h1 id="Laplacian方法"><a href="#Laplacian方法" class="headerlink" title="Laplacian方法"></a>Laplacian方法</h1><h1 id="边缘加强去噪"><a href="#边缘加强去噪" class="headerlink" title="边缘加强去噪"></a>边缘加强去噪</h1><p>二阶算子或者一阶算子</p>
 <p>边缘</p>
 <ul>
 <li>二阶算子对应其他边缘 如canny边缘或者sobel边缘 能否有这个结果</li>
+</ul>
+<h1 id="实验记录"><a href="#实验记录" class="headerlink" title="实验记录"></a>实验记录</h1><h2 id="08-30"><a href="#08-30" class="headerlink" title="08.30"></a>08.30</h2><ul>
+<li><p>原来的网络，更新了input和label的建立方法。</p>
+<p>单独训练gx和gy，因为divergence可以通过gx和gy得到。</p>
+<p>label: gx</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">image = im2double(uint8(image));</span><br><span class="line">image = double(image);</span><br><span class="line">[gx, gy] = gradient(image);</span><br><span class="line">edge = gy+<span class="number">0.5</span>;</span><br></pre></td></tr></table></figure>
+<p>Label:gx_YY</p>
+</li>
+</ul>
+<ul>
+<li><p>训练样本：detail_gradient15_gx.h5、detail_gradient15_gy.h5</p>
+<p>将image归一化后求梯度，在DIV2数据中范围在[-0.4,+0.4]</p>
+<p>将归一化后的g_15和gx作为输入和label</p>
+</li>
+<li><p>目前训练获得一个依然携带噪声的灰度图</p>
+</li>
+<li><p>下一步实验计划</p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190830163049183.png" alt="image-20190830163049183"></p>
+</li>
+<li><p>目前问题</p>
+<p>训练loss回升的原因</p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190830163634802.png" alt="image-20190830163634802"></p>
+</li>
+</ul>
+<h2 id="09-01"><a href="#09-01" class="headerlink" title="09.01"></a>09.01</h2><ul>
+<li><p>验证是否gx的信息也可以辅助去噪，不一定要二阶信息。</p>
+<ul>
+<li><p>matlab自带的gradient操作</p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190902205601640.png" alt="image-20190902205601640"></p>
+</li>
+<li><p>结论：原图的gx也能帮助图像复原，比gxgy的信息的效果稍差一点。</p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190903005732909.png" alt="image-20190903005732909"></p>
+<p>但是对gx的偏移或者缩放都会严重影响辅助效果，通常是没有效果。</p>
+</li>
+<li><p>计算是一同缩放或者平移的影响</p>
+</li>
+<li><p>一阶边缘和二阶边缘的区别</p>
+<p>一阶边缘更像是一个浮雕图。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="09-04"><a href="#09-04" class="headerlink" title="09/04"></a>09/04</h2><h3 id="不同的网络，不同的label，训练灰度图的结果"><a href="#不同的网络，不同的label，训练灰度图的结果" class="headerlink" title="不同的网络，不同的label，训练灰度图的结果"></a>不同的网络，不同的label，训练灰度图的结果</h3><p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20190904102152196.png" alt="image-20190904102152196"></p>
+<p>1.天蓝色：Unet,         label-&gt;gradientX用的是自己写的gradient_x</p>
+<p>2.深红:      Ljc的Net，label-&gt;gradientX用的是自己写的gradient_x，网络的影响不大</p>
+<p>3.深蓝色：Unet,        label-&gt;gradientY用的是系统</p>
+<p>4.黄色：   Unet,         label-&gt;gradientX用的是系统</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% 一阶边缘</span></span><br><span class="line"><span class="comment">%% 1.label: gradient matlab自带梯度</span></span><br><span class="line">image = im2double(uint8(image));</span><br><span class="line">image = double(image);</span><br><span class="line">[gx, gy] = gradient(image); <span class="comment">%[-0.3, 0.3]</span></span><br><span class="line">edge1 = gx+<span class="number">0.5</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">%% 2.label: gradient_x 相邻两个像素点的差值</span></span><br><span class="line">edge = gradient_x(image)    <span class="comment">% [-0.6, 0.6]</span></span><br><span class="line">edge2 = edge/<span class="number">2.0</span>+<span class="number">0.5</span>				<span class="comment">% [0.2, 0.8];</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">% 二阶边缘</span></span><br><span class="line"><span class="comment">%% zeng的edge</span></span><br><span class="line">gx = gx./<span class="built_in">sqrt</span>(gx.^<span class="number">2</span>+gy.^<span class="number">2</span>+<span class="number">1</span>);</span><br><span class="line">gy = gy./<span class="built_in">sqrt</span>(gx.^<span class="number">2</span>+gy.^<span class="number">2</span>+<span class="number">1</span>);</span><br><span class="line">edge = divergence(gx,gy); [<span class="number">-0.6</span>, <span class="number">0.6</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">%% 3.label 归一化的二阶边缘：训练出来的结果比shift好。但是网络并没有收敛的趋势？</span></span><br><span class="line">MaxValue = <span class="built_in">max</span>(<span class="built_in">max</span>(edge));</span><br><span class="line">MinValue = <span class="built_in">min</span>(<span class="built_in">min</span>(edge));</span><br><span class="line">edge2=(edge-MinValue)/(MaxValue-MinValue);</span><br><span class="line"></span><br><span class="line"><span class="comment">%% 4.divgradient：算子的运算更直接, 对应divgradient_T转置</span></span><br><span class="line">edge3 = divgradient(ftrue); # [-0.6, 0.6]</span><br><span class="line"><span class="comment">% label_divgradient: edge3 = edge3/2.0;</span></span><br><span class="line"><span class="comment">% label_divgradient: edge3 = edge3/2.0+0.5;</span></span><br><span class="line"><span class="comment">% 都采用DenoiseNet，再尝试Unet</span></span><br></pre></td></tr></table></figure>
+<h3 id="正则项的改进"><a href="#正则项的改进" class="headerlink" title="正则项的改进"></a>正则项的改进</h3><ul>
+<li><p>算子和网络edge匹配</p>
+<ul>
+<li>缩放</li>
+<li>平移</li>
+<li>一阶gx下，gradient_x和label：一阶边缘系统gradient的psnr最高。视觉效果最好。</li>
+</ul>
+</li>
+<li><p>正则项的变形</p>
+<ul>
+<li><p>$|x-edge_x|_{1}+|y-edge_y|_{2}$</p>
+</li>
 <li></li>
+</ul>
+</li>
+</ul>
+<h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><ul>
+<li><p>视觉方面，噪声大的时候，新的edge能不能减少artifacts？</p>
+</li>
+<li><p>噪声低的时候，psnr能不能升高</p>
+</li>
+<li><p>重复的纹理能不能提出来</p>
+</li>
+</ul>
+<ul>
+<li><p>使用divgradient+DenoiseNet，Set12，noise=15，psnr比过bm3d, sum(bm3d)=388.4312</p>
+<ul>
+<li><p>alpha=0.1，beta=0.3, sum(psnr)= 390.5050</p>
+</li>
+<li><p>alpha=0.1，beta=0.4, sum(psnr)= 390.0549</p>
+</li>
+<li><p>alpha=0.1，beta=0.2, sum(psnr)=390.2907</p>
+</li>
+<li><p>alpha=0.07，beta=0.3, sum(psnr)=391.5980</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="09-09"><a href="#09-09" class="headerlink" title="09.09"></a>09.09</h2><ul>
+<li><p>问题一：噪声50下，原图的edge，也无法将图像复原。有斑驳。</p>
+<p>解决办法：</p>
+<ul>
+<li><p>检查有没有解错，beta很小的情况下，为什么会有斑驳，理应和没有beta是一致的</p>
+</li>
+<li><p>尝试两步解法，先tv，再edge</p>
+</li>
+</ul>
+<p>不太行：加上去的纹理像噪声</p>
+</li>
+<li><p>问题二：无法提取高噪声下的edge</p>
+<p>解决办法：用新的训练代码，或者找另一个人一起训练，先验证15下的loss和模型是差不多的效果。</p>
+</li>
+<li><p>先尝试噪声20 25 30</p>
+</li>
+</ul>
+<h1 id="论文要修改的地方"><a href="#论文要修改的地方" class="headerlink" title="论文要修改的地方"></a>论文要修改的地方</h1><ul>
+<li><p>噪声等级和噪声方差之间的关系</p>
+<p>$\sigma=15,35,50$ 标志着噪声等级。 </p>
+<p>对应均值为0，方差为$(\sigma/255)^2$的高斯白噪声。</p>
+<p>噪声的合成由matlab的imnoise完成。</p>
+</li>
+</ul>
+<h2 id="实验评价"><a href="#实验评价" class="headerlink" title="实验评价"></a>实验评价</h2><ul>
+<li><p>比较的方法</p>
+<p>NLM, BM3D, tight frame</p>
+<p>\cite{cai2014data}</p>
+</li>
+<li><p>参数的选择</p>
+<p>the code of BM3D and Tight frame are downloaded from thier official website. and run directly.?</p>
+<p>we choose the parameters for the best performance.</p>
+<p><strong>TV:</strong></p>
+<p>15, alpha=0.01, </p>
+<p>35, alpha=0.28, <strong>07_tv28.bmp</strong></p>
+<p>50, alpha=0.38, <strong>07_tv38.bmp</strong></p>
+<p><strong>Edge TV:</strong> </p>
+<p>15, alpha=0.08, beta=0.3</p>
+<p>35, alpha=0.25, beta=0.9</p>
+<p>50, alpha=0.30, beta=0.8</p>
+</li>
+<li><p>摘录</p>
+<p>g, the introduction of the second order term leads to a signiﬁcant reduction of the staircasing effect resulting in piecewise smooth images rather than piecewise constant images when using the ROF model. The superiority of an approach that combines ﬁrst and second order regularisation rather than ﬁrst order regularisation only, is conﬁrmed quantitatively by the SSIM index.</p>
+</li>
+<li><p>图片表格的改进：</p>
+<ul>
+<li><p>补充噪声级别和噪声variance之间的关系</p>
+<p>（sigma/255）^2; therefore 15 corresponds to the  50 corresponds to </p>
+</li>
+<li><p>补充参数表格</p>
+</li>
+<li><p>将所有psnr参数用红色标出，把表格转置</p>
+<p>The results are illustrated in Fig. 15 . And all the numerical mesurements of  the results of Set 12 is listed in Table 7. </p>
+<p>the psnr and ssim of the proposed methods which outperform the BM3Dis marked red in </p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20191008153226604.png" alt="image-20191008153226604"></p>
+</li>
+<li><p>图后面可以加解释</p>
+</li>
+<li><p>tight frame和BM3D的参数不需要</p>
+<p>for BM3D and tight frame，we use their code published on their</p>
+<p>and the parameters are tuned to the best  performance</p>
+</li>
+<li><p>调参的可视化</p>
+<p><img src="https://blog-w.oss-cn-beijing.aliyuncs.com/2019-10-08-121937.png" alt="Screen Shot 2019-10-08 at 8.18.45 PM"></p>
+</li>
+</ul>
+</li>
+<li><p>评价</p>
+<ul>
+<li><p>效率：</p>
+<p>For tight frame based methods,  a sparse basis for transforming the noisy images to a sparser representation is the crucial step.a over-complete dictionary is calculated for each noisy image,  where it can get a sparse representation.</p>
+<p>BM3D，block searching, time cost，Patch-based methods, searching the pixels in a similar block, and therefore cosume a lot of time</p>
+<p>p needs to be  trained for different level of noise rather than different images. for images of diﬀerent types,</p>
+</li>
+<li><p>效果</p>
+<p>these methods all work quite  well in the case of noise 15. Therefore,we have to show you the the enlaegement to see the tiny difference.</p>
+<p>Compared to BM3D, </p>
+<p>EdgeTV is more sharp in the edge, as in the 海星。</p>
+<p>It is much smoother in the smooth district,  sometimes even smoother and</p>
+<p>smoothed but not at the loss of the detail. Actually, BM3D is still oversmoothed as in the mouth of parrot.</p>
+<p>Actually, the sharp the edg</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Comparisons of denoising results with other methods on Set12</li>
+</ul>
+<h2 id="论文实验部分参考"><a href="#论文实验部分参考" class="headerlink" title="论文实验部分参考"></a>论文实验部分参考</h2><ul>
+<li><p>架构参考</p>
+<ul>
+<li><p>3.3 Inpainting</p>
+<p>3.4 Zooming</p>
+<p>3.5 Denoising</p>
+<p>阐明比较的方法；阐述各种方法中的超参，初始条件；</p>
+<p>3.5.1 Synthetic Image</p>
+<p>噪声的级别；算法的迭代次数；阐述结果的视觉效果。</p>
+<p>3.5.2 Natural Image</p>
+<p>噪声的级别；参数的设置,迭代次数；评价结果（先把表格和图标说明具体化：具体某列某个细节的描述方法）</p>
+<p>In all the experiments displayed in Fig. 15, we observe a similar phenomenon. The TV regularization contains staircasing effects and reduces the contrast or erases thin features,see the ropes in Boat. Some gray stripes on the NLTV denoising result become less notable, see the second row, fourth column in Fig. 16. NLTVG denoising results have similar problems because of an excessive blur. BM3D puts distracting artifact around ropes, see the ﬁrst row, sixth column in Fig. 16, and smooths out some of the textures on the scarf</p>
+<ul>
+<li><p>图片的组成</p>
+<p>单张图的所有噪声不同方法的结果；参数的设置；多张图的多种噪声结果；表格数值；放大区域比较</p>
+<p><img src="/Users/yyf/Library/Application Support/typora-user-images/image-20191009143222897.png" alt="image-20191009143222897"></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>阐明处理的问题：denoising, images corrupted with Gaussian noise, thus L2 norm in the fidelity term is the most suitable.</p>
+<p>比较方法: We compare our method with…</p>
+<p>参数选择: We present examples of (5.2) for alpha=, beta=.</p>
+<p>有额外说明的用Note that</p>
+<p>测试的图像：the basic synthetic test image is shown in Fig. 3.</p>
+<p>评价方法：Our main assessment for the quality of the reconstruction is the structural similarity index SSIM.</p>
+<p>The SSIM index also assesses the conservation of the structural information of the reconstructed image. N</p>
+<p>实验的终止条件:固定迭代次数</p>
+<p>评价：</p>
+</li>
+</ul>
+<ul>
+<li><p>词组摘录</p>
+<p>visual quality, visual inspection,  </p>
+</li>
+<li><p>噪声</p>
+<p>We consider additive Gaussian white noise with standard deviation σ = 0.04, 0.06 and 0.08 </p>
+<p>The noise has been produced with MATLAB’s built in function imnoise. </p>
+</li>
+<li><p>参数选择</p>
+<p>The setting of the parameters in RNLTV and NLTV is presented in Tables 5 and 6, respectively. The number of iterations 8 is both 600. BM3D does not have any input parameters (except the polluted image). The parameter of the TV model is tuned to ﬁnd the best restoration quality.</p>
+<p>The highest SSIM value for TV denoising is achieved for α = 0.12 (SSIM =0.8979) while the highest one for TV-TV 2 is achieved for α = 0.06, β = 0.03 (SSIM = 0.9081). </p>
+<p>Note, however, that this optimal combination of α and β in terms of SSIM does not always correspond to best visual result. In general, the latter corresponds to a slightly bigger β than the one chosen by SSIM, see Fig. 5(h). </p>
+</li>
+<li><p>看图说话</p>
+<p>See Fig. 4 for an visual inspection of the results for the image “Barbara” by diﬀerent methods. </p>
+<p>Figure 5 depicts one denoising example, where the original image is corrupted with Gaussian noise of variance 0.005.</p>
+<p>For better visualisation, we include the middle row slices of all the reconstructions in Fig. 6.</p>
+</li>
+<li><p>对TV的评价</p>
+<p>The TV regularization contains staircasing effects and reduces the contrast or erases thin features, see the ropes in Boat. </p>
+<p>—while being simple and efﬁciently numerically solvable.</p>
+</li>
+<li><p>不同方法的比较</p>
+<p>the performances of the K-SVD method with patch size 8×8 and our approaches with ﬁlter 8×8, 16×16 are nearly the same with similar PSNR values.</p>
+<p>Overall, the performances of our proposed method and the K-SVD method are comparable in terms of PSNR value, and so <strong>is the visual quality</strong>.</p>
+<p>There are images on which the K-SVD method performed better and there are some on which our approaches performed better.</p>
+</li>
+<li><p>时间比较</p>
+<p>Moreover, <u>the computational effort</u> needed for its numerical solution is not much more than the one needed for solving the standard ROF model [61]. For comparison the numerical solution for TGV regularisation is in general about ten times slower than this, see Table 1 at the end of the paper.</p>
+</li>
+</ul>
+<ul>
+<li><p>方法的延伸</p>
+<p>Let us note that the algorithm (5.19)–(5.23) can be easily generalised to colour images, again see [57, 76].</p>
+</li>
 </ul>
 
     </div>
@@ -531,8 +778,8 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-              <a href="/p/f54.html" rel="prev" title="胰脏分割-Unet相关论文">
-                胰脏分割-Unet相关论文 <i class="fa fa-chevron-right"></i>
+              <a href="/p/44f5.html" rel="prev" title="生成模型vs判别模型">
+                生成模型vs判别模型 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -589,7 +836,7 @@
         
           <a href="/archives">
         
-          <span class="site-state-item-count">38</span>
+          <span class="site-state-item-count">59</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -661,9 +908,7 @@
         
           
         
-          
-        
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
@@ -708,7 +953,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">1.</span> <span class="nav-text">参考资料</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#传统数学方法"><span class="nav-number">2.</span> <span class="nav-text">传统数学方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#深度学习方法"><span class="nav-number">3.</span> <span class="nav-text">深度学习方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Laplacian的方法"><span class="nav-number">4.</span> <span class="nav-text">Laplacian的方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#边缘加强去噪"><span class="nav-number">5.</span> <span class="nav-text">边缘加强去噪</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">1.</span> <span class="nav-text">参考资料</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#传统数学方法"><span class="nav-number">2.</span> <span class="nav-text">传统数学方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#深度学习方法"><span class="nav-number">3.</span> <span class="nav-text">深度学习方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Laplacian方法"><span class="nav-number">4.</span> <span class="nav-text">Laplacian方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#边缘加强去噪"><span class="nav-number">5.</span> <span class="nav-text">边缘加强去噪</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验记录"><span class="nav-number">6.</span> <span class="nav-text">实验记录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#08-30"><span class="nav-number">6.1.</span> <span class="nav-text">08.30</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#09-01"><span class="nav-number">6.2.</span> <span class="nav-text">09.01</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#09-04"><span class="nav-number">6.3.</span> <span class="nav-text">09/04</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#不同的网络，不同的label，训练灰度图的结果"><span class="nav-number">6.3.1.</span> <span class="nav-text">不同的网络，不同的label，训练灰度图的结果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正则项的改进"><span class="nav-number">6.3.2.</span> <span class="nav-text">正则项的改进</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结果"><span class="nav-number">6.3.3.</span> <span class="nav-text">结果</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#09-09"><span class="nav-number">6.4.</span> <span class="nav-text">09.09</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#论文要修改的地方"><span class="nav-number">7.</span> <span class="nav-text">论文要修改的地方</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#实验评价"><span class="nav-number">7.1.</span> <span class="nav-text">实验评价</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#论文实验部分参考"><span class="nav-number">7.2.</span> <span class="nav-text">论文实验部分参考</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -744,14 +989,14 @@
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">120k</span>
+    <span title="站点总字数">163k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">1:49</span>
+    <span title="站点阅读时长">2:29</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
   <span class="post-meta-divider">|</span>

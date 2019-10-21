@@ -71,7 +71,7 @@
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79gy1g3a5quqvmaj30xa0osgnx.jpg">
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79gy1g3m23i2605j30qc0fe0xa.jpg">
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79gy1g3m23ice0rj30qw06o407.jpg">
-<meta property="og:updated_time" content="2019-08-17T06:37:26.711Z">
+<meta property="og:updated_time" content="2019-10-01T14:22:38.609Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="去噪传统方法论文综述">
 <meta name="twitter:description" content="期刊会议 计算机视觉期刊 A类  TPAMI: IEEE Trans on Pattern Analysis and Machine Intelligence IJCV: International Journal of Computer Vision TIP: IEEE Transactions on Image Processing  B类  CVIU: Computer Vision and">
@@ -181,7 +181,7 @@
       
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">13</span></a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">12</span></a>
 
   </li>
       
@@ -421,7 +421,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-17 14:37:26" itemprop="dateModified" datetime="2019-08-17T14:37:26+08:00">2019-08-17</time>
+                <time title="修改时间：2019-10-01 22:22:38" itemprop="dateModified" datetime="2019-10-01T22:22:38+08:00">2019-10-01</time>
               </span>
             
           
@@ -456,7 +456,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>18k</span>
+              <span>19k</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -622,7 +622,7 @@ J[u(x, y)]=\iint_{\Omega} F\left(x, y, u, \frac{\partial u}{\partial x}, \frac{\
 $$ {222}
 该类函数求极值的必要条件，即欧拉-拉格朗日方程(PDE):</script><p>F_{H}-\frac{\partial}{\partial x}\left\{F_{p}\right\}-\frac{\partial}{\partial y}\left\{F_{q}\right\}=0</p>
 <script type="math/tex; mode=display">
-其中, $p=\frac{\partial u(x, y)}{\partial x}, q=\frac{\partial u(x, y)}{\partial y}​$.
+其中, $p=\frac{\partial u(x, y)}{\partial x}, q=\frac{\partial u(x, y)}{\partial y}$.
 
 对于式1，有$F_{H}=\lambda\left(u-u^{0}\right), F_{p}=\frac{\frac{\partial u}{\partial x}}{|\nabla u|}, F_{q}=\frac{\frac{\partial u}{\partial y}}{|\nabla u|}$, 代入后有：</script><p>\begin{array}{l}{\lambda\left(u-u^{0}\right)-\left\{\frac{\partial}{\partial x}\left\{\left(\frac{\frac{\partial u}{\partial x}}{|\nabla u|}\right)\right\}+\frac{\partial}{\partial y}\left\{\frac{\frac{\partial u}{\partial y}}{|\nabla u|}\right\}\right\}=0} \\ {\Rightarrow \lambda\left(u-u^{0}\right)-\left(\frac{\partial}{\partial x}, \frac{\partial}{\partial y}\right) \cdot\left(\frac{\frac{\partial u}{\partial x}}{|\nabla u|}, \frac{\frac{\partial u}{\partial y}}{|\nabla u|}\right)=0} \\ {\Rightarrow \lambda\left(u-u^{0}\right)-\left(\frac{\partial}{\partial x}, \frac{\partial}{\partial y}\right) \cdot\left(\frac{1}{|\nabla u|}\left(\frac{\partial u}{\partial x}, \frac{\partial u}{\partial y}\right)\right)=0} \\ {\Rightarrow \lambda\left(u-u^{0}\right)-\nabla \cdot\left(\frac{\nabla u}{|\nabla u|}\right)=0}\end{array}</p>
 <script type="math/tex; mode=display">
@@ -657,7 +657,7 @@ TV复原模型的欧拉一拉格朗日方程为 ：</script><p>-\nabla \cdot\lef
 <li><p>(四阶)  Chan T, Marquina A, Mulet P.,  2000, SIAM J Sci Comput,</p>
 <p>《High-order total variation-based image restoration》: ”In this paper we present an improved model, constructed by adding a nonlinear fourth order diffusive term to the Euler–Lagrange equations of the variational TV model. “</p>
 <script type="math/tex; mode=display">
-\int_{\Omega}\left(\alpha|\nabla u|_{\beta}+\mu \Phi(|\nabla u|)(\mathcal{L}(u))^{2}+\frac{1}{2}(u-z)^{2}\right)</script><p>where, $\mathcal{L}(u)​$ is an elliptic operator and $\Phi(|\nabla u|)​$ is  the adaptive function. This model retain the good properties of the TV functional and <strong>penalize “wrong” edges created in regions which “should” be smooth</strong>. The adaptive functional, in which the action of the second order term is lessened where the gradient is large(avoid oversmooth).</p>
+\int_{\Omega}\left(\alpha|\nabla u|_{\beta}+\mu \Phi(|\nabla u|)(\mathcal{L}(u))^{2}+\frac{1}{2}(u-z)^{2}\right)</script><p>where, $\mathcal{L}(u)$ is an elliptic operator and $\Phi(|\nabla u|)$ is  the adaptive function. This model retain the good properties of the TV functional and <strong>penalize “wrong” edges created in regions which “should” be smooth</strong>. The adaptive functional, in which the action of the second order term is lessened where the gradient is large(avoid oversmooth).</p>
 </li>
 <li><p>(二阶) O. M. Lysaker and X.-C. Tai, Int. J. Comp. Vis., 2006</p>
 <p>《Iterative image restoration combining total variation minimization and a second-order functional》:Instead of combing TV norm and second order derivatives within one regularization functional, <strong>Lysaker and Tai [5]</strong> use two regularization functionals.</p>
@@ -906,6 +906,19 @@ D_{K L}(\boldsymbol{z}, \boldsymbol{g})=\left\langle\boldsymbol{g}, \ln \frac{\b
 <li><p>图片名称</p>
 <p>Figure 7: Some examples of RCF. <strong>From top to bottom:</strong> BSDS500 [2], NYUD [49], Multicue-Boundary [41], and Multicue-Edge [41]. <strong>From left to right:</strong> origin image, ground truth, RCF edge map, origin image, ground truth, and RCF edge map.</p>
 </li>
+<li><p>图像的合成</p>
+<p>The noisy inputs are synthesized by adding i.i.d. Gaussian white noise with diﬀerent standard deviation σ to the original images.</p>
+</li>
+<li><p>方法的比较</p>
+<ul>
+<li><p>两个方法差不多的情况</p>
+<p>There are images on which the K-SVD method performed better and there are some on which our approaches performed better. Overall, the performances of our proposed method and the K-SVD method are comparable in terms of PSNR value, and so is the visual quality.</p>
+</li>
+<li><p>We <u>compared</u> the computational eﬃciency of Algorithm 1 <u>against that of</u> the K-SVD method <u>in terms of</u> the running time on the same hardware conﬁguration.</p>
+</li>
+<li></li>
+</ul>
+</li>
 </ul>
 
     </div>
@@ -990,7 +1003,7 @@ D_{K L}(\boldsymbol{z}, \boldsymbol{g})=\left\langle\boldsymbol{g}, \ln \frac{\b
         
           <a href="/archives">
         
-          <span class="site-state-item-count">38</span>
+          <span class="site-state-item-count">59</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1062,9 +1075,7 @@ D_{K L}(\boldsymbol{z}, \boldsymbol{g})=\left\langle\boldsymbol{g}, \ln \frac{\b
         
           
         
-          
-        
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
@@ -1145,14 +1156,14 @@ D_{K L}(\boldsymbol{z}, \boldsymbol{g})=\left\langle\boldsymbol{g}, \ln \frac{\b
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">120k</span>
+    <span title="站点总字数">163k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">1:49</span>
+    <span title="站点阅读时长">2:29</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
   <span class="post-meta-divider">|</span>
